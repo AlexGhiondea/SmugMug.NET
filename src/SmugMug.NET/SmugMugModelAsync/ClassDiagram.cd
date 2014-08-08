@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SmugMugModel.Album">
+    <Position X="30.5" Y="4.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>bEmWFBQMCW7tWfQ8vpViUal/r6WqgNk7yyC+XlA3/g0=</HashCode>
+      <FileName>Objects\Album.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.AlbumTemplate" Collapsed="true">
+    <Position X="38.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>bEiQABQMCEaAQJAgEoViUKknBiGAgNEjwgC+TlAzegU=</HashCode>
+      <FileName>Objects\AlbumTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Category">
+    <Position X="0.75" Y="4.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AEBAAAgAAAEAACAEAAAIAAQBAAEAAAAAAQAACEAQgkA=</HashCode>
+      <FileName>Objects\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Comment" Collapsed="true">
+    <Position X="42.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAACAAAAgA=</HashCode>
+      <FileName>Objects\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.CommunicationHelper" Collapsed="true">
+    <Position X="44.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAgCAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Objects\CommunicationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Community">
+    <Position X="11.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAkA=</HashCode>
+      <FileName>Objects\Community.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Family" Collapsed="true">
+    <Position X="46.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAgAAAAAAAAAAAAAAACAAAAEAAQAAAAAEAAA=</HashCode>
+      <FileName>Objects\Family.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Friend" Collapsed="true">
+    <Position X="48" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAgAAAAAAAAAAAAAAACAAAAEAAQAAAAAEAAA=</HashCode>
+      <FileName>Objects\Friend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Highlight" Collapsed="true">
+    <Position X="41" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAQAAAAAAAABAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Objects\Highlight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Image">
+    <Position X="36.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qrT3FqRAPUmDgmYljdRKjelsn725Ik3RSzgkWlrPooc=</HashCode>
+      <FileName>Objects\Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.UploadEventArgs" Collapsed="true">
+    <Position X="42.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAA=</HashCode>
+      <FileName>Objects\ImageUpload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.ImageUpload" Collapsed="true">
+    <Position X="42.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAEEAAAAgAAACIwAgIAQAEABAACEAAAAAEgAA=</HashCode>
+      <FileName>Objects\ImageUpload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Login" Collapsed="true">
+    <Position X="44.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACBAIAAAAAAAQAAAAAACAAAEAAAAAAABAAAAAAAAgA=</HashCode>
+      <FileName>Objects\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.MyUser">
+    <Position X="14" Y="4.75" Width="7.75" />
+    <TypeIdentifier>
+      <HashCode>JAOAGIgAgVACAABEAABACIogESAgEAAABEAIAgCQAgA=</HashCode>
+      <FileName>Objects\MyUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Product" Collapsed="true">
+    <Position X="46.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAQAAAAAACgA=</HashCode>
+      <FileName>Objects\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Session" Collapsed="true">
+    <Position X="48" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Objects\Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.ShareGroup">
+    <Position X="26.5" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AABBgAAAAQggAAAAAAEAAAQBACEgAEAAAAAACAAEA8A=</HashCode>
+      <FileName>Objects\ShareGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Site" Collapsed="true">
+    <Position X="41" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAEAAAAAAAAAEAAAAAAAQAAAAAEA=</HashCode>
+      <FileName>Objects\Site.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SmugMugBase" Collapsed="true">
+    <Position X="42.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAIAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\SmugMugBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SmugMugObject" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEEAIAAAAAAQAA=</HashCode>
+      <FileName>Objects\SmugMugObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SubCategory">
+    <Position X="6.5" Y="4.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AABABAgAAAAAAAAEAAAAAAQBAAEAAAAAAAAACEAAikA=</HashCode>
+      <FileName>Objects\SubCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Template" Collapsed="true">
+    <Position X="46.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAkA=</HashCode>
+      <FileName>Objects\Template.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Theme" Collapsed="true">
+    <Position X="48" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAQAAAAAACkA=</HashCode>
+      <FileName>Objects\Theme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.User" Collapsed="true">
+    <Position X="44.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEAAAAAAAACAEAAAgBABgAKASAAkAAAAICAAEAgQ=</HashCode>
+      <FileName>Objects\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Watermark">
+    <Position X="22.5" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQQhAAAAAQBAgEAAFAAAIAAAUEAAkA=</HashCode>
+      <FileName>Objects\Watermark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SmugMugException" Collapsed="true">
+    <Position X="44.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SmugMugResponse" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAGAACACAAAAAAAAAAIAAAAgAAAAAAAAAAACA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.LoginResponse" Collapsed="true">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.UserResponse" Collapsed="true">
+    <Position X="29.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAACACAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Auth" Collapsed="true">
+    <Position X="41" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.Token" Collapsed="true">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAEAAAAAAAAABAAACAAAAEAAAIAAAAgA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.AuthResponse" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.ThemeResponse" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAQAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.TemplateResponse" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.CommunityResponse" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAICAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.FriendResponse" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.FamilyResponse" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.CategoryResponse" Collapsed="true">
+    <Position X="32" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACACAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.SubCategoryResponse" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.ShareGroupResponse" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAAAAIAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.AlbumTemplateResponse" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAMAAAAAAIAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.AlbumResponse" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.ImageResponse" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAABCAAIAACAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmugMugModel.WatermarkResponse" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIQAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmugMugResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SmugMugModel.By" Collapsed="true">
+    <Position X="46.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQACAAAAABAAAA=</HashCode>
+      <FileName>Enums\AlbumEnums\AlbumReSortByEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.Direction" Collapsed="true">
+    <Position X="46.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Enums\AlbumEnums\AlbumReSortDirectionEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ColorCorrection" Collapsed="true">
+    <Position X="48" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAABAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\AlbumEnums\ColorCorrectionEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.SortMethod" Collapsed="true">
+    <Position X="41" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAEAAAQBCAAAAABAAAA=</HashCode>
+      <FileName>Enums\AlbumEnums\SortMethodEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ColorSpaceEnum" Collapsed="true">
+    <Position X="41" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAA=</HashCode>
+      <FileName>Enums\ImageEnums\ColorSpaceEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ContrastEnum" Collapsed="true">
+    <Position X="42.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\ContrastEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.DegreesEnum" Collapsed="true">
+    <Position X="44.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\DegreesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ExposureModeEnum" Collapsed="true">
+    <Position X="48" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\ExposureModeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ExposureProgramEnum" Collapsed="true">
+    <Position X="41" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACEQAAAAAAAABAAAACAAAAAAAAAAAAIAoAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\ExposureProgramEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.FlashEnum" Collapsed="true">
+    <Position X="42.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAARIgBAACCASCAAAAAYACRQAAAAAAAFAAIACAE=</HashCode>
+      <FileName>Enums\ImageEnums\FlashEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.LightSourceEnum" Collapsed="true">
+    <Position X="44.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAIAAAAAAAAAABAAAQAAACQAAEAQAgIAAABAAAEoCBE=</HashCode>
+      <FileName>Enums\ImageEnums\LightSourceEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.MeteringEnum" Collapsed="true">
+    <Position X="46.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAABAAAAQAAAAAAAAQAgEAAAAABA=</HashCode>
+      <FileName>Enums\ImageEnums\MeteringEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.SaturationEnum" Collapsed="true">
+    <Position X="44.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAggIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\SaturationEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.SensingMethodEnum" Collapsed="true">
+    <Position X="46.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAAAAAAAAAEAgAAAAAAAAAAAAAAAwAAAgAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\SensingMethodEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.SharpnessEnum" Collapsed="true">
+    <Position X="48" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\SharpnessEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.SubjectDistanceRangeEnum" Collapsed="true">
+    <Position X="42.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAgAAAAAAAAAAAAEAABA=</HashCode>
+      <FileName>Enums\ImageEnums\SubjectDistanceRangeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.WhiteBalanceEnum" Collapsed="true">
+    <Position X="48" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ImageEnums\WhiteBalanceEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ProductTypeEnum" Collapsed="true">
+    <Position X="42.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAMAEAAAAAACAAAAEAAAAAAAA=</HashCode>
+      <FileName>Enums\ProductTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.TemplateID" Collapsed="true">
+    <Position X="44.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEAQAEAACAEAAAAAAAAAACAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\TemplateIDEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.ThemeType" Collapsed="true">
+    <Position X="46.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Enums\ThemeTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.AccessEnum" Collapsed="true">
+    <Position X="41" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAA=</HashCode>
+      <FileName>Enums\TokenEnums\AccessEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.PermissionsEnum" Collapsed="true">
+    <Position X="48" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\TokenEnums\PermissionsEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.AccountStatusEnum" Collapsed="true">
+    <Position X="42.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\UserEnums\AccountStatusEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.AccountTypeEnum" Collapsed="true">
+    <Position X="44.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAEAAAAAAAA=</HashCode>
+      <FileName>Enums\UserEnums\AccountTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmugMugModel.PinnedEnum" Collapsed="true">
+    <Position X="41" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAAAAABAAAAAQAAAAAAAIAAAACACAAAAIAUA=</HashCode>
+      <FileName>Enums\WatermarkEnums\PinnedEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
