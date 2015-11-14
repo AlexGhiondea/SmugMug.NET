@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModelAsync", "SmugMugModelAsync\SmugMugModelAsync.csproj", "{C7020561-8E04-4D6A-8D46-28F31183ECBB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugTest", "SmugMugTest\SmugMugTest.csproj", "{7F0008B0-AFC4-4DB2-B0D2-71F3071F4D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugTest.v2", "SmugMugTest.v2\SmugMugTest.v2.csproj", "{5F920D4B-3C84-4329-B539-DE884404EBC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModel.v2", "SmugMugModel.v2\SmugMugModel.v2.csproj", "{6322369D-B963-4695-9E43-708836F226F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{7F0008B0-AFC4-4DB2-B0D2-71F3071F4D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0008B0-AFC4-4DB2-B0D2-71F3071F4D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0008B0-AFC4-4DB2-B0D2-71F3071F4D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6322369D-B963-4695-9E43-708836F226F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6322369D-B963-4695-9E43-708836F226F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6322369D-B963-4695-9E43-708836F226F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6322369D-B963-4695-9E43-708836F226F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
