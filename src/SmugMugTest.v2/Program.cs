@@ -12,7 +12,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SmugMugTest.v2;
 using SmugMugTest.v2.PropertyDescriptors;
-
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SmugMugTest
 {
@@ -43,14 +44,125 @@ namespace SmugMugTest
             Console.WriteLine("Using tokenSecret={0}", oauthToken.TokenSecret);
         }
 
+        private static string CreateRegEx(string source)
+        {
+            int currPos = 0;
+            StringBuilder sb = new StringBuilder();
+            while (currPos < source.Length)
+            {
+                if (currPos > 1 && source[currPos] == ':' && source[currPos - 1] == '/')
+                {
+                    // this is the start of the identifier.
+                    while (currPos < source.Length && source[currPos] != '/')
+                        currPos++;
 
+                    sb.Append("(\\S)*");
+                    if (currPos != source.Length)
+                        sb.Append("/");
+                }
+                else
+                {
+                    sb.Append(source[currPos]);
+                }
+                currPos++;
+            }
+            return sb.ToString();
+        }
 
         static void Main(string[] args)
         {
             GetSmugMugSecrets();
             Debug.Assert(!oauthToken.Equals(OAuthToken.Invalid));
 
-           
+            string b = "https://api.smugmug.com";
+            BaseUriFinder buf = new BaseUriFinder(oauthToken);
+            var list = buf.GetBaseUris(b, "/api/v2");
+
+            List<string> uriMatch = list.Select(x => CreateRegEx(x.Value)).ToList();
+            uriMatch.AddRange(list.Select(x => CreateRegEx(x.Value) + "!(\\S)*").ToList()); // sometimes this is a better match
+
+            Dictionary<string, ObjectDescriptor> objectData = new Dictionary<string, ObjectDescriptor>();
+
+            list.Add("base", "/api/v2/user/ghiondea");
+
+            Stack<KeyValuePair<string, string>> ToProcess = new Stack<KeyValuePair<string, string>>();
+            foreach (var item in list)
+            {
+                ToProcess.Push(item);
+            }
+
+            HashSet<string> visited = new HashSet<string>();
+
+            while (ToProcess.Count > 0)
+            {
+                var item = ToProcess.Pop();
+                Console.WriteLine(b + item.Value + "?_pretty&_verbosity=3");
+                ObjectDescriptor newNode = Explore(b + item.Value + "?_pretty&_verbosity=3");
+
+                visited.Add(item.Value);
+
+                if (newNode != null)
+                {
+                    var retType = newNode.Name == null ? item.Key : newNode.Name;
+
+                    Console.WriteLine(retType);
+
+                    if (newNode.Methods != null)
+                    {
+                        foreach (var method in newNode.Methods)
+                        {
+                            // we should reverse normalize the uri.
+                            foreach (var uriRegEx in uriMatch)
+                            {
+                                if (Regex.IsMatch(method.Uri, uriRegEx))
+                                {
+                                    method.NormalizedUri = uriRegEx;
+                                }
+                            }
+
+                            if (method.ReturnType == null)
+                            {
+                                Console.WriteLine("No known RetType! {0}", method.Uri);
+                                continue;
+                            }
+
+                            if (visited.Contains(method.Uri))
+                                continue;
+
+                            ToProcess.Push(new KeyValuePair<string, string>(method.ReturnType, method.Uri));
+                        }
+                    }
+
+                    ObjectDescriptor o;
+                    if (objectData.TryGetValue(retType, out o))
+                    {
+                        // we need to merge them.
+                        foreach (var p in newNode.Properties)
+                        {
+                            if (o.Properties.FirstOrDefault(x => x.Name == p.Name) == null)
+                            {
+                                o.Properties.Add(p);
+                            }
+                        }
+
+                        // we need to merge them.
+                        foreach (var m in newNode.Methods)
+                        {
+                            if (o.Methods.FirstOrDefault(x => x.Uri == m.Uri) == null)
+                            {
+                                o.Methods.Add(m);
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        objectData[retType] = newNode;
+                    }
+                }
+            }
+
+            return;
 
             string apiBase = "https://api.smugmug.com";
 
@@ -115,11 +227,17 @@ namespace SmugMugTest
         {
             HttpClient client = HttpClientHelpers.CreateHttpClient(oauthToken);
 
-            var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
+            try {
+                var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
+                return ProcessData(req);
+            }
+            catch
+            {
+                return null;
+            }
+            
 
-            var od = ProcessData(req);
-
-            return od;
+            return null;
 
             //string objName;
             //JProperty obj = GetObjectDataFromRequest(req, out objName) as JProperty;
@@ -257,6 +375,9 @@ namespace SmugMugTest
 
             od.Properties = properties;
 
+            if (obj.Property("Response") == null)
+                return od;
+
             var val = obj.Property("Response").Value as JObject;
             var name2 = val.Property("Locator").ToObject<string>();
 
@@ -269,7 +390,11 @@ namespace SmugMugTest
                     {
                         MethodDescriptor md = new MethodDescriptor();
                         md.Uri = (item.Value as JObject).Property("Uri").Value.ToString();
-                        md.ReturnType = (item.Value as JObject).Property("Locator").Value.ToString();
+
+                        if ((item.Value as JObject).Property("Locator") != null)
+                        {
+                            md.ReturnType = (item.Value as JObject).Property("Locator").Value.ToString();
+                        }
 
                         od.Methods.Add(md);
                     }

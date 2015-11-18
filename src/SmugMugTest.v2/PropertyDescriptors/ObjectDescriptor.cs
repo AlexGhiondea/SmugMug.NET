@@ -21,6 +21,7 @@ namespace SmugMugTest.v2.PropertyDescriptors
 
     public class MethodDescriptor
     {
+        public string NormalizedUri { get; set; }
         public string Uri { get; set; }
         public string ReturnType { get; set; }
     }
