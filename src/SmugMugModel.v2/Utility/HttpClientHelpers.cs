@@ -1,7 +1,7 @@
-﻿using SmugMugModel.v2.Authentication;
+﻿using SmugMug.v2.Authentication;
 using System.Net.Http;
 
-namespace SmugMugModel.v2.Helpers
+namespace SmugMug.v2.Helpers
 {
     public static class HttpClientHelpers
     {

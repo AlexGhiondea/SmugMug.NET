@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using SmugMugModel.v2.Authentication;
-using SmugMugModel.v2.Helpers;
+using SmugMug.v2.Authentication;
+using SmugMug.v2.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

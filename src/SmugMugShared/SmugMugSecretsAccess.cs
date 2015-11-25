@@ -5,10 +5,39 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Linq;
 
-namespace SmugMugTest
+namespace SmugMug.Shared
 {
-    public class SmugMugSecretsAccess
+    public class SecretsAccess
     {
+        /// <summary>
+        /// If the secrets are in a file, get them from there. Otherwise, request them (apikey, secret) from the user
+        /// </summary>
+        public static OAuthToken GetSmugMugSecrets()
+        {
+            OAuthToken oauthToken = default(OAuthToken);
+            if (!SecretsAccess.TryReadSecretsFromFile(out oauthToken))
+            {
+                // Do we have the secret/apikey?
+                Console.WriteLine("Please enter your API Key and press [Enter]:");
+                string apiKey = Console.ReadLine();
+                Console.WriteLine("Please enter your Application Secret and press [Enter]:");
+                string secret = Console.ReadLine();
+
+                oauthToken = SmugMugAuthorize.AuthorizeSmugMug(apiKey, secret, AuthenticationOptions.FullAccess);
+                SecretsAccess.SaveSecretsToFile(oauthToken);
+            }
+
+#if DEBUG
+            Console.WriteLine("Using APIKey={0}", oauthToken.ApiKey);
+            Console.WriteLine("Using AppSecret={0}", oauthToken.Secret);
+            Console.WriteLine("Using token={0}", oauthToken.Token);
+            Console.WriteLine("Using tokenSecret={0}", oauthToken.TokenSecret);
+#endif
+
+            return oauthToken;
+        }
+
+
         static void EncryptTextToFile(String Data, String FileName, byte[] Key, byte[] IV)
         {
             try

@@ -1,6 +1,5 @@
-﻿using SmugMugModel.v2.Authentication;
-using SmugMugModel.v2.Helpers;
-using SmugMugTest.v2.Authentication;
+﻿using SmugMug.v2.Authentication;
+using SmugMug.v2.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

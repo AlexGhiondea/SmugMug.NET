@@ -1,4 +1,4 @@
-﻿namespace SmugMugTest.v2.Authentication
+﻿namespace SmugMug.v2.Authentication
 {
     public enum PermissionLevel
     {

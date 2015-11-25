@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SmugMugTest.v2.Authentication
+namespace SmugMug.v2.Authentication
 {
     public class AuthenticationOptions
     {

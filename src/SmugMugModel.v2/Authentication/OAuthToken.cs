@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmugMugModel.v2.Authentication
+namespace SmugMug.v2.Authentication
 {
     public struct OAuthToken
     {

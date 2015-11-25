@@ -1,10 +1,10 @@
-﻿using SmugMugTest.v2.Authentication;
+﻿using SmugMug.v2.Authentication;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SmugMugModel.v2.Authentication
+namespace SmugMug.v2.Authentication
 {
     public class SmugMugAuthorize
     {
