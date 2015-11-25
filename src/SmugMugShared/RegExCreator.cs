@@ -2,11 +2,31 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Collections.Generic;
 
 namespace SmugMugShared
 {
     public static class RegExCreator
     {
+        private static HashSet<string> s_specialUris = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        static RegExCreator()
+        {
+            s_specialUris.Add("/folder/user");
+            s_specialUris.Add("/folder/id");
+            s_specialUris.Add("/catalog");
+            s_specialUris.Add("/highlight");
+            s_specialUris.Add("/deleted");
+        }
+        private static string GetPrefix(string uri)
+        {
+            foreach (var specialUri in s_specialUris)
+            {
+                if (uri.StartsWith(specialUri))
+                    return specialUri;
+            }
+            return string.Empty;
+        }
+
         public static string FromUri(string baseUri, string uri)
         {
             string temp = uri;
@@ -14,7 +34,14 @@ namespace SmugMugShared
             string endpointParameter = string.Empty;
             string methodName = string.Empty;
 
+
             temp = temp.Replace(baseUri, "");
+
+            string prefix = GetPrefix(temp);
+
+            if (prefix.Length > 0)
+                temp = temp.Substring(prefix.Length);
+
 
             // check for the ones that contain the ':id' code
             int ss = temp.IndexOf(':');
@@ -113,7 +140,7 @@ namespace SmugMugShared
                 methodName = "!" + methodName;
             }
 
-            string methodNorm =  endpoint + endpointParameter + methodName;
+            string methodNorm = prefix + endpoint + endpointParameter + methodName;
 
             return methodNorm;
         }
