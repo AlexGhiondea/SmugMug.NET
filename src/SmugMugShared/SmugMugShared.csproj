@@ -47,9 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Descriptors\Method.cs" />
+    <Compile Include="Descriptors\Limits.cs" />
+    <Compile Include="Descriptors\Properties\ArrayProperty.cs" />
+    <Compile Include="Descriptors\Properties\DateTimeProperty.cs" />
+    <Compile Include="Descriptors\Properties\HashProperty.cs" />
+    <Compile Include="Descriptors\Properties\DecimalProperty.cs" />
+    <Compile Include="Descriptors\Properties\UriProperty.cs" />
+    <Compile Include="Descriptors\Properties\BooleanProperty.cs" />
+    <Compile Include="Descriptors\Properties\IntegerProperty.cs" />
+    <Compile Include="Descriptors\Properties\StringProperty.cs" />
+    <Compile Include="Descriptors\Properties\SelectProperty.cs" />
+    <Compile Include="Descriptors\Properties\TimeStampProperty.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Descriptors\ObjectDescriptor.cs" />
-    <Compile Include="Descriptors\PropertyDescriptor.cs" />
+    <Compile Include="Descriptors\Entity.cs" />
+    <Compile Include="Descriptors\Properties\Property.cs" />
     <Compile Include="SmugMugSecretsAccess.cs" />
   </ItemGroup>
   <ItemGroup>

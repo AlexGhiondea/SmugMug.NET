@@ -1,4 +1,7 @@
-﻿using SmugMug.v2.Authentication;
+﻿// Copyright (c) Alex Ghiondea. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using SmugMug.v2.Authentication;
 using System;
 using System.IO;
 using System.Security.Cryptography;
