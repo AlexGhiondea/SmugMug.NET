@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiAnalysis.cs" />
     <Compile Include="BaseUriFinder.cs" />
     <Compile Include="CodeGen.cs" />
     <Compile Include="Program.cs">
