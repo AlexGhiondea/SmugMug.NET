@@ -18,17 +18,16 @@ namespace SmugMugMetadataRetriever
             s_oauthToken = SmugMug.Shared.SecretsAccess.GetSmugMugSecrets();
             Debug.Assert(!s_oauthToken.Equals(OAuthToken.Invalid));
 
-            UriFinder buf = new UriFinder(s_oauthToken);
+            ApiAnalyzer buf = new ApiAnalyzer(s_oauthToken);
             var list = new Dictionary<string, string>();
             list = buf.GetBaseUris(Constants.Addresses.SmugMug, "/api/v2");
 
             Dictionary<string, string> uris = new Dictionary<string, string>() { 
-
             };
 
             foreach (var item in list)
             {
-                uris.Add(item.Key, Constants.Addresses.SmugMugApi + item.Value + Constants.RequestModifiers);
+                uris.Add(item.Key, Constants.Addresses.SmugMug + item.Value + Constants.RequestModifiers);
             }
 
             var types = buf.AnalyzeAPIs(uris, Constants.Addresses.SmugMugApi);

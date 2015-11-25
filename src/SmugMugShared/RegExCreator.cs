@@ -114,10 +114,7 @@ namespace SmugMugShared
             }
 
             string methodNorm =  endpoint + endpointParameter + methodName;
-#if DEBUG
-            Console.WriteLine(uri);
-            Console.WriteLine(methodNorm);
-#endif
+
             return methodNorm;
         }
     }

@@ -14,10 +14,10 @@ using System.Net.Http;
 
 namespace SmugMugMetadataRetriever
 {
-    public class UriFinder
+    public class ApiAnalyzer
     {
         OAuthToken _token;
-        public UriFinder(OAuthToken oauthToken)
+        public ApiAnalyzer(OAuthToken oauthToken)
         {
             _token = oauthToken;
         }
@@ -61,8 +61,6 @@ namespace SmugMugMetadataRetriever
 
         public Dictionary<string, Entity> AnalyzeAPIs(Dictionary<string, string> uriStartingPoints, string baseUri)
         {
-
-
             Dictionary<string, Entity> result = new Dictionary<string, Entity>(StringComparer.OrdinalIgnoreCase);
 
             // Create the initial stack of the uris to analyze
