@@ -72,18 +72,18 @@ namespace SmugMugMetadataRetriever
             {
                 var uri = stack.Pop();
 
-                ConsolePrinter.Write(ConsoleColor.Cyan, "Found {0} types", result.Count);
                 ConsolePrinter.Write(ConsoleColor.DarkGreen, "Processing {0} ...", uri.Value);
 
                 string normalized = RegExCreator.FromUri(baseUri, uri.Value);
                 ConsolePrinter.Write(ConsoleColor.Gray, "Normalized {0}", normalized);
                 alreadyVisited.Add(normalized);
 
-
-                var obj = Explore(uri.Value);
+                var obj = ProcessUriLocation(uri.Value);
                 if (obj == null)
                     continue;
 
+                // If the entity does not have a name (or one could not be retrieved), use the one 
+                // created when the key was inserted.
                 obj.Name = obj.Name ?? uri.Key;
 
                 Entity current;
@@ -96,6 +96,7 @@ namespace SmugMugMetadataRetriever
                 {
                     result[obj.Name] = obj;
                 }
+                ConsolePrinter.Write(ConsoleColor.Cyan, "Found {0} types", result.Count);
 
                 foreach (var item in obj.Methods)
                 {
@@ -104,7 +105,7 @@ namespace SmugMugMetadataRetriever
                     if (!alreadyVisited.Contains(RegExCreator.FromUri(baseUri, uriAddr)))
                     {
                         stack.Push(new KeyValuePair<string, string>(item.ReturnType, uriAddr));
-                        ConsolePrinter.Write(ConsoleColor.DarkYellow, "Discovered {0}", uriAddr);
+                        ConsolePrinter.Write(ConsoleColor.DarkYellow, "Queued {0}", uriAddr);
                     }
                 }
             }
@@ -137,24 +138,23 @@ namespace SmugMugMetadataRetriever
             return discoveredUris;
         }
 
-        private Entity Explore(string uri)
+        private Entity ProcessUriLocation(string uri)
         {
-            HttpClient client = HttpClientHelpers.CreateHttpClient(_token);
-
-            try
+            using (HttpClient client = HttpClientHelpers.CreateHttpClient(_token))
             {
-                var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
-                return ProcessData(req);
+                try
+                {
+                    var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
+                    return ProcessData(req);
+                }
+                catch { }
             }
-            catch { }
-
 
             return null;
         }
 
         private static Entity ProcessData(string req)
         {
-            //TODO: Need to also 'guess' about the parameters based on the GET method... no other better way :(
             JObject obj = JObject.Parse(req);
 
             if (obj.Property("Options") == null)
