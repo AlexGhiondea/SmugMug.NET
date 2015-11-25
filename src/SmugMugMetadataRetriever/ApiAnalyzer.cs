@@ -41,7 +41,7 @@ namespace SmugMugMetadataRetriever
                     }
 
                     string uri = baseAddress + curr.Value;
-                    Console.WriteLine("Processing: " + uri);
+                    ConsolePrinter.Write(ConsoleColor.DarkGreen, "Processing: " + uri);
                     var result = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
 
                     var discUris = DiscoverUris(result);
@@ -72,14 +72,13 @@ namespace SmugMugMetadataRetriever
             {
                 var uri = stack.Pop();
 
-                ConsolePrinter.Write(ConsoleColor.DarkYellow, uri.Value);
+                ConsolePrinter.Write(ConsoleColor.Cyan, "Found {0} types", result.Count);
+                ConsolePrinter.Write(ConsoleColor.DarkGreen, "Processing {0} ...", uri.Value);
+
                 string normalized = RegExCreator.FromUri(baseUri, uri.Value);
-                ConsolePrinter.Write(ConsoleColor.White, normalized);
+                ConsolePrinter.Write(ConsoleColor.Gray, "Normalized {0}", normalized);
                 alreadyVisited.Add(normalized);
 
-
-                ConsolePrinter.Write(ConsoleColor.Green, "Found {0} types", result.Count);
-                ConsolePrinter.Write(ConsoleColor.Gray, "Processing {0} ...", uri.Value);
 
                 var obj = Explore(uri.Value);
                 if (obj == null)
@@ -105,7 +104,7 @@ namespace SmugMugMetadataRetriever
                     if (!alreadyVisited.Contains(RegExCreator.FromUri(baseUri, uriAddr)))
                     {
                         stack.Push(new KeyValuePair<string, string>(item.ReturnType, uriAddr));
-                        ConsolePrinter.Write(ConsoleColor.Cyan, uriAddr);
+                        ConsolePrinter.Write(ConsoleColor.DarkYellow, "Discovered {0}", uriAddr);
                     }
                 }
             }
