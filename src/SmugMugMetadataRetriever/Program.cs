@@ -10,12 +10,10 @@ namespace SmugMugMetadataRetriever
     {
         static OAuthToken s_oauthToken;
 
-
         static void Main(string[] args)
         {
             s_oauthToken = SmugMug.Shared.SecretsAccess.GetSmugMugSecrets();
             Debug.Assert(!s_oauthToken.Equals(OAuthToken.Invalid));
-
         }
     }
 }
