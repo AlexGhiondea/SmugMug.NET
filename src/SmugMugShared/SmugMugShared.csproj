@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Descriptors\Method.cs" />
     <Compile Include="Descriptors\Limits.cs" />
     <Compile Include="Descriptors\Properties\ArrayProperty.cs" />
@@ -59,10 +60,13 @@
     <Compile Include="Descriptors\Properties\StringProperty.cs" />
     <Compile Include="Descriptors\Properties\SelectProperty.cs" />
     <Compile Include="Descriptors\Properties\TimeStampProperty.cs" />
+    <Compile Include="Extensions\StackExtensions.cs" />
+    <Compile Include="Extensions\ConsolePrinter.cs" />
     <Compile Include="Extensions\JsonExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Descriptors\Entity.cs" />
     <Compile Include="Descriptors\Properties\Property.cs" />
+    <Compile Include="RegExCreator.cs" />
     <Compile Include="SmugMugSecretsAccess.cs" />
   </ItemGroup>
   <ItemGroup>
