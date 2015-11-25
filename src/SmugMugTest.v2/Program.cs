@@ -10,9 +10,10 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SmugMugTest.v2;
-using SmugMugTest.v2.PropertyDescriptors;
 using System.Text;
 using System.Text.RegularExpressions;
+using SmugMug.Shared.Descriptors;
+using SmugMug.Shared.Extensions;
 
 namespace SmugMugTest
 {
@@ -80,7 +81,7 @@ namespace SmugMugTest
             List<string> uriMatch = list.Select(x => CreateRegEx(x.Value)).ToList();
             uriMatch.AddRange(list.Select(x => CreateRegEx(x.Value) + "!(\\S)*").ToList()); // sometimes this is a better match
 
-            Dictionary<string, ObjectDescriptor> objectData = new Dictionary<string, ObjectDescriptor>();
+            Dictionary<string, Entity> objectData = new Dictionary<string, Entity>();
 
             list.Add("base", "/api/v2/user/ghiondea");
 
@@ -96,7 +97,7 @@ namespace SmugMugTest
             {
                 var item = ToProcess.Pop();
                 Console.WriteLine(b + item.Value + "?_pretty&_verbosity=3");
-                ObjectDescriptor newNode = Explore(b + item.Value + "?_pretty&_verbosity=3");
+                Entity newNode = Explore(b + item.Value + "?_pretty&_verbosity=3");
 
                 visited.Add(item.Value);
 
@@ -132,7 +133,7 @@ namespace SmugMugTest
                         }
                     }
 
-                    ObjectDescriptor o;
+                    Entity o;
                     if (objectData.TryGetValue(retType, out o))
                     {
                         // we need to merge them.
@@ -166,21 +167,21 @@ namespace SmugMugTest
             string apiBase = "https://api.smugmug.com";
 
             //
-            ObjectDescriptor entry = Explore("");
+            Entity entry = Explore("");
 
-            Queue<ObjectDescriptor> nodes = new Queue<ObjectDescriptor>();
+            Queue<Entity> nodes = new Queue<Entity>();
             nodes.Enqueue(entry);
 
             HashSet<string> alreadyVisited = new HashSet<string>();
             alreadyVisited.Add("");
 
-            HashSet<ObjectDescriptor> objects = new HashSet<ObjectDescriptor>();
+            HashSet<Entity> objects = new HashSet<Entity>();
 
             HashSet<string> hs = new HashSet<string>();
 
             while (nodes.Count > 0)
             {
-                ObjectDescriptor curr = nodes.Dequeue();
+                Entity curr = nodes.Dequeue();
                 if (curr.Methods == null)
                     continue;
                 foreach (var item in curr.Methods)
@@ -194,7 +195,7 @@ namespace SmugMugTest
                         Console.WriteLine(apiBase + currMethod);
                         try
                         {
-                            ObjectDescriptor newNode = Explore(apiBase + currMethod);
+                            Entity newNode = Explore(apiBase + currMethod);
 
                             if (newNode != null)
                             {
@@ -222,7 +223,7 @@ namespace SmugMugTest
             }
         }
 
-        private static ObjectDescriptor Explore(string uri)
+        private static Entity Explore(string uri)
         {
             HttpClient client = HttpClientHelpers.CreateHttpClient(oauthToken);
 
@@ -279,7 +280,7 @@ namespace SmugMugTest
             //return entry;
         }
 
-        private static ObjectDescriptor ProcessData(string req)
+        private static Entity ProcessData(string req)
         {
             JObject obj = JObject.Parse(req);
 
@@ -296,7 +297,7 @@ namespace SmugMugTest
 
             var outputInfo = response.Property("Output").Value as JArray;
 
-            List<PropertyDescriptor> properties = new List<PropertyDescriptor>();
+            List<Property> properties = new List<Property>();
 
             foreach (JObject item in outputInfo)
             {
@@ -313,56 +314,56 @@ namespace SmugMugTest
                 {
                     case "select":
                         {
-                            properties.Add(new SelectPropertyDescriptor(item));
+                            properties.Add(new SelectProperty(item));
                             break;
                         }
                     case "varchar":
                     case "text":
                         {
-                            properties.Add(new StringPropertyDescriptor(item));
+                            properties.Add(new StringProperty(item));
                             break;
                         }
                     case "uri":
                         {
-                            properties.Add(new UriPropertyDescriptor(item));
+                            properties.Add(new UriProperty(item));
                             break;
                         }
                     case "array":
                         {
-                            properties.Add(new ArrayPropertyDescriptor(item));
+                            properties.Add(new ArrayProperty(item));
                             break;
                         }
                     case "decimal":
                         {
-                            properties.Add(new DecimalPropertyDescriptor(item));
+                            properties.Add(new DecimalProperty(item));
                             break;
                         }
                     case "time":
                     case "date":
                     case "datetime":
                         {
-                            properties.Add(new DateTimePropertyDescriptor(item));
+                            properties.Add(new DateTimeProperty(item));
                             break;
                         }
                     case "unixtimestamp":
                     case "timestamp":
                         {
-                            properties.Add(new TimeStampPropertyDescriptor(item));
+                            properties.Add(new TimeStampProperty(item));
                             break;
                         }
                     case "boolean":
                         {
-                            properties.Add(new BooleanPropertyDescriptor(item));
+                            properties.Add(new BooleanProperty(item));
                             break;
                         }
                     case "integer":
                         {
-                            properties.Add(new IntegerPropertyDescriptor(item));
+                            properties.Add(new IntegerProperty(item));
                             break;
                         }
                     case "hash":
                         {
-                            properties.Add(new HashPropertyDescriptor(item));
+                            properties.Add(new HashProperty(item));
                             break;
                         }
                     default:
@@ -370,7 +371,7 @@ namespace SmugMugTest
                 }
             }
 
-            ObjectDescriptor od = new ObjectDescriptor();
+            Entity od = new Entity();
 
             od.Properties = properties;
 
@@ -387,7 +388,7 @@ namespace SmugMugTest
                 {
                     foreach (JProperty item in uris.Value)
                     {
-                        MethodDescriptor md = new MethodDescriptor();
+                        Method md = new Method();
                         md.Uri = (item.Value as JObject).Property("Uri").Value.ToString();
 
                         if ((item.Value as JObject).Property("Locator") != null)
