@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using Newtonsoft.Json;
 using SmugMug.Shared.Descriptors;
 using SmugMug.v2.Authentication;
 using SmugMugShared;
@@ -36,7 +37,9 @@ namespace SmugMugMetadataRetriever
 
             var types = buf.AnalyzeAPIs(uris, Constants.Addresses.SmugMugApi);
 
-            var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault();
+            var jsonSerSettings = new JsonSerializerSettings();
+            jsonSerSettings.TypeNameHandling = TypeNameHandling.All;
+            var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
 
             using (StreamWriter sw = new StreamWriter("data.json"))
             {
