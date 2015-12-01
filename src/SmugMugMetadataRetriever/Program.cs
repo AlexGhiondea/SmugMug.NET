@@ -22,9 +22,12 @@ namespace SmugMugMetadataRetriever
             var list = new Dictionary<string, string>();
             list = buf.GetBaseUris(Constants.Addresses.SmugMug, "/api/v2");
 
-            Dictionary<string, string> uris = new Dictionary<string, string>() { 
-            };
+            for (int i = 0; i < args.Length; i++)
+            {
+                list.Add("arg" + i, args[i]);
+            }
 
+            Dictionary<string, string> uris = new Dictionary<string, string>();
             foreach (var item in list)
             {
                 uris.Add(item.Key, Constants.Addresses.SmugMug + item.Value + Constants.RequestModifiers);
