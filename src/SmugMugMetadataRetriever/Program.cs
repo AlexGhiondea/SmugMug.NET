@@ -6,6 +6,7 @@ using SmugMug.v2.Authentication;
 using SmugMugShared;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 namespace SmugMugMetadataRetriever
 {
@@ -34,6 +35,13 @@ namespace SmugMugMetadataRetriever
             }
 
             var types = buf.AnalyzeAPIs(uris, Constants.Addresses.SmugMugApi);
+
+            var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault();
+
+            using (StreamWriter sw = new StreamWriter("data.json"))
+            {
+                jsonSer.Serialize(sw, types);
+            }
         }
     }
 }
