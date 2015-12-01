@@ -11,6 +11,10 @@ namespace SmugMug.Shared.Descriptors
         public StringProperty(JObject obj)
             : base(obj)
         {
+            if (obj == null)
+            {
+                return;
+            }
 
             string min = string.Empty, max = string.Empty;
             if (obj.Property("MIN_CHARS") != null)

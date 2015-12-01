@@ -11,11 +11,17 @@ namespace SmugMug.Shared.Descriptors
     {
         public string Name { get; set; }
         public string Description { get; set; }
-
         public string Deprecated { get; set; }
 
-        public Property(JObject obj)
+        public Property()
         {
+            Name = Description = Deprecated = string.Empty;
+        }
+
+        public Property(JObject obj)
+            : this()
+        {
+            if (obj == null) return;
             Name = obj.GetValueAsString("Name");
             Description = obj.GetValueAsString("Description");
             Deprecated = obj.GetValueAsString("Deprecated");
