@@ -35,13 +35,14 @@ namespace SmugMugMetadataRetriever
                 {
                     var curr = UrisToCheck.Pop();
 
+                    // We are going to skip all of the uris which don't have a parameter (ie. :albumid)
                     if (curr.Value.IndexOf(':', 6) > 0)
                     {
                         visited.Add(curr.Key, curr.Value);
                     }
 
                     string uri = baseAddress + curr.Value;
-                    ConsolePrinter.Write(ConsoleColor.DarkGreen, "Processing: " + uri);
+                    ConsolePrinter.Write(ConsoleColor.DarkGreen, "Found: " + uri);
                     var result = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
 
                     var discUris = DiscoverUris(result);
