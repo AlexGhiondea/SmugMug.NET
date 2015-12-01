@@ -94,7 +94,10 @@ namespace SmugMugMetadataRetriever
                 }
                 else
                 {
-                    result[obj.Name] = obj;
+                    if (!string.IsNullOrEmpty(obj.Name))
+                    {
+                        result[obj.Name] = obj;
+                    }
                 }
                 ConsolePrinter.Write(ConsoleColor.Cyan, "Found {0} types", result.Count);
 
