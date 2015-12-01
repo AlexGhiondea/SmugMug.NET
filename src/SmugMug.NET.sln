@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugMetadataRetriever", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugShared", "SmugMugShared\SmugMugShared.csproj", "{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{668FA86F-9892-4055-B8EF-A581AE63DC77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24E408C7-79D6-41E6-B2DA-9E71A36EED13} = {668FA86F-9892-4055-B8EF-A581AE63DC77}
 	EndGlobalSection
 EndGlobal
