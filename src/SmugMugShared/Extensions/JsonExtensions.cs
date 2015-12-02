@@ -11,6 +11,9 @@ namespace SmugMug.Shared.Extensions
     {
         public static string GetValueAsString(this JObject obj, string name)
         {
+            if (obj == null)
+                return string.Empty;
+
             var prop = obj.Property(name);
             if (prop != null)
                 return prop.Value.ToString();

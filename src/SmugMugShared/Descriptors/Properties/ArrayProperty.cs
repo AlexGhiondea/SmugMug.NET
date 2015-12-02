@@ -11,14 +11,21 @@ namespace SmugMug.Shared.Descriptors
         public string ItemType { get; set; }
         public Limits ArrayLimits { get; set; }
 
+        public ArrayProperty()
+        {
+            ItemType = string.Empty;
+        }
+
         public ArrayProperty(JObject obj)
             : base(obj)
         {
+            if (obj == null) { return; }
+
             ItemType = obj.GetValueAsString("ITEM_TYPE");
 
             var min = obj.Property("MIN_COUNT").ToObject<string>();
             var max = obj.Property("MAX_COUNT").ToObject<string>();
-            ArrayLimits = new Limits() { Min = min, Max = max };
+            ArrayLimits = new Limits(min, max);
         }
 
         public override string ToString()

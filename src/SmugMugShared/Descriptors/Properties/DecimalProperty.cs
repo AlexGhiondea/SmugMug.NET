@@ -11,9 +11,16 @@ namespace SmugMug.Shared.Descriptors
         public string Scale { get; set; }
         public bool Signed { get; set; }
 
+        public DecimalProperty()
+        {
+            Precision = Scale = string.Empty;
+        }
+
         public DecimalProperty(JObject obj)
             : base(obj)
         {
+            if (obj == null) { return; }
+
             Precision = obj.Property("PRECISION").ToObject<string>();
             Scale = obj.Property("SCALE").ToObject<string>();
             Signed = obj.Property("SIGNED").ToObject<bool>();

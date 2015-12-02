@@ -11,6 +11,10 @@ namespace SmugMug.Shared.Descriptors
         public StringProperty(JObject obj)
             : base(obj)
         {
+            if (obj == null)
+            {
+                return;
+            }
 
             string min = string.Empty, max = string.Empty;
             if (obj.Property("MIN_CHARS") != null)
@@ -22,7 +26,7 @@ namespace SmugMug.Shared.Descriptors
             {
                 max = obj.Property("MAX_CHARS").ToObject<string>();
             }
-            StringLimits = new Limits() { Min = min, Max = max };
+            StringLimits = new Limits(min, max);
         }
 
         public override string ToString()
