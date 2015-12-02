@@ -14,20 +14,56 @@ namespace SmugMugCodeGen
 {
     class Program
     {
+        private static Options _options;
+
+        private static void PrintUsage()
+        {
+            ConsolePrinter.Write(ConsoleColor.White, "Usage:");
+            ConsolePrinter.Write(ConsoleColor.Cyan, "smugmugcodegen.exe <outputFolder> [<metadataFiles>] ");
+        }
+
         static void Main(string[] args)
         {
-            if (args.Length != 1)
+            // The usage of this tool is going to be:
+            // smugmugcodegen.exe <outputFolder> [<metadataFiles>] 
+            if (args.Length <= 2)
             {
-                System.Console.WriteLine("Please provide the json file");
-                return;
+                PrintUsage();
+                Environment.Exit(-1);
             }
 
-            // The first argument is the path to the json file containing the
-            string jsonFile = args[0];
-            Dictionary<string, Entity> metadata = LoadMetadataFromFile(jsonFile);
+            //get the output directory.
+            _options = new Options(args);
+
+            Dictionary<string, Entity> metadata = LoadMetadataFromFile(_options.InputFiles);
+
+            // Make sure the output directories exist
+            if (Helpers.TryCreateDirectory(_options.OutputDir) == false)
+                Environment.Exit(-2);
+            if (Helpers.TryCreateDirectory(_options.OutputDirEnums) == false)
+                Environment.Exit(-2);
 
             CodeGen cg = new CodeGen(metadata);
 
+            WriteClasses(metadata);
+
+            WriteEnums();
+        }
+
+        private static void WriteEnums()
+        {
+            Dictionary<string, string> enumTypeDefs = CodeGen.BuildEnums();
+
+            foreach (var item in enumTypeDefs)
+            {
+                File.WriteAllText(Path.Combine(_options.OutputDirEnums, item.Key + "Enum.cs"), item.Value);
+                ConsolePrinter.Write(ConsoleColor.Green, "Generated enum {0}", item.Key);
+            }
+            ConsolePrinter.Write(ConsoleColor.White, "Generated {0} enums", enumTypeDefs.Count);
+        }
+
+        private static void WriteClasses(Dictionary<string, Entity> metadata)
+        {
             foreach (var item in metadata)
             {
                 StringBuilder sb = new StringBuilder();
@@ -38,35 +74,77 @@ namespace SmugMugCodeGen
 
                 sb.AppendFormat(Constants.ClassDefinition, className, properties, methods);
 
-                File.WriteAllText(item.Key + ".cs", sb.ToString());
+                File.WriteAllText(Path.Combine(_options.OutputDir, item.Key + ".cs"), sb.ToString());
 
                 ConsolePrinter.Write(ConsoleColor.Green, "Generated class {0}", item.Key);
             }
             ConsolePrinter.Write(ConsoleColor.White, "Generated {0} classes", metadata.Count);
-
-            Dictionary<string, string> enumTypeDefs = CodeGen.BuildEnums();
-
-            foreach (var item in enumTypeDefs)
-            {
-                File.WriteAllText(item.Key + "Enum.cs", item.Value);
-                ConsolePrinter.Write(ConsoleColor.Green, "Generated enum {0}", item.Key);
-            }
-            ConsolePrinter.Write(ConsoleColor.White, "Generated {0} enums", enumTypeDefs.Count);
         }
 
-        private static Dictionary<string, Entity> LoadMetadataFromFile(string jsonFile)
+
+
+        private static Dictionary<string, Entity> LoadMetadataFromFile(string[] files)
         {
-            var jsonSerSettings = new JsonSerializerSettings();
-            jsonSerSettings.TypeNameHandling = TypeNameHandling.All;
-            Newtonsoft.Json.JsonSerializer jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
+            Dictionary<string, Entity> data = null;
 
-            using (StreamReader sr = new StreamReader(jsonFile))
-            using (JsonReader jr = new JsonTextReader(sr))
+            foreach (var file in files)
             {
-                ConsolePrinter.Write(ConsoleColor.White, "Loading metadata from file");
-                var data = jsonSer.Deserialize<Dictionary<string, Entity>>(jr);
+                if (!File.Exists(file))
+                {
+                    ConsolePrinter.Write(ConsoleColor.Yellow, "Cannot find file {0}. Skipping...", file);
+                    continue;
+                }
 
-                return data;
+                try
+                {
+                    var jsonSerSettings = new JsonSerializerSettings();
+                    jsonSerSettings.TypeNameHandling = TypeNameHandling.All;
+                    Newtonsoft.Json.JsonSerializer jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
+
+                    using (StreamReader sr = new StreamReader(file))
+                    using (JsonReader jr = new JsonTextReader(sr))
+                    {
+                        ConsolePrinter.Write(ConsoleColor.White, "Loading metadata from file {0}", file);
+                        var currentData = jsonSer.Deserialize<Dictionary<string, Entity>>(jr);
+
+                        // If this is the first file, nothing to merge.
+                        if (data == null)
+                        {
+                            data = currentData;
+                            continue;
+                        }
+
+                        // we need to merge the 2 entities.
+                        MergeMetadataInfo(data, currentData);
+                    }
+                }
+                catch (Exception e)
+                {
+                    ConsolePrinter.Write(ConsoleColor.Red, "Error processing file {0} ({1}). Skipping.", file, e.Message);
+                }
+            }
+
+            return data;
+        }
+
+        private static void MergeMetadataInfo(Dictionary<string, Entity> current, Dictionary<string, Entity> other)
+        {
+            foreach (var key in other.Keys)
+            {
+                if (current.ContainsKey(key))
+                {
+                    // We need to merge the 2 
+                    var currentEntity = current[key];
+                    var otherEntity = other[key];
+
+                    currentEntity.MergeWith(otherEntity);
+                }
+                else
+                {
+                    // this is a new thing in other, and not in current. 
+                    // Add it to current.
+                    current.Add(key, other[key]);
+                }
             }
         }
     }

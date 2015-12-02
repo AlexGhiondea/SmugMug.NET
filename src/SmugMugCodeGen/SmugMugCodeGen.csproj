@@ -50,6 +50,7 @@
     <Compile Include="CodeGen\CodeGen.Methods.cs" />
     <Compile Include="CodeGen\Helpers.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CodeGen\CodeGen.Properties.cs" />
