@@ -29,7 +29,7 @@ namespace SmugMug.Shared.Descriptors
 
             var min = obj.Property("MIN_COUNT").ToObject<string>();
             var max = obj.Property("MAX_COUNT").ToObject<string>();
-            OptionCountLimits = new Limits() { Min = min, Max = max };
+            OptionCountLimits = new Limits(min, max);
 
             Options = new List<string>((obj.Property("OPTIONS").Value as JArray).Values().Select(x => x.ToString()));
         }

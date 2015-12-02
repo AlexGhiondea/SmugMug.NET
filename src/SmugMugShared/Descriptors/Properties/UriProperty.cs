@@ -15,7 +15,7 @@ namespace SmugMug.Shared.Descriptors
             var min = obj.GetValueAsString("MIN_LENGTH");
             var max = obj.GetValueAsString("MAX_LENGTH");
 
-            UriLimits = new Limits() { Min = min, Max = max };
+            UriLimits = new Limits(min, max);
         }
 
         public override string ToString()

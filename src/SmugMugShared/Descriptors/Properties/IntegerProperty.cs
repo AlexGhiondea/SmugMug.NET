@@ -17,7 +17,7 @@ namespace SmugMug.Shared.Descriptors
             var min = obj.Property("MIN_VALUE").ToObject<string>();
             var max = obj.Property("MAX_VALUE").ToObject<string>();
 
-            IntegerLimits = new Limits() { Min = min, Max = max };
+            IntegerLimits = new Limits(min, max);
         }
 
         public override string ToString()

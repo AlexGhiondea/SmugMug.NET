@@ -25,7 +25,7 @@ namespace SmugMug.Shared.Descriptors
 
             var min = obj.Property("MIN_COUNT").ToObject<string>();
             var max = obj.Property("MAX_COUNT").ToObject<string>();
-            ArrayLimits = new Limits() { Min = min, Max = max };
+            ArrayLimits = new Limits(min, max);
         }
 
         public override string ToString()
