@@ -22,7 +22,8 @@ namespace SmugMug.Shared.Descriptors
                 StringComparer.OrdinalIgnoreCase.Equals("positive_infinity", value))
                 return double.PositiveInfinity;
 
-            if (StringComparer.OrdinalIgnoreCase.Equals("negative_infinity", value))
+            if (StringComparer.OrdinalIgnoreCase.Equals("-infinity", value) ||
+                StringComparer.OrdinalIgnoreCase.Equals("negative_infinity", value))
                 return double.NegativeInfinity;
 
             return double.Parse(value);
