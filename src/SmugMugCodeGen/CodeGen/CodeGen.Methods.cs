@@ -11,7 +11,14 @@ namespace SmugMugCodeGen
     {
         public static StringBuilder BuildMethods(List<Method> list)
         {
-            return new StringBuilder();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("/*");
+            foreach (var item in list)
+            {
+                sb.AppendLine(string.Format("[{0}] -- {1}", item.ReturnType, item.Uri));
+            }
+            sb.AppendLine("*/");
+            return sb;
         }
     }
 }
