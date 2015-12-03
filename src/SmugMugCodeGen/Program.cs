@@ -26,7 +26,7 @@ namespace SmugMugCodeGen
         {
             // The usage of this tool is going to be:
             // smugmugcodegen.exe <outputFolder> [<metadataFiles>] 
-            if (args.Length <= 2)
+            if (args.Length < 2)
             {
                 PrintUsage();
                 Environment.Exit(-1);
