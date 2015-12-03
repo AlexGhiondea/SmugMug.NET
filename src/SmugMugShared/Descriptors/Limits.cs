@@ -18,6 +18,9 @@ namespace SmugMug.Shared.Descriptors
 
         private double Parse(string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return 0;
+
             if (StringComparer.OrdinalIgnoreCase.Equals("infinity", value) ||
                 StringComparer.OrdinalIgnoreCase.Equals("positive_infinity", value))
                 return double.PositiveInfinity;
@@ -25,6 +28,9 @@ namespace SmugMug.Shared.Descriptors
             if (StringComparer.OrdinalIgnoreCase.Equals("-infinity", value) ||
                 StringComparer.OrdinalIgnoreCase.Equals("negative_infinity", value))
                 return double.NegativeInfinity;
+
+            if (StringComparer.OrdinalIgnoreCase.Equals("all", value))
+                return double.PositiveInfinity;
 
             return double.Parse(value);
         }
