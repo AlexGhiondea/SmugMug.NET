@@ -117,6 +117,10 @@ namespace SmugMugMetadataRetriever
             return result;
         }
 
+        public HashSet<string> GetMissingTypes()
+        {
+            return missingTypes;
+        }
 
         private static Dictionary<string, string> DiscoverUris(string req)
         {
@@ -293,6 +297,8 @@ namespace SmugMugMetadataRetriever
             return discoveredUris;
         }
 
+        private static HashSet<string> missingTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
         private static Entity ProcessOutputEntry(JObject obj)
         {
             Entity od = new Entity();
@@ -327,6 +333,7 @@ namespace SmugMugMetadataRetriever
                 {
                     if (val2.Property(name3) == null)
                     {
+                        missingTypes.Add(name3);
                         ConsolePrinter.Write(ConsoleColor.Yellow, "Empty response, expecting {0}", name3);
                         return od;
                     }
