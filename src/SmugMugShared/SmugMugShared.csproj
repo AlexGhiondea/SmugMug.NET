@@ -51,6 +51,7 @@
     <Compile Include="Descriptors\Method.cs" />
     <Compile Include="Descriptors\Limits.cs" />
     <Compile Include="Descriptors\Properties\ArrayProperty.cs" />
+    <Compile Include="Descriptors\Properties\FloatProperty.cs" />
     <Compile Include="Descriptors\Properties\DateTimeProperty.cs" />
     <Compile Include="Descriptors\Properties\HashProperty.cs" />
     <Compile Include="Descriptors\Properties\DecimalProperty.cs" />

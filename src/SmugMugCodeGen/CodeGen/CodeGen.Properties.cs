@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using SmugMug.Shared.Descriptors;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +16,8 @@ namespace SmugMugCodeGen
                 return "bool";
             if (prop is DecimalProperty)
                 return "decimal";
+            if (prop is FloatProperty)
+                return "float";
             if (prop is IntegerProperty)
                 return "int";
             if (prop is ArrayProperty)
@@ -26,7 +29,7 @@ namespace SmugMugCodeGen
             if (prop is StringProperty || prop is UriProperty || prop is HashProperty)
                 return "string";
 
-            return string.Empty;
+            throw new ArgumentException("Unknown property type");
         }
 
         private static string GetArrayPropertyType(ArrayProperty ap)

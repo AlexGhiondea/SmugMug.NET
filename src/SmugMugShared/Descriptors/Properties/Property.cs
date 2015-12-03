@@ -40,56 +40,51 @@ namespace SmugMug.Shared.Descriptors
                 case "select":
                     {
                         return new SelectProperty(item);
-
                     }
                 case "varchar":
                 case "text":
                     {
                         return new StringProperty(item);
-
                     }
+                case "fullurl":
                 case "uri":
                     {
                         return new UriProperty(item);
-
                     }
                 case "array":
                     {
                         return new ArrayProperty(item);
-
                     }
                 case "decimal":
                     {
                         return new DecimalProperty(item);
-
                     }
                 case "time":
                 case "date":
                 case "datetime":
                     {
                         return new DateTimeProperty(item);
-
                     }
                 case "unixtimestamp":
                 case "timestamp":
                     {
                         return new TimeStampProperty(item);
-
                     }
                 case "boolean":
                     {
                         return new BooleanProperty(item);
-
                     }
                 case "integer":
                     {
                         return new IntegerProperty(item);
-
                     }
                 case "hash":
                     {
                         return new HashProperty(item);
-
+                    }
+                case "float":
+                    {
+                        return new FloatProperty(item);
                     }
                 default:
                     throw new InvalidDataException("I cannot do it -- type unknown ->>>   " + type);
