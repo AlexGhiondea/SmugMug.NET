@@ -52,6 +52,7 @@ namespace SmugMugMetadataRetriever
 
             var jsonSerSettings = new JsonSerializerSettings();
             jsonSerSettings.TypeNameHandling = TypeNameHandling.All;
+            jsonSerSettings.Formatting = Formatting.Indented;
             var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
 
             using (StreamWriter sw = new StreamWriter("data.json"))
