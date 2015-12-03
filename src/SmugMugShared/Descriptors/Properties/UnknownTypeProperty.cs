@@ -5,22 +5,21 @@ using Newtonsoft.Json.Linq;
 
 namespace SmugMug.Shared.Descriptors
 {
-    public class TimeStampProperty : Property
+    public class UnknownTypeProperty : Property
     {
-        public TimeStampProperty()
+        public UnknownTypeProperty()
         {
 
         }
 
-        public TimeStampProperty(JObject obj)
-            : base(obj)
+        public UnknownTypeProperty(string name)
+            : base(name)
         {
-
         }
 
         public override string ToString()
         {
-            return base.ToString() + ": TimeStamp";
+            return base.ToString() + ": unknown";
         }
     }
 }

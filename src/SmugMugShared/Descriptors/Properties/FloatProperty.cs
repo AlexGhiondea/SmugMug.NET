@@ -8,6 +8,17 @@ namespace SmugMug.Shared.Descriptors
     public class FloatProperty : Property
     {
         public Limits DoubleLimits { get; set; }
+        
+        public FloatProperty()
+        {
+
+        }
+
+        public FloatProperty(string name)
+            : base(name)
+        {
+
+        }
 
         public FloatProperty(JObject obj)
             : base(obj)

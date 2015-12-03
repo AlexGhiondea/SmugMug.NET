@@ -7,6 +7,11 @@ namespace SmugMug.Shared.Descriptors
 {
     public class HashProperty : Property
     {
+        public HashProperty()
+        {
+
+        }
+
         public HashProperty(JObject obj)
             : base(obj)
         {

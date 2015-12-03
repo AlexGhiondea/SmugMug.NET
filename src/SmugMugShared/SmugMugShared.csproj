@@ -55,6 +55,7 @@
     <Compile Include="Descriptors\Properties\DateTimeProperty.cs" />
     <Compile Include="Descriptors\Properties\HashProperty.cs" />
     <Compile Include="Descriptors\Properties\DecimalProperty.cs" />
+    <Compile Include="Descriptors\Properties\UnknownTypeProperty.cs" />
     <Compile Include="Descriptors\Properties\UriProperty.cs" />
     <Compile Include="Descriptors\Properties\BooleanProperty.cs" />
     <Compile Include="Descriptors\Properties\IntegerProperty.cs" />

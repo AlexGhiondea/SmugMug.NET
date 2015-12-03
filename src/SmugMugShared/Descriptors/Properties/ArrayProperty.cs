@@ -13,7 +13,13 @@ namespace SmugMug.Shared.Descriptors
 
         public ArrayProperty()
         {
-            ItemType = string.Empty;
+
+        }
+
+        public ArrayProperty(string name, string itemType)
+            : base(name)
+        {
+            ItemType = itemType;
         }
 
         public ArrayProperty(JObject obj)

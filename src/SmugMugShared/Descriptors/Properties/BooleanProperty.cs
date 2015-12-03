@@ -7,6 +7,17 @@ namespace SmugMug.Shared.Descriptors
 {
     public class BooleanProperty : Property
     {
+        public BooleanProperty()
+        {
+
+        }
+
+        public BooleanProperty(string name)
+            : base(name)
+        {
+
+        }
+
         public BooleanProperty(JObject obj)
             : base(obj)
         {

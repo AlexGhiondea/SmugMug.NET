@@ -18,6 +18,11 @@ namespace SmugMug.Shared.Descriptors
             Name = Description = Deprecated = string.Empty;
         }
 
+        public Property(string name)
+        {
+            Name = name;
+        }
+
         public Property(JObject obj)
             : this()
         {
