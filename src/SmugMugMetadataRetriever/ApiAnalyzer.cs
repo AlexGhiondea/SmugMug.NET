@@ -161,9 +161,71 @@ namespace SmugMugMetadataRetriever
             return null;
         }
 
+        private static Entity ProcessResponse(JObject response)
+        {
+            // try and guess what other properties are in this response.
+            Entity e = new Entity();
+
+            var locatorType = response.Property("Locator").Value.ToString();
+
+            JObject obj = response.Property(locatorType).Value as JObject;
+
+            if (obj == null)
+            {
+                return e;
+            }
+
+            foreach (JProperty item in obj.Properties())
+            {
+                string name = item.Name;
+
+
+                switch (item.Value.Type)
+                {
+                    case JTokenType.Array:
+                        break;
+                    case JTokenType.Boolean:
+                        break;
+                    case JTokenType.Date:
+                        break;
+                    case JTokenType.Float:
+                        break;
+                    case JTokenType.Guid:
+                        break;
+                    case JTokenType.Integer:
+                        break;
+                    case JTokenType.String:
+                        break;
+                    case JTokenType.TimeSpan:
+                        break;
+                    default:
+                        throw new ArgumentException();
+                }
+                object value = item.Value;
+
+                if (value is JValue)
+                {
+                    JValue val = value as JValue;
+                }
+                else if (value is JArray)
+                {
+
+                }
+
+
+            }
+
+            throw new NotImplementedException();
+        }
+
         private static Entity ProcessData(string req)
         {
             JObject obj = JObject.Parse(req);
+
+            if (obj.Property("Response") != null)
+            {
+                Entity aaa = ProcessResponse(obj.Property("Response").Value as JObject);
+            }
 
             if (obj.Property("Options") == null)
             {
@@ -387,6 +449,5 @@ namespace SmugMugMetadataRetriever
 
             return od;
         }
-
     }
 }
