@@ -166,7 +166,15 @@ namespace SmugMugMetadataRetriever
             // try and guess what other properties are in this response.
             Entity e = new Entity();
 
+            if (response.Property("Locator") == null)
+                return e;
+
+            //TODO: handle arrays.
+
             var locatorType = response.Property("Locator").Value.ToString();
+
+            if (response.Property(locatorType) == null)
+                return e;
 
             JObject obj = response.Property(locatorType).Value as JObject;
 
@@ -179,53 +187,47 @@ namespace SmugMugMetadataRetriever
             {
                 string name = item.Name;
 
+                ConsolePrinter.Write(ConsoleColor.Magenta, "Found {0} on type {1}", name, locatorType.ToString());
 
                 switch (item.Value.Type)
                 {
                     case JTokenType.Array:
+                        var arr = item.Value as JArray;
+                        string itemType = "string";
+
+                        // The assumption is that they are all of the same type.
+                        if (arr.First != null)
+                            itemType = (item.Value as JArray).First.Type.ToString();
+
+                        e.Properties.Add(new ArrayProperty(name, itemType));
                         break;
                     case JTokenType.Boolean:
+                        e.Properties.Add(new BooleanProperty(name));
                         break;
                     case JTokenType.Date:
+                        e.Properties.Add(new DateTimeProperty(name));
                         break;
                     case JTokenType.Float:
-                        break;
-                    case JTokenType.Guid:
+                        e.Properties.Add(new FloatProperty(name));
                         break;
                     case JTokenType.Integer:
+                        e.Properties.Add(new IntegerProperty(name));
                         break;
-                    case JTokenType.String:
-                        break;
-                    case JTokenType.TimeSpan:
-                        break;
+
                     default:
-                        throw new ArgumentException();
+                        // Uris is special, and we don't include it
+                        if (!StringComparer.OrdinalIgnoreCase.Equals(name, "uris"))
+                            e.Properties.Add(new UnknownTypeProperty(name));
+                        break;
                 }
-                object value = item.Value;
-
-                if (value is JValue)
-                {
-                    JValue val = value as JValue;
-                }
-                else if (value is JArray)
-                {
-
-                }
-
-
             }
-
-            throw new NotImplementedException();
+            return e;
         }
 
         private static Entity ProcessData(string req)
         {
             JObject obj = JObject.Parse(req);
 
-            if (obj.Property("Response") != null)
-            {
-                Entity aaa = ProcessResponse(obj.Property("Response").Value as JObject);
-            }
 
             if (obj.Property("Options") == null)
             {
@@ -243,6 +245,9 @@ namespace SmugMugMetadataRetriever
             // Now process the Response in search of Uris
             if (obj.Property("Response") == null)
                 return od;
+
+            Entity resp = ProcessResponse(obj.Property("Response").Value as JObject);
+            od.MergeWith(resp);
 
             var valObj = obj.Property("Response").Value;
             var val = valObj as JObject;
