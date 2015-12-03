@@ -28,11 +28,7 @@ namespace SmugMug.v2.Types
 {{
     public partial class {0}Entity
     {{
-        // Properties
         {1}
-
-        // Methods
-        {2}
     }}
 }}
 ";

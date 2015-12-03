@@ -66,22 +66,27 @@ namespace SmugMugCodeGen
         {
             foreach (var item in metadata)
             {
-                StringBuilder sb = new StringBuilder();
+
 
                 StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
                 StringBuilder methods = CodeGen.BuildMethods(item.Value.Methods);
                 string className = Helpers.NormalizeString(item.Value.Name);
 
-                sb.AppendFormat(Constants.ClassDefinition, className, properties, methods);
+                string objectDirName = Path.Combine(_options.OutputDir, item.Key);
+                Directory.CreateDirectory(objectDirName);
 
-                File.WriteAllText(Path.Combine(_options.OutputDir, item.Key + ".cs"), sb.ToString());
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat(Constants.ClassDefinition, className, properties);
+                File.WriteAllText(Path.Combine(objectDirName, item.Key + ".properties.cs"), sb.ToString());
+
+                sb = new StringBuilder();
+                sb.AppendFormat(Constants.ClassDefinition, className, methods);
+                File.WriteAllText(Path.Combine(objectDirName, item.Key + ".methods.cs"), sb.ToString());
 
                 ConsolePrinter.Write(ConsoleColor.Green, "Generated class {0}", item.Key);
             }
             ConsolePrinter.Write(ConsoleColor.White, "Generated {0} classes", metadata.Count);
         }
-
-
 
         private static Dictionary<string, Entity> LoadMetadataFromFile(string[] files)
         {
