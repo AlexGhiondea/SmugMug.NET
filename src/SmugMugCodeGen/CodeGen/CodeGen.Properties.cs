@@ -29,6 +29,9 @@ namespace SmugMugCodeGen
             if (prop is StringProperty || prop is UriProperty || prop is HashProperty)
                 return "string";
 
+            if (prop is UnknownTypeProperty)
+                return "string";
+
             throw new ArgumentException("Unknown property type");
         }
 

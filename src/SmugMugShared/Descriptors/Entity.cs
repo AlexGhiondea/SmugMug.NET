@@ -31,9 +31,19 @@ namespace SmugMug.Shared.Descriptors
 
             foreach (var prop in other.Properties)
             {
-                if (Properties.FirstOrDefault(p => p.Name == prop.Name) == null)
+                var property = Properties.FirstOrDefault(p => p.Name == prop.Name);
+                if (property == null)
                 {
                     Properties.Add(prop);
+                }
+                else
+                {
+                    if (property is UnknownTypeProperty && !(prop is UnknownTypeProperty))
+                    {
+                        Properties.Remove(property);
+                        Properties.Add(prop);
+                    }
+                    // we should try and merge the property info
                 }
             }
         }
