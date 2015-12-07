@@ -66,13 +66,11 @@ namespace SmugMugCodeGen
         {
             foreach (var item in metadata)
             {
-
-
                 StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
                 StringBuilder methods = CodeGen.BuildMethods(item.Value.Methods);
                 string className = Helpers.NormalizeString(item.Value.Name);
 
-                string objectDirName = Path.Combine(_options.OutputDir, item.Key);
+                string objectDirName = Path.Combine(_options.OutputDir, className);
                 Directory.CreateDirectory(objectDirName);
 
                 StringBuilder sb = new StringBuilder();

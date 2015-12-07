@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -11,6 +12,12 @@ namespace SmugMugCodeGen
     {
         public static string NormalizeString(string input)
         {
+            return NormalizeString(input, new char[0]);
+        }
+
+        public static string NormalizeString(string input, params char[] additionalCharsToEscape)
+        {
+            HashSet<char> additionalCharactersToSkip = new HashSet<char>(additionalCharsToEscape);
             StringBuilder sb = new StringBuilder();
 
             if (char.IsDigit(input[0]))
@@ -23,6 +30,12 @@ namespace SmugMugCodeGen
 
                 if (input[i] == '\\' || input[i] == '/' || input[i] == ',')
                     continue;
+
+                if (additionalCharactersToSkip.Count > 0 && additionalCharactersToSkip.Contains(input[i]))
+                {
+                    sb.Append('_');
+                    continue;
+                }
 
                 sb.Append(input[i]);
             }
