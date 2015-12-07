@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 using SmugMug.Shared.Descriptors;
 using SmugMug.v2.Authentication;
 using SmugMugShared;
+using SmugMugShared.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -37,8 +39,20 @@ namespace SmugMugMetadataRetriever
 
             var types = buf.AnalyzeAPIs(uris, Constants.Addresses.SmugMugApi);
 
+            var missingTypes = buf.GetMissingTypes();
+
+            // make sure that we have all the types?
+            foreach (var item in missingTypes)
+            {
+                if (!types.ContainsKey(item))
+                {
+                    ConsolePrinter.Write(ConsoleColor.Red, "Could not find type {0}", item);
+                }
+            }
+
             var jsonSerSettings = new JsonSerializerSettings();
             jsonSerSettings.TypeNameHandling = TypeNameHandling.All;
+            jsonSerSettings.Formatting = Formatting.Indented;
             var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
 
             using (StreamWriter sw = new StreamWriter("data.json"))

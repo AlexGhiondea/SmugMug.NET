@@ -7,6 +7,15 @@ namespace SmugMug.Shared.Descriptors
 {
     public class DateTimeProperty : Property
     {
+        public DateTimeProperty()
+        {
+
+        }
+        public DateTimeProperty(string name)
+            : base(name)
+        {
+
+        }
         public DateTimeProperty(JObject obj)
             : base(obj)
         {

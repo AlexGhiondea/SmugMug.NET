@@ -29,6 +29,16 @@ namespace SmugMug.Shared.Descriptors
             StringLimits = new Limits(min, max);
         }
 
+        public StringProperty(string name)
+            : base(name)
+        {
+        }
+
+        public StringProperty()
+        {
+
+        }
+
         public override string ToString()
         {
             return base.ToString() + ": string";

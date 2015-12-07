@@ -20,6 +20,16 @@ namespace SmugMug.Shared.Descriptors
             IntegerLimits = new Limits(min, max);
         }
 
+        public IntegerProperty(string name)
+            : base(name)
+        {
+        }
+
+        public IntegerProperty()
+        {
+
+        }
+
         public override string ToString()
         {
             return base.ToString() + ": integer";

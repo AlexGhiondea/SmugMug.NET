@@ -117,6 +117,10 @@ namespace SmugMugMetadataRetriever
             return result;
         }
 
+        public HashSet<string> GetMissingTypes()
+        {
+            return missingTypes;
+        }
 
         private static Dictionary<string, string> DiscoverUris(string req)
         {
@@ -157,9 +161,73 @@ namespace SmugMugMetadataRetriever
             return null;
         }
 
+        private static Entity ProcessResponse(JObject response)
+        {
+            // try and guess what other properties are in this response.
+            Entity e = new Entity();
+
+            if (response.Property("Locator") == null)
+                return e;
+
+            //TODO: handle arrays.
+
+            var locatorType = response.Property("Locator").Value.ToString();
+
+            if (response.Property(locatorType) == null)
+                return e;
+
+            JObject obj = response.Property(locatorType).Value as JObject;
+
+            if (obj == null)
+            {
+                return e;
+            }
+
+            foreach (JProperty item in obj.Properties())
+            {
+                string name = item.Name;
+
+                ConsolePrinter.Write(ConsoleColor.Magenta, "Found {0} on type {1}", name, locatorType.ToString());
+
+                switch (item.Value.Type)
+                {
+                    case JTokenType.Array:
+                        var arr = item.Value as JArray;
+                        string itemType = "string";
+
+                        // The assumption is that they are all of the same type.
+                        if (arr.First != null)
+                            itemType = (item.Value as JArray).First.Type.ToString();
+
+                        e.Properties.Add(new ArrayProperty(name, itemType));
+                        break;
+                    case JTokenType.Boolean:
+                        e.Properties.Add(new BooleanProperty(name));
+                        break;
+                    case JTokenType.Date:
+                        e.Properties.Add(new DateTimeProperty(name));
+                        break;
+                    case JTokenType.Float:
+                        e.Properties.Add(new FloatProperty(name));
+                        break;
+                    case JTokenType.Integer:
+                        e.Properties.Add(new IntegerProperty(name));
+                        break;
+
+                    default:
+                        // Uris is special, and we don't include it
+                        if (!StringComparer.OrdinalIgnoreCase.Equals(name, "uris"))
+                            e.Properties.Add(new UnknownTypeProperty(name));
+                        break;
+                }
+            }
+            return e;
+        }
+
         private static Entity ProcessData(string req)
         {
             JObject obj = JObject.Parse(req);
+
 
             if (obj.Property("Options") == null)
             {
@@ -177,6 +245,9 @@ namespace SmugMugMetadataRetriever
             // Now process the Response in search of Uris
             if (obj.Property("Response") == null)
                 return od;
+
+            Entity resp = ProcessResponse(obj.Property("Response").Value as JObject);
+            od.MergeWith(resp);
 
             var valObj = obj.Property("Response").Value;
             var val = valObj as JObject;
@@ -293,6 +364,8 @@ namespace SmugMugMetadataRetriever
             return discoveredUris;
         }
 
+        private static HashSet<string> missingTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
         private static Entity ProcessOutputEntry(JObject obj)
         {
             Entity od = new Entity();
@@ -327,6 +400,7 @@ namespace SmugMugMetadataRetriever
                 {
                     if (val2.Property(name3) == null)
                     {
+                        missingTypes.Add(name3);
                         ConsolePrinter.Write(ConsoleColor.Yellow, "Empty response, expecting {0}", name3);
                         return od;
                     }
@@ -380,6 +454,5 @@ namespace SmugMugMetadataRetriever
 
             return od;
         }
-
     }
 }

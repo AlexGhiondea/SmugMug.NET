@@ -9,6 +9,12 @@ namespace SmugMug.Shared.Descriptors
     public class UriProperty : Property
     {
         public Limits UriLimits { get; set; }
+
+        public UriProperty()
+        {
+
+        }
+
         public UriProperty(JObject obj)
             : base(obj)
         {
