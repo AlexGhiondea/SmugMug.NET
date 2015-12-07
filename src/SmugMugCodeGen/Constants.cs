@@ -26,7 +26,7 @@ using System;
 
 namespace SmugMug.v2.Types
 {{
-    public partial class {0}Entity
+    public partial class {0}Entity : SmugMugEntity
     {{
         {1}
     }}
