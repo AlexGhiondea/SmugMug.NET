@@ -5,7 +5,22 @@ namespace SmugMugCodeGen
 {
     public static class Constants
     {
-        public const string PropertyDefinition = @"        public {0} {1} {{get; set;}}";
+        public const string PropertyFieldDefinition = @"        private {0} {1};";
+
+        public const string PropertyDefinition = @"
+        public {0} {1} {{
+            get {{
+                return {2};
+            }}
+            set {{
+                if ({2} != value)
+                {{
+                    {2} = value;
+                    NotifyPropertyValueChanged(""{1}"", {2});
+                }}
+            }}
+        }}
+";
 
         public const string MethodDefinition = @"
         public {0} {1} ()

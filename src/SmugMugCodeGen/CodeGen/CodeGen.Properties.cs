@@ -55,16 +55,29 @@ namespace SmugMugCodeGen
 
         public static StringBuilder BuildProperties(IEnumerable<Property> list)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder propertyFields = new StringBuilder();
+            StringBuilder propertyAccesors = new StringBuilder();
 
             foreach (var prop in list)
             {
                 string propName = Helpers.NormalizeString(prop.Name);
                 string propType = GetPropertyType(prop);
-                sb.AppendLine(string.Format(Constants.PropertyDefinition, propType, propName));
+
+                // the properties are going to be generated into 2 parts:
+                //  1. At the top, the field declaration
+                //  2. At the bottom, the actual implementation
+
+                string fieldName = "_" + char.ToLower(propName[0]) + propName.Substring(1);
+                propertyFields.AppendLine(string.Format(Constants.PropertyFieldDefinition, propType, fieldName));
+
+                propertyAccesors.AppendLine(string.Format(Constants.PropertyDefinition, propType, propName, fieldName));
             }
 
-            return sb;
+            propertyFields.AppendLine();
+
+            propertyFields.AppendLine(propertyAccesors.ToString());
+
+            return propertyFields;
         }
     }
 }
