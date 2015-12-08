@@ -7,13 +7,113 @@ namespace SmugMug.v2.Types
 {
     public partial class CommentEntity : SmugMugEntity
     {
-        public string Comment {get; set;}
-        public DateTime Date {get; set;}
-        public string Name {get; set;}
-        public int Rating {get; set;}
-        public int ServiceID {get; set;}
-        public int SocialID {get; set;}
-        public CommentStatusEnum Status {get; set;}
+        private string _comment;
+        private DateTime _date;
+        private string _name;
+        private int _rating;
+        private int _serviceID;
+        private int _socialID;
+        private CommentStatusEnum _status;
+
+
+        public string Comment {
+            get {
+                return _comment;
+            }
+            set {
+                if (_comment != value)
+                {
+                    _comment = value;
+                    NotifyPropertyValueChanged("Comment", _comment);
+                }
+            }
+        }
+
+
+        public DateTime Date {
+            get {
+                return _date;
+            }
+            set {
+                if (_date != value)
+                {
+                    _date = value;
+                    NotifyPropertyValueChanged("Date", _date);
+                }
+            }
+        }
+
+
+        public string Name {
+            get {
+                return _name;
+            }
+            set {
+                if (_name != value)
+                {
+                    _name = value;
+                    NotifyPropertyValueChanged("Name", _name);
+                }
+            }
+        }
+
+
+        public int Rating {
+            get {
+                return _rating;
+            }
+            set {
+                if (_rating != value)
+                {
+                    _rating = value;
+                    NotifyPropertyValueChanged("Rating", _rating);
+                }
+            }
+        }
+
+
+        public int ServiceID {
+            get {
+                return _serviceID;
+            }
+            set {
+                if (_serviceID != value)
+                {
+                    _serviceID = value;
+                    NotifyPropertyValueChanged("ServiceID", _serviceID);
+                }
+            }
+        }
+
+
+        public int SocialID {
+            get {
+                return _socialID;
+            }
+            set {
+                if (_socialID != value)
+                {
+                    _socialID = value;
+                    NotifyPropertyValueChanged("SocialID", _socialID);
+                }
+            }
+        }
+
+
+        public CommentStatusEnum Status {
+            get {
+                return _status;
+            }
+            set {
+                if (_status != value)
+                {
+                    _status = value;
+                    NotifyPropertyValueChanged("Status", _status);
+                }
+            }
+        }
+
+
 
     }
 }

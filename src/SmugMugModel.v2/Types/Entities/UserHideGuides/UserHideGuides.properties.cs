@@ -7,9 +7,53 @@ namespace SmugMug.v2.Types
 {
     public partial class UserHideGuidesEntity : SmugMugEntity
     {
-        public bool Hide {get; set;}
-        public string Uri {get; set;}
-        public string UriDescription {get; set;}
+        private bool _hide;
+        private string _uri;
+        private string _uriDescription;
+
+
+        public bool Hide {
+            get {
+                return _hide;
+            }
+            set {
+                if (_hide != value)
+                {
+                    _hide = value;
+                    NotifyPropertyValueChanged("Hide", _hide);
+                }
+            }
+        }
+
+
+        public string Uri {
+            get {
+                return _uri;
+            }
+            set {
+                if (_uri != value)
+                {
+                    _uri = value;
+                    NotifyPropertyValueChanged("Uri", _uri);
+                }
+            }
+        }
+
+
+        public string UriDescription {
+            get {
+                return _uriDescription;
+            }
+            set {
+                if (_uriDescription != value)
+                {
+                    _uriDescription = value;
+                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                }
+            }
+        }
+
+
 
     }
 }

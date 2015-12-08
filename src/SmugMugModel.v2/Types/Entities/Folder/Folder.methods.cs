@@ -26,9 +26,9 @@ namespace SmugMug.v2.Types
             return default(UserEntity); 
         }
 
-        public FolderEntity folderusercmac____parents ()
+        public FolderEntity folderusersmugmuguser____parents ()
         {
-            // /folder/user/cmac/(*)!parents 
+            // /folder/user/smugmuguser/(*)!parents 
             return default(FolderEntity); 
         }
 
@@ -92,51 +92,51 @@ namespace SmugMug.v2.Types
             return default(FolderEntity); 
         }
 
-        public FolderEntity folderusercmac____parent ()
+        public FolderEntity folderusersmugmuguser____parent ()
         {
-            // /folder/user/cmac/(*)!parent 
+            // /folder/user/smugmuguser/(*)!parent 
             return default(FolderEntity); 
         }
 
-        public ImageEntity folderusercmac____highlightimage ()
+        public ImageEntity folderusersmugmuguser____highlightimage ()
         {
-            // /folder/user/cmac/(*)!highlightimage 
+            // /folder/user/smugmuguser/(*)!highlightimage 
             return default(ImageEntity); 
         }
 
-        public FolderEntity folderusercmac____folders ()
+        public FolderEntity folderusersmugmuguser____folders ()
         {
-            // /folder/user/cmac/(*)!folders 
+            // /folder/user/smugmuguser/(*)!folders 
             return default(FolderEntity); 
         }
 
-        public FolderListEntity folderusercmac____folderlist ()
+        public FolderListEntity folderusersmugmuguser____folderlist ()
         {
-            // /folder/user/cmac/(*)!folderlist 
+            // /folder/user/smugmuguser/(*)!folderlist 
             return default(FolderListEntity); 
         }
 
-        public AlbumEntity folderusercmac____albums ()
+        public AlbumEntity folderusersmugmuguser____albums ()
         {
-            // /folder/user/cmac/(*)!albums 
+            // /folder/user/smugmuguser/(*)!albums 
             return default(AlbumEntity); 
         }
 
-        public AlbumListEntity folderusercmac____albumlist ()
+        public AlbumListEntity folderusersmugmuguser____albumlist ()
         {
-            // /folder/user/cmac/(*)!albumlist 
+            // /folder/user/smugmuguser/(*)!albumlist 
             return default(AlbumListEntity); 
         }
 
-        public PageEntity folderusercmac____pages ()
+        public PageEntity folderusersmugmuguser____pages ()
         {
-            // /folder/user/cmac/(*)!pages 
+            // /folder/user/smugmuguser/(*)!pages 
             return default(PageEntity); 
         }
 
-        public SizeEntity folderusercmac____size ()
+        public SizeEntity folderusersmugmuguser____size ()
         {
-            // /folder/user/cmac/(*)!size 
+            // /folder/user/smugmuguser/(*)!size 
             return default(SizeEntity); 
         }
 

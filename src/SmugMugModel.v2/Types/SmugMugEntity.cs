@@ -5,5 +5,9 @@ namespace SmugMug.v2.Types
 {
     public class SmugMugEntity
     {
+        protected void NotifyPropertyValueChanged(string name, object value)
+        {
+
+        }
     }
 }

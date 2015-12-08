@@ -8,5 +8,7 @@ namespace SmugMug.v2.Types
     public partial class UserCouponEntity : SmugMugEntity
     {
 
+
+
     }
 }
