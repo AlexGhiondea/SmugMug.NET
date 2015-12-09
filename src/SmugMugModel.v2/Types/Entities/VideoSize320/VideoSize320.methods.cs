@@ -1,0 +1,18 @@
+// Copyright (c) Alex Ghiondea. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+
+namespace SmugMug.v2.Types
+{
+    public partial class VideoSize320Entity : SmugMugEntity
+    {
+
+        public ImageSizeCustomEntity image____sizecustom ()
+        {
+            // /image/(*)!sizecustom 
+            return default(ImageSizeCustomEntity); 
+        }
+
+    }
+}

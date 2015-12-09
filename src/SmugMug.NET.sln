@@ -11,13 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugTest.v2", "SmugMugTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModel.v2", "SmugMugModel.v2\SmugMugModel.v2.csproj", "{6322369D-B963-4695-9E43-708836F226F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugMetadataRetriever", "SmugMugMetadataRetriever\SmugMugMetadataRetriever.csproj", "{24E408C7-79D6-41E6-B2DA-9E71A36EED13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugMetadataRetriever", "tools\SmugMugMetadataRetriever\SmugMugMetadataRetriever.csproj", "{24E408C7-79D6-41E6-B2DA-9E71A36EED13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugShared", "SmugMugShared\SmugMugShared.csproj", "{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{668FA86F-9892-4055-B8EF-A581AE63DC77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugCodeGen", "tools\SmugMugCodeGen\SmugMugCodeGen.csproj", "{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugCodeGen", "SmugMugCodeGen\SmugMugCodeGen.csproj", "{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,7 +58,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{24E408C7-79D6-41E6-B2DA-9E71A36EED13} = {668FA86F-9892-4055-B8EF-A581AE63DC77}
-		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1} = {668FA86F-9892-4055-B8EF-A581AE63DC77}
+		{24E408C7-79D6-41E6-B2DA-9E71A36EED13} = {1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}
+		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1} = {1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}
 	EndGlobalSection
 EndGlobal
