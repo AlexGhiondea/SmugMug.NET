@@ -8,13 +8,13 @@ namespace SmugMug.v2.Types
     public partial class DeletedFolderEntity : SmugMugEntity
     {
 
-        public UserEntity user___ ()
+        public UserEntity user___ (string param1)
         {
             // /user/(*) 
             return default(UserEntity); 
         }
 
-        public RecoverDeletedFolderEntity deletedfolder____recover ()
+        public RecoverDeletedFolderEntity deletedfolder____recover (string param1)
         {
             // /deleted/folder/(*)!recover 
             return default(RecoverDeletedFolderEntity); 

@@ -8,7 +8,7 @@ namespace SmugMug.v2.Types
     public partial class DownloadEntity : SmugMugEntity
     {
 
-        public AlbumEntity album___ ()
+        public AlbumEntity album___ (string param1)
         {
             // /album/(*) 
             return default(AlbumEntity); 

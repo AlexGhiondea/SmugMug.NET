@@ -8,7 +8,7 @@ namespace SmugMug.v2.Types
     public partial class VideoSize640Entity : SmugMugEntity
     {
 
-        public ImageSizeCustomEntity image____sizecustom ()
+        public ImageSizeCustomEntity image____sizecustom (string param1)
         {
             // /image/(*)!sizecustom 
             return default(ImageSizeCustomEntity); 

@@ -8,7 +8,7 @@ namespace SmugMug.v2.Types
     public partial class UserGuideStateEntity : SmugMugEntity
     {
 
-        public GuideEntity guide___ ()
+        public GuideEntity guide___ (string param1)
         {
             // /guide/(*) 
             return default(GuideEntity); 

@@ -8,91 +8,91 @@ namespace SmugMug.v2.Types
     public partial class AlbumEntity : SmugMugEntity
     {
 
-        public AlbumShareUrisEntity album____shareuris ()
+        public AlbumShareUrisEntity album____shareuris (string param1)
         {
             // /album/(*)!shareuris 
             return default(AlbumShareUrisEntity); 
         }
 
-        public NodeEntity node___ ()
+        public NodeEntity node___ (string param1)
         {
             // /node/(*) 
             return default(NodeEntity); 
         }
 
-        public UserEntity user___ ()
+        public UserEntity user___ (string param1)
         {
             // /user/(*) 
             return default(UserEntity); 
         }
 
-        public FolderEntity folderuser___Family___ ()
+        public FolderEntity folderuser___Family___ (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*) 
             return default(FolderEntity); 
         }
 
-        public FolderEntity folderuser___Family____parents ()
+        public FolderEntity folderuser___Family____parents (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*)!parents 
             return default(FolderEntity); 
         }
 
-        public ImageEntity highlightnode___ ()
+        public ImageEntity highlightnode___ (string param1)
         {
             // /highlight/node/(*) 
             return default(ImageEntity); 
         }
 
-        public AlbumImageEntity album____highlightimage ()
+        public AlbumImageEntity album____highlightimage (string param1)
         {
             // /album/(*)!highlightimage 
             return default(AlbumImageEntity); 
         }
 
-        public AlbumImageEntity album____images ()
+        public AlbumImageEntity album____images (string param1)
         {
             // /album/(*)!images 
             return default(AlbumImageEntity); 
         }
 
-        public AlbumImageEntity album____popularmedia ()
+        public AlbumImageEntity album____popularmedia (string param1)
         {
             // /album/(*)!popularmedia 
             return default(AlbumImageEntity); 
         }
 
-        public AlbumImageEntity album____geomedia ()
+        public AlbumImageEntity album____geomedia (string param1)
         {
             // /album/(*)!geomedia 
             return default(AlbumImageEntity); 
         }
 
-        public CommentEntity album____comments ()
+        public CommentEntity album____comments (string param1)
         {
             // /album/(*)!comments 
             return default(CommentEntity); 
         }
 
-        public CatalogSkuPriceEntity album____prices ()
+        public CatalogSkuPriceEntity album____prices (string param1)
         {
             // /album/(*)!prices 
             return default(CatalogSkuPriceEntity); 
         }
 
-        public FolderEntity folderuser___SmugMug___ ()
+        public FolderEntity folderuser___SmugMug___ (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*) 
             return default(FolderEntity); 
         }
 
-        public FolderEntity folderuser___SmugMug____parents ()
+        public FolderEntity folderuser___SmugMug____parents (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*)!parents 
             return default(FolderEntity); 
         }
 
-        public DownloadEntity album____download ()
+        public DownloadEntity album____download (string param1)
         {
             // /album/(*)!download 
             return default(DownloadEntity); 

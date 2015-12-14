@@ -8,13 +8,13 @@ namespace SmugMug.v2.Types
     public partial class LargestVideoEntity : SmugMugEntity
     {
 
-        public VideoSize1920Entity video____size1920 ()
+        public VideoSize1920Entity video____size1920 (string param1)
         {
             // /video/(*)!size1920 
             return default(VideoSize1920Entity); 
         }
 
-        public ImageSizeCustomEntity image____sizecustom ()
+        public ImageSizeCustomEntity image____sizecustom (string param1)
         {
             // /image/(*)!sizecustom 
             return default(ImageSizeCustomEntity); 

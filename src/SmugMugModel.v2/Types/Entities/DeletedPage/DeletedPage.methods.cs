@@ -8,13 +8,13 @@ namespace SmugMug.v2.Types
     public partial class DeletedPageEntity : SmugMugEntity
     {
 
-        public UserEntity user___ ()
+        public UserEntity user___ (string param1)
         {
             // /user/(*) 
             return default(UserEntity); 
         }
 
-        public RecoverDeletedPageEntity deletedpage____recover ()
+        public RecoverDeletedPageEntity deletedpage____recover (string param1)
         {
             // /deleted/page/(*)!recover 
             return default(RecoverDeletedPageEntity); 

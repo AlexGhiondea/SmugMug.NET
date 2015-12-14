@@ -8,7 +8,7 @@ namespace SmugMug.v2.Types
     public partial class AlbumTemplateEntity : SmugMugEntity
     {
 
-        public UserEntity user___ ()
+        public UserEntity user___ (string param1)
         {
             // /user/(*) 
             return default(UserEntity); 

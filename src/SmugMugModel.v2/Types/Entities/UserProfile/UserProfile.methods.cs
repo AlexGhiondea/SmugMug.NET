@@ -8,19 +8,19 @@ namespace SmugMug.v2.Types
     public partial class UserProfileEntity : SmugMugEntity
     {
 
-        public BioImageEntity user____bioimage ()
+        public BioImageEntity user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
             return default(BioImageEntity); 
         }
 
-        public CoverImageEntity user____coverimage ()
+        public CoverImageEntity user____coverimage (string param1)
         {
             // /user/(*)!coverimage 
             return default(CoverImageEntity); 
         }
 
-        public UserEntity user___ ()
+        public UserEntity user___ (string param1)
         {
             // /user/(*) 
             return default(UserEntity); 

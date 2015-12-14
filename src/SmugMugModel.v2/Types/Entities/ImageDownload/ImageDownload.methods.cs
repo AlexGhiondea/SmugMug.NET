@@ -8,7 +8,7 @@ namespace SmugMug.v2.Types
     public partial class ImageDownloadEntity : SmugMugEntity
     {
 
-        public ImageEntity image___ ()
+        public ImageEntity image___ (string param1)
         {
             // /image/(*) 
             return default(ImageEntity); 
