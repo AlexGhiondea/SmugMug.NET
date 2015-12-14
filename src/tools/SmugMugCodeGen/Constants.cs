@@ -23,10 +23,10 @@ namespace SmugMugCodeGen
 ";
 
         public const string MethodDefinition = @"
-        public {0} {1} ()
+        public {0} {1} ({2})
         {{
-            // {2} 
-            {3} 
+            // {3} 
+            {4} 
         }}";
 
         public const string EnumDefinition = @"// Copyright (c) Alex Ghiondea. All rights reserved.
