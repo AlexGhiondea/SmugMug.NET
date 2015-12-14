@@ -164,7 +164,10 @@ namespace SmugMugMetadataRetriever
                     var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
                     return ProcessData(req);
                 }
-                catch { }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Uri: '{0}', Error: '{1}'", uri, e.Message);
+                }
             }
 
             return null;
@@ -391,8 +394,12 @@ namespace SmugMugMetadataRetriever
             if (response == null)
                 return od;
 
+            od.Deprecated = response.GetValueAsString("Deprecated");
+
             if (response.Property("Output") == null)
             {
+
+
                 if (obj.Property("Response") == null)
                     return od;
 

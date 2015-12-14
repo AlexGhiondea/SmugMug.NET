@@ -13,6 +13,8 @@ namespace SmugMug.Shared.Descriptors
 
         public List<Method> Methods { get; set; }
 
+        public string Deprecated { get; set; }
+
         public Entity()
         {
             Methods = new List<Method>();
@@ -21,6 +23,11 @@ namespace SmugMug.Shared.Descriptors
 
         public void MergeWith(Entity other)
         {
+            if (string.IsNullOrEmpty(Deprecated) && !string.IsNullOrEmpty(other.Deprecated))
+                this.Deprecated = other.Deprecated;
+            else
+                this.Deprecated += other.Deprecated;
+
             foreach (var meth in other.Methods)
             {
                 if (Methods.FirstOrDefault(m => m.Uri == meth.Uri) == null)
