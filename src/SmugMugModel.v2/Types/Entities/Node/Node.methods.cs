@@ -14,10 +14,10 @@ namespace SmugMug.v2.Types
             return default(FolderEntity); 
         }
 
-        public NodeEntity node____parents (string param1)
+        public NodeEntity[] node____parents (string param1)
         {
             // /node/(*)!parents 
-            return default(NodeEntity); 
+            return default(NodeEntity[]); 
         }
 
         public UserEntity user___ (string param1)
@@ -32,10 +32,10 @@ namespace SmugMug.v2.Types
             return default(ImageEntity); 
         }
 
-        public NodeEntity node____children (string param1)
+        public NodeEntity[] node____children (string param1)
         {
             // /node/(*)!children 
-            return default(NodeEntity); 
+            return default(NodeEntity[]); 
         }
 
         public NodeEntity node____parent (string param1)

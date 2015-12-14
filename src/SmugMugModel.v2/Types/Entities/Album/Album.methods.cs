@@ -32,10 +32,10 @@ namespace SmugMug.v2.Types
             return default(FolderEntity); 
         }
 
-        public FolderEntity folderuser___Family____parents (string param1, string param2)
+        public FolderEntity[] folderuser___Family____parents (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*)!parents 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public ImageEntity highlightnode___ (string param1)
@@ -50,34 +50,34 @@ namespace SmugMug.v2.Types
             return default(AlbumImageEntity); 
         }
 
-        public AlbumImageEntity album____images (string param1)
+        public AlbumImageEntity[] album____images (string param1)
         {
             // /album/(*)!images 
-            return default(AlbumImageEntity); 
+            return default(AlbumImageEntity[]); 
         }
 
-        public AlbumImageEntity album____popularmedia (string param1)
+        public AlbumImageEntity[] album____popularmedia (string param1)
         {
             // /album/(*)!popularmedia 
-            return default(AlbumImageEntity); 
+            return default(AlbumImageEntity[]); 
         }
 
-        public AlbumImageEntity album____geomedia (string param1)
+        public AlbumImageEntity[] album____geomedia (string param1)
         {
             // /album/(*)!geomedia 
-            return default(AlbumImageEntity); 
+            return default(AlbumImageEntity[]); 
         }
 
-        public CommentEntity album____comments (string param1)
+        public CommentEntity[] album____comments (string param1)
         {
             // /album/(*)!comments 
-            return default(CommentEntity); 
+            return default(CommentEntity[]); 
         }
 
-        public CatalogSkuPriceEntity album____prices (string param1)
+        public CatalogSkuPriceEntity[] album____prices (string param1)
         {
             // /album/(*)!prices 
-            return default(CatalogSkuPriceEntity); 
+            return default(CatalogSkuPriceEntity[]); 
         }
 
         public FolderEntity folderuser___SmugMug___ (string param1, string param2)
@@ -86,16 +86,16 @@ namespace SmugMug.v2.Types
             return default(FolderEntity); 
         }
 
-        public FolderEntity folderuser___SmugMug____parents (string param1, string param2)
+        public FolderEntity[] folderuser___SmugMug____parents (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*)!parents 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
-        public DownloadEntity album____download (string param1)
+        public DownloadEntity[] album____download (string param1)
         {
             // /album/(*)!download 
-            return default(DownloadEntity); 
+            return default(DownloadEntity[]); 
         }
 
     }

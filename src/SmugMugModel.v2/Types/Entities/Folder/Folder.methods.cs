@@ -26,10 +26,10 @@ namespace SmugMug.v2.Types
             return default(UserEntity); 
         }
 
-        public FolderEntity folderusersmugmuguser____parents (string param1)
+        public FolderEntity[] folderusersmugmuguser____parents (string param1)
         {
             // /folder/user/smugmuguser/(*)!parents 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderEntity folderuser___Family____parent (string param1, string param2)
@@ -50,10 +50,10 @@ namespace SmugMug.v2.Types
             return default(ImageEntity); 
         }
 
-        public FolderEntity folderuser___Family____folders (string param1, string param2)
+        public FolderEntity[] folderuser___Family____folders (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*)!folders 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderListEntity folderuser___Family____folderlist (string param1, string param2)
@@ -62,10 +62,10 @@ namespace SmugMug.v2.Types
             return default(FolderListEntity); 
         }
 
-        public AlbumEntity folderuser___Family____albums (string param1, string param2)
+        public AlbumEntity[] folderuser___Family____albums (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*)!albums 
-            return default(AlbumEntity); 
+            return default(AlbumEntity[]); 
         }
 
         public AlbumListEntity folderuser___Family____albumlist (string param1, string param2)
@@ -74,10 +74,10 @@ namespace SmugMug.v2.Types
             return default(AlbumListEntity); 
         }
 
-        public PageEntity folderuser___Family____pages (string param1, string param2)
+        public PageEntity[] folderuser___Family____pages (string param1, string param2)
         {
             // /folder/user/(*)/Family/(*)!pages 
-            return default(PageEntity); 
+            return default(PageEntity[]); 
         }
 
         public SizeEntity folderuser___Family____size (string param1, string param2)
@@ -86,10 +86,10 @@ namespace SmugMug.v2.Types
             return default(SizeEntity); 
         }
 
-        public FolderEntity folderuser____parents (string param1)
+        public FolderEntity[] folderuser____parents (string param1)
         {
             // /folder/user/(*)!parents 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderEntity folderusersmugmuguser____parent (string param1)
@@ -104,10 +104,10 @@ namespace SmugMug.v2.Types
             return default(ImageEntity); 
         }
 
-        public FolderEntity folderusersmugmuguser____folders (string param1)
+        public FolderEntity[] folderusersmugmuguser____folders (string param1)
         {
             // /folder/user/smugmuguser/(*)!folders 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderListEntity folderusersmugmuguser____folderlist (string param1)
@@ -116,10 +116,10 @@ namespace SmugMug.v2.Types
             return default(FolderListEntity); 
         }
 
-        public AlbumEntity folderusersmugmuguser____albums (string param1)
+        public AlbumEntity[] folderusersmugmuguser____albums (string param1)
         {
             // /folder/user/smugmuguser/(*)!albums 
-            return default(AlbumEntity); 
+            return default(AlbumEntity[]); 
         }
 
         public AlbumListEntity folderusersmugmuguser____albumlist (string param1)
@@ -128,10 +128,10 @@ namespace SmugMug.v2.Types
             return default(AlbumListEntity); 
         }
 
-        public PageEntity folderusersmugmuguser____pages (string param1)
+        public PageEntity[] folderusersmugmuguser____pages (string param1)
         {
             // /folder/user/smugmuguser/(*)!pages 
-            return default(PageEntity); 
+            return default(PageEntity[]); 
         }
 
         public SizeEntity folderusersmugmuguser____size (string param1)
@@ -146,10 +146,10 @@ namespace SmugMug.v2.Types
             return default(ImageEntity); 
         }
 
-        public FolderEntity folderuser____folders (string param1)
+        public FolderEntity[] folderuser____folders (string param1)
         {
             // /folder/user/(*)!folders 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderListEntity folderuser____folderlist (string param1)
@@ -158,10 +158,10 @@ namespace SmugMug.v2.Types
             return default(FolderListEntity); 
         }
 
-        public AlbumEntity folderuser____albums (string param1)
+        public AlbumEntity[] folderuser____albums (string param1)
         {
             // /folder/user/(*)!albums 
-            return default(AlbumEntity); 
+            return default(AlbumEntity[]); 
         }
 
         public AlbumListEntity folderuser____albumlist (string param1)
@@ -170,10 +170,10 @@ namespace SmugMug.v2.Types
             return default(AlbumListEntity); 
         }
 
-        public PageEntity folderuser____pages (string param1)
+        public PageEntity[] folderuser____pages (string param1)
         {
             // /folder/user/(*)!pages 
-            return default(PageEntity); 
+            return default(PageEntity[]); 
         }
 
         public SizeEntity folderuser____size (string param1)
@@ -194,10 +194,10 @@ namespace SmugMug.v2.Types
             return default(ImageEntity); 
         }
 
-        public FolderEntity folderuser___SmugMug____folders (string param1, string param2)
+        public FolderEntity[] folderuser___SmugMug____folders (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*)!folders 
-            return default(FolderEntity); 
+            return default(FolderEntity[]); 
         }
 
         public FolderListEntity folderuser___SmugMug____folderlist (string param1, string param2)
@@ -206,10 +206,10 @@ namespace SmugMug.v2.Types
             return default(FolderListEntity); 
         }
 
-        public AlbumEntity folderuser___SmugMug____albums (string param1, string param2)
+        public AlbumEntity[] folderuser___SmugMug____albums (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*)!albums 
-            return default(AlbumEntity); 
+            return default(AlbumEntity[]); 
         }
 
         public AlbumListEntity folderuser___SmugMug____albumlist (string param1, string param2)
@@ -218,10 +218,10 @@ namespace SmugMug.v2.Types
             return default(AlbumListEntity); 
         }
 
-        public PageEntity folderuser___SmugMug____pages (string param1, string param2)
+        public PageEntity[] folderuser___SmugMug____pages (string param1, string param2)
         {
             // /folder/user/(*)/SmugMug/(*)!pages 
-            return default(PageEntity); 
+            return default(PageEntity[]); 
         }
 
         public SizeEntity folderuser___SmugMug____size (string param1, string param2)

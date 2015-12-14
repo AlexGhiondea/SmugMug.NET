@@ -44,10 +44,10 @@ namespace SmugMug.v2.Types
             return default(UserEntity); 
         }
 
-        public CommentEntity image____comments (string param1)
+        public CommentEntity[] image____comments (string param1)
         {
             // /image/(*)!comments 
-            return default(CommentEntity); 
+            return default(CommentEntity[]); 
         }
 
         public EmbedVideoEntity video____embed (string param1)
@@ -68,10 +68,10 @@ namespace SmugMug.v2.Types
             return default(ImageMetadataEntity); 
         }
 
-        public CatalogSkuPriceEntity image____prices (string param1)
+        public CatalogSkuPriceEntity[] image____prices (string param1)
         {
             // /image/(*)!prices 
-            return default(CatalogSkuPriceEntity); 
+            return default(CatalogSkuPriceEntity[]); 
         }
 
         public ImageEntity image___ (string param1)
