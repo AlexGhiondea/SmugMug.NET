@@ -268,37 +268,37 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!geomedia",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!popularmedia",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!featuredalbums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!recentimages",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!imagesearch",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -346,37 +346,37 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!geomedia",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!popularmedia",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!featuredalbums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!recentimages",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!imagesearch",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -394,7 +394,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!albumtemplates",
-          "ReturnType": "AlbumTemplate"
+          "ReturnType": "AlbumTemplate[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -406,19 +406,19 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!tasks",
-          "ReturnType": "Task"
+          "ReturnType": "Task[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!watermarks",
-          "ReturnType": "Watermark"
+          "ReturnType": "Watermark[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!printmarks",
-          "ReturnType": "Printmark"
+          "ReturnType": "Printmark[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -430,19 +430,19 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!coupons",
-          "ReturnType": "UserCoupon"
+          "ReturnType": "UserCoupon[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!latestquicknews",
-          "ReturnType": "QuickNews"
+          "ReturnType": "QuickNews[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!guides",
-          "ReturnType": "UserGuideState"
+          "ReturnType": "UserGuideState[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -460,37 +460,37 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!grants",
-          "ReturnType": "Grant"
+          "ReturnType": "Grant[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!duplicateimagesearch",
-          "ReturnType": "Image"
+          "ReturnType": "Image[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!deletedalbums",
-          "ReturnType": "DeletedAlbum"
+          "ReturnType": "DeletedAlbum[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!deletedfolders",
-          "ReturnType": "DeletedFolder"
+          "ReturnType": "DeletedFolder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!deletedpages",
-          "ReturnType": "DeletedPage"
+          "ReturnType": "DeletedPage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!contacts",
-          "ReturnType": "Contact"
+          "ReturnType": "Contact[]"
         }
       ]
     }
@@ -899,7 +899,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/fh8NGqC!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -923,7 +923,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/fh8NGqC!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -953,7 +953,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Kc7pDWx!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -977,7 +977,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Kc7pDWx!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1013,7 +1013,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/NzDBpmH!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1025,7 +1025,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/NzDBpmH!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1055,7 +1055,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Wdtd6f7!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1067,7 +1067,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Wdtd6f7!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1103,7 +1103,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/SD5BL92!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1115,7 +1115,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/SD5BL92!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1157,7 +1157,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/z5233DS!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1187,7 +1187,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/dPcG9P5!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1199,7 +1199,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/dPcG9P5!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -1235,7 +1235,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/99kRCRg!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         }
       ]
     }
@@ -2623,7 +2623,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Videos!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2641,31 +2641,31 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/ZDQXVN!images",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/ZDQXVN!popularmedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/ZDQXVN!geomedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/ZDQXVN!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/ZDQXVN!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2689,7 +2689,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug/Heroes!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2707,31 +2707,31 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/TrBCmb!images",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/TrBCmb!popularmedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/TrBCmb!geomedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/TrBCmb!download",
-          "ReturnType": "Download"
+          "ReturnType": "Download[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/TrBCmb!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2761,31 +2761,31 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/RJHXVN!images",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/RJHXVN!popularmedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/RJHXVN!geomedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/RJHXVN!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/RJHXVN!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2809,7 +2809,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Photos!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -2827,37 +2827,37 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!images",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!popularmedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!geomedia",
-          "ReturnType": "AlbumImage"
+          "ReturnType": "AlbumImage[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!download",
-          "ReturnType": "Download"
+          "ReturnType": "Download[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/album/mCMp7h!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         }
       ]
     }
@@ -3105,7 +3105,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/fh8NGqC!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -3129,7 +3129,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/fh8NGqC!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -3171,7 +3171,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Kc7pDWx!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -3195,7 +3195,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/Kc7pDWx!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6409,7 +6409,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6433,7 +6433,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Videos!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6445,7 +6445,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Videos!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6457,7 +6457,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Videos!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6481,7 +6481,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6505,7 +6505,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6517,7 +6517,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6529,7 +6529,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6571,7 +6571,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Photos!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6583,7 +6583,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Photos!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6595,7 +6595,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/Family/Photos!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6631,7 +6631,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6643,7 +6643,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6655,7 +6655,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6679,7 +6679,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug!parents",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6703,7 +6703,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug/Heroes!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6715,7 +6715,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug/Heroes!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6727,7 +6727,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug/Heroes!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6769,7 +6769,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug!folders",
-          "ReturnType": "Folder"
+          "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6781,7 +6781,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug!albums",
-          "ReturnType": "Album"
+          "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -6793,7 +6793,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug!pages",
-          "ReturnType": "Page"
+          "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7474,7 +7474,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/zx4Fx!parents",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7492,7 +7492,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/zx4Fx!children",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7510,7 +7510,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/c4jv4!parents",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7522,7 +7522,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/c4jv4!children",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7540,7 +7540,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/QTjKm!parents",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7552,7 +7552,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/QTjKm!children",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7570,7 +7570,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/Y2341!parents",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7582,7 +7582,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/Y2341!children",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -7600,7 +7600,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/node/wQQ35!parents",
-          "ReturnType": "Node"
+          "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -8221,7 +8221,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/5T8MH4d!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -8233,7 +8233,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/5T8MH4d!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -8500,7 +8500,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/SD5BL92!comments",
-          "ReturnType": "Comment"
+          "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
@@ -8512,7 +8512,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/image/SD5BL92!prices",
-          "ReturnType": "CatalogSkuPrice"
+          "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
