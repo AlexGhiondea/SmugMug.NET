@@ -23,7 +23,17 @@ namespace SmugMugCodeGen
 
                 returnType = "void"; // this is the default
                 if (!string.IsNullOrEmpty(item.ReturnType))
-                    returnType = Helpers.NormalizeString(item.ReturnType) + "Entity";
+                {
+                    returnType = item.ReturnType;
+
+                    if (returnType.EndsWith("[]"))
+                        returnType = returnType.Replace("[]", "");
+
+                    returnType = Helpers.NormalizeString(returnType) + "Entity";
+
+                    if (item.ReturnType.EndsWith("[]"))
+                        returnType += "[]";
+                }
 
                 int paramCount;
                 uri = RegExCreator.FromUri(SmugMugShared.Constants.Addresses.SmugMugApi, SmugMugShared.Constants.Addresses.SmugMug + item.Uri, out paramCount);
