@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         private string _passwordHint;
         private bool _printable;
         private string _printmarkUri;
-        private int _proofDays;
+        private long _proofDays;
         private bool _protected;
         private bool _public;
         private bool _share;
@@ -367,7 +367,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ProofDays {
+        public long ProofDays {
             get {
                 return _proofDays;
             }

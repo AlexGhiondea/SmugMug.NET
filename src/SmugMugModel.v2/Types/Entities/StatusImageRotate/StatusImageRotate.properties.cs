@@ -8,17 +8,17 @@ namespace SmugMug.v2.Types
 {
     public partial class StatusImageRotateEntity : SmugMugEntity
     {
-        private int _degrees;
+        private long _degrees;
         private string _imageUri;
         private DateTime _lastUpdated;
         private string _message;
         private string _queueName;
-        private int _rotate;
+        private long _rotate;
         private ImageStatusEnum _status;
         private DateTime _timeIn;
 
 
-        public int Degrees {
+        public long Degrees {
             get {
                 return _degrees;
             }
@@ -88,7 +88,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Rotate {
+        public long Rotate {
             get {
                 return _rotate;
             }

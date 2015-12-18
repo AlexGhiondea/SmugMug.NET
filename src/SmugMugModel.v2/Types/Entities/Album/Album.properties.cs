@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         private HeaderEnum _header;
         private bool _hideOwner;
         private string _highlightAlbumImageUri;
-        private int _imageCount;
+        private long _imageCount;
         private DateTime _imagesLastUpdated;
         private InterceptShippingEnum _interceptShipping;
         private string _keywords;
@@ -40,14 +40,14 @@ namespace SmugMug.v2.Types
         private string _name;
         private string _niceName;
         private string _nodeID;
-        private int _originalSizes;
+        private long _originalSizes;
         private bool _packagingBranding;
         private string _password;
         private string _passwordHint;
         private bool _printable;
         private string _printmarkUri;
         private PrivacyEnum _privacy;
-        private int _proofDays;
+        private long _proofDays;
         private bool _protected;
         private string _responseLevel;
         private SecurityTypeEnum _securityType;
@@ -59,7 +59,7 @@ namespace SmugMug.v2.Types
         private string _templateUri;
         private string _themeUri;
         private string _title;
-        private int _totalSizes;
+        private long _totalSizes;
         private string _uploadKey;
         private string _uri;
         private string _uriDescription;
@@ -393,7 +393,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ImageCount {
+        public long ImageCount {
             get {
                 return _imageCount;
             }
@@ -519,7 +519,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalSizes {
+        public long OriginalSizes {
             get {
                 return _originalSizes;
             }
@@ -617,7 +617,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ProofDays {
+        public long ProofDays {
             get {
                 return _proofDays;
             }
@@ -785,7 +785,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int TotalSizes {
+        public long TotalSizes {
             get {
                 return _totalSizes;
             }

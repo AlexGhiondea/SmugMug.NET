@@ -9,8 +9,8 @@ namespace SmugMug.v2.Types
     public partial class ImageSizeCustomEntity : SmugMugEntity
     {
         private string _ext;
-        private int _requestedHeight;
-        private int _requestedWidth;
+        private long _requestedHeight;
+        private long _requestedWidth;
         private string _url;
         private bool _usable;
         private bool _watermarked;
@@ -30,7 +30,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int RequestedHeight {
+        public long RequestedHeight {
             get {
                 return _requestedHeight;
             }
@@ -44,7 +44,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int RequestedWidth {
+        public long RequestedWidth {
             get {
                 return _requestedWidth;
             }

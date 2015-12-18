@@ -8,17 +8,17 @@ namespace SmugMug.v2.Types
 {
     public partial class WatermarkEntity : SmugMugEntity
     {
-        private int _dissolve;
-        private int _imageID;
+        private long _dissolve;
+        private long _imageID;
         private string _imageKey;
         private string _name;
         private PinnedEnum _pinned;
         private SmallestSizeEnum _smallestSize;
         private bool _thumbs;
-        private int _watermarkID;
+        private long _watermarkID;
 
 
-        public int Dissolve {
+        public long Dissolve {
             get {
                 return _dissolve;
             }
@@ -32,7 +32,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ImageID {
+        public long ImageID {
             get {
                 return _imageID;
             }
@@ -116,7 +116,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int WatermarkID {
+        public long WatermarkID {
             get {
                 return _watermarkID;
             }

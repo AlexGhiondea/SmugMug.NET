@@ -8,18 +8,18 @@ namespace SmugMug.v2.Types
 {
     public partial class PrintmarkEntity : SmugMugEntity
     {
-        private int _dissolve;
-        private int _gap;
-        private int _imageID;
+        private long _dissolve;
+        private long _gap;
+        private long _imageID;
         private string _imageKey;
         private string _imageUri;
         private string _location;
         private string _name;
-        private int _printmarkID;
-        private int _scale;
+        private long _printmarkID;
+        private long _scale;
 
 
-        public int Dissolve {
+        public long Dissolve {
             get {
                 return _dissolve;
             }
@@ -33,7 +33,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Gap {
+        public long Gap {
             get {
                 return _gap;
             }
@@ -47,7 +47,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ImageID {
+        public long ImageID {
             get {
                 return _imageID;
             }
@@ -117,7 +117,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int PrintmarkID {
+        public long PrintmarkID {
             get {
                 return _printmarkID;
             }
@@ -131,7 +131,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Scale {
+        public long Scale {
             get {
                 return _scale;
             }

@@ -13,7 +13,7 @@ namespace SmugMug.v2.Types
         private bool _dark;
         private string _filename;
         private string _name;
-        private int _thumbs;
+        private long _thumbs;
 
 
         public bool AjaxEnabled {
@@ -86,7 +86,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Thumbs {
+        public long Thumbs {
             get {
                 return _thumbs;
             }

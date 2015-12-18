@@ -8,9 +8,9 @@ namespace SmugMug.v2.Types
 {
     public partial class ImageEntity : SmugMugEntity
     {
-        private int _altitude;
+        private long _altitude;
         private string _archivedMD5;
-        private int _archivedSize;
+        private long _archivedSize;
         private string _archivedUri;
         private bool _canEdit;
         private string _caption;
@@ -29,9 +29,9 @@ namespace SmugMug.v2.Types
         private DateTime _lastUpdated;
         private decimal _latitude;
         private decimal _longitude;
-        private int _originalHeight;
-        private int _originalSize;
-        private int _originalWidth;
+        private long _originalHeight;
+        private long _originalSize;
+        private long _originalWidth;
         private bool _processing;
         private bool _protected;
         private string _thumbnailUrl;
@@ -44,7 +44,7 @@ namespace SmugMug.v2.Types
         private string _webUri;
 
 
-        public int Altitude {
+        public long Altitude {
             get {
                 return _altitude;
             }
@@ -72,7 +72,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ArchivedSize {
+        public long ArchivedSize {
             get {
                 return _archivedSize;
             }
@@ -338,7 +338,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalHeight {
+        public long OriginalHeight {
             get {
                 return _originalHeight;
             }
@@ -352,7 +352,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalSize {
+        public long OriginalSize {
             get {
                 return _originalSize;
             }
@@ -366,7 +366,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalWidth {
+        public long OriginalWidth {
             get {
                 return _originalWidth;
             }

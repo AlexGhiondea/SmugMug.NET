@@ -9,14 +9,14 @@ namespace SmugMug.v2.Types
     public partial class LargestImageEntity : SmugMugEntity
     {
         private string _ext;
-        private int _height;
-        private int _size;
+        private long _height;
+        private long _size;
         private string _uri;
         private string _uriDescription;
         private string _url;
         private bool _usable;
         private bool _watermarked;
-        private int _width;
+        private long _width;
 
 
         public string Ext {
@@ -33,7 +33,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Height {
+        public long Height {
             get {
                 return _height;
             }
@@ -47,7 +47,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Size {
+        public long Size {
             get {
                 return _size;
             }
@@ -131,7 +131,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Width {
+        public long Width {
             get {
                 return _width;
             }

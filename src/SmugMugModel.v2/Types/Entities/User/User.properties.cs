@@ -13,7 +13,7 @@ namespace SmugMug.v2.Types
         private string _domainOnly;
         private string _firstName;
         private bool _friendsView;
-        private int _imageCount;
+        private long _imageCount;
         private bool _isTrial;
         private string _lastName;
         private string _name;
@@ -102,7 +102,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ImageCount {
+        public long ImageCount {
             get {
                 return _imageCount;
             }

@@ -11,9 +11,9 @@ namespace SmugMug.v2.Types
         private string _comment;
         private DateTime _date;
         private string _name;
-        private int _rating;
-        private int _serviceID;
-        private int _socialID;
+        private long _rating;
+        private long _serviceID;
+        private long _socialID;
         private CommentStatusEnum _status;
 
 
@@ -59,7 +59,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Rating {
+        public long Rating {
             get {
                 return _rating;
             }
@@ -73,7 +73,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ServiceID {
+        public long ServiceID {
             get {
                 return _serviceID;
             }
@@ -87,7 +87,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int SocialID {
+        public long SocialID {
             get {
                 return _socialID;
             }

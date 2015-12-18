@@ -28,7 +28,7 @@ namespace SmugMug.v2.Types
         private SecurityTypeEnum _securityType;
         private SmugSearchableEnum _smugSearchable;
         private SortDirectionEnum _sortDirection;
-        private int _sortIndex;
+        private long _sortIndex;
         private SortMethodEnum _sortMethod;
         private TypeEnum _type;
         private string _uri;
@@ -319,7 +319,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int SortIndex {
+        public long SortIndex {
             get {
                 return _sortIndex;
             }
