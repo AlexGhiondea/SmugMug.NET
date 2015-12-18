@@ -12,7 +12,7 @@ namespace SmugMug.v2.Types
         private string _description;
         private EffectivePrivacyEnum _effectivePrivacy;
         private EffectiveSecurityTypeEnum _effectiveSecurityType;
-        private string _formattedValues;
+        private CaptionEntity _formattedValues;
         private bool _hasChildren;
         private bool _hideOwner;
         private string _highlightImageUri;
@@ -108,7 +108,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string FormattedValues {
+        public CaptionEntity FormattedValues {
             get {
                 return _formattedValues;
             }

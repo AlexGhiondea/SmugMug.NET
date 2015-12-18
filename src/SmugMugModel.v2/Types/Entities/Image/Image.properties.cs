@@ -18,7 +18,7 @@ namespace SmugMug.v2.Types
         private bool _eZProject;
         private string _fileName;
         private string _format;
-        private string _formattedValues;
+        private CaptionEntity _formattedValues;
         private bool _hidden;
         private string _imageKey;
         private bool _isArchive;
@@ -197,7 +197,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string FormattedValues {
+        public CaptionEntity FormattedValues {
             get {
                 return _formattedValues;
             }

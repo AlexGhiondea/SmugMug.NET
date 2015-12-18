@@ -63,6 +63,10 @@ namespace SmugMugCodeGen
                 string propName = Helpers.NormalizeString(prop.Name);
                 string propType = GetPropertyType(prop);
 
+                // we are going to skip over FormattedValues
+                if (StringComparer.OrdinalIgnoreCase.Equals(propName, "FormattedValues"))
+                    propType = "CaptionEntity";
+
                 // the properties are going to be generated into 2 parts:
                 //  1. At the top, the field declaration
                 //  2. At the bottom, the actual implementation
