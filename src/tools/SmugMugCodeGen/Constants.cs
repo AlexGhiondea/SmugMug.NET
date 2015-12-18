@@ -31,12 +31,13 @@ namespace SmugMugCodeGen
 
         public const string EnumDefinition = @"// Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+{0}
 
 namespace SmugMug.v2.Types
 {{
-    public enum {0} 
+    public enum {1} 
     {{
-        {1}
+{2}
     }}
 }}
 ";
