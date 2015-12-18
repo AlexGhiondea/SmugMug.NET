@@ -2,11 +2,23 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
     public partial class ImageSizesEntity : SmugMugEntity
     {
+        public ImageSizesEntity()
+        {
+            //Empty constructor to enable deserialization
+        }
+
+        public ImageSizesEntity(OAuthToken oauthToken)
+            : base(oauthToken)
+        {
+            _oauthToken = oauthToken;
+        }
+
 
         public ImageSizeTinyEntity image____sizetiny (string param1)
         {
@@ -121,6 +133,5 @@ namespace SmugMug.v2.Types
             // /image/(*)!largestimage 
             return default(LargestImageEntity); 
         }
-
     }
 }

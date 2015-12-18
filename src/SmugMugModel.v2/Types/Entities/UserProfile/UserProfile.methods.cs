@@ -2,11 +2,23 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
     public partial class UserProfileEntity : SmugMugEntity
     {
+        public UserProfileEntity()
+        {
+            //Empty constructor to enable deserialization
+        }
+
+        public UserProfileEntity(OAuthToken oauthToken)
+            : base(oauthToken)
+        {
+            _oauthToken = oauthToken;
+        }
+
 
         public BioImageEntity user____bioimage (string param1)
         {
@@ -25,6 +37,5 @@ namespace SmugMug.v2.Types
             // /user/(*) 
             return default(UserEntity); 
         }
-
     }
 }
