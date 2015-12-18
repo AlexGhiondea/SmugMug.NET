@@ -19,7 +19,7 @@ namespace SmugMugCodeGen
             if (prop is FloatProperty)
                 return "float";
             if (prop is IntegerProperty)
-                return "int";
+                return "long";
             if (prop is ArrayProperty)
                 return GetArrayPropertyType(prop as ArrayProperty);
             if (prop is SelectProperty)
