@@ -45,6 +45,7 @@ namespace SmugMug.v2.Types
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {{
@@ -53,6 +54,18 @@ namespace SmugMug.v2.Types
 {1}
     }}
 }}
+";
+
+        public const string ConstructorDefinition = @"        public {0}Entity()
+        {{
+            //Empty constructor to enable deserialization
+        }}
+
+        public {0}Entity(OAuthToken oauthToken)
+            : base(oauthToken)
+        {{
+            _oauthToken = oauthToken;
+        }}
 ";
     }
 }

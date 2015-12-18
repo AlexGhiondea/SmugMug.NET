@@ -70,6 +70,7 @@ namespace SmugMugCodeGen
                 StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
 
                 StringBuilder methods = new StringBuilder();
+                methods.AppendLine(string.Format(Constants.ConstructorDefinition, className));
                 methods.Append(CodeGen.BuildMethods(item.Value.Methods));
 
                 string objectDirName = Path.Combine(_options.OutputDir, className);
