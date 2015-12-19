@@ -77,16 +77,28 @@ namespace SmugMugCodeGen
                 Directory.CreateDirectory(objectDirName);
 
                 StringBuilder sb = new StringBuilder();
-                sb.AppendFormat(Constants.ClassDefinition, className, properties.ToString().TrimEnd());
+                sb.AppendFormat(Constants.ClassDefinition, className, properties.ToString().TrimEnd(), string.Empty);
                 File.WriteAllText(Path.Combine(objectDirName, item.Key + ".properties.cs"), sb.ToString());
 
                 sb = new StringBuilder();
-                sb.AppendFormat(Constants.ClassDefinition, className, methods.ToString().TrimEnd());
+                sb.AppendFormat(Constants.ClassDefinition, className, methods.ToString().TrimEnd(), GetObsoleteString(item.Value.Deprecated));
                 File.WriteAllText(Path.Combine(objectDirName, item.Key + ".methods.cs"), sb.ToString());
 
                 ConsolePrinter.Write(ConsoleColor.Green, "Generated class {0}", item.Key);
             }
             ConsolePrinter.Write(ConsoleColor.White, "Generated {0} classes", metadata.Count);
+        }
+
+        private static string GetObsoleteString(string deprecated)
+        {
+            if (string.IsNullOrEmpty(deprecated))
+                return string.Empty;
+
+            StringBuilder obsolete = new StringBuilder();
+
+            obsolete.AppendLine("");
+            obsolete.Append("    [Obsolete]");
+            return obsolete.ToString();
         }
 
         private static Dictionary<string, Entity> LoadMetadataFromFile(string[] files)

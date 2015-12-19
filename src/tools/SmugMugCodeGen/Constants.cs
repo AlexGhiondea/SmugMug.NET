@@ -49,7 +49,7 @@ using System;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
-{{
+{{{2}
     public partial class {0}Entity : SmugMugEntity
     {{
 {1}
