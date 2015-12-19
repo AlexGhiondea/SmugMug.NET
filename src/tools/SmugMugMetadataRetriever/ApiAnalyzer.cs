@@ -394,8 +394,15 @@ namespace SmugMugMetadataRetriever
             if (response == null)
                 return od;
 
-            od.Deprecated = response.GetValueAsString("Deprecated");
+            if (response.Property("Deprecated") != null)
+            {
+                var depreObj = response.Property("Deprecated").Value as JObject;
+                if (depreObj != null)
+                {
+                    od.Deprecated = depreObj.GetValueAsString("Alternative");
+                }
 
+            }
             if (response.Property("Output") == null)
             {
 
