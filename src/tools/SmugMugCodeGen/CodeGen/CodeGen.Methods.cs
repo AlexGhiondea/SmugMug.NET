@@ -11,9 +11,11 @@ namespace SmugMugCodeGen
 {
     public partial class CodeGen
     {
-        public static StringBuilder BuildMethods(List<Method> list)
+        public static StringBuilder BuildMethods(List<Method> unsortedList)
         {
             StringBuilder sb = new StringBuilder();
+
+            var list = unsortedList.OrderBy(m => m.Uri);
 
             HashSet<string> methodMap = new HashSet<string>();
 
