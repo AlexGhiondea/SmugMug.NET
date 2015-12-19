@@ -333,7 +333,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/node/X1245",
+          "Uri": "/api/v2/node/X4M5H",
           "ReturnType": "Node"
         },
         {
@@ -554,6 +554,120 @@
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
       "$values": [
         {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "WebUri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.ArrayProperty, SmugMugShared",
+          "ItemType": "string",
+          "ArrayLimits": null,
+          "Name": "KeywordArray",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "Altitude",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Hidden",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Processing",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "Date",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "OriginalHeight",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "OriginalWidth",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "OriginalSize",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "LastUpdated",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Collectable",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "IsArchive",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "IsVideo",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "CanEdit",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Protected",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Watermarked",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -583,18 +697,6 @@
             "Max": "Infinity"
           },
           "Name": "Keywords",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.ArrayProperty, SmugMugShared",
-          "ItemType": "Varchar",
-          "ArrayLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": 0.0,
-            "Max": "Infinity"
-          },
-          "Name": "KeywordArray",
           "Description": "",
           "Deprecated": ""
         },
@@ -636,23 +738,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": 0.0,
-            "Max": 16777215.0
-          },
-          "Name": "Altitude",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Hidden",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.UriProperty, SmugMugShared",
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -675,12 +760,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Processing",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -688,12 +767,6 @@
             "Max": "Infinity"
           },
           "Name": "UploadKey",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
-          "Name": "Date",
           "Description": "",
           "Deprecated": ""
         },
@@ -709,83 +782,8 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": "-Infinity",
-            "Max": "Infinity"
-          },
-          "Name": "OriginalHeight",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": "-Infinity",
-            "Max": "Infinity"
-          },
-          "Name": "OriginalWidth",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": "-Infinity",
-            "Max": "Infinity"
-          },
-          "Name": "OriginalSize",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.TimeStampProperty, SmugMugShared",
-          "Name": "LastUpdated",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Collectable",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "IsArchive",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "IsVideo",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "CanEdit",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Protected",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
           "Name": "EZProject",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Watermarked",
           "Description": "",
           "Deprecated": ""
         },
@@ -838,24 +836,6 @@
           "Name": "FormattedValues",
           "Description": "Alternative versions of certain fields formatted for use in different contexts.",
           "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "Uri",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "WebUri",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "UriDescription",
-          "Description": null,
-          "Deprecated": null
         }
       ]
     },
@@ -865,25 +845,25 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestimage",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestimage",
           "ReturnType": "LargestImage"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestvideo",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestvideo",
           "ReturnType": "LargestVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizes",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizes",
           "ReturnType": "ImageSizes"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizedetails",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizedetails",
           "ReturnType": "ImageSizeDetails"
         },
         {
@@ -901,31 +881,31 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!comments",
+          "Uri": "/api/v2/image/9wRCxGR!comments",
           "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!embed",
+          "Uri": "/api/v2/video/9wRCxGR-1!embed",
           "ReturnType": "EmbedVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!csmil",
+          "Uri": "/api/v2/video/9wRCxGR-1!csmil",
           "ReturnType": "CSMILVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!metadata",
+          "Uri": "/api/v2/image/9wRCxGR!metadata",
           "ReturnType": "ImageMetadata"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!prices",
+          "Uri": "/api/v2/image/9wRCxGR!prices",
           "ReturnType": "CatalogSkuPrice[]"
         },
         {
@@ -1242,7 +1222,7 @@
         }
       ]
     },
-    "Deprecated": "{\r\n  \"Message\": \"Use global image search with the Scope argument instead\",\r\n  \"Alternative\": \"/api/v2/image!search\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}"
+    "Deprecated": "/api/v2/image!search/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id/api/v2/highlight/node/:id"
   },
   "CatalogSkuPrice": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
@@ -2870,7 +2850,7 @@
         }
       ]
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}"
+    "Deprecated": "/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children"
   },
   "AlbumImage": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
@@ -2916,7 +2896,7 @@
         },
         {
           "$type": "SmugMug.Shared.Descriptors.ArrayProperty, SmugMugShared",
-          "ItemType": "String",
+          "ItemType": "string",
           "ArrayLimits": null,
           "Name": "KeywordArray",
           "Description": null,
@@ -3078,25 +3058,25 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestimage",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestimage",
           "ReturnType": "LargestImage"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestvideo",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestvideo",
           "ReturnType": "LargestVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizes",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizes",
           "ReturnType": "ImageSizes"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizedetails",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizedetails",
           "ReturnType": "ImageSizeDetails"
         },
         {
@@ -3114,43 +3094,43 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!comments",
+          "Uri": "/api/v2/image/9wRCxGR!comments",
           "ReturnType": "Comment[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!embed",
+          "Uri": "/api/v2/video/9wRCxGR-1!embed",
           "ReturnType": "EmbedVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!csmil",
+          "Uri": "/api/v2/video/9wRCxGR-1!csmil",
           "ReturnType": "CSMILVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!metadata",
+          "Uri": "/api/v2/image/9wRCxGR!metadata",
           "ReturnType": "ImageMetadata"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC!prices",
+          "Uri": "/api/v2/image/9wRCxGR!prices",
           "ReturnType": "CatalogSkuPrice[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1",
+          "Uri": "/api/v2/image/9wRCxGR-1",
           "ReturnType": "Image"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/album/ZDQXVN/image/fh8NGqC-1!shareuris",
+          "Uri": "/api/v2/album/ZDQXVN/image/9wRCxGR-1!shareuris",
           "ReturnType": "AlbumImageShareUris"
         },
         {
@@ -3221,7 +3201,7 @@
         }
       ]
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/highlight/node/:id\"\r\n}"
+    "Deprecated": "/api/v2/highlight/node/:id"
   },
   "AlbumImageShareUris": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
@@ -3741,115 +3721,115 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizetiny",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizetiny",
           "ReturnType": "ImageSizeTiny"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizethumb",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizethumb",
           "ReturnType": "ImageSizeThumb"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizesmall",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizesmall",
           "ReturnType": "ImageSizeSmall"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizemedium",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizemedium",
           "ReturnType": "ImageSizeMedium"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizelarge",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizelarge",
           "ReturnType": "ImageSizeLarge"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizexlarge",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizexlarge",
           "ReturnType": "ImageSizeXLarge"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizex2large",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizex2large",
           "ReturnType": "ImageSizeX2Large"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizex3large",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizex3large",
           "ReturnType": "ImageSizeX3Large"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size1920",
+          "Uri": "/api/v2/video/9wRCxGR-1!size1920",
           "ReturnType": "VideoSize1920"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size1280",
+          "Uri": "/api/v2/video/9wRCxGR-1!size1280",
           "ReturnType": "VideoSize1280"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size960",
+          "Uri": "/api/v2/video/9wRCxGR-1!size960",
           "ReturnType": "VideoSize960"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size640",
+          "Uri": "/api/v2/video/9wRCxGR-1!size640",
           "ReturnType": "VideoSize640"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size320",
+          "Uri": "/api/v2/video/9wRCxGR-1!size320",
           "ReturnType": "VideoSize320"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size200",
+          "Uri": "/api/v2/video/9wRCxGR-1!size200",
           "ReturnType": "VideoSize200"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size110",
+          "Uri": "/api/v2/video/9wRCxGR-1!size110",
           "ReturnType": "VideoSize110"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!smil",
+          "Uri": "/api/v2/video/9wRCxGR-1!smil",
           "ReturnType": "VideoSMIL"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestvideo",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestvideo",
           "ReturnType": "LargestVideo"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom",
           "ReturnType": "ImageSizeCustom"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!largestimage",
+          "Uri": "/api/v2/image/9wRCxGR-1!largestimage",
           "ReturnType": "LargestImage"
         }
       ]
@@ -3949,7 +3929,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizex3large",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizex3large",
           "ReturnType": "ImageSizeX3Large"
         }
       ]
@@ -4253,13 +4233,13 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/video/fh8NGqC-1!size1920",
+          "Uri": "/api/v2/video/9wRCxGR-1!size1920",
           "ReturnType": "VideoSize1920"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=1080&width=1920",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=1080&width=1920",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -4388,7 +4368,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=1080&width=1920",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=1080&width=1920",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -4639,7 +4619,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=180&width=320",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=180&width=320",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -4768,7 +4748,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=180&width=320",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=180&width=320",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -4897,7 +4877,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=180&width=320",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=180&width=320",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -5026,7 +5006,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=360&width=640",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=360&width=640",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -5155,7 +5135,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=540&width=960",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=540&width=960",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -5284,7 +5264,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/image/fh8NGqC-1!sizecustom?height=720&width=1280",
+          "Uri": "/api/v2/image/9wRCxGR-1!sizecustom?height=720&width=1280",
           "ReturnType": "ImageSizeCustom"
         }
       ]
@@ -6152,6 +6132,48 @@
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
       "$values": [
         {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "ResponseLevel",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "WebUri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateAdded",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateModified",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "IsEmpty",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -6346,18 +6368,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.TimeStampProperty, SmugMugShared",
-          "Name": "DateAdded",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.TimeStampProperty, SmugMugShared",
-          "Name": "DateModified",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -6381,36 +6391,6 @@
         },
         {
           "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "IsEmpty",
-          "Description": "Whether this folder contains any albums, folders, or pages.",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "ResponseLevel",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "Uri",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "WebUri",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
-          "Name": "UriDescription",
-          "Description": null,
-          "Deprecated": null
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
           "Name": "AutoRename",
           "Description": "Auto-rename conflicting album NiceNames?",
           "Deprecated": ""
@@ -6423,13 +6403,13 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/id/Y2341",
+          "Uri": "/api/v2/folder/id/DTkJQ",
           "ReturnType": "Folder"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/node/Y2341",
+          "Uri": "/api/v2/node/DTkJQ",
           "ReturnType": "Node"
         },
         {
@@ -6453,7 +6433,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/highlight/node/Y2341",
+          "Uri": "/api/v2/highlight/node/DTkJQ",
           "ReturnType": "Image"
         },
         {
@@ -6833,10 +6813,124 @@
           "NormalizedUri": null,
           "Uri": "/api/v2/folder/user/smugmuguser/SmugMug!size",
           "ReturnType": "Size"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/id/X4M5H",
+          "ReturnType": "Folder"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/node/X4M5H",
+          "ReturnType": "Node"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/user/smugmuguser",
+          "ReturnType": "User"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/highlight/node/X4M5H",
+          "ReturnType": "Image"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!highlightimage",
+          "ReturnType": "Image"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!folders",
+          "ReturnType": "Folder[]"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!folderlist",
+          "ReturnType": "FolderList"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!movefolders",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!sortfolders",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!albums",
+          "ReturnType": "Album[]"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!albumfromalbumtemplate",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!sortalbums",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!movealbums",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!albumlist",
+          "ReturnType": "AlbumList"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!pages",
+          "ReturnType": "Page[]"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!movepages",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!sortpages",
+          "ReturnType": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!grants",
+          "ReturnType": "Grant[]"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/folder/user/smugmuguser!size",
+          "ReturnType": "Size"
         }
       ]
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!parent\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}"
+    "Deprecated": "/api/v2/node/:nodeid/api/v2/node/:nodeid!children/api/v2/node/:nodeid!parent/api/v2/node/:nodeid!parent/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid!parent/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid!children/api/v2/node/:nodeid!parent/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid!children/api/v2/node/:nodeid!parent/api/v2/node/:nodeid!children/api/v2/node/:nodeid!parent/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid/api/v2/node/:nodeid"
   },
   "Size": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
@@ -7075,33 +7169,77 @@
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
       "$values": []
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid\"\r\n}"
+    "Deprecated": "/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid"
   },
   "AlbumList": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
     "Name": "AlbumList",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UrlPath",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
       "$values": []
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}"
+    "Deprecated": "/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children"
   },
   "FolderList": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
     "Name": "FolderList",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UrlPath",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "CanHaveFolder",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
       "$values": []
     },
-    "Deprecated": "{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}{\r\n  \"Alternative\": \"/api/v2/node/:nodeid!children\"\r\n}"
+    "Deprecated": "/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children/api/v2/node/:nodeid!children"
   },
   "ImageDownload": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
@@ -7596,31 +7734,31 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/id/Y2341",
+          "Uri": "/api/v2/folder/id/DTkJQ",
           "ReturnType": "Folder"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/node/Y2341!parent",
+          "Uri": "/api/v2/node/DTkJQ!parent",
           "ReturnType": "Node"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/node/Y2341!parents",
+          "Uri": "/api/v2/node/DTkJQ!parents",
           "ReturnType": "Node[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/highlight/node/Y2341",
+          "Uri": "/api/v2/highlight/node/DTkJQ",
           "ReturnType": "Image"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/node/Y2341!children",
+          "Uri": "/api/v2/node/DTkJQ!children",
           "ReturnType": "Node[]"
         },
         {
@@ -7706,15 +7844,35 @@
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
       "$values": [
         {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
           "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": "-Infinity",
-            "Max": "Infinity"
-          },
+          "IntegerLimits": null,
           "Name": "Part",
-          "Description": "",
-          "Deprecated": ""
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateAdded",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateModified",
+          "Description": null,
+          "Deprecated": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
@@ -7746,18 +7904,6 @@
             ]
           },
           "Name": "Status",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
-          "Name": "DateAdded",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.TimeStampProperty, SmugMugShared",
-          "Name": "DateModified",
           "Description": "",
           "Deprecated": ""
         }
@@ -7831,7 +7977,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Facebook",
           "Description": "",
@@ -7842,7 +7988,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Twitter",
           "Description": "",
@@ -7853,7 +7999,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Instagram",
           "Description": "",
@@ -7864,7 +8010,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Blogger",
           "Description": "",
@@ -7875,7 +8021,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Flickr",
           "Description": "",
@@ -7886,7 +8032,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "GooglePlus",
           "Description": "",
@@ -7897,7 +8043,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "LinkedIn",
           "Description": "",
@@ -7908,7 +8054,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Pinterest",
           "Description": "",
@@ -7919,7 +8065,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Tumblr",
           "Description": "",
@@ -7930,7 +8076,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Vimeo",
           "Description": "",
@@ -7941,7 +8087,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Wordpress",
           "Description": "",
@@ -7952,7 +8098,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "YouTube",
           "Description": "",
@@ -7963,7 +8109,7 @@
           "UriLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
             "Min": 0.0,
-            "Max": "Infinity"
+            "Max": 0.0
           },
           "Name": "Custom",
           "Description": "",
@@ -8579,7 +8725,77 @@
     "Name": "Contact",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "PrimaryEmail",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
+    },
+    "Methods": {
+      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/contact/MXcj24!grants",
+          "ReturnType": "Grant[]"
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
+          "NormalizedUri": null,
+          "Uri": "/api/v2/contact/MXcj24!emails",
+          "ReturnType": "ContactEmail[]"
+        }
+      ]
+    },
+    "Deprecated": ""
+  },
+  "ContactEmail": {
+    "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
+    "Name": "ContactEmail",
+    "Properties": {
+      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Email",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -8587,12 +8803,68 @@
     },
     "Deprecated": ""
   },
+  "Grant": {
+    "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
+    "Name": "Grant",
+    "Properties": {
+      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
+      "$values": []
+    },
+    "Methods": {
+      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
+      "$values": []
+    },
+    "Deprecated": "/api/v2/node/:nodeid!grants"
+  },
   "DeletedPage": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
     "Name": "DeletedPage",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UrlPath",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateAdded",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateDeleted",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateModified",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -8631,7 +8903,50 @@
     "Name": "DeletedFolder",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UrlPath",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateAdded",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateDeleted",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateModified",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -8670,7 +8985,50 @@
     "Name": "DeletedAlbum",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UrlPath",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Name",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateAdded",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateDeleted",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.DateTimeProperty, SmugMugShared",
+          "Name": "DateModified",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -8694,19 +9052,6 @@
   "RecoverDeletedAlbum": {
     "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
     "Name": "RecoverDeletedAlbum",
-    "Properties": {
-      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
-    },
-    "Methods": {
-      "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
-      "$values": []
-    },
-    "Deprecated": ""
-  },
-  "Grant": {
-    "$type": "SmugMug.Shared.Descriptors.Entity, SmugMugShared",
-    "Name": "Grant",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
       "$values": []
@@ -8834,7 +9179,32 @@
     "Name": "UserGuideState",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Complete",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Autorun",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -8928,7 +9298,34 @@
     "Name": "UserUploadLimits",
     "Properties": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
-      "$values": []
+      "$values": [
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Type",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "MimeTypes",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "MaxSize",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "MaxPixels",
+          "Description": null,
+          "Deprecated": null
+        }
+      ]
     },
     "Methods": {
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Method, SmugMugShared]], mscorlib",
@@ -9191,6 +9588,139 @@
       "$type": "System.Collections.Generic.List`1[[SmugMug.Shared.Descriptors.Property, SmugMugShared]], mscorlib",
       "$values": [
         {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "Uri",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.UnknownTypeProperty, SmugMugShared",
+          "Name": "UriDescription",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "AllowDownloads",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "CanRank",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Clean",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Comments",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "EXIF",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "External",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "FamilyEdit",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Filenames",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "FriendEdit",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Geography",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "HideOwner",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "PackagingBranding",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Printable",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
+          "IntegerLimits": null,
+          "Name": "ProofDays",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Protected",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Public",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Share",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "SquareThumbs",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "Watermark",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
+          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
+          "Name": "WorldSearchable",
+          "Description": null,
+          "Deprecated": null
+        },
+        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -9246,12 +9776,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "AllowDownloads",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -9282,60 +9806,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "CanRank",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Clean",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Comments",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "EXIF",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "External",
-          "Description": "An old setting that no longer has any function",
-          "Deprecated": "2015-09-08"
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "FamilyEdit",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Filenames",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "FriendEdit",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Geography",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.SelectProperty, SmugMugShared",
           "OptionCountLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -9351,12 +9821,6 @@
           },
           "Name": "Header",
           "Description": "Appearance",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "HideOwner",
-          "Description": "",
           "Deprecated": ""
         },
         {
@@ -9401,12 +9865,6 @@
           "Deprecated": ""
         },
         {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "PackagingBranding",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
           "$type": "SmugMug.Shared.Descriptors.StringProperty, SmugMugShared",
           "StringLimits": {
             "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
@@ -9425,41 +9883,6 @@
             "Max": 255.0
           },
           "Name": "PasswordHint",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Printable",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.IntegerProperty, SmugMugShared",
-          "IntegerLimits": {
-            "$type": "SmugMug.Shared.Descriptors.Limits, SmugMugShared",
-            "Min": "-Infinity",
-            "Max": "Infinity"
-          },
-          "Name": "ProofDays",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Protected",
-          "Description": "Right-Click Protection",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Public",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Share",
           "Description": "",
           "Deprecated": ""
         },
@@ -9518,24 +9941,6 @@
             ]
           },
           "Name": "SortMethod",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "SquareThumbs",
-          "Description": "",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "Watermark",
-          "Description": "Automatically apply watermark to uploaded images?",
-          "Deprecated": ""
-        },
-        {
-          "$type": "SmugMug.Shared.Descriptors.BooleanProperty, SmugMugShared",
-          "Name": "WorldSearchable",
           "Description": "",
           "Deprecated": ""
         }
