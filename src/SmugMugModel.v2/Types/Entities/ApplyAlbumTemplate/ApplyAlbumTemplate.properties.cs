@@ -6,52 +6,22 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class CatalogSkuPriceEntity : SmugMugEntity
+    public partial class ApplyAlbumTemplateEntity : SmugMugEntity
     {
-        private string _currency;
-        private float _price;
-        private string _responseLevel;
+        private string _albumTemplateUri;
         private string _uri;
         private string _uriDescription;
 
 
-        public string Currency {
+        public string AlbumTemplateUri {
             get {
-                return _currency;
+                return _albumTemplateUri;
             }
             set {
-                if (_currency != value)
+                if (_albumTemplateUri != value)
                 {
-                    _currency = value;
-                    NotifyPropertyValueChanged("Currency", _currency);
-                }
-            }
-        }
-
-
-        public float Price {
-            get {
-                return _price;
-            }
-            set {
-                if (_price != value)
-                {
-                    _price = value;
-                    NotifyPropertyValueChanged("Price", _price);
-                }
-            }
-        }
-
-
-        public string ResponseLevel {
-            get {
-                return _responseLevel;
-            }
-            set {
-                if (_responseLevel != value)
-                {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    _albumTemplateUri = value;
+                    NotifyPropertyValueChanged("AlbumTemplateUri", _albumTemplateUri);
                 }
             }
         }

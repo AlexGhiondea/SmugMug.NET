@@ -50,6 +50,18 @@ namespace SmugMug.v2.Types
             return default(NodeEntity[]); 
         }
 
+        public void node____movenodes (string param1)
+        {
+            // /node/(*)!movenodes 
+             
+        }
+
+        public GrantEntity[] node____grants (string param1)
+        {
+            // /node/(*)!grants 
+            return default(GrantEntity[]); 
+        }
+
         public NodeEntity node____parent (string param1)
         {
             // /node/(*)!parent 

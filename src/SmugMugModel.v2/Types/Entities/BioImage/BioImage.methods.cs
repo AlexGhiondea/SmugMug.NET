@@ -62,6 +62,30 @@ namespace SmugMug.v2.Types
             return default(CommentEntity[]); 
         }
 
+        public void image____rotate (string param1)
+        {
+            // /image/(*)!rotate 
+             
+        }
+
+        public ColorImageEntity image____color (string param1)
+        {
+            // /image/(*)!color 
+            return default(ColorImageEntity); 
+        }
+
+        public void image____crop (string param1)
+        {
+            // /image/(*)!crop 
+             
+        }
+
+        public void image____watermark (string param1)
+        {
+            // /image/(*)!watermark 
+             
+        }
+
         public ImageMetadataEntity image____metadata (string param1)
         {
             // /image/(*)!metadata 

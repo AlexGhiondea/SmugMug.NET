@@ -18,5 +18,18 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        public CatalogSkuEntity catalogsku___ (string param1)
+        {
+            // /catalog/sku/(*) 
+            return default(CatalogSkuEntity); 
+        }
+
+        public void catalogsku____buy (string param1)
+        {
+            // /catalog/sku/(*)!buy 
+             
+        }
     }
 }

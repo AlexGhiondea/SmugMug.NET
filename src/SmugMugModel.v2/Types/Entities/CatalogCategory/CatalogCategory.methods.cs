@@ -6,18 +6,24 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    [Obsolete]
-    public partial class GrantEntity : SmugMugEntity
+    public partial class CatalogCategoryEntity : SmugMugEntity
     {
-        public GrantEntity()
+        public CatalogCategoryEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public GrantEntity(OAuthToken oauthToken)
+        public CatalogCategoryEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;
+        }
+
+
+        public CatalogSubCategoryEntity[] catalogcategory____subcategories (string param1)
+        {
+            // /catalog/category/(*)!subcategories 
+            return default(CatalogSubCategoryEntity[]); 
         }
     }
 }

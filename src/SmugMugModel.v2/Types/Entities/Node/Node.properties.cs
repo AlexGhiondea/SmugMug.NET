@@ -8,6 +8,7 @@ namespace SmugMug.v2.Types
 {
     public partial class NodeEntity : SmugMugEntity
     {
+        private bool _autoRename;
         private DateTime _dateAdded;
         private DateTime _dateModified;
         private string _description;
@@ -24,6 +25,7 @@ namespace SmugMug.v2.Types
         private string _password;
         private string _passwordHint;
         private PrivacyEnum _privacy;
+        private bool _resetUrlName;
         private string _responseLevel;
         private SecurityTypeEnum _securityType;
         private SmugSearchableEnum _smugSearchable;
@@ -37,6 +39,20 @@ namespace SmugMug.v2.Types
         private string _urlPath;
         private string _webUri;
         private WorldSearchableEnum _worldSearchable;
+
+
+        public bool AutoRename {
+            get {
+                return _autoRename;
+            }
+            set {
+                if (_autoRename != value)
+                {
+                    _autoRename = value;
+                    NotifyPropertyValueChanged("AutoRename", _autoRename);
+                }
+            }
+        }
 
 
         public DateTime DateAdded {
@@ -258,6 +274,20 @@ namespace SmugMug.v2.Types
                 {
                     _privacy = value;
                     NotifyPropertyValueChanged("Privacy", _privacy);
+                }
+            }
+        }
+
+
+        public bool ResetUrlName {
+            get {
+                return _resetUrlName;
+            }
+            set {
+                if (_resetUrlName != value)
+                {
+                    _resetUrlName = value;
+                    NotifyPropertyValueChanged("ResetUrlName", _resetUrlName);
                 }
             }
         }

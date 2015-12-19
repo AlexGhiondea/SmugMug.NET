@@ -6,6 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
+    [Obsolete]
     public partial class PageEntity : SmugMugEntity
     {
         public PageEntity()

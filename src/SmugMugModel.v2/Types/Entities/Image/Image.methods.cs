@@ -6,6 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
+    [Obsolete]
     public partial class ImageEntity : SmugMugEntity
     {
         public ImageEntity()
@@ -26,12 +27,6 @@ namespace SmugMug.v2.Types
             return default(LargestImageEntity); 
         }
 
-        public LargestVideoEntity image____largestvideo (string param1)
-        {
-            // /image/(*)!largestvideo 
-            return default(LargestVideoEntity); 
-        }
-
         public ImageSizesEntity image____sizes (string param1)
         {
             // /image/(*)!sizes 
@@ -50,6 +45,12 @@ namespace SmugMug.v2.Types
             return default(AlbumEntity); 
         }
 
+        public ImageDownloadEntity image____download (string param1)
+        {
+            // /image/(*)!download 
+            return default(ImageDownloadEntity); 
+        }
+
         public UserEntity user___ (string param1)
         {
             // /user/(*) 
@@ -62,16 +63,28 @@ namespace SmugMug.v2.Types
             return default(CommentEntity[]); 
         }
 
-        public EmbedVideoEntity video____embed (string param1)
+        public void image____rotate (string param1)
         {
-            // /video/(*)!embed 
-            return default(EmbedVideoEntity); 
+            // /image/(*)!rotate 
+             
         }
 
-        public CSMILVideoEntity video____csmil (string param1)
+        public ColorImageEntity image____color (string param1)
         {
-            // /video/(*)!csmil 
-            return default(CSMILVideoEntity); 
+            // /image/(*)!color 
+            return default(ColorImageEntity); 
+        }
+
+        public void image____crop (string param1)
+        {
+            // /image/(*)!crop 
+             
+        }
+
+        public void image____watermark (string param1)
+        {
+            // /image/(*)!watermark 
+             
         }
 
         public ImageMetadataEntity image____metadata (string param1)
@@ -86,10 +99,22 @@ namespace SmugMug.v2.Types
             return default(CatalogSkuPriceEntity[]); 
         }
 
-        public ImageDownloadEntity image____download (string param1)
+        public LargestVideoEntity image____largestvideo (string param1)
         {
-            // /image/(*)!download 
-            return default(ImageDownloadEntity); 
+            // /image/(*)!largestvideo 
+            return default(LargestVideoEntity); 
+        }
+
+        public EmbedVideoEntity video____embed (string param1)
+        {
+            // /video/(*)!embed 
+            return default(EmbedVideoEntity); 
+        }
+
+        public CSMILVideoEntity video____csmil (string param1)
+        {
+            // /video/(*)!csmil 
+            return default(CSMILVideoEntity); 
         }
     }
 }

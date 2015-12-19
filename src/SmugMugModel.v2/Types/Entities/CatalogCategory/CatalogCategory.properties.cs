@@ -6,52 +6,52 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class CatalogSkuPriceEntity : SmugMugEntity
+    public partial class CatalogCategoryEntity : SmugMugEntity
     {
-        private string _currency;
-        private float _price;
-        private string _responseLevel;
+        private string _description;
+        private string _name;
+        private long _sortIndex;
         private string _uri;
         private string _uriDescription;
 
 
-        public string Currency {
+        public string Description {
             get {
-                return _currency;
+                return _description;
             }
             set {
-                if (_currency != value)
+                if (_description != value)
                 {
-                    _currency = value;
-                    NotifyPropertyValueChanged("Currency", _currency);
+                    _description = value;
+                    NotifyPropertyValueChanged("Description", _description);
                 }
             }
         }
 
 
-        public float Price {
+        public string Name {
             get {
-                return _price;
+                return _name;
             }
             set {
-                if (_price != value)
+                if (_name != value)
                 {
-                    _price = value;
-                    NotifyPropertyValueChanged("Price", _price);
+                    _name = value;
+                    NotifyPropertyValueChanged("Name", _name);
                 }
             }
         }
 
 
-        public string ResponseLevel {
+        public long SortIndex {
             get {
-                return _responseLevel;
+                return _sortIndex;
             }
             set {
-                if (_responseLevel != value)
+                if (_sortIndex != value)
                 {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    _sortIndex = value;
+                    NotifyPropertyValueChanged("SortIndex", _sortIndex);
                 }
             }
         }

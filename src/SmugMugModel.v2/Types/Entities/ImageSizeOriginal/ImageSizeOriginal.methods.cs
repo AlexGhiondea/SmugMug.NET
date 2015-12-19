@@ -6,15 +6,14 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    [Obsolete]
-    public partial class GrantEntity : SmugMugEntity
+    public partial class ImageSizeOriginalEntity : SmugMugEntity
     {
-        public GrantEntity()
+        public ImageSizeOriginalEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public GrantEntity(OAuthToken oauthToken)
+        public ImageSizeOriginalEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;

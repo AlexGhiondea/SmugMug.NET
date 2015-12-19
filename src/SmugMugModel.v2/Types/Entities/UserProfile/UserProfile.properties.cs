@@ -8,8 +8,10 @@ namespace SmugMug.v2.Types
 {
     public partial class UserProfileEntity : SmugMugEntity
     {
+        private string _bioImageUri;
         private string _bioText;
         private string _blogger;
+        private string _coverImageUri;
         private string _custom;
         private string _displayName;
         private string _facebook;
@@ -28,6 +30,20 @@ namespace SmugMug.v2.Types
         private string _vimeo;
         private string _wordpress;
         private string _youTube;
+
+
+        public string BioImageUri {
+            get {
+                return _bioImageUri;
+            }
+            set {
+                if (_bioImageUri != value)
+                {
+                    _bioImageUri = value;
+                    NotifyPropertyValueChanged("BioImageUri", _bioImageUri);
+                }
+            }
+        }
 
 
         public string BioText {
@@ -53,6 +69,20 @@ namespace SmugMug.v2.Types
                 {
                     _blogger = value;
                     NotifyPropertyValueChanged("Blogger", _blogger);
+                }
+            }
+        }
+
+
+        public string CoverImageUri {
+            get {
+                return _coverImageUri;
+            }
+            set {
+                if (_coverImageUri != value)
+                {
+                    _coverImageUri = value;
+                    NotifyPropertyValueChanged("CoverImageUri", _coverImageUri);
                 }
             }
         }

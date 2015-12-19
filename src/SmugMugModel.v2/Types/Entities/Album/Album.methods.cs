@@ -6,6 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
+    [Obsolete]
     public partial class AlbumEntity : SmugMugEntity
     {
         public AlbumEntity()
@@ -38,15 +39,15 @@ namespace SmugMug.v2.Types
             return default(UserEntity); 
         }
 
-        public FolderEntity folderuser___Family___ (string param1, string param2)
+        public FolderEntity folderuserghiondea___ (string param1)
         {
-            // /folder/user/(*)/Family/(*) 
+            // /folder/user/ghiondea/(*) 
             return default(FolderEntity); 
         }
 
-        public FolderEntity[] folderuser___Family____parents (string param1, string param2)
+        public FolderEntity[] folderuserghiondea____parents (string param1)
         {
-            // /folder/user/(*)/Family/(*)!parents 
+            // /folder/user/ghiondea/(*)!parents 
             return default(FolderEntity[]); 
         }
 
@@ -86,10 +87,82 @@ namespace SmugMug.v2.Types
             return default(CommentEntity[]); 
         }
 
+        public void album____moveimages (string param1)
+        {
+            // /album/(*)!moveimages 
+             
+        }
+
+        public void album____collectimages (string param1)
+        {
+            // /album/(*)!collectimages 
+             
+        }
+
+        public ApplyAlbumTemplateEntity album____applyalbumtemplate (string param1)
+        {
+            // /album/(*)!applyalbumtemplate 
+            return default(ApplyAlbumTemplateEntity); 
+        }
+
+        public void album____deleteimages (string param1)
+        {
+            // /album/(*)!deleteimages 
+             
+        }
+
+        public void album____uploadfromuri (string param1)
+        {
+            // /album/(*)!uploadfromuri 
+             
+        }
+
+        public GrantEntity[] album____grants (string param1)
+        {
+            // /album/(*)!grants 
+            return default(GrantEntity[]); 
+        }
+
+        public DownloadEntity[] album____download (string param1)
+        {
+            // /album/(*)!download 
+            return default(DownloadEntity[]); 
+        }
+
         public CatalogSkuPriceEntity[] album____prices (string param1)
         {
             // /album/(*)!prices 
             return default(CatalogSkuPriceEntity[]); 
+        }
+
+        public WatermarkEntity watermark___ (string param1)
+        {
+            // /watermark/(*) 
+            return default(WatermarkEntity); 
+        }
+
+        public FolderEntity folderuser___EthanAlbert___ (string param1, string param2)
+        {
+            // /folder/user/(*)/Ethan-Albert/(*) 
+            return default(FolderEntity); 
+        }
+
+        public FolderEntity[] folderuser___EthanAlbert____parents (string param1, string param2)
+        {
+            // /folder/user/(*)/Ethan-Albert/(*)!parents 
+            return default(FolderEntity[]); 
+        }
+
+        public FolderEntity folderuser___Family___ (string param1, string param2)
+        {
+            // /folder/user/(*)/Family/(*) 
+            return default(FolderEntity); 
+        }
+
+        public FolderEntity[] folderuser___Family____parents (string param1, string param2)
+        {
+            // /folder/user/(*)/Family/(*)!parents 
+            return default(FolderEntity[]); 
         }
 
         public FolderEntity folderuser___SmugMug___ (string param1, string param2)
@@ -102,12 +175,6 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)/SmugMug/(*)!parents 
             return default(FolderEntity[]); 
-        }
-
-        public DownloadEntity[] album____download (string param1)
-        {
-            // /album/(*)!download 
-            return default(DownloadEntity[]); 
         }
     }
 }

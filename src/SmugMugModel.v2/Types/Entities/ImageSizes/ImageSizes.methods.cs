@@ -68,6 +68,24 @@ namespace SmugMug.v2.Types
             return default(ImageSizeX3LargeEntity); 
         }
 
+        public ImageSizeOriginalEntity image____sizeoriginal (string param1)
+        {
+            // /image/(*)!sizeoriginal 
+            return default(ImageSizeOriginalEntity); 
+        }
+
+        public ImageSizeCustomEntity image____sizecustom (string param1)
+        {
+            // /image/(*)!sizecustom 
+            return default(ImageSizeCustomEntity); 
+        }
+
+        public LargestImageEntity image____largestimage (string param1)
+        {
+            // /image/(*)!largestimage 
+            return default(LargestImageEntity); 
+        }
+
         public VideoSize1920Entity video____size1920 (string param1)
         {
             // /video/(*)!size1920 
@@ -120,18 +138,6 @@ namespace SmugMug.v2.Types
         {
             // /image/(*)!largestvideo 
             return default(LargestVideoEntity); 
-        }
-
-        public ImageSizeCustomEntity image____sizecustom (string param1)
-        {
-            // /image/(*)!sizecustom 
-            return default(ImageSizeCustomEntity); 
-        }
-
-        public LargestImageEntity image____largestimage (string param1)
-        {
-            // /image/(*)!largestimage 
-            return default(LargestImageEntity); 
         }
     }
 }

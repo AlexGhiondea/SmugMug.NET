@@ -6,18 +6,24 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    [Obsolete]
-    public partial class GrantEntity : SmugMugEntity
+    public partial class CatalogVendorEntity : SmugMugEntity
     {
-        public GrantEntity()
+        public CatalogVendorEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public GrantEntity(OAuthToken oauthToken)
+        public CatalogVendorEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;
+        }
+
+
+        public CatalogProductEntity[] catalogvendor____products (string param1)
+        {
+            // /catalog/vendor/(*)!products 
+            return default(CatalogProductEntity[]); 
         }
     }
 }

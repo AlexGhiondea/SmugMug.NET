@@ -6,52 +6,23 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class CatalogSkuPriceEntity : SmugMugEntity
+    public partial class ColorImageEntity : SmugMugEntity
     {
-        private string _currency;
-        private float _price;
-        private string _responseLevel;
+        private long _height;
         private string _uri;
         private string _uriDescription;
+        private long _width;
 
 
-        public string Currency {
+        public long Height {
             get {
-                return _currency;
+                return _height;
             }
             set {
-                if (_currency != value)
+                if (_height != value)
                 {
-                    _currency = value;
-                    NotifyPropertyValueChanged("Currency", _currency);
-                }
-            }
-        }
-
-
-        public float Price {
-            get {
-                return _price;
-            }
-            set {
-                if (_price != value)
-                {
-                    _price = value;
-                    NotifyPropertyValueChanged("Price", _price);
-                }
-            }
-        }
-
-
-        public string ResponseLevel {
-            get {
-                return _responseLevel;
-            }
-            set {
-                if (_responseLevel != value)
-                {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    _height = value;
+                    NotifyPropertyValueChanged("Height", _height);
                 }
             }
         }
@@ -80,6 +51,20 @@ namespace SmugMug.v2.Types
                 {
                     _uriDescription = value;
                     NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                }
+            }
+        }
+
+
+        public long Width {
+            get {
+                return _width;
+            }
+            set {
+                if (_width != value)
+                {
+                    _width = value;
+                    NotifyPropertyValueChanged("Width", _width);
                 }
             }
         }

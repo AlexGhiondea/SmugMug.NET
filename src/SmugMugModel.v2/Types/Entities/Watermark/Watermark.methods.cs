@@ -18,5 +18,18 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        public UserEntity user___ (string param1)
+        {
+            // /user/(*) 
+            return default(UserEntity); 
+        }
+
+        public ImageEntity image___ (string param1)
+        {
+            // /image/(*) 
+            return default(ImageEntity); 
+        }
     }
 }
