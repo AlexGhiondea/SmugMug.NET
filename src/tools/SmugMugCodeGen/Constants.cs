@@ -68,5 +68,7 @@ namespace SmugMug.v2.Types
             _oauthToken = oauthToken;
         }}
 ";
+
+        public const string ParameterNameBase = "param";
     }
 }

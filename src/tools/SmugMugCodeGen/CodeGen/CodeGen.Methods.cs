@@ -6,6 +6,7 @@ using SmugMugShared;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System;
 
 namespace SmugMugCodeGen
 {
@@ -42,7 +43,7 @@ namespace SmugMugCodeGen
                 methodName = Helpers.NormalizeString(uri, '!', '(', ')', '*');
                 parameters = GenerateParams(paramCount);
 
-                returnCode = returnType == "void" ? string.Empty : string.Format("return default({0});", returnType);
+                returnCode = GenerateMethodCall(uri, returnType, paramCount);
 
                 string key = returnType + " " + methodName;
                 if (methodMap.Contains(key))
@@ -60,6 +61,51 @@ namespace SmugMugCodeGen
             }
             return sb;
         }
+        private static readonly string[] UriParameterDelimiter = new string[] { "(*)" };
+        private static string GenerateMethodCall(string uri, string returnType, int parameterCount)
+        {
+            if (returnType == "void")
+                return "return;";
+
+            // we need to first reconstruct the uri to take into account the parameters.
+            string methodCall = returnType.TrimEnd().EndsWith("[]") ? "RetrieveEntityArrayAsync" : "RetrieveEntityAsync";
+
+            StringBuilder sb = new StringBuilder();
+
+            // the code that puts the uri together with the parameters.
+            sb.AppendLine(CreateRequestUriWithParameters(uri, parameterCount));
+            sb.AppendLine();
+            sb.AppendFormat("            return {0}<{1}>(requestUri).Result;", methodCall, returnType.Replace("[]", ""));
+            return sb.ToString();
+        }
+
+        private static string CreateRequestUriWithParameters(string uri, int parameterCount)
+        {
+            StringBuilder requestUri = new StringBuilder();
+            requestUri.Append("string requestUri = string.Format(\"");
+            requestUri.Append(SmugMug.v2.Constants.Addresses.SmugMugApi);
+            string[] parts = uri.Split(UriParameterDelimiter, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < parts.Length; i++)
+            {
+                requestUri.Append(parts[i]);
+                requestUri.Append("{");
+                requestUri.Append(i);
+                requestUri.Append("}");
+            }
+            requestUri.Append("\", "); // close format string;
+
+            for (int i = 0; i < parameterCount; i++)
+            {
+                requestUri.Append(Constants.ParameterNameBase);
+                requestUri.Append(i + 1);
+                if (i != parameterCount - 1)
+                    requestUri.Append(",");
+            }
+
+            requestUri.Append(");"); // close string.format
+            return requestUri.ToString();
+        }
 
         private static string GenerateParams(int count)
         {
@@ -70,7 +116,7 @@ namespace SmugMugCodeGen
 
             for (int i = 0; i < count; i++)
             {
-                sb.AppendFormat("string param{0}", i + 1);
+                sb.AppendFormat("string {0}{1}", Constants.ParameterNameBase, i + 1);
                 if (i + 1 < count)
                     sb.Append(", ");
             }
