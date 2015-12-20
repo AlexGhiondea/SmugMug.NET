@@ -23,7 +23,14 @@ namespace SmugMugCodeGen
 ";
 
         public const string MethodDefinition = @"
-        public {0} {1} ({2})
+        public async Task<{0}> {1} ({2})
+        {{
+            // {3} 
+            {4} 
+        }}";
+
+        public const string VoidMethodDefinition = @"
+        public async Task {1} ({2})
         {{
             // {3} 
             {4} 
@@ -45,7 +52,7 @@ namespace SmugMug.v2.Types
         public const string ClassDefinition = @"// Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System;
+using System;{3}
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -70,5 +77,6 @@ namespace SmugMug.v2.Types
 ";
 
         public const string ParameterNameBase = "param";
+        public const string VoidMethodReturnType = "Task";
     }
 }

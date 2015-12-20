@@ -24,7 +24,7 @@ namespace SmugMugCodeGen
             {
                 string returnType, methodName, uri, returnCode, parameters;
 
-                returnType = "void"; // this is the default
+                returnType = Constants.VoidMethodReturnType; // this is the default
                 if (!string.IsNullOrEmpty(item.ReturnType))
                 {
                     returnType = item.ReturnType;
@@ -52,7 +52,11 @@ namespace SmugMugCodeGen
                 }
 
                 methodMap.Add(key);
-                sb.AppendLine(string.Format(Constants.MethodDefinition,
+
+                string methodDefinitionFormat = returnType == Constants.VoidMethodReturnType ?
+                                                    Constants.VoidMethodDefinition :
+                                                    Constants.MethodDefinition;
+                sb.AppendLine(string.Format(methodDefinitionFormat,
                     /*return type*/returnType,
                     /*method name*/methodName,
                     /*parameters*/parameters,
@@ -64,18 +68,32 @@ namespace SmugMugCodeGen
         private static readonly string[] UriParameterDelimiter = new string[] { "(*)" };
         private static string GenerateMethodCall(string uri, string returnType, int parameterCount)
         {
-            if (returnType == "void")
-                return "return;";
+            string methodCall, awaitStatement;
+
+            if (returnType == Constants.VoidMethodReturnType)
+            {
+                methodCall = "GetRequestAsync";
+                awaitStatement = "await {0}(requestUri);";
+            }
+            else
+            {
+                methodCall = returnType.TrimEnd().EndsWith("[]") ?
+                                "RetrieveEntityArrayAsync" :
+                                "RetrieveEntityAsync";
+                awaitStatement = "await {0}<{1}>(requestUri);";
+            }
 
             // we need to first reconstruct the uri to take into account the parameters.
-            string methodCall = returnType.TrimEnd().EndsWith("[]") ? "RetrieveEntityArrayAsync" : "RetrieveEntityAsync";
 
             StringBuilder sb = new StringBuilder();
 
             // the code that puts the uri together with the parameters.
             sb.AppendLine(CreateRequestUriWithParameters(uri, parameterCount));
             sb.AppendLine();
-            sb.AppendFormat("            return {0}<{1}>(requestUri).Result;", methodCall, returnType.Replace("[]", ""));
+            if (returnType != "Task")
+                sb.Append("            return ");
+
+            sb.AppendFormat(awaitStatement, methodCall, returnType.Replace("[]", ""));
             return sb.ToString();
         }
 
