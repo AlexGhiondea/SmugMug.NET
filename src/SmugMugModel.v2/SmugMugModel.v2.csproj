@@ -98,6 +98,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Caption\Caption.properties.cs" />
+    <Compile Include="Types\Entities\Caption\Caption.methods.cs" />
     <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.methods.cs" />
     <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.properties.cs" />
     <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.methods.cs" />
