@@ -91,7 +91,7 @@ namespace SmugMugCodeGen
 
         private static string GetObsoleteString(string deprecated)
         {
-            if (string.IsNullOrEmpty(deprecated))
+            //if (string.IsNullOrEmpty(deprecated))
                 return string.Empty;
 
             StringBuilder obsolete = new StringBuilder();
