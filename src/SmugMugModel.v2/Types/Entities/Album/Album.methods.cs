@@ -124,18 +124,18 @@ namespace SmugMug.v2.Types
             return; 
         }
 
-        public FolderEntity folderusersmugmuguser___ (string param1)
+        public FolderEntity folderuser______ (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}", param1);
+            // /folder/user/(*)/(*) 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}", param1,param2);
 
             return RetrieveEntityAsync<FolderEntity>(requestUri).Result; 
         }
 
-        public FolderEntity[] folderusersmugmuguser____parents (string param1)
+        public FolderEntity[] folderuser_______parents (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!parents 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!parents{1}", param1);
+            // /folder/user/(*)/(*)!parents 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!parents{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<FolderEntity>(requestUri).Result; 
         }

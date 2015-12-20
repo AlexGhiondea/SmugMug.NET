@@ -142,125 +142,125 @@ namespace SmugMug.v2.Types
             return; 
         }
 
-        public void folderusersmugmuguser____albumfromalbumtemplate (string param1)
+        public void folderuser_______albumfromalbumtemplate (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!albumfromalbumtemplate 
+            // /folder/user/(*)/(*)!albumfromalbumtemplate 
             return; 
         }
 
-        public AlbumListEntity folderusersmugmuguser____albumlist (string param1)
+        public AlbumListEntity folderuser_______albumlist (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!albumlist 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!albumlist{1}", param1);
+            // /folder/user/(*)/(*)!albumlist 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!albumlist{2}", param1,param2);
 
             return RetrieveEntityAsync<AlbumListEntity>(requestUri).Result; 
         }
 
-        public AlbumEntity[] folderusersmugmuguser____albums (string param1)
+        public AlbumEntity[] folderuser_______albums (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!albums 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!albums{1}", param1);
+            // /folder/user/(*)/(*)!albums 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!albums{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<AlbumEntity>(requestUri).Result; 
         }
 
-        public FolderListEntity folderusersmugmuguser____folderlist (string param1)
+        public FolderListEntity folderuser_______folderlist (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!folderlist 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!folderlist{1}", param1);
+            // /folder/user/(*)/(*)!folderlist 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!folderlist{2}", param1,param2);
 
             return RetrieveEntityAsync<FolderListEntity>(requestUri).Result; 
         }
 
-        public FolderEntity[] folderusersmugmuguser____folders (string param1)
+        public FolderEntity[] folderuser_______folders (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!folders 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!folders{1}", param1);
+            // /folder/user/(*)/(*)!folders 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!folders{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<FolderEntity>(requestUri).Result; 
         }
 
-        public GrantEntity[] folderusersmugmuguser____grants (string param1)
+        public GrantEntity[] folderuser_______grants (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!grants 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!grants{1}", param1);
+            // /folder/user/(*)/(*)!grants 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!grants{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<GrantEntity>(requestUri).Result; 
         }
 
-        public ImageEntity folderusersmugmuguser____highlightimage (string param1)
+        public ImageEntity folderuser_______highlightimage (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!highlightimage 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!highlightimage{1}", param1);
+            // /folder/user/(*)/(*)!highlightimage 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!highlightimage{2}", param1,param2);
 
             return RetrieveEntityAsync<ImageEntity>(requestUri).Result; 
         }
 
-        public void folderusersmugmuguser____movealbums (string param1)
+        public void folderuser_______movealbums (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!movealbums 
+            // /folder/user/(*)/(*)!movealbums 
             return; 
         }
 
-        public void folderusersmugmuguser____movefolders (string param1)
+        public void folderuser_______movefolders (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!movefolders 
+            // /folder/user/(*)/(*)!movefolders 
             return; 
         }
 
-        public void folderusersmugmuguser____movepages (string param1)
+        public void folderuser_______movepages (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!movepages 
+            // /folder/user/(*)/(*)!movepages 
             return; 
         }
 
-        public PageEntity[] folderusersmugmuguser____pages (string param1)
+        public PageEntity[] folderuser_______pages (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!pages 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!pages{1}", param1);
+            // /folder/user/(*)/(*)!pages 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!pages{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<PageEntity>(requestUri).Result; 
         }
 
-        public FolderEntity folderusersmugmuguser____parent (string param1)
+        public FolderEntity folderuser_______parent (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!parent 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!parent{1}", param1);
+            // /folder/user/(*)/(*)!parent 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!parent{2}", param1,param2);
 
             return RetrieveEntityAsync<FolderEntity>(requestUri).Result; 
         }
 
-        public FolderEntity[] folderusersmugmuguser____parents (string param1)
+        public FolderEntity[] folderuser_______parents (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!parents 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!parents{1}", param1);
+            // /folder/user/(*)/(*)!parents 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!parents{2}", param1,param2);
 
             return RetrieveEntityArrayAsync<FolderEntity>(requestUri).Result; 
         }
 
-        public SizeEntity folderusersmugmuguser____size (string param1)
+        public SizeEntity folderuser_______size (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!size 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/smugmuguser/{0}!size{1}", param1);
+            // /folder/user/(*)/(*)!size 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}/{1}!size{2}", param1,param2);
 
             return RetrieveEntityAsync<SizeEntity>(requestUri).Result; 
         }
 
-        public void folderusersmugmuguser____sortalbums (string param1)
+        public void folderuser_______sortalbums (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!sortalbums 
+            // /folder/user/(*)/(*)!sortalbums 
             return; 
         }
 
-        public void folderusersmugmuguser____sortfolders (string param1)
+        public void folderuser_______sortfolders (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!sortfolders 
+            // /folder/user/(*)/(*)!sortfolders 
             return; 
         }
 
-        public void folderusersmugmuguser____sortpages (string param1)
+        public void folderuser_______sortpages (string param1, string param2)
         {
-            // /folder/user/smugmuguser/(*)!sortpages 
+            // /folder/user/(*)/(*)!sortpages 
             return; 
         }
 
