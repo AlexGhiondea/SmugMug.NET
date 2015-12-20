@@ -18,5 +18,18 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        public ContactEmailEntity[] contact____emails (string param1)
+        {
+            // /contact/(*)!emails 
+            return default(ContactEmailEntity[]); 
+        }
+
+        public GrantEntity[] contact____grants (string param1)
+        {
+            // /contact/(*)!grants 
+            return default(GrantEntity[]); 
+        }
     }
 }

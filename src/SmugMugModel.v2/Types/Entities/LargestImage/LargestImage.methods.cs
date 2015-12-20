@@ -20,6 +20,12 @@ namespace SmugMug.v2.Types
         }
 
 
+        public ImageSizeX3LargeEntity image____sizex3large (string param1)
+        {
+            // /image/(*)!sizex3large 
+            return default(ImageSizeX3LargeEntity); 
+        }
+
         public ImageSizeOriginalEntity image____sizeoriginal (string param1)
         {
             // /image/(*)!sizeoriginal 
@@ -30,12 +36,6 @@ namespace SmugMug.v2.Types
         {
             // /image/(*)!sizexlarge 
             return default(ImageSizeXLargeEntity); 
-        }
-
-        public ImageSizeX3LargeEntity image____sizex3large (string param1)
-        {
-            // /image/(*)!sizex3large 
-            return default(ImageSizeX3LargeEntity); 
         }
     }
 }

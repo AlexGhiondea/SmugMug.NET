@@ -20,16 +20,16 @@ namespace SmugMug.v2.Types
         }
 
 
-        public UserEntity user___ (string param1)
-        {
-            // /user/(*) 
-            return default(UserEntity); 
-        }
-
         public RecoverDeletedPageEntity deletedpage____recover (string param1)
         {
             // /deleted/page/(*)!recover 
             return default(RecoverDeletedPageEntity); 
+        }
+
+        public UserEntity user___ (string param1)
+        {
+            // /user/(*) 
+            return default(UserEntity); 
         }
     }
 }

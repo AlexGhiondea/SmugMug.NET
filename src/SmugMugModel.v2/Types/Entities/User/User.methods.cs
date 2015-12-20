@@ -20,22 +20,10 @@ namespace SmugMug.v2.Types
         }
 
 
-        public BioImageEntity user____bioimage (string param1)
+        public FolderEntity folderuser___ (string param1)
         {
-            // /user/(*)!bioimage 
-            return default(BioImageEntity); 
-        }
-
-        public CoverImageEntity user____coverimage (string param1)
-        {
-            // /user/(*)!coverimage 
-            return default(CoverImageEntity); 
-        }
-
-        public UserProfileEntity user____profile (string param1)
-        {
-            // /user/(*)!profile 
-            return default(UserProfileEntity); 
+            // /folder/user/(*) 
+            return default(FolderEntity); 
         }
 
         public NodeEntity node___ (string param1)
@@ -44,58 +32,10 @@ namespace SmugMug.v2.Types
             return default(NodeEntity); 
         }
 
-        public FolderEntity folderuser___ (string param1)
-        {
-            // /folder/user/(*) 
-            return default(FolderEntity); 
-        }
-
         public AlbumEntity[] user____albums (string param1)
         {
             // /user/(*)!albums 
             return default(AlbumEntity[]); 
-        }
-
-        public ImageEntity[] user____geomedia (string param1)
-        {
-            // /user/(*)!geomedia 
-            return default(ImageEntity[]); 
-        }
-
-        public ImageEntity[] user____popularmedia (string param1)
-        {
-            // /user/(*)!popularmedia 
-            return default(ImageEntity[]); 
-        }
-
-        public AlbumEntity[] user____featuredalbums (string param1)
-        {
-            // /user/(*)!featuredalbums 
-            return default(AlbumEntity[]); 
-        }
-
-        public ImageEntity[] user____recentimages (string param1)
-        {
-            // /user/(*)!recentimages 
-            return default(ImageEntity[]); 
-        }
-
-        public ImageEntity[] user____imagesearch (string param1)
-        {
-            // /user/(*)!imagesearch 
-            return default(ImageEntity[]); 
-        }
-
-        public UserTopKeywordsEntity user____topkeywords (string param1)
-        {
-            // /user/(*)!topkeywords 
-            return default(UserTopKeywordsEntity); 
-        }
-
-        public FolderAlbumPageEntity user____urlpathlookup (string param1)
-        {
-            // /user/(*)!urlpathlookup 
-            return default(FolderAlbumPageEntity); 
         }
 
         public AlbumTemplateEntity[] user____albumtemplates (string param1)
@@ -104,34 +44,16 @@ namespace SmugMug.v2.Types
             return default(AlbumTemplateEntity[]); 
         }
 
-        public void user____sortfeaturedalbums (string param1)
+        public BioImageEntity user____bioimage (string param1)
         {
-            // /user/(*)!sortfeaturedalbums 
-             
+            // /user/(*)!bioimage 
+            return default(BioImageEntity); 
         }
 
-        public TaskEntity[] user____tasks (string param1)
+        public ContactEntity[] user____contacts (string param1)
         {
-            // /user/(*)!tasks 
-            return default(TaskEntity[]); 
-        }
-
-        public WatermarkEntity[] user____watermarks (string param1)
-        {
-            // /user/(*)!watermarks 
-            return default(WatermarkEntity[]); 
-        }
-
-        public PrintmarkEntity[] user____printmarks (string param1)
-        {
-            // /user/(*)!printmarks 
-            return default(PrintmarkEntity[]); 
-        }
-
-        public UserUploadLimitsEntity user____uploadlimits (string param1)
-        {
-            // /user/(*)!uploadlimits 
-            return default(UserUploadLimitsEntity); 
+            // /user/(*)!contacts 
+            return default(ContactEntity[]); 
         }
 
         public UserCouponEntity[] user____coupons (string param1)
@@ -140,40 +62,10 @@ namespace SmugMug.v2.Types
             return default(UserCouponEntity[]); 
         }
 
-        public QuickNewsEntity[] user____latestquicknews (string param1)
+        public CoverImageEntity user____coverimage (string param1)
         {
-            // /user/(*)!latestquicknews 
-            return default(QuickNewsEntity[]); 
-        }
-
-        public UserGuideStateEntity[] user____guides (string param1)
-        {
-            // /user/(*)!guides 
-            return default(UserGuideStateEntity[]); 
-        }
-
-        public UserHideGuidesEntity user____hideguides (string param1)
-        {
-            // /user/(*)!hideguides 
-            return default(UserHideGuidesEntity); 
-        }
-
-        public FeaturesEntity user____features (string param1)
-        {
-            // /user/(*)!features 
-            return default(FeaturesEntity); 
-        }
-
-        public GrantEntity[] user____grants (string param1)
-        {
-            // /user/(*)!grants 
-            return default(GrantEntity[]); 
-        }
-
-        public ImageEntity[] user____duplicateimagesearch (string param1)
-        {
-            // /user/(*)!duplicateimagesearch 
-            return default(ImageEntity[]); 
+            // /user/(*)!coverimage 
+            return default(CoverImageEntity); 
         }
 
         public DeletedAlbumEntity[] user____deletedalbums (string param1)
@@ -194,10 +86,118 @@ namespace SmugMug.v2.Types
             return default(DeletedPageEntity[]); 
         }
 
-        public ContactEntity[] user____contacts (string param1)
+        public ImageEntity[] user____duplicateimagesearch (string param1)
         {
-            // /user/(*)!contacts 
-            return default(ContactEntity[]); 
+            // /user/(*)!duplicateimagesearch 
+            return default(ImageEntity[]); 
+        }
+
+        public AlbumEntity[] user____featuredalbums (string param1)
+        {
+            // /user/(*)!featuredalbums 
+            return default(AlbumEntity[]); 
+        }
+
+        public FeaturesEntity user____features (string param1)
+        {
+            // /user/(*)!features 
+            return default(FeaturesEntity); 
+        }
+
+        public ImageEntity[] user____geomedia (string param1)
+        {
+            // /user/(*)!geomedia 
+            return default(ImageEntity[]); 
+        }
+
+        public GrantEntity[] user____grants (string param1)
+        {
+            // /user/(*)!grants 
+            return default(GrantEntity[]); 
+        }
+
+        public UserGuideStateEntity[] user____guides (string param1)
+        {
+            // /user/(*)!guides 
+            return default(UserGuideStateEntity[]); 
+        }
+
+        public UserHideGuidesEntity user____hideguides (string param1)
+        {
+            // /user/(*)!hideguides 
+            return default(UserHideGuidesEntity); 
+        }
+
+        public ImageEntity[] user____imagesearch (string param1)
+        {
+            // /user/(*)!imagesearch 
+            return default(ImageEntity[]); 
+        }
+
+        public QuickNewsEntity[] user____latestquicknews (string param1)
+        {
+            // /user/(*)!latestquicknews 
+            return default(QuickNewsEntity[]); 
+        }
+
+        public ImageEntity[] user____popularmedia (string param1)
+        {
+            // /user/(*)!popularmedia 
+            return default(ImageEntity[]); 
+        }
+
+        public PrintmarkEntity[] user____printmarks (string param1)
+        {
+            // /user/(*)!printmarks 
+            return default(PrintmarkEntity[]); 
+        }
+
+        public UserProfileEntity user____profile (string param1)
+        {
+            // /user/(*)!profile 
+            return default(UserProfileEntity); 
+        }
+
+        public ImageEntity[] user____recentimages (string param1)
+        {
+            // /user/(*)!recentimages 
+            return default(ImageEntity[]); 
+        }
+
+        public void user____sortfeaturedalbums (string param1)
+        {
+            // /user/(*)!sortfeaturedalbums 
+             
+        }
+
+        public TaskEntity[] user____tasks (string param1)
+        {
+            // /user/(*)!tasks 
+            return default(TaskEntity[]); 
+        }
+
+        public UserTopKeywordsEntity user____topkeywords (string param1)
+        {
+            // /user/(*)!topkeywords 
+            return default(UserTopKeywordsEntity); 
+        }
+
+        public UserUploadLimitsEntity user____uploadlimits (string param1)
+        {
+            // /user/(*)!uploadlimits 
+            return default(UserUploadLimitsEntity); 
+        }
+
+        public FolderAlbumPageEntity user____urlpathlookup (string param1)
+        {
+            // /user/(*)!urlpathlookup 
+            return default(FolderAlbumPageEntity); 
+        }
+
+        public WatermarkEntity[] user____watermarks (string param1)
+        {
+            // /user/(*)!watermarks 
+            return default(WatermarkEntity[]); 
         }
     }
 }

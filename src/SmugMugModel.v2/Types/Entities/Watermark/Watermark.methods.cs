@@ -20,16 +20,16 @@ namespace SmugMug.v2.Types
         }
 
 
-        public UserEntity user___ (string param1)
-        {
-            // /user/(*) 
-            return default(UserEntity); 
-        }
-
         public ImageEntity image___ (string param1)
         {
             // /image/(*) 
             return default(ImageEntity); 
+        }
+
+        public UserEntity user___ (string param1)
+        {
+            // /user/(*) 
+            return default(UserEntity); 
         }
     }
 }

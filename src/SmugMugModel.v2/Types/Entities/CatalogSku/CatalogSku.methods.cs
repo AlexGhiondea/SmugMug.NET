@@ -26,10 +26,10 @@ namespace SmugMug.v2.Types
             return default(CatalogProductEntity); 
         }
 
-        public CatalogSkuTypeEntity catalog___option___ (string param1, string param2)
+        public void catalogsku____buy (string param1)
         {
-            // /catalog/(*)/option/(*) 
-            return default(CatalogSkuTypeEntity); 
+            // /catalog/sku/(*)!buy 
+             
         }
 
         public CatalogSkuPriceEntity catalogsku____price (string param1)
@@ -38,10 +38,10 @@ namespace SmugMug.v2.Types
             return default(CatalogSkuPriceEntity); 
         }
 
-        public void catalogsku____buy (string param1)
+        public CatalogSkuTypeEntity catalog___option___ (string param1, string param2)
         {
-            // /catalog/sku/(*)!buy 
-             
+            // /catalog/(*)/option/(*) 
+            return default(CatalogSkuTypeEntity); 
         }
     }
 }

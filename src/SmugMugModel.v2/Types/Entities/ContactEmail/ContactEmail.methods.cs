@@ -6,14 +6,14 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class PageEntity : SmugMugEntity
+    public partial class ContactEmailEntity : SmugMugEntity
     {
-        public PageEntity()
+        public ContactEmailEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public PageEntity(OAuthToken oauthToken)
+        public ContactEmailEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;

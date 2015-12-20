@@ -124,6 +124,8 @@
     <Compile Include="Types\Entities\Comment\Comment.properties.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Types\Entities\ContactEmail\ContactEmail.methods.cs" />
+    <Compile Include="Types\Entities\ContactEmail\ContactEmail.properties.cs" />
     <Compile Include="Types\Entities\Contact\Contact.methods.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -20,6 +20,12 @@ namespace SmugMug.v2.Types
         }
 
 
+        public UserEntity user___ (string param1)
+        {
+            // /user/(*) 
+            return default(UserEntity); 
+        }
+
         public BioImageEntity user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
@@ -30,12 +36,6 @@ namespace SmugMug.v2.Types
         {
             // /user/(*)!coverimage 
             return default(CoverImageEntity); 
-        }
-
-        public UserEntity user___ (string param1)
-        {
-            // /user/(*) 
-            return default(UserEntity); 
         }
     }
 }

@@ -20,12 +20,6 @@ namespace SmugMug.v2.Types
         }
 
 
-        public CatalogVendorEntity catalogvendor___ (string param1)
-        {
-            // /catalog/vendor/(*) 
-            return default(CatalogVendorEntity); 
-        }
-
         public CatalogCategoryEntity catalogcategory___ (string param1)
         {
             // /catalog/category/(*) 
@@ -42,6 +36,12 @@ namespace SmugMug.v2.Types
         {
             // /catalog/product/(*)!options 
             return default(CatalogSkuEntity[]); 
+        }
+
+        public CatalogVendorEntity catalogvendor___ (string param1)
+        {
+            // /catalog/vendor/(*) 
+            return default(CatalogVendorEntity); 
         }
     }
 }

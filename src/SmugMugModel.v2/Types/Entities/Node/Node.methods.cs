@@ -20,22 +20,16 @@ namespace SmugMug.v2.Types
         }
 
 
+        public AlbumEntity album___ (string param1)
+        {
+            // /album/(*) 
+            return default(AlbumEntity); 
+        }
+
         public FolderEntity folderid___ (string param1)
         {
             // /folder/id/(*) 
             return default(FolderEntity); 
-        }
-
-        public NodeEntity[] node____parents (string param1)
-        {
-            // /node/(*)!parents 
-            return default(NodeEntity[]); 
-        }
-
-        public UserEntity user___ (string param1)
-        {
-            // /user/(*) 
-            return default(UserEntity); 
         }
 
         public ImageEntity highlightnode___ (string param1)
@@ -50,16 +44,16 @@ namespace SmugMug.v2.Types
             return default(NodeEntity[]); 
         }
 
-        public void node____movenodes (string param1)
-        {
-            // /node/(*)!movenodes 
-             
-        }
-
         public GrantEntity[] node____grants (string param1)
         {
             // /node/(*)!grants 
             return default(GrantEntity[]); 
+        }
+
+        public void node____movenodes (string param1)
+        {
+            // /node/(*)!movenodes 
+             
         }
 
         public NodeEntity node____parent (string param1)
@@ -68,10 +62,16 @@ namespace SmugMug.v2.Types
             return default(NodeEntity); 
         }
 
-        public AlbumEntity album___ (string param1)
+        public NodeEntity[] node____parents (string param1)
         {
-            // /album/(*) 
-            return default(AlbumEntity); 
+            // /node/(*)!parents 
+            return default(NodeEntity[]); 
+        }
+
+        public UserEntity user___ (string param1)
+        {
+            // /user/(*) 
+            return default(UserEntity); 
         }
     }
 }

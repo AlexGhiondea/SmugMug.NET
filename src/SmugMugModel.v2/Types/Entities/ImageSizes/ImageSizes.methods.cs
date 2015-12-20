@@ -20,28 +20,22 @@ namespace SmugMug.v2.Types
         }
 
 
-        public ImageSizeTinyEntity image____sizetiny (string param1)
+        public LargestImageEntity image____largestimage (string param1)
         {
-            // /image/(*)!sizetiny 
-            return default(ImageSizeTinyEntity); 
+            // /image/(*)!largestimage 
+            return default(LargestImageEntity); 
         }
 
-        public ImageSizeThumbEntity image____sizethumb (string param1)
+        public LargestVideoEntity image____largestvideo (string param1)
         {
-            // /image/(*)!sizethumb 
-            return default(ImageSizeThumbEntity); 
+            // /image/(*)!largestvideo 
+            return default(LargestVideoEntity); 
         }
 
-        public ImageSizeSmallEntity image____sizesmall (string param1)
+        public ImageSizeCustomEntity image____sizecustom (string param1)
         {
-            // /image/(*)!sizesmall 
-            return default(ImageSizeSmallEntity); 
-        }
-
-        public ImageSizeMediumEntity image____sizemedium (string param1)
-        {
-            // /image/(*)!sizemedium 
-            return default(ImageSizeMediumEntity); 
+            // /image/(*)!sizecustom 
+            return default(ImageSizeCustomEntity); 
         }
 
         public ImageSizeLargeEntity image____sizelarge (string param1)
@@ -50,10 +44,28 @@ namespace SmugMug.v2.Types
             return default(ImageSizeLargeEntity); 
         }
 
-        public ImageSizeXLargeEntity image____sizexlarge (string param1)
+        public ImageSizeMediumEntity image____sizemedium (string param1)
         {
-            // /image/(*)!sizexlarge 
-            return default(ImageSizeXLargeEntity); 
+            // /image/(*)!sizemedium 
+            return default(ImageSizeMediumEntity); 
+        }
+
+        public ImageSizeSmallEntity image____sizesmall (string param1)
+        {
+            // /image/(*)!sizesmall 
+            return default(ImageSizeSmallEntity); 
+        }
+
+        public ImageSizeThumbEntity image____sizethumb (string param1)
+        {
+            // /image/(*)!sizethumb 
+            return default(ImageSizeThumbEntity); 
+        }
+
+        public ImageSizeTinyEntity image____sizetiny (string param1)
+        {
+            // /image/(*)!sizetiny 
+            return default(ImageSizeTinyEntity); 
         }
 
         public ImageSizeX2LargeEntity image____sizex2large (string param1)
@@ -68,58 +80,16 @@ namespace SmugMug.v2.Types
             return default(ImageSizeX3LargeEntity); 
         }
 
+        public ImageSizeXLargeEntity image____sizexlarge (string param1)
+        {
+            // /image/(*)!sizexlarge 
+            return default(ImageSizeXLargeEntity); 
+        }
+
         public ImageSizeOriginalEntity image____sizeoriginal (string param1)
         {
             // /image/(*)!sizeoriginal 
             return default(ImageSizeOriginalEntity); 
-        }
-
-        public ImageSizeCustomEntity image____sizecustom (string param1)
-        {
-            // /image/(*)!sizecustom 
-            return default(ImageSizeCustomEntity); 
-        }
-
-        public LargestImageEntity image____largestimage (string param1)
-        {
-            // /image/(*)!largestimage 
-            return default(LargestImageEntity); 
-        }
-
-        public VideoSize1920Entity video____size1920 (string param1)
-        {
-            // /video/(*)!size1920 
-            return default(VideoSize1920Entity); 
-        }
-
-        public VideoSize1280Entity video____size1280 (string param1)
-        {
-            // /video/(*)!size1280 
-            return default(VideoSize1280Entity); 
-        }
-
-        public VideoSize960Entity video____size960 (string param1)
-        {
-            // /video/(*)!size960 
-            return default(VideoSize960Entity); 
-        }
-
-        public VideoSize640Entity video____size640 (string param1)
-        {
-            // /video/(*)!size640 
-            return default(VideoSize640Entity); 
-        }
-
-        public VideoSize320Entity video____size320 (string param1)
-        {
-            // /video/(*)!size320 
-            return default(VideoSize320Entity); 
-        }
-
-        public VideoSize200Entity video____size200 (string param1)
-        {
-            // /video/(*)!size200 
-            return default(VideoSize200Entity); 
         }
 
         public VideoSize110Entity video____size110 (string param1)
@@ -128,16 +98,46 @@ namespace SmugMug.v2.Types
             return default(VideoSize110Entity); 
         }
 
+        public VideoSize1280Entity video____size1280 (string param1)
+        {
+            // /video/(*)!size1280 
+            return default(VideoSize1280Entity); 
+        }
+
+        public VideoSize1920Entity video____size1920 (string param1)
+        {
+            // /video/(*)!size1920 
+            return default(VideoSize1920Entity); 
+        }
+
+        public VideoSize200Entity video____size200 (string param1)
+        {
+            // /video/(*)!size200 
+            return default(VideoSize200Entity); 
+        }
+
+        public VideoSize320Entity video____size320 (string param1)
+        {
+            // /video/(*)!size320 
+            return default(VideoSize320Entity); 
+        }
+
+        public VideoSize640Entity video____size640 (string param1)
+        {
+            // /video/(*)!size640 
+            return default(VideoSize640Entity); 
+        }
+
+        public VideoSize960Entity video____size960 (string param1)
+        {
+            // /video/(*)!size960 
+            return default(VideoSize960Entity); 
+        }
+
         public VideoSMILEntity video____smil (string param1)
         {
             // /video/(*)!smil 
             return default(VideoSMILEntity); 
-        }
-
-        public LargestVideoEntity image____largestvideo (string param1)
-        {
-            // /image/(*)!largestvideo 
-            return default(LargestVideoEntity); 
         }
     }
 }

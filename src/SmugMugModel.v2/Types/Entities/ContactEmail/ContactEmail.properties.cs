@@ -6,22 +6,22 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class AlbumListEntity : SmugMugEntity
+    public partial class ContactEmailEntity : SmugMugEntity
     {
-        private string _name;
+        private string _email;
         private string _uri;
-        private string _urlPath;
+        private string _uriDescription;
 
 
-        public string Name {
+        public string Email {
             get {
-                return _name;
+                return _email;
             }
             set {
-                if (_name != value)
+                if (_email != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    _email = value;
+                    NotifyPropertyValueChanged("Email", _email);
                 }
             }
         }
@@ -41,15 +41,15 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string UrlPath {
+        public string UriDescription {
             get {
-                return _urlPath;
+                return _uriDescription;
             }
             set {
-                if (_urlPath != value)
+                if (_uriDescription != value)
                 {
-                    _urlPath = value;
-                    NotifyPropertyValueChanged("UrlPath", _urlPath);
+                    _uriDescription = value;
+                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
                 }
             }
         }
