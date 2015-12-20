@@ -23,7 +23,9 @@ namespace SmugMug.v2.Types
         public AlbumEntity album___ (string param1)
         {
             // /album/(*) 
-            return default(AlbumEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/album/{0}", param1);
+
+            return RetrieveEntityAsync<AlbumEntity>(requestUri).Result; 
         }
     }
 }

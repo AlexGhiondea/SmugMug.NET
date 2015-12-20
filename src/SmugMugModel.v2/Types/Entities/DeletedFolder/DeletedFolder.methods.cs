@@ -23,13 +23,17 @@ namespace SmugMug.v2.Types
         public RecoverDeletedFolderEntity deletedfolder____recover (string param1)
         {
             // /deleted/folder/(*)!recover 
-            return default(RecoverDeletedFolderEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/folder/{0}!recover{1}", param1);
+
+            return RetrieveEntityAsync<RecoverDeletedFolderEntity>(requestUri).Result; 
         }
 
         public UserEntity user___ (string param1)
         {
             // /user/(*) 
-            return default(UserEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}", param1);
+
+            return RetrieveEntityAsync<UserEntity>(requestUri).Result; 
         }
     }
 }

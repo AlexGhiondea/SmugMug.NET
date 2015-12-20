@@ -23,13 +23,17 @@ namespace SmugMug.v2.Types
         public ImageEntity image___ (string param1)
         {
             // /image/(*) 
-            return default(ImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}", param1);
+
+            return RetrieveEntityAsync<ImageEntity>(requestUri).Result; 
         }
 
         public UserEntity user___ (string param1)
         {
             // /user/(*) 
-            return default(UserEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}", param1);
+
+            return RetrieveEntityAsync<UserEntity>(requestUri).Result; 
         }
     }
 }

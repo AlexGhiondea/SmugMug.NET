@@ -23,13 +23,15 @@ namespace SmugMug.v2.Types
         public CatalogSkuEntity catalogsku___ (string param1)
         {
             // /catalog/sku/(*) 
-            return default(CatalogSkuEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}", param1);
+
+            return RetrieveEntityAsync<CatalogSkuEntity>(requestUri).Result; 
         }
 
         public void catalogsku____buy (string param1)
         {
             // /catalog/sku/(*)!buy 
-             
+            return; 
         }
     }
 }

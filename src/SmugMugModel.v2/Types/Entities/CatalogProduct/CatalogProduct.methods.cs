@@ -23,25 +23,33 @@ namespace SmugMug.v2.Types
         public CatalogCategoryEntity catalogcategory___ (string param1)
         {
             // /catalog/category/(*) 
-            return default(CatalogCategoryEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/category/{0}", param1);
+
+            return RetrieveEntityAsync<CatalogCategoryEntity>(requestUri).Result; 
         }
 
         public CatalogSubCategoryEntity catalog___prints___ (string param1, string param2)
         {
             // /catalog/(*)/prints/(*) 
-            return default(CatalogSubCategoryEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/{0}/prints/{1}", param1,param2);
+
+            return RetrieveEntityAsync<CatalogSubCategoryEntity>(requestUri).Result; 
         }
 
         public CatalogSkuEntity[] catalogproduct____options (string param1)
         {
             // /catalog/product/(*)!options 
-            return default(CatalogSkuEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/product/{0}!options{1}", param1);
+
+            return RetrieveEntityArrayAsync<CatalogSkuEntity>(requestUri).Result; 
         }
 
         public CatalogVendorEntity catalogvendor___ (string param1)
         {
             // /catalog/vendor/(*) 
-            return default(CatalogVendorEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/vendor/{0}", param1);
+
+            return RetrieveEntityAsync<CatalogVendorEntity>(requestUri).Result; 
         }
     }
 }

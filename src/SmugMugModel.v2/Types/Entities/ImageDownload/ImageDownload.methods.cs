@@ -23,7 +23,9 @@ namespace SmugMug.v2.Types
         public ImageEntity image___ (string param1)
         {
             // /image/(*) 
-            return default(ImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}", param1);
+
+            return RetrieveEntityAsync<ImageEntity>(requestUri).Result; 
         }
     }
 }

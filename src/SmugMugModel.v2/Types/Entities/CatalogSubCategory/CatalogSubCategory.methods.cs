@@ -23,7 +23,9 @@ namespace SmugMug.v2.Types
         public CatalogCategoryEntity catalogcategory___ (string param1)
         {
             // /catalog/category/(*) 
-            return default(CatalogCategoryEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/category/{0}", param1);
+
+            return RetrieveEntityAsync<CatalogCategoryEntity>(requestUri).Result; 
         }
     }
 }

@@ -23,121 +23,161 @@ namespace SmugMug.v2.Types
         public LargestImageEntity image____largestimage (string param1)
         {
             // /image/(*)!largestimage 
-            return default(LargestImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestimage{1}", param1);
+
+            return RetrieveEntityAsync<LargestImageEntity>(requestUri).Result; 
         }
 
         public LargestVideoEntity image____largestvideo (string param1)
         {
             // /image/(*)!largestvideo 
-            return default(LargestVideoEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestvideo{1}", param1);
+
+            return RetrieveEntityAsync<LargestVideoEntity>(requestUri).Result; 
         }
 
         public ImageSizeCustomEntity image____sizecustom (string param1)
         {
             // /image/(*)!sizecustom 
-            return default(ImageSizeCustomEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizecustom{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeCustomEntity>(requestUri).Result; 
         }
 
         public ImageSizeLargeEntity image____sizelarge (string param1)
         {
             // /image/(*)!sizelarge 
-            return default(ImageSizeLargeEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizelarge{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeLargeEntity>(requestUri).Result; 
         }
 
         public ImageSizeMediumEntity image____sizemedium (string param1)
         {
             // /image/(*)!sizemedium 
-            return default(ImageSizeMediumEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizemedium{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeMediumEntity>(requestUri).Result; 
         }
 
         public ImageSizeSmallEntity image____sizesmall (string param1)
         {
             // /image/(*)!sizesmall 
-            return default(ImageSizeSmallEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizesmall{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeSmallEntity>(requestUri).Result; 
         }
 
         public ImageSizeThumbEntity image____sizethumb (string param1)
         {
             // /image/(*)!sizethumb 
-            return default(ImageSizeThumbEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizethumb{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeThumbEntity>(requestUri).Result; 
         }
 
         public ImageSizeTinyEntity image____sizetiny (string param1)
         {
             // /image/(*)!sizetiny 
-            return default(ImageSizeTinyEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizetiny{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeTinyEntity>(requestUri).Result; 
         }
 
         public ImageSizeX2LargeEntity image____sizex2large (string param1)
         {
             // /image/(*)!sizex2large 
-            return default(ImageSizeX2LargeEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizex2large{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeX2LargeEntity>(requestUri).Result; 
         }
 
         public ImageSizeX3LargeEntity image____sizex3large (string param1)
         {
             // /image/(*)!sizex3large 
-            return default(ImageSizeX3LargeEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizex3large{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeX3LargeEntity>(requestUri).Result; 
         }
 
         public ImageSizeXLargeEntity image____sizexlarge (string param1)
         {
             // /image/(*)!sizexlarge 
-            return default(ImageSizeXLargeEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizexlarge{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeXLargeEntity>(requestUri).Result; 
         }
 
         public ImageSizeOriginalEntity image____sizeoriginal (string param1)
         {
             // /image/(*)!sizeoriginal 
-            return default(ImageSizeOriginalEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizeoriginal{1}", param1);
+
+            return RetrieveEntityAsync<ImageSizeOriginalEntity>(requestUri).Result; 
         }
 
         public VideoSize110Entity video____size110 (string param1)
         {
             // /video/(*)!size110 
-            return default(VideoSize110Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size110{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize110Entity>(requestUri).Result; 
         }
 
         public VideoSize1280Entity video____size1280 (string param1)
         {
             // /video/(*)!size1280 
-            return default(VideoSize1280Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size1280{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize1280Entity>(requestUri).Result; 
         }
 
         public VideoSize1920Entity video____size1920 (string param1)
         {
             // /video/(*)!size1920 
-            return default(VideoSize1920Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size1920{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize1920Entity>(requestUri).Result; 
         }
 
         public VideoSize200Entity video____size200 (string param1)
         {
             // /video/(*)!size200 
-            return default(VideoSize200Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size200{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize200Entity>(requestUri).Result; 
         }
 
         public VideoSize320Entity video____size320 (string param1)
         {
             // /video/(*)!size320 
-            return default(VideoSize320Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size320{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize320Entity>(requestUri).Result; 
         }
 
         public VideoSize640Entity video____size640 (string param1)
         {
             // /video/(*)!size640 
-            return default(VideoSize640Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size640{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize640Entity>(requestUri).Result; 
         }
 
         public VideoSize960Entity video____size960 (string param1)
         {
             // /video/(*)!size960 
-            return default(VideoSize960Entity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!size960{1}", param1);
+
+            return RetrieveEntityAsync<VideoSize960Entity>(requestUri).Result; 
         }
 
         public VideoSMILEntity video____smil (string param1)
         {
             // /video/(*)!smil 
-            return default(VideoSMILEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!smil{1}", param1);
+
+            return RetrieveEntityAsync<VideoSMILEntity>(requestUri).Result; 
         }
     }
 }

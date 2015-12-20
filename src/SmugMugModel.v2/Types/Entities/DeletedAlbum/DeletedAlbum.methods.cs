@@ -23,13 +23,17 @@ namespace SmugMug.v2.Types
         public RecoverDeletedAlbumEntity deletedalbum____recover (string param1)
         {
             // /deleted/album/(*)!recover 
-            return default(RecoverDeletedAlbumEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/album/{0}!recover{1}", param1);
+
+            return RetrieveEntityAsync<RecoverDeletedAlbumEntity>(requestUri).Result; 
         }
 
         public UserEntity user___ (string param1)
         {
             // /user/(*) 
-            return default(UserEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}", param1);
+
+            return RetrieveEntityAsync<UserEntity>(requestUri).Result; 
         }
     }
 }

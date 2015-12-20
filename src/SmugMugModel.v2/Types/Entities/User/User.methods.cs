@@ -23,181 +23,239 @@ namespace SmugMug.v2.Types
         public FolderEntity folderuser___ (string param1)
         {
             // /folder/user/(*) 
-            return default(FolderEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/folder/user/{0}", param1);
+
+            return RetrieveEntityAsync<FolderEntity>(requestUri).Result; 
         }
 
         public NodeEntity node___ (string param1)
         {
             // /node/(*) 
-            return default(NodeEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}", param1);
+
+            return RetrieveEntityAsync<NodeEntity>(requestUri).Result; 
         }
 
         public AlbumEntity[] user____albums (string param1)
         {
             // /user/(*)!albums 
-            return default(AlbumEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!albums{1}", param1);
+
+            return RetrieveEntityArrayAsync<AlbumEntity>(requestUri).Result; 
         }
 
         public AlbumTemplateEntity[] user____albumtemplates (string param1)
         {
             // /user/(*)!albumtemplates 
-            return default(AlbumTemplateEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!albumtemplates{1}", param1);
+
+            return RetrieveEntityArrayAsync<AlbumTemplateEntity>(requestUri).Result; 
         }
 
         public BioImageEntity user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
-            return default(BioImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!bioimage{1}", param1);
+
+            return RetrieveEntityAsync<BioImageEntity>(requestUri).Result; 
         }
 
         public ContactEntity[] user____contacts (string param1)
         {
             // /user/(*)!contacts 
-            return default(ContactEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!contacts{1}", param1);
+
+            return RetrieveEntityArrayAsync<ContactEntity>(requestUri).Result; 
         }
 
         public UserCouponEntity[] user____coupons (string param1)
         {
             // /user/(*)!coupons 
-            return default(UserCouponEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!coupons{1}", param1);
+
+            return RetrieveEntityArrayAsync<UserCouponEntity>(requestUri).Result; 
         }
 
         public CoverImageEntity user____coverimage (string param1)
         {
             // /user/(*)!coverimage 
-            return default(CoverImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!coverimage{1}", param1);
+
+            return RetrieveEntityAsync<CoverImageEntity>(requestUri).Result; 
         }
 
         public DeletedAlbumEntity[] user____deletedalbums (string param1)
         {
             // /user/(*)!deletedalbums 
-            return default(DeletedAlbumEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!deletedalbums{1}", param1);
+
+            return RetrieveEntityArrayAsync<DeletedAlbumEntity>(requestUri).Result; 
         }
 
         public DeletedFolderEntity[] user____deletedfolders (string param1)
         {
             // /user/(*)!deletedfolders 
-            return default(DeletedFolderEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!deletedfolders{1}", param1);
+
+            return RetrieveEntityArrayAsync<DeletedFolderEntity>(requestUri).Result; 
         }
 
         public DeletedPageEntity[] user____deletedpages (string param1)
         {
             // /user/(*)!deletedpages 
-            return default(DeletedPageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!deletedpages{1}", param1);
+
+            return RetrieveEntityArrayAsync<DeletedPageEntity>(requestUri).Result; 
         }
 
         public ImageEntity[] user____duplicateimagesearch (string param1)
         {
             // /user/(*)!duplicateimagesearch 
-            return default(ImageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!duplicateimagesearch{1}", param1);
+
+            return RetrieveEntityArrayAsync<ImageEntity>(requestUri).Result; 
         }
 
         public AlbumEntity[] user____featuredalbums (string param1)
         {
             // /user/(*)!featuredalbums 
-            return default(AlbumEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!featuredalbums{1}", param1);
+
+            return RetrieveEntityArrayAsync<AlbumEntity>(requestUri).Result; 
         }
 
         public FeaturesEntity user____features (string param1)
         {
             // /user/(*)!features 
-            return default(FeaturesEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!features{1}", param1);
+
+            return RetrieveEntityAsync<FeaturesEntity>(requestUri).Result; 
         }
 
         public ImageEntity[] user____geomedia (string param1)
         {
             // /user/(*)!geomedia 
-            return default(ImageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!geomedia{1}", param1);
+
+            return RetrieveEntityArrayAsync<ImageEntity>(requestUri).Result; 
         }
 
         public GrantEntity[] user____grants (string param1)
         {
             // /user/(*)!grants 
-            return default(GrantEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!grants{1}", param1);
+
+            return RetrieveEntityArrayAsync<GrantEntity>(requestUri).Result; 
         }
 
         public UserGuideStateEntity[] user____guides (string param1)
         {
             // /user/(*)!guides 
-            return default(UserGuideStateEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!guides{1}", param1);
+
+            return RetrieveEntityArrayAsync<UserGuideStateEntity>(requestUri).Result; 
         }
 
         public UserHideGuidesEntity user____hideguides (string param1)
         {
             // /user/(*)!hideguides 
-            return default(UserHideGuidesEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!hideguides{1}", param1);
+
+            return RetrieveEntityAsync<UserHideGuidesEntity>(requestUri).Result; 
         }
 
         public ImageEntity[] user____imagesearch (string param1)
         {
             // /user/(*)!imagesearch 
-            return default(ImageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!imagesearch{1}", param1);
+
+            return RetrieveEntityArrayAsync<ImageEntity>(requestUri).Result; 
         }
 
         public QuickNewsEntity[] user____latestquicknews (string param1)
         {
             // /user/(*)!latestquicknews 
-            return default(QuickNewsEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!latestquicknews{1}", param1);
+
+            return RetrieveEntityArrayAsync<QuickNewsEntity>(requestUri).Result; 
         }
 
         public ImageEntity[] user____popularmedia (string param1)
         {
             // /user/(*)!popularmedia 
-            return default(ImageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!popularmedia{1}", param1);
+
+            return RetrieveEntityArrayAsync<ImageEntity>(requestUri).Result; 
         }
 
         public PrintmarkEntity[] user____printmarks (string param1)
         {
             // /user/(*)!printmarks 
-            return default(PrintmarkEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!printmarks{1}", param1);
+
+            return RetrieveEntityArrayAsync<PrintmarkEntity>(requestUri).Result; 
         }
 
         public UserProfileEntity user____profile (string param1)
         {
             // /user/(*)!profile 
-            return default(UserProfileEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!profile{1}", param1);
+
+            return RetrieveEntityAsync<UserProfileEntity>(requestUri).Result; 
         }
 
         public ImageEntity[] user____recentimages (string param1)
         {
             // /user/(*)!recentimages 
-            return default(ImageEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!recentimages{1}", param1);
+
+            return RetrieveEntityArrayAsync<ImageEntity>(requestUri).Result; 
         }
 
         public void user____sortfeaturedalbums (string param1)
         {
             // /user/(*)!sortfeaturedalbums 
-             
+            return; 
         }
 
         public TaskEntity[] user____tasks (string param1)
         {
             // /user/(*)!tasks 
-            return default(TaskEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!tasks{1}", param1);
+
+            return RetrieveEntityArrayAsync<TaskEntity>(requestUri).Result; 
         }
 
         public UserTopKeywordsEntity user____topkeywords (string param1)
         {
             // /user/(*)!topkeywords 
-            return default(UserTopKeywordsEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!topkeywords{1}", param1);
+
+            return RetrieveEntityAsync<UserTopKeywordsEntity>(requestUri).Result; 
         }
 
         public UserUploadLimitsEntity user____uploadlimits (string param1)
         {
             // /user/(*)!uploadlimits 
-            return default(UserUploadLimitsEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!uploadlimits{1}", param1);
+
+            return RetrieveEntityAsync<UserUploadLimitsEntity>(requestUri).Result; 
         }
 
         public FolderAlbumPageEntity user____urlpathlookup (string param1)
         {
             // /user/(*)!urlpathlookup 
-            return default(FolderAlbumPageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!urlpathlookup{1}", param1);
+
+            return RetrieveEntityAsync<FolderAlbumPageEntity>(requestUri).Result; 
         }
 
         public WatermarkEntity[] user____watermarks (string param1)
         {
             // /user/(*)!watermarks 
-            return default(WatermarkEntity[]); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!watermarks{1}", param1);
+
+            return RetrieveEntityArrayAsync<WatermarkEntity>(requestUri).Result; 
         }
     }
 }

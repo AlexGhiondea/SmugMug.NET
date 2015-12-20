@@ -23,7 +23,9 @@ namespace SmugMug.v2.Types
         public GuideEntity guide___ (string param1)
         {
             // /guide/(*) 
-            return default(GuideEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/guide/{0}", param1);
+
+            return RetrieveEntityAsync<GuideEntity>(requestUri).Result; 
         }
     }
 }

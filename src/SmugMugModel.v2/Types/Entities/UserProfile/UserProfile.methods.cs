@@ -23,19 +23,25 @@ namespace SmugMug.v2.Types
         public UserEntity user___ (string param1)
         {
             // /user/(*) 
-            return default(UserEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}", param1);
+
+            return RetrieveEntityAsync<UserEntity>(requestUri).Result; 
         }
 
         public BioImageEntity user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
-            return default(BioImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!bioimage{1}", param1);
+
+            return RetrieveEntityAsync<BioImageEntity>(requestUri).Result; 
         }
 
         public CoverImageEntity user____coverimage (string param1)
         {
             // /user/(*)!coverimage 
-            return default(CoverImageEntity); 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!coverimage{1}", param1);
+
+            return RetrieveEntityAsync<CoverImageEntity>(requestUri).Result; 
         }
     }
 }
