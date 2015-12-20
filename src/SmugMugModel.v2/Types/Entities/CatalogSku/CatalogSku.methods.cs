@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -20,34 +21,36 @@ namespace SmugMug.v2.Types
         }
 
 
-        public CatalogProductEntity catalogproduct___ (string param1)
+        public async Task<CatalogProductEntity> catalogproduct___ (string param1)
         {
             // /catalog/product/(*) 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/product/{0}", param1);
 
-            return RetrieveEntityAsync<CatalogProductEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<CatalogProductEntity>(requestUri); 
         }
 
-        public void catalogsku____buy (string param1)
+        public async Task catalogsku____buy (string param1)
         {
             // /catalog/sku/(*)!buy 
-            return; 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}!buy", param1);
+
+            await GetRequestAsync(requestUri); 
         }
 
-        public CatalogSkuPriceEntity catalogsku____price (string param1)
+        public async Task<CatalogSkuPriceEntity> catalogsku____price (string param1)
         {
             // /catalog/sku/(*)!price 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}!price", param1);
 
-            return RetrieveEntityAsync<CatalogSkuPriceEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<CatalogSkuPriceEntity>(requestUri); 
         }
 
-        public CatalogSkuTypeEntity catalogskutypeoptionfinish___ (string param1)
+        public async Task<CatalogSkuTypeEntity> catalogskutypeoptionfinish___ (string param1)
         {
             // /catalog/skutype/option/finish/(*) 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/skutype/option/finish/{0}", param1);
 
-            return RetrieveEntityAsync<CatalogSkuTypeEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<CatalogSkuTypeEntity>(requestUri); 
         }
     }
 }

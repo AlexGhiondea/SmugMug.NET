@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -20,12 +21,12 @@ namespace SmugMug.v2.Types
         }
 
 
-        public ImageEntity image___ (string param1)
+        public async Task<ImageEntity> image___ (string param1)
         {
             // /image/(*) 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}", param1);
 
-            return RetrieveEntityAsync<ImageEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
         }
     }
 }

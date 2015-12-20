@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -20,28 +21,28 @@ namespace SmugMug.v2.Types
         }
 
 
-        public ImageSizeX3LargeEntity image____sizex3large (string param1)
+        public async Task<ImageSizeX3LargeEntity> image____sizex3large (string param1)
         {
             // /image/(*)!sizex3large 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizex3large", param1);
 
-            return RetrieveEntityAsync<ImageSizeX3LargeEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<ImageSizeX3LargeEntity>(requestUri); 
         }
 
-        public ImageSizeOriginalEntity image____sizeoriginal (string param1)
+        public async Task<ImageSizeOriginalEntity> image____sizeoriginal (string param1)
         {
             // /image/(*)!sizeoriginal 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizeoriginal", param1);
 
-            return RetrieveEntityAsync<ImageSizeOriginalEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<ImageSizeOriginalEntity>(requestUri); 
         }
 
-        public ImageSizeXLargeEntity image____sizexlarge (string param1)
+        public async Task<ImageSizeXLargeEntity> image____sizexlarge (string param1)
         {
             // /image/(*)!sizexlarge 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizexlarge", param1);
 
-            return RetrieveEntityAsync<ImageSizeXLargeEntity>(requestUri).Result; 
+            return await RetrieveEntityAsync<ImageSizeXLargeEntity>(requestUri); 
         }
     }
 }

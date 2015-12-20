@@ -90,8 +90,10 @@ namespace SmugMugCodeGen
             // the code that puts the uri together with the parameters.
             sb.AppendLine(CreateRequestUriWithParameters(uri, parameterCount));
             sb.AppendLine();
+            sb.Append("            ");
             if (returnType != "Task")
-                sb.Append("            return ");
+                sb.Append("return ");
+
 
             sb.AppendFormat(awaitStatement, methodCall, returnType.Replace("[]", ""));
             return sb.ToString();

@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -20,20 +21,20 @@ namespace SmugMug.v2.Types
         }
 
 
-        public ContactEmailEntity[] contact____emails (string param1)
+        public async Task<ContactEmailEntity[]> contact____emails (string param1)
         {
             // /contact/(*)!emails 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!emails", param1);
 
-            return RetrieveEntityArrayAsync<ContactEmailEntity>(requestUri).Result; 
+            return await RetrieveEntityArrayAsync<ContactEmailEntity>(requestUri); 
         }
 
-        public GrantEntity[] contact____grants (string param1)
+        public async Task<GrantEntity[]> contact____grants (string param1)
         {
             // /contact/(*)!grants 
             string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!grants", param1);
 
-            return RetrieveEntityArrayAsync<GrantEntity>(requestUri).Result; 
+            return await RetrieveEntityArrayAsync<GrantEntity>(requestUri); 
         }
     }
 }
