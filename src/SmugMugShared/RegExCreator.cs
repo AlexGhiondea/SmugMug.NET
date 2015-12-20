@@ -156,7 +156,17 @@ namespace SmugMugShared
                 methodName = "!" + methodName;
             }
 
+            // we could have something like:
+            // /folder/user/smugmuguser/albumName!parent
+            // 
+
             string methodNorm = prefix + endpoint + endpointParameter + methodName;
+            if (methodNorm.IndexOf("smugmuguser") > 0)
+            {
+                methodNorm = methodNorm.Replace("smugmuguser", "(*)");
+                paramCount++;
+            }
+
 
             return methodNorm;
         }
