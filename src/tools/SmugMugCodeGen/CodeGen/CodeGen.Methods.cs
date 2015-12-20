@@ -89,9 +89,14 @@ namespace SmugMugCodeGen
             for (int i = 0; i < parts.Length; i++)
             {
                 requestUri.Append(parts[i]);
-                requestUri.Append("{");
-                requestUri.Append(i);
-                requestUri.Append("}");
+
+                if (!parts[i].StartsWith("!"))
+                {
+                    // the part that starts with '!' does not accept parameters.
+                    requestUri.Append("{");
+                    requestUri.Append(i);
+                    requestUri.Append("}");
+                }
             }
             requestUri.Append("\", "); // close format string;
 
