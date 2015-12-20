@@ -38,7 +38,7 @@ namespace SmugMugCodeGen
                 }
 
                 int paramCount;
-                uri = RegExCreator.FromUri(SmugMug.v2.Helpers.Constants.Addresses.SmugMugApi, SmugMug.v2.Helpers.Constants.Addresses.SmugMug + item.Uri, out paramCount);
+                uri = RegExCreator.FromUri(SmugMug.v2.Constants.Addresses.SmugMugApi, SmugMug.v2.Constants.Addresses.SmugMug + item.Uri, out paramCount);
                 methodName = Helpers.NormalizeString(uri, '!', '(', ')', '*');
                 parameters = GenerateParams(paramCount);
 
