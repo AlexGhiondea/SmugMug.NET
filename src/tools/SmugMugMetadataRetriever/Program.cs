@@ -4,6 +4,7 @@
 using Newtonsoft.Json;
 using SmugMug.Shared.Descriptors;
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Helpers;
 using SmugMugShared;
 using SmugMugShared.Extensions;
 using System;

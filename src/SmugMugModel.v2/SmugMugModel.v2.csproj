@@ -514,6 +514,7 @@
     <Compile Include="Types\Enums\WatermarkEnum.cs" />
     <Compile Include="Types\Enums\WorldSearchableEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Constants.cs" />
     <Compile Include="Utility\HttpClientHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
