@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         public ColorImageEntity image____color (string param1)
         {
             // /image/(*)!color 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!color{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!color", param1);
 
             return RetrieveEntityAsync<ColorImageEntity>(requestUri).Result; 
         }
@@ -39,7 +39,7 @@ namespace SmugMug.v2.Types
         public CommentEntity[] image____comments (string param1)
         {
             // /image/(*)!comments 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!comments{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!comments", param1);
 
             return RetrieveEntityArrayAsync<CommentEntity>(requestUri).Result; 
         }
@@ -53,7 +53,7 @@ namespace SmugMug.v2.Types
         public ImageDownloadEntity image____download (string param1)
         {
             // /image/(*)!download 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!download{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!download", param1);
 
             return RetrieveEntityAsync<ImageDownloadEntity>(requestUri).Result; 
         }
@@ -61,7 +61,7 @@ namespace SmugMug.v2.Types
         public ImageMetadataEntity image____metadata (string param1)
         {
             // /image/(*)!metadata 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!metadata{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!metadata", param1);
 
             return RetrieveEntityAsync<ImageMetadataEntity>(requestUri).Result; 
         }
@@ -69,7 +69,7 @@ namespace SmugMug.v2.Types
         public CatalogSkuPriceEntity[] image____prices (string param1)
         {
             // /image/(*)!prices 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!prices{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!prices", param1);
 
             return RetrieveEntityArrayAsync<CatalogSkuPriceEntity>(requestUri).Result; 
         }
@@ -89,7 +89,7 @@ namespace SmugMug.v2.Types
         public LargestImageEntity image____largestimage (string param1)
         {
             // /image/(*)!largestimage 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestimage{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestimage", param1);
 
             return RetrieveEntityAsync<LargestImageEntity>(requestUri).Result; 
         }
@@ -97,7 +97,7 @@ namespace SmugMug.v2.Types
         public ImageSizeDetailsEntity image____sizedetails (string param1)
         {
             // /image/(*)!sizedetails 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizedetails{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizedetails", param1);
 
             return RetrieveEntityAsync<ImageSizeDetailsEntity>(requestUri).Result; 
         }
@@ -105,7 +105,7 @@ namespace SmugMug.v2.Types
         public ImageSizesEntity image____sizes (string param1)
         {
             // /image/(*)!sizes 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizes{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizes", param1);
 
             return RetrieveEntityAsync<ImageSizesEntity>(requestUri).Result; 
         }
@@ -113,7 +113,7 @@ namespace SmugMug.v2.Types
         public LargestVideoEntity image____largestvideo (string param1)
         {
             // /image/(*)!largestvideo 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestvideo{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestvideo", param1);
 
             return RetrieveEntityAsync<LargestVideoEntity>(requestUri).Result; 
         }
@@ -129,7 +129,7 @@ namespace SmugMug.v2.Types
         public CSMILVideoEntity video____csmil (string param1)
         {
             // /video/(*)!csmil 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!csmil{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!csmil", param1);
 
             return RetrieveEntityAsync<CSMILVideoEntity>(requestUri).Result; 
         }
@@ -137,7 +137,7 @@ namespace SmugMug.v2.Types
         public EmbedVideoEntity video____embed (string param1)
         {
             // /video/(*)!embed 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!embed{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!embed", param1);
 
             return RetrieveEntityAsync<EmbedVideoEntity>(requestUri).Result; 
         }

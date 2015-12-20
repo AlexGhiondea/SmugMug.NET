@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         public BioImageEntity user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!bioimage{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!bioimage", param1);
 
             return RetrieveEntityAsync<BioImageEntity>(requestUri).Result; 
         }
@@ -39,7 +39,7 @@ namespace SmugMug.v2.Types
         public CoverImageEntity user____coverimage (string param1)
         {
             // /user/(*)!coverimage 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!coverimage{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}!coverimage", param1);
 
             return RetrieveEntityAsync<CoverImageEntity>(requestUri).Result; 
         }

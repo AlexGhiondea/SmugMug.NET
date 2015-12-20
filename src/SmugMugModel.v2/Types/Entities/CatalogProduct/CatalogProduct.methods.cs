@@ -39,7 +39,7 @@ namespace SmugMug.v2.Types
         public CatalogSkuEntity[] catalogproduct____options (string param1)
         {
             // /catalog/product/(*)!options 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/product/{0}!options{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/product/{0}!options", param1);
 
             return RetrieveEntityArrayAsync<CatalogSkuEntity>(requestUri).Result; 
         }

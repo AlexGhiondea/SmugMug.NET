@@ -23,7 +23,7 @@ namespace SmugMug.v2.Types
         public ImageSizeX3LargeEntity image____sizex3large (string param1)
         {
             // /image/(*)!sizex3large 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizex3large{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizex3large", param1);
 
             return RetrieveEntityAsync<ImageSizeX3LargeEntity>(requestUri).Result; 
         }
@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         public ImageSizeOriginalEntity image____sizeoriginal (string param1)
         {
             // /image/(*)!sizeoriginal 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizeoriginal{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizeoriginal", param1);
 
             return RetrieveEntityAsync<ImageSizeOriginalEntity>(requestUri).Result; 
         }
@@ -39,7 +39,7 @@ namespace SmugMug.v2.Types
         public ImageSizeXLargeEntity image____sizexlarge (string param1)
         {
             // /image/(*)!sizexlarge 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizexlarge{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizexlarge", param1);
 
             return RetrieveEntityAsync<ImageSizeXLargeEntity>(requestUri).Result; 
         }

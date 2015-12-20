@@ -23,7 +23,7 @@ namespace SmugMug.v2.Types
         public RecoverDeletedPageEntity deletedpage____recover (string param1)
         {
             // /deleted/page/(*)!recover 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/page/{0}!recover{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/page/{0}!recover", param1);
 
             return RetrieveEntityAsync<RecoverDeletedPageEntity>(requestUri).Result; 
         }

@@ -23,7 +23,7 @@ namespace SmugMug.v2.Types
         public CatalogSubCategoryEntity[] catalogcategory____subcategories (string param1)
         {
             // /catalog/category/(*)!subcategories 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/category/{0}!subcategories{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/category/{0}!subcategories", param1);
 
             return RetrieveEntityArrayAsync<CatalogSubCategoryEntity>(requestUri).Result; 
         }

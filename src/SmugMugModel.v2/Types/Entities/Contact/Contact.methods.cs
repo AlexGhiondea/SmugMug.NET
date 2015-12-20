@@ -23,7 +23,7 @@ namespace SmugMug.v2.Types
         public ContactEmailEntity[] contact____emails (string param1)
         {
             // /contact/(*)!emails 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!emails{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!emails", param1);
 
             return RetrieveEntityArrayAsync<ContactEmailEntity>(requestUri).Result; 
         }
@@ -31,7 +31,7 @@ namespace SmugMug.v2.Types
         public GrantEntity[] contact____grants (string param1)
         {
             // /contact/(*)!grants 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!grants{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/contact/{0}!grants", param1);
 
             return RetrieveEntityArrayAsync<GrantEntity>(requestUri).Result; 
         }

@@ -23,7 +23,7 @@ namespace SmugMug.v2.Types
         public RecoverDeletedAlbumEntity deletedalbum____recover (string param1)
         {
             // /deleted/album/(*)!recover 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/album/{0}!recover{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/deleted/album/{0}!recover", param1);
 
             return RetrieveEntityAsync<RecoverDeletedAlbumEntity>(requestUri).Result; 
         }

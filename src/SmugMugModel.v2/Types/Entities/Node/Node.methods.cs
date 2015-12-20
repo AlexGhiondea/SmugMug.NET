@@ -47,7 +47,7 @@ namespace SmugMug.v2.Types
         public NodeEntity[] node____children (string param1)
         {
             // /node/(*)!children 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!children{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!children", param1);
 
             return RetrieveEntityArrayAsync<NodeEntity>(requestUri).Result; 
         }
@@ -55,7 +55,7 @@ namespace SmugMug.v2.Types
         public GrantEntity[] node____grants (string param1)
         {
             // /node/(*)!grants 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!grants{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!grants", param1);
 
             return RetrieveEntityArrayAsync<GrantEntity>(requestUri).Result; 
         }
@@ -69,7 +69,7 @@ namespace SmugMug.v2.Types
         public NodeEntity node____parent (string param1)
         {
             // /node/(*)!parent 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!parent{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!parent", param1);
 
             return RetrieveEntityAsync<NodeEntity>(requestUri).Result; 
         }
@@ -77,7 +77,7 @@ namespace SmugMug.v2.Types
         public NodeEntity[] node____parents (string param1)
         {
             // /node/(*)!parents 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!parents{1}", param1);
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/node/{0}!parents", param1);
 
             return RetrieveEntityArrayAsync<NodeEntity>(requestUri).Result; 
         }
