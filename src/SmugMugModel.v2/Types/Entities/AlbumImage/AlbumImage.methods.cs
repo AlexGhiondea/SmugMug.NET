@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<AlbumEntity> album___ (string param1)
         {
             // /album/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/album/{0}", param1);
+            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<AlbumEntity>(requestUri); 
         }
@@ -32,7 +32,7 @@ namespace SmugMug.v2.Types
         public async Task<AlbumImageShareUrisEntity> album___image____shareuris (string param1, string param2)
         {
             // /album/(*)/image/(*)!shareuris 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/album/{0}/image/{1}!shareuris", param1,param2);
+            string requestUri = string.Format("{0}/album/{1}/image/{2}!shareuris", SmugMug.v2.Constants.Addresses.SmugMugApi, param1,param2);
 
             return await RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri); 
         }
@@ -40,7 +40,7 @@ namespace SmugMug.v2.Types
         public async Task<ColorImageEntity> image____color (string param1)
         {
             // /image/(*)!color 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!color", param1);
+            string requestUri = string.Format("{0}/image/{1}!color", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ColorImageEntity>(requestUri); 
         }
@@ -48,7 +48,7 @@ namespace SmugMug.v2.Types
         public async Task<CommentEntity[]> image____comments (string param1)
         {
             // /image/(*)!comments 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!comments", param1);
+            string requestUri = string.Format("{0}/image/{1}!comments", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityArrayAsync<CommentEntity>(requestUri); 
         }
@@ -56,7 +56,7 @@ namespace SmugMug.v2.Types
         public async Task image____crop (string param1)
         {
             // /image/(*)!crop 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!crop", param1);
+            string requestUri = string.Format("{0}/image/{1}!crop", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             await GetRequestAsync(requestUri); 
         }
@@ -64,7 +64,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageDownloadEntity> image____download (string param1)
         {
             // /image/(*)!download 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!download", param1);
+            string requestUri = string.Format("{0}/image/{1}!download", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageDownloadEntity>(requestUri); 
         }
@@ -72,7 +72,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageMetadataEntity> image____metadata (string param1)
         {
             // /image/(*)!metadata 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!metadata", param1);
+            string requestUri = string.Format("{0}/image/{1}!metadata", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageMetadataEntity>(requestUri); 
         }
@@ -80,7 +80,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogSkuPriceEntity[]> image____prices (string param1)
         {
             // /image/(*)!prices 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!prices", param1);
+            string requestUri = string.Format("{0}/image/{1}!prices", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityArrayAsync<CatalogSkuPriceEntity>(requestUri); 
         }
@@ -88,7 +88,7 @@ namespace SmugMug.v2.Types
         public async Task image____rotate (string param1)
         {
             // /image/(*)!rotate 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!rotate", param1);
+            string requestUri = string.Format("{0}/image/{1}!rotate", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             await GetRequestAsync(requestUri); 
         }
@@ -96,7 +96,7 @@ namespace SmugMug.v2.Types
         public async Task image____watermark (string param1)
         {
             // /image/(*)!watermark 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!watermark", param1);
+            string requestUri = string.Format("{0}/image/{1}!watermark", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             await GetRequestAsync(requestUri); 
         }
@@ -104,7 +104,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageEntity> image___ (string param1)
         {
             // /image/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}", param1);
+            string requestUri = string.Format("{0}/image/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageEntity>(requestUri); 
         }
@@ -112,7 +112,7 @@ namespace SmugMug.v2.Types
         public async Task<LargestImageEntity> image____largestimage (string param1)
         {
             // /image/(*)!largestimage 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestimage", param1);
+            string requestUri = string.Format("{0}/image/{1}!largestimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<LargestImageEntity>(requestUri); 
         }
@@ -120,7 +120,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageSizeDetailsEntity> image____sizedetails (string param1)
         {
             // /image/(*)!sizedetails 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizedetails", param1);
+            string requestUri = string.Format("{0}/image/{1}!sizedetails", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageSizeDetailsEntity>(requestUri); 
         }
@@ -128,7 +128,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageSizesEntity> image____sizes (string param1)
         {
             // /image/(*)!sizes 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizes", param1);
+            string requestUri = string.Format("{0}/image/{1}!sizes", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageSizesEntity>(requestUri); 
         }
@@ -136,7 +136,7 @@ namespace SmugMug.v2.Types
         public async Task<LargestVideoEntity> image____largestvideo (string param1)
         {
             // /image/(*)!largestvideo 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!largestvideo", param1);
+            string requestUri = string.Format("{0}/image/{1}!largestvideo", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<LargestVideoEntity>(requestUri); 
         }
@@ -144,7 +144,7 @@ namespace SmugMug.v2.Types
         public async Task<UserEntity> user___ (string param1)
         {
             // /user/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/user/{0}", param1);
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<UserEntity>(requestUri); 
         }
@@ -152,7 +152,7 @@ namespace SmugMug.v2.Types
         public async Task<CSMILVideoEntity> video____csmil (string param1)
         {
             // /video/(*)!csmil 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!csmil", param1);
+            string requestUri = string.Format("{0}/video/{1}!csmil", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<CSMILVideoEntity>(requestUri); 
         }
@@ -160,7 +160,7 @@ namespace SmugMug.v2.Types
         public async Task<EmbedVideoEntity> video____embed (string param1)
         {
             // /video/(*)!embed 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/video/{0}!embed", param1);
+            string requestUri = string.Format("{0}/video/{1}!embed", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<EmbedVideoEntity>(requestUri); 
         }

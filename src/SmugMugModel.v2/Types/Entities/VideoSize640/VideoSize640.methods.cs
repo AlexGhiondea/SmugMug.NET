@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<ImageSizeCustomEntity> image____sizecustom (string param1)
         {
             // /image/(*)!sizecustom 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/image/{0}!sizecustom", param1);
+            string requestUri = string.Format("{0}/image/{1}!sizecustom", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageSizeCustomEntity>(requestUri); 
         }

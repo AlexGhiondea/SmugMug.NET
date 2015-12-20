@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogSkuEntity> catalogsku___ (string param1)
         {
             // /catalog/sku/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}", param1);
+            string requestUri = string.Format("{0}/catalog/sku/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<CatalogSkuEntity>(requestUri); 
         }
@@ -32,7 +32,7 @@ namespace SmugMug.v2.Types
         public async Task catalogsku____buy (string param1)
         {
             // /catalog/sku/(*)!buy 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}!buy", param1);
+            string requestUri = string.Format("{0}/catalog/sku/{1}!buy", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             await GetRequestAsync(requestUri); 
         }
