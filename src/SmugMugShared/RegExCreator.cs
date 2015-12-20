@@ -13,7 +13,8 @@ namespace SmugMugShared
         {
             s_specialUris.Add("/folder/user");
             s_specialUris.Add("/folder/id");
-            s_specialUris.Add("/catalog");
+            s_specialUris.Add("/catalog/skutype/option");
+            s_specialUris.Add("/catalog"); // this is last as this is the catch-all
             s_specialUris.Add("/highlight");
             s_specialUris.Add("/deleted");
         }
@@ -33,7 +34,7 @@ namespace SmugMugShared
             string endpoint = string.Empty;
             string endpointParameter = string.Empty;
             string methodName = string.Empty;
-            paramCount = 0; 
+            paramCount = 0;
 
             temp = temp.Replace(baseUri, "");
 
@@ -111,11 +112,19 @@ namespace SmugMugShared
                         endpointParameter = "/(*)";
                         paramCount++;
                     }
-                    else
+                    else if (v.Length == 3)
                     {
                         endpoint = endpoint + "/(*)/";
                         paramCount++;
                         endpointParameter = v[1] + "/(*)";
+                        paramCount++;
+                    }
+                    else
+                    {
+                        endpoint = endpoint + "/" + v[0] + "/(*)";
+                        paramCount++;
+                        endpoint = endpoint + "/" + v[2];
+                        endpointParameter = "/(*)";
                         paramCount++;
                     }
 
@@ -147,7 +156,17 @@ namespace SmugMugShared
                 methodName = "!" + methodName;
             }
 
+            // we could have something like:
+            // /folder/user/smugmuguser/albumName!parent
+            // 
+
             string methodNorm = prefix + endpoint + endpointParameter + methodName;
+            if (methodNorm.IndexOf("smugmuguser") > 0)
+            {
+                methodNorm = methodNorm.Replace("smugmuguser", "(*)");
+                paramCount++;
+            }
+
 
             return methodNorm;
         }

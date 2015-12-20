@@ -40,6 +40,8 @@ namespace SmugMug.v2.Types
         private SortMethodEnum _sortMethod;
         private bool _squareThumbs;
         private string _templateUri;
+        private string _uri;
+        private string _uriDescription;
         private bool _watermark;
         private string _watermarkUri;
         private bool _worldSearchable;
@@ -488,6 +490,34 @@ namespace SmugMug.v2.Types
                 {
                     _templateUri = value;
                     NotifyPropertyValueChanged("TemplateUri", _templateUri);
+                }
+            }
+        }
+
+
+        public string Uri {
+            get {
+                return _uri;
+            }
+            set {
+                if (_uri != value)
+                {
+                    _uri = value;
+                    NotifyPropertyValueChanged("Uri", _uri);
+                }
+            }
+        }
+
+
+        public string UriDescription {
+            get {
+                return _uriDescription;
+            }
+            set {
+                if (_uriDescription != value)
+                {
+                    _uriDescription = value;
+                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
                 }
             }
         }

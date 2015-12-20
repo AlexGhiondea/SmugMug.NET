@@ -15,6 +15,8 @@ namespace SmugMug.v2.Types
         private PinnedEnum _pinned;
         private SmallestSizeEnum _smallestSize;
         private bool _thumbs;
+        private string _uri;
+        private string _uriDescription;
         private long _watermarkID;
 
 
@@ -111,6 +113,34 @@ namespace SmugMug.v2.Types
                 {
                     _thumbs = value;
                     NotifyPropertyValueChanged("Thumbs", _thumbs);
+                }
+            }
+        }
+
+
+        public string Uri {
+            get {
+                return _uri;
+            }
+            set {
+                if (_uri != value)
+                {
+                    _uri = value;
+                    NotifyPropertyValueChanged("Uri", _uri);
+                }
+            }
+        }
+
+
+        public string UriDescription {
+            get {
+                return _uriDescription;
+            }
+            set {
+                if (_uriDescription != value)
+                {
+                    _uriDescription = value;
+                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
                 }
             }
         }

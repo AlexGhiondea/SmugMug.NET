@@ -3,7 +3,9 @@
 
 using Newtonsoft.Json;
 using SmugMug.Shared.Descriptors;
+using SmugMug.v2;
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Helpers;
 using SmugMugShared;
 using SmugMugShared.Extensions;
 using System;
@@ -55,7 +57,7 @@ namespace SmugMugMetadataRetriever
             jsonSerSettings.Formatting = Formatting.Indented;
             var jsonSer = Newtonsoft.Json.JsonSerializer.CreateDefault(jsonSerSettings);
 
-            using (StreamWriter sw = new StreamWriter("data.json"))
+            using (StreamWriter sw = new StreamWriter("metadata.json"))
             {
                 jsonSer.Serialize(sw, types);
             }

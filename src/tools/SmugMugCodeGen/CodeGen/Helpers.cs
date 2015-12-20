@@ -28,7 +28,7 @@ namespace SmugMugCodeGen
                 if (char.IsWhiteSpace(input[i]))
                     continue;
 
-                if (input[i] == '\\' || input[i] == '/' || input[i] == ',')
+                if (input[i] == '\\' || input[i] == '/' || input[i] == ',' || input[i] == '-')
                     continue;
 
                 if (additionalCharactersToSkip.Count > 0 && additionalCharactersToSkip.Contains(input[i]))

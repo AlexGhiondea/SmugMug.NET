@@ -112,6 +112,15 @@ namespace SmugMug.v2.Types
             }
         }
 
+        public async Task GetRequestAsync(string requestUri)
+        {
+            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
+            using (HttpResponseMessage response = await httpClient.GetAsync(requestUri))
+            using (StreamReader streamReader = new StreamReader(await response.Content.ReadAsStreamAsync()))
+            {
+            }
+        }
+
         private static JToken GetDataAsJTokenOrDefault(JObject obj, string entityName)
         {
             const string ResponseString = "Response";

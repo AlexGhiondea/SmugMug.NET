@@ -4,6 +4,7 @@
 using Newtonsoft.Json.Linq;
 using SmugMug.Shared.Descriptors;
 using SmugMug.Shared.Extensions;
+using SmugMug.v2;
 using SmugMug.v2.Authentication;
 using SmugMug.v2.Helpers;
 using SmugMugShared;
@@ -187,51 +188,99 @@ namespace SmugMugMetadataRetriever
             if (response.Property(locatorType) == null)
                 return e;
 
-            JObject obj = response.Property(locatorType).Value as JObject;
+            var val = response.Property(locatorType).Value;
 
-            if (obj == null)
+            if (val is JObject)
             {
-                return e;
-            }
+                JObject obj = val as JObject;
 
-            foreach (JProperty item in obj.Properties())
-            {
-                string name = item.Name;
-
-                ConsolePrinter.Write(ConsoleColor.Magenta, "Found {0} on type {1}", name, locatorType.ToString());
-
-                switch (item.Value.Type)
+                foreach (JProperty item in obj.Properties())
                 {
-                    case JTokenType.Array:
-                        var arr = item.Value as JArray;
-                        string itemType = "string";
+                    string name = item.Name;
 
-                        // The assumption is that they are all of the same type.
-                        if (arr.First != null)
-                            itemType = (item.Value as JArray).First.Type.ToString();
+                    ConsolePrinter.Write(ConsoleColor.Magenta, "Found {0} on type {1}", name, locatorType.ToString());
 
-                        e.Properties.Add(new ArrayProperty(name, itemType));
-                        break;
-                    case JTokenType.Boolean:
-                        e.Properties.Add(new BooleanProperty(name));
-                        break;
-                    case JTokenType.Date:
-                        e.Properties.Add(new DateTimeProperty(name));
-                        break;
-                    case JTokenType.Float:
-                        e.Properties.Add(new FloatProperty(name));
-                        break;
-                    case JTokenType.Integer:
-                        e.Properties.Add(new IntegerProperty(name));
-                        break;
+                    switch (item.Value.Type)
+                    {
+                        case JTokenType.Array:
+                            var arr = item.Value as JArray;
+                            string itemType = "string";
 
-                    default:
-                        // Uris is special, and we don't include it
-                        if (!StringComparer.OrdinalIgnoreCase.Equals(name, "uris"))
-                            e.Properties.Add(new UnknownTypeProperty(name));
-                        break;
+                            // The assumption is that they are all of the same type.
+                            if (arr.First != null)
+                                itemType = (item.Value as JArray).First.Type.ToString();
+
+                            e.Properties.Add(new ArrayProperty(name, itemType));
+                            break;
+                        case JTokenType.Boolean:
+                            e.Properties.Add(new BooleanProperty(name));
+                            break;
+                        case JTokenType.Date:
+                            e.Properties.Add(new DateTimeProperty(name));
+                            break;
+                        case JTokenType.Float:
+                            e.Properties.Add(new FloatProperty(name));
+                            break;
+                        case JTokenType.Integer:
+                            e.Properties.Add(new IntegerProperty(name));
+                            break;
+
+                        default:
+                            // Uris is special, and we don't include it
+                            if (!StringComparer.OrdinalIgnoreCase.Equals(name, "uris"))
+                                e.Properties.Add(new UnknownTypeProperty(name));
+                            break;
+                    }
                 }
             }
+            else if (val is JArray)
+            {
+                var obj = val as JArray;
+                if (obj.Count==0)
+                {
+                    return e;
+                }
+
+                foreach (JProperty item in (obj[0] as JObject).Properties())
+                {
+                    string name = item.Name;
+
+                    ConsolePrinter.Write(ConsoleColor.Magenta, "Found {0} on type {1}", name, locatorType.ToString());
+
+                    switch (item.Value.Type)
+                    {
+                        case JTokenType.Array:
+                            var arr = item.Value as JArray;
+                            string itemType = "string";
+
+                            // The assumption is that they are all of the same type.
+                            if (arr.First != null)
+                                itemType = (item.Value as JArray).First.Type.ToString();
+
+                            e.Properties.Add(new ArrayProperty(name, itemType));
+                            break;
+                        case JTokenType.Boolean:
+                            e.Properties.Add(new BooleanProperty(name));
+                            break;
+                        case JTokenType.Date:
+                            e.Properties.Add(new DateTimeProperty(name));
+                            break;
+                        case JTokenType.Float:
+                            e.Properties.Add(new FloatProperty(name));
+                            break;
+                        case JTokenType.Integer:
+                            e.Properties.Add(new IntegerProperty(name));
+                            break;
+
+                        default:
+                            // Uris is special, and we don't include it
+                            if (!StringComparer.OrdinalIgnoreCase.Equals(name, "uris"))
+                                e.Properties.Add(new UnknownTypeProperty(name));
+                            break;
+                    }
+                }
+            }
+
             return e;
         }
 
@@ -394,8 +443,15 @@ namespace SmugMugMetadataRetriever
             if (response == null)
                 return od;
 
-            od.Deprecated = response.GetValueAsString("Deprecated");
+            if (response.Property("Deprecated") != null)
+            {
+                var depreObj = response.Property("Deprecated").Value as JObject;
+                if (depreObj != null)
+                {
+                    od.Deprecated = depreObj.GetValueAsString("Alternative");
+                }
 
+            }
             if (response.Property("Output") == null)
             {
 
@@ -435,6 +491,10 @@ namespace SmugMugMetadataRetriever
                         odd.Name = name3;
                         var methods = (item as JObject).Property("Uris");
 
+                        if (methods == null)
+                        {
+                            continue;
+                        }
 
                         if (methods.Value is JObject)
                         {

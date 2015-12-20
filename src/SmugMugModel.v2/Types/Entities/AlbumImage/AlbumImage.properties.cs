@@ -9,6 +9,9 @@ namespace SmugMug.v2.Types
     public partial class AlbumImageEntity : SmugMugEntity
     {
         private long _altitude;
+        private string _archivedMD5;
+        private long _archivedSize;
+        private string _archivedUri;
         private bool _canEdit;
         private string _caption;
         private bool _collectable;
@@ -20,7 +23,7 @@ namespace SmugMug.v2.Types
         private string _imageKey;
         private bool _isArchive;
         private bool _isVideo;
-        private String[] _keywordArray;
+        private string[] _keywordArray;
         private string _keywords;
         private DateTime _lastUpdated;
         private string _latitude;
@@ -50,6 +53,48 @@ namespace SmugMug.v2.Types
                 {
                     _altitude = value;
                     NotifyPropertyValueChanged("Altitude", _altitude);
+                }
+            }
+        }
+
+
+        public string ArchivedMD5 {
+            get {
+                return _archivedMD5;
+            }
+            set {
+                if (_archivedMD5 != value)
+                {
+                    _archivedMD5 = value;
+                    NotifyPropertyValueChanged("ArchivedMD5", _archivedMD5);
+                }
+            }
+        }
+
+
+        public long ArchivedSize {
+            get {
+                return _archivedSize;
+            }
+            set {
+                if (_archivedSize != value)
+                {
+                    _archivedSize = value;
+                    NotifyPropertyValueChanged("ArchivedSize", _archivedSize);
+                }
+            }
+        }
+
+
+        public string ArchivedUri {
+            get {
+                return _archivedUri;
+            }
+            set {
+                if (_archivedUri != value)
+                {
+                    _archivedUri = value;
+                    NotifyPropertyValueChanged("ArchivedUri", _archivedUri);
                 }
             }
         }
@@ -209,7 +254,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public String[] KeywordArray {
+        public string[] KeywordArray {
             get {
                 return _keywordArray;
             }

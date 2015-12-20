@@ -18,13 +18,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugCodeGen", "tools\SmugMugCodeGen\SmugMugCodeGen.csproj", "{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}"
-	ProjectSection(SolutionItems) = preProject
-		tools\SmugMugMetadata\metadata.json = tools\SmugMugMetadata\metadata.json
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmugMugMetadata", "SmugMugMetadata", "{A6EAD003-DBD4-4634-B5EB-BC0F29AAFFFE}"
 	ProjectSection(SolutionItems) = preProject
 		tools\SmugMugMetadata\metadata.json = tools\SmugMugMetadata\metadata.json
+		tools\SmugMugMetadata\metadata_part2.json = tools\SmugMugMetadata\metadata_part2.json
+		tools\SmugMugMetadata\metadata_part3.json = tools\SmugMugMetadata\metadata_part3.json
 	EndProjectSection
 EndProject
 Global

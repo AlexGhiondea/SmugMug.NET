@@ -10,7 +10,7 @@ namespace SmugMug.v2.Types
     {
         private long _altitude;
         private string _altitudeReference;
-        private string _aperture;
+        private float _aperture;
         private string _audioCodec;
         private string _author;
         private string _authorTitle;
@@ -49,7 +49,7 @@ namespace SmugMug.v2.Types
         private string _gainControl;
         private string _headline;
         private string _hyperfocalDistance;
-        private string _iSO;
+        private long _iSO;
         private string _keywords;
         private long _latitude;
         private string _latitudeReference;
@@ -63,13 +63,13 @@ namespace SmugMug.v2.Types
         private DateTime _microDateTimeCreated;
         private DateTime _microDateTimeDigitized;
         private string _model;
-        private string _normalizedLightValue;
-        private string _rating;
+        private float _normalizedLightValue;
+        private long _rating;
         private string _saturation;
         private string _scaleFactor;
         private string _sceneCaptureType;
         private string _sensingMethod;
-        private string _serialNumber;
+        private long _serialNumber;
         private string _sharpness;
         private string _software;
         private string _source;
@@ -118,7 +118,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string Aperture {
+        public float Aperture {
             get {
                 return _aperture;
             }
@@ -664,7 +664,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string ISO {
+        public long ISO {
             get {
                 return _iSO;
             }
@@ -860,7 +860,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string NormalizedLightValue {
+        public float NormalizedLightValue {
             get {
                 return _normalizedLightValue;
             }
@@ -874,7 +874,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string Rating {
+        public long Rating {
             get {
                 return _rating;
             }
@@ -944,7 +944,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string SerialNumber {
+        public long SerialNumber {
             get {
                 return _serialNumber;
             }

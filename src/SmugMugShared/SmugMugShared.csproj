@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="Descriptors\Method.cs" />
     <Compile Include="Descriptors\Limits.cs" />
     <Compile Include="Descriptors\Properties\ArrayProperty.cs" />
