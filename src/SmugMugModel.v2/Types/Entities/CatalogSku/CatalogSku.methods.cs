@@ -42,10 +42,10 @@ namespace SmugMug.v2.Types
             return RetrieveEntityAsync<CatalogSkuPriceEntity>(requestUri).Result; 
         }
 
-        public CatalogSkuTypeEntity catalog___option___ (string param1, string param2)
+        public CatalogSkuTypeEntity catalogskutypeoptionfinish___ (string param1)
         {
-            // /catalog/(*)/option/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/{0}/option/{1}", param1,param2);
+            // /catalog/skutype/option/finish/(*) 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/skutype/option/finish/{0}", param1);
 
             return RetrieveEntityAsync<CatalogSkuTypeEntity>(requestUri).Result; 
         }

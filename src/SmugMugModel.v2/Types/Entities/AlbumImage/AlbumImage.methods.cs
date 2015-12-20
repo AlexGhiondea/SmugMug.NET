@@ -28,26 +28,10 @@ namespace SmugMug.v2.Types
             return RetrieveEntityAsync<AlbumEntity>(requestUri).Result; 
         }
 
-        public AlbumImageShareUrisEntity ___bddHpz____shareuris (string param1, string param2)
+        public AlbumImageShareUrisEntity album___image____shareuris (string param1, string param2)
         {
-            // /(*)/bddHpz/(*)!shareuris 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/{0}/bddHpz/{1}!shareuris{2}", param1,param2);
-
-            return RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri).Result; 
-        }
-
-        public AlbumImageShareUrisEntity ___T3PH3g____shareuris (string param1, string param2)
-        {
-            // /(*)/T3PH3g/(*)!shareuris 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/{0}/T3PH3g/{1}!shareuris{2}", param1,param2);
-
-            return RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri).Result; 
-        }
-
-        public AlbumImageShareUrisEntity ___ZDQXVN____shareuris (string param1, string param2)
-        {
-            // /(*)/ZDQXVN/(*)!shareuris 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/{0}/ZDQXVN/{1}!shareuris{2}", param1,param2);
+            // /album/(*)/image/(*)!shareuris 
+            string requestUri = string.Format("https://api.smugmug.com/api/v2/album/{0}/image/{1}!shareuris{2}", param1,param2);
 
             return RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri).Result; 
         }
