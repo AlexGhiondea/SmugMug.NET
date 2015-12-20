@@ -140,7 +140,16 @@ namespace SmugMugMetadataRetriever
             foreach (JProperty uri in Uris.Value)
             {
                 var UriValue = (uri.Value as JObject).Property("Uri").Value;
-                discoveredUris.Add(uri.Name, UriValue.ToString());
+
+                var returns = (uri.Value as JObject).GetValueAsString("LocatorType");
+
+                string returnType = uri.Name;
+                if (StringComparer.OrdinalIgnoreCase.Equals("Objects", returns))
+                {
+                    returnType += "[]";
+                }
+
+                discoveredUris.Add(returnType, UriValue.ToString());
             }
 
             return discoveredUris;
@@ -155,7 +164,10 @@ namespace SmugMugMetadataRetriever
                     var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
                     return ProcessData(req);
                 }
-                catch { }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Uri: '{0}', Error: '{1}'", uri, e.Message);
+                }
             }
 
             return null;
@@ -169,9 +181,8 @@ namespace SmugMugMetadataRetriever
             if (response.Property("Locator") == null)
                 return e;
 
-            //TODO: handle arrays.
-
-            var locatorType = response.Property("Locator").Value.ToString();
+            var locatorType = response.GetValueAsString("Locator");
+            var returnType = response.GetValueAsString("LocatorType");
 
             if (response.Property(locatorType) == null)
                 return e;
@@ -240,7 +251,7 @@ namespace SmugMugMetadataRetriever
 
             od.MergeWith(mParams);
 
-            var uriDict = DiscoverUris(obj);
+            // var uriDict = DiscoverUris(obj);
 
             // Now process the Response in search of Uris
             if (obj.Property("Response") == null)
@@ -274,6 +285,14 @@ namespace SmugMugMetadataRetriever
                             if ((item.Value as JObject).Property("Locator") != null)
                             {
                                 md.ReturnType = (item.Value as JObject).Property("Locator").Value.ToString();
+
+                                var returns = (item.Value as JObject).GetValueAsString("LocatorType");
+
+                                string returnType = md.ReturnType;
+                                if (StringComparer.OrdinalIgnoreCase.Equals("Objects", returns))
+                                {
+                                    md.ReturnType += "[]";
+                                }
                             }
                             od.Methods.Add(md);
                         }
@@ -375,8 +394,12 @@ namespace SmugMugMetadataRetriever
             if (response == null)
                 return od;
 
+            od.Deprecated = response.GetValueAsString("Deprecated");
+
             if (response.Property("Output") == null)
             {
+
+
                 if (obj.Property("Response") == null)
                     return od;
 
@@ -422,6 +445,10 @@ namespace SmugMugMetadataRetriever
                                 var entryObj = (entry.Value as JObject);
                                 var uri = entryObj.GetValueAsString("Uri");
                                 var locator = entryObj.GetValueAsString("Locator");
+                                var returnType = entryObj.GetValueAsString("LocatorType");
+
+                                if (StringComparer.OrdinalIgnoreCase.Equals("objects", returnType))
+                                    locator += "[]";
 
                                 odd.Methods.Add(new Method()
                                 {

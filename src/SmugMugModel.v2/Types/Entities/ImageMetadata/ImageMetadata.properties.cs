@@ -2,12 +2,13 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
     public partial class ImageMetadataEntity : SmugMugEntity
     {
-        private int _altitude;
+        private long _altitude;
         private string _altitudeReference;
         private string _aperture;
         private string _audioCodec;
@@ -50,12 +51,12 @@ namespace SmugMug.v2.Types
         private string _hyperfocalDistance;
         private string _iSO;
         private string _keywords;
-        private int _latitude;
+        private long _latitude;
         private string _latitudeReference;
         private string _lens;
         private string _lensSerialNumber;
         private string _lightSource;
-        private int _longitude;
+        private long _longitude;
         private string _longitudeReference;
         private string _make;
         private string _metering;
@@ -89,7 +90,7 @@ namespace SmugMug.v2.Types
         private string _writerEditor;
 
 
-        public int Altitude {
+        public long Altitude {
             get {
                 return _altitude;
             }
@@ -691,7 +692,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Latitude {
+        public long Latitude {
             get {
                 return _latitude;
             }
@@ -761,7 +762,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int Longitude {
+        public long Longitude {
             get {
                 return _longitude;
             }
@@ -1207,8 +1208,5 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-
     }
 }

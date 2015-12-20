@@ -311,6 +311,12 @@ namespace SmugMugTest.v2
                 return od;
 
             var outputInfo = ((obj.Property("Options").Value as JObject).Property("Parameters").Value) as JObject;
+            var deprecated = ((obj.Property("Options").Value as JObject)).GetValueAsString("Deprecated");
+
+            if (!string.IsNullOrEmpty(deprecated))
+            {
+                od.Deprecated = deprecated;
+            }
 
             if (outputInfo.Property("PATCH") != null)
             {

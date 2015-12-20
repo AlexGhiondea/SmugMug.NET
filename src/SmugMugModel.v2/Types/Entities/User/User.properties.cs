@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
@@ -12,7 +13,7 @@ namespace SmugMug.v2.Types
         private string _domainOnly;
         private string _firstName;
         private bool _friendsView;
-        private int _imageCount;
+        private long _imageCount;
         private bool _isTrial;
         private string _lastName;
         private string _name;
@@ -101,7 +102,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ImageCount {
+        public long ImageCount {
             get {
                 return _imageCount;
             }
@@ -337,8 +338,5 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-
     }
 }

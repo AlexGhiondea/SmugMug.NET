@@ -2,23 +2,24 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
     public partial class SizeEntity : SmugMugEntity
     {
-        private int _albumCount;
-        private int _dynamicMediaCount;
-        private int _dynamicMediaSize;
-        private int _folderCount;
-        private int _mediaCount;
-        private int _mediaSize;
-        private int _pageCount;
+        private long _albumCount;
+        private long _dynamicMediaCount;
+        private long _dynamicMediaSize;
+        private long _folderCount;
+        private long _mediaCount;
+        private long _mediaSize;
+        private long _pageCount;
         private string _uri;
         private string _uriDescription;
 
 
-        public int AlbumCount {
+        public long AlbumCount {
             get {
                 return _albumCount;
             }
@@ -32,7 +33,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int DynamicMediaCount {
+        public long DynamicMediaCount {
             get {
                 return _dynamicMediaCount;
             }
@@ -46,7 +47,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int DynamicMediaSize {
+        public long DynamicMediaSize {
             get {
                 return _dynamicMediaSize;
             }
@@ -60,7 +61,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int FolderCount {
+        public long FolderCount {
             get {
                 return _folderCount;
             }
@@ -74,7 +75,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int MediaCount {
+        public long MediaCount {
             get {
                 return _mediaCount;
             }
@@ -88,7 +89,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int MediaSize {
+        public long MediaSize {
             get {
                 return _mediaSize;
             }
@@ -102,7 +103,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int PageCount {
+        public long PageCount {
             get {
                 return _pageCount;
             }
@@ -142,8 +143,5 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-
     }
 }

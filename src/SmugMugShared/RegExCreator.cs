@@ -27,13 +27,13 @@ namespace SmugMugShared
             return string.Empty;
         }
 
-        public static string FromUri(string baseUri, string uri)
+        public static string FromUri(string baseUri, string uri, out int paramCount)
         {
             string temp = uri;
             string endpoint = string.Empty;
             string endpointParameter = string.Empty;
             string methodName = string.Empty;
-
+            paramCount = 0; 
 
             temp = temp.Replace(baseUri, "");
 
@@ -61,6 +61,8 @@ namespace SmugMugShared
                     string val = temp.Substring(ss, le - ss);
                     uri = uri.Replace(val, "(*)");
                     temp = temp.Replace(val, "");
+
+                    paramCount++;
 
                     ss = temp.IndexOf(':', ss);
                 }
@@ -107,17 +109,21 @@ namespace SmugMugShared
                     {
                         endpoint = endpoint + "/" + v[0];
                         endpointParameter = "/(*)";
+                        paramCount++;
                     }
                     else
                     {
                         endpoint = endpoint + "/(*)/";
+                        paramCount++;
                         endpointParameter = v[1] + "/(*)";
+                        paramCount++;
                     }
 
                 }
                 else
                 {
                     endpointParameter = "/(*)";
+                    paramCount++;
                 }
             }
             else
@@ -129,6 +135,7 @@ namespace SmugMugShared
                     temp = temp.Replace(endpointParameter + "?", "");
 
                     endpointParameter = "/(*)";
+                    paramCount++;
                 }
             }
 
@@ -143,6 +150,12 @@ namespace SmugMugShared
             string methodNorm = prefix + endpoint + endpointParameter + methodName;
 
             return methodNorm;
+        }
+
+        public static string FromUri(string baseUri, string uri)
+        {
+            int dummy;
+            return FromUri(baseUri, uri, out dummy);
         }
     }
 }

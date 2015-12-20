@@ -2,14 +2,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
     public partial class BioImageEntity : SmugMugEntity
     {
-        private int _altitude;
+        private long _altitude;
         private string _archivedMD5;
-        private int _archivedSize;
+        private long _archivedSize;
         private string _archivedUri;
         private bool _canEdit;
         private string _caption;
@@ -17,7 +18,7 @@ namespace SmugMug.v2.Types
         private DateTime _date;
         private string _fileName;
         private string _format;
-        private string _formattedValues;
+        private CaptionEntity _formattedValues;
         private bool _hidden;
         private string _imageKey;
         private bool _isArchive;
@@ -27,9 +28,9 @@ namespace SmugMug.v2.Types
         private DateTime _lastUpdated;
         private string _latitude;
         private string _longitude;
-        private int _originalHeight;
-        private int _originalSize;
-        private int _originalWidth;
+        private long _originalHeight;
+        private long _originalSize;
+        private long _originalWidth;
         private bool _processing;
         private bool _protected;
         private string _thumbnailUrl;
@@ -41,7 +42,7 @@ namespace SmugMug.v2.Types
         private string _webUri;
 
 
-        public int Altitude {
+        public long Altitude {
             get {
                 return _altitude;
             }
@@ -69,7 +70,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int ArchivedSize {
+        public long ArchivedSize {
             get {
                 return _archivedSize;
             }
@@ -181,7 +182,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string FormattedValues {
+        public CaptionEntity FormattedValues {
             get {
                 return _formattedValues;
             }
@@ -321,7 +322,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalHeight {
+        public long OriginalHeight {
             get {
                 return _originalHeight;
             }
@@ -335,7 +336,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalSize {
+        public long OriginalSize {
             get {
                 return _originalSize;
             }
@@ -349,7 +350,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int OriginalWidth {
+        public long OriginalWidth {
             get {
                 return _originalWidth;
             }
@@ -487,8 +488,5 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-
     }
 }

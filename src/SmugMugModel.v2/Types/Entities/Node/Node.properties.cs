@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
@@ -12,7 +13,7 @@ namespace SmugMug.v2.Types
         private string _description;
         private EffectivePrivacyEnum _effectivePrivacy;
         private EffectiveSecurityTypeEnum _effectiveSecurityType;
-        private string _formattedValues;
+        private CaptionEntity _formattedValues;
         private bool _hasChildren;
         private bool _hideOwner;
         private string _highlightImageUri;
@@ -27,7 +28,7 @@ namespace SmugMug.v2.Types
         private SecurityTypeEnum _securityType;
         private SmugSearchableEnum _smugSearchable;
         private SortDirectionEnum _sortDirection;
-        private int _sortIndex;
+        private long _sortIndex;
         private SortMethodEnum _sortMethod;
         private TypeEnum _type;
         private string _uri;
@@ -108,7 +109,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string FormattedValues {
+        public CaptionEntity FormattedValues {
             get {
                 return _formattedValues;
             }
@@ -318,7 +319,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public int SortIndex {
+        public long SortIndex {
             get {
                 return _sortIndex;
             }
@@ -442,8 +443,5 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-
     }
 }
