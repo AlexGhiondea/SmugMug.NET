@@ -102,8 +102,7 @@ namespace SmugMugCodeGen
         private static string CreateRequestUriWithParameters(string uri, int parameterCount)
         {
             StringBuilder requestUri = new StringBuilder();
-            requestUri.Append("string requestUri = string.Format(\"");
-            requestUri.Append(SmugMug.v2.Constants.Addresses.SmugMugApi);
+            requestUri.Append("string requestUri = string.Format(\"{0}");
             string[] parts = uri.Split(UriParameterDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < parts.Length; i++)
@@ -114,12 +113,12 @@ namespace SmugMugCodeGen
                 {
                     // the part that starts with '!' does not accept parameters.
                     requestUri.Append("{");
-                    requestUri.Append(i);
+                    requestUri.Append(i + 1);
                     requestUri.Append("}");
                 }
             }
             requestUri.Append("\", "); // close format string;
-
+            requestUri.Append("SmugMug.v2.Constants.Addresses.SmugMugApi, ");
             for (int i = 0; i < parameterCount; i++)
             {
                 requestUri.Append(Constants.ParameterNameBase);

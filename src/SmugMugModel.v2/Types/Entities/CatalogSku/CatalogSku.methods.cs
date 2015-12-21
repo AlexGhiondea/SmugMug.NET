@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogProductEntity> catalogproduct___ (string param1)
         {
             // /catalog/product/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/product/{0}", param1);
+            string requestUri = string.Format("{0}/catalog/product/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<CatalogProductEntity>(requestUri); 
         }
@@ -32,7 +32,7 @@ namespace SmugMug.v2.Types
         public async Task catalogsku____buy (string param1)
         {
             // /catalog/sku/(*)!buy 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}!buy", param1);
+            string requestUri = string.Format("{0}/catalog/sku/{1}!buy", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             await GetRequestAsync(requestUri); 
         }
@@ -40,7 +40,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogSkuPriceEntity> catalogsku____price (string param1)
         {
             // /catalog/sku/(*)!price 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/sku/{0}!price", param1);
+            string requestUri = string.Format("{0}/catalog/sku/{1}!price", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<CatalogSkuPriceEntity>(requestUri); 
         }
@@ -48,7 +48,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogSkuTypeEntity> catalogskutypeoptionfinish___ (string param1)
         {
             // /catalog/skutype/option/finish/(*) 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/skutype/option/finish/{0}", param1);
+            string requestUri = string.Format("{0}/catalog/skutype/option/finish/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<CatalogSkuTypeEntity>(requestUri); 
         }

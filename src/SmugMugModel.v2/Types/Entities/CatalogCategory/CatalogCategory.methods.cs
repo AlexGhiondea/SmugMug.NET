@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogSubCategoryEntity[]> catalogcategory____subcategories (string param1)
         {
             // /catalog/category/(*)!subcategories 
-            string requestUri = string.Format("https://api.smugmug.com/api/v2/catalog/category/{0}!subcategories", param1);
+            string requestUri = string.Format("{0}/catalog/category/{1}!subcategories", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityArrayAsync<CatalogSubCategoryEntity>(requestUri); 
         }

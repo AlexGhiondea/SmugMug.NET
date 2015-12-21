@@ -7,26 +7,17 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class DownloadEntity : SmugMugEntity
+    public partial class CaptionEntity : SmugMugEntity
     {
-        public DownloadEntity()
+        public CaptionEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public DownloadEntity(OAuthToken oauthToken)
+        public CaptionEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;
-        }
-
-
-        public async Task<AlbumEntity> album___ (string param1)
-        {
-            // /album/(*) 
-            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<AlbumEntity>(requestUri); 
         }
     }
 }
