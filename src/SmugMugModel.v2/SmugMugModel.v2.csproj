@@ -353,6 +353,7 @@
     <Compile Include="Types\Entities\Size\Size.properties.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Types\SiteEntity.cs" />
     <Compile Include="Types\SmugMugEntity.cs">
       <SubType>Code</SubType>
     </Compile>
