@@ -15,10 +15,18 @@ namespace SmugMug.v2.Types
 
         public async Task<UserEntity> GetAuthenticatedUserAsync()
         {
-            // /album/(*)!applyalbumtemplate 
+            // !authuser 
             string requestUri = string.Format("{0}!authuser", SmugMug.v2.Constants.Addresses.SmugMugApi);
 
             return await RetrieveEntityAsync<UserEntity>(requestUri);
+        }
+
+        public async Task<UserEntity[]> SearchForUser(string query)
+        {
+            // api/v2/user!search?q=
+            string requestUri = string.Format("{0}/user!search?q={1}", SmugMug.v2.Constants.Addresses.SmugMugApi, query);
+
+            return await RetrieveEntityArrayAsync<UserEntity>(requestUri);
         }
     }
 }
