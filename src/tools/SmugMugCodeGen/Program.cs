@@ -19,13 +19,13 @@ namespace SmugMugCodeGen
         private static void PrintUsage()
         {
             ConsolePrinter.Write(ConsoleColor.White, "Usage:");
-            ConsolePrinter.Write(ConsoleColor.Cyan, "smugmugcodegen.exe <outputFolder> [<metadataFiles>] ");
+            ConsolePrinter.Write(ConsoleColor.Cyan, "smugmugcodegen.exe <outputFolder> [GenerateManualFiles] [<metadataFiles>] ");
         }
 
         static void Main(string[] args)
         {
             // The usage of this tool is going to be:
-            // smugmugcodegen.exe <outputFolder> [<metadataFiles>] 
+            // smugmugcodegen.exe <outputFolder> <GenerateManualFiles> [<metadataFiles>] 
             if (args.Length < 2)
             {
                 PrintUsage();
@@ -85,6 +85,17 @@ namespace SmugMugCodeGen
                 classDefinition = GetClassDefinition(className, methods.ToString().TrimEnd(), string.Empty, "using System.Threading.Tasks;");
                 sb.Append(classDefinition);
                 File.WriteAllText(Path.Combine(objectDirName, item.Key + ".methods.cs"), sb.ToString());
+
+                if (_options.GenerateManualFiles)
+                {
+                    // These should only be used once, as they are meant to be changed while the API is taking shape
+                    sb = new StringBuilder();
+                    StringBuilder manualMethods = new StringBuilder();
+                    manualMethods.Append(CodeGen.BuildManualMethods(item.Value.Methods));
+                    classDefinition = GetClassDefinition(className, manualMethods.ToString().TrimEnd(), string.Empty, "using System.Threading.Tasks;");
+                    sb.Append(classDefinition);
+                    File.WriteAllText(Path.Combine(objectDirName, item.Key + ".manual.cs"), sb.ToString());
+                }
 
                 ConsolePrinter.Write(ConsoleColor.Green, "Generated class {0}", item.Key);
             }
