@@ -27,8 +27,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_bitrate != value)
                 {
-                    _bitrate = value;
-                    NotifyPropertyValueChanged("Bitrate", _bitrate);
+                    NotifyPropertyValueChanged("Bitrate", oldValue:_bitrate, newValue: value);
+                    _bitrate = value;     
                 }
             }
         }
@@ -41,8 +41,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_duration != value)
                 {
-                    _duration = value;
-                    NotifyPropertyValueChanged("Duration", _duration);
+                    NotifyPropertyValueChanged("Duration", oldValue:_duration, newValue: value);
+                    _duration = value;     
                 }
             }
         }
@@ -55,8 +55,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_ext != value)
                 {
-                    _ext = value;
-                    NotifyPropertyValueChanged("Ext", _ext);
+                    NotifyPropertyValueChanged("Ext", oldValue:_ext, newValue: value);
+                    _ext = value;     
                 }
             }
         }
@@ -69,8 +69,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_height != value)
                 {
-                    _height = value;
-                    NotifyPropertyValueChanged("Height", _height);
+                    NotifyPropertyValueChanged("Height", oldValue:_height, newValue: value);
+                    _height = value;     
                 }
             }
         }
@@ -83,8 +83,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_size != value)
                 {
-                    _size = value;
-                    NotifyPropertyValueChanged("Size", _size);
+                    NotifyPropertyValueChanged("Size", oldValue:_size, newValue: value);
+                    _size = value;     
                 }
             }
         }
@@ -97,8 +97,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -111,8 +111,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }
@@ -125,8 +125,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_url != value)
                 {
-                    _url = value;
-                    NotifyPropertyValueChanged("Url", _url);
+                    NotifyPropertyValueChanged("Url", oldValue:_url, newValue: value);
+                    _url = value;     
                 }
             }
         }
@@ -139,8 +139,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_usable != value)
                 {
-                    _usable = value;
-                    NotifyPropertyValueChanged("Usable", _usable);
+                    NotifyPropertyValueChanged("Usable", oldValue:_usable, newValue: value);
+                    _usable = value;     
                 }
             }
         }
@@ -153,8 +153,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_width != value)
                 {
-                    _width = value;
-                    NotifyPropertyValueChanged("Width", _width);
+                    NotifyPropertyValueChanged("Width", oldValue:_width, newValue: value);
+                    _width = value;     
                 }
             }
         }

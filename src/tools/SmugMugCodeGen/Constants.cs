@@ -15,8 +15,8 @@ namespace SmugMugCodeGen
             set {{
                 if ({2} != value)
                 {{
-                    {2} = value;
-                    NotifyPropertyValueChanged(""{1}"", {2});
+                    NotifyPropertyValueChanged(""{1}"", oldValue:{2}, newValue: value);
+                    {2} = value;     
                 }}
             }}
         }}

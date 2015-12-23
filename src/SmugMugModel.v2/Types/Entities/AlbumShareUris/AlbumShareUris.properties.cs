@@ -21,8 +21,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_slideshowEmbedUri != value)
                 {
-                    _slideshowEmbedUri = value;
-                    NotifyPropertyValueChanged("SlideshowEmbedUri", _slideshowEmbedUri);
+                    NotifyPropertyValueChanged("SlideshowEmbedUri", oldValue:_slideshowEmbedUri, newValue: value);
+                    _slideshowEmbedUri = value;     
                 }
             }
         }
@@ -35,8 +35,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_slideshowFlashUri != value)
                 {
-                    _slideshowFlashUri = value;
-                    NotifyPropertyValueChanged("SlideshowFlashUri", _slideshowFlashUri);
+                    NotifyPropertyValueChanged("SlideshowFlashUri", oldValue:_slideshowFlashUri, newValue: value);
+                    _slideshowFlashUri = value;     
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -63,8 +63,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }

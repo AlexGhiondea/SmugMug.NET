@@ -27,8 +27,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_dissolve != value)
                 {
-                    _dissolve = value;
-                    NotifyPropertyValueChanged("Dissolve", _dissolve);
+                    NotifyPropertyValueChanged("Dissolve", oldValue:_dissolve, newValue: value);
+                    _dissolve = value;     
                 }
             }
         }
@@ -41,8 +41,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageID != value)
                 {
-                    _imageID = value;
-                    NotifyPropertyValueChanged("ImageID", _imageID);
+                    NotifyPropertyValueChanged("ImageID", oldValue:_imageID, newValue: value);
+                    _imageID = value;     
                 }
             }
         }
@@ -55,8 +55,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageKey != value)
                 {
-                    _imageKey = value;
-                    NotifyPropertyValueChanged("ImageKey", _imageKey);
+                    NotifyPropertyValueChanged("ImageKey", oldValue:_imageKey, newValue: value);
+                    _imageKey = value;     
                 }
             }
         }
@@ -69,8 +69,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_name != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    NotifyPropertyValueChanged("Name", oldValue:_name, newValue: value);
+                    _name = value;     
                 }
             }
         }
@@ -83,8 +83,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_pinned != value)
                 {
-                    _pinned = value;
-                    NotifyPropertyValueChanged("Pinned", _pinned);
+                    NotifyPropertyValueChanged("Pinned", oldValue:_pinned, newValue: value);
+                    _pinned = value;     
                 }
             }
         }
@@ -97,8 +97,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_smallestSize != value)
                 {
-                    _smallestSize = value;
-                    NotifyPropertyValueChanged("SmallestSize", _smallestSize);
+                    NotifyPropertyValueChanged("SmallestSize", oldValue:_smallestSize, newValue: value);
+                    _smallestSize = value;     
                 }
             }
         }
@@ -111,8 +111,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_thumbs != value)
                 {
-                    _thumbs = value;
-                    NotifyPropertyValueChanged("Thumbs", _thumbs);
+                    NotifyPropertyValueChanged("Thumbs", oldValue:_thumbs, newValue: value);
+                    _thumbs = value;     
                 }
             }
         }
@@ -125,8 +125,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -139,8 +139,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }
@@ -153,8 +153,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_watermarkID != value)
                 {
-                    _watermarkID = value;
-                    NotifyPropertyValueChanged("WatermarkID", _watermarkID);
+                    NotifyPropertyValueChanged("WatermarkID", oldValue:_watermarkID, newValue: value);
+                    _watermarkID = value;     
                 }
             }
         }

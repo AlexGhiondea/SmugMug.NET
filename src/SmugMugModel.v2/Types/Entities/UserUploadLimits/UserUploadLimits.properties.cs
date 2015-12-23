@@ -21,8 +21,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_maxPixels != value)
                 {
-                    _maxPixels = value;
-                    NotifyPropertyValueChanged("MaxPixels", _maxPixels);
+                    NotifyPropertyValueChanged("MaxPixels", oldValue:_maxPixels, newValue: value);
+                    _maxPixels = value;     
                 }
             }
         }
@@ -35,8 +35,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_maxSize != value)
                 {
-                    _maxSize = value;
-                    NotifyPropertyValueChanged("MaxSize", _maxSize);
+                    NotifyPropertyValueChanged("MaxSize", oldValue:_maxSize, newValue: value);
+                    _maxSize = value;     
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_mimeTypes != value)
                 {
-                    _mimeTypes = value;
-                    NotifyPropertyValueChanged("MimeTypes", _mimeTypes);
+                    NotifyPropertyValueChanged("MimeTypes", oldValue:_mimeTypes, newValue: value);
+                    _mimeTypes = value;     
                 }
             }
         }
@@ -63,8 +63,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_type != value)
                 {
-                    _type = value;
-                    NotifyPropertyValueChanged("Type", _type);
+                    NotifyPropertyValueChanged("Type", oldValue:_type, newValue: value);
+                    _type = value;     
                 }
             }
         }

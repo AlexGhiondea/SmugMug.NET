@@ -23,8 +23,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageUri != value)
                 {
-                    _imageUri = value;
-                    NotifyPropertyValueChanged("ImageUri", _imageUri);
+                    NotifyPropertyValueChanged("ImageUri", oldValue:_imageUri, newValue: value);
+                    _imageUri = value;     
                 }
             }
         }
@@ -37,8 +37,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_lastUpdated != value)
                 {
-                    _lastUpdated = value;
-                    NotifyPropertyValueChanged("LastUpdated", _lastUpdated);
+                    NotifyPropertyValueChanged("LastUpdated", oldValue:_lastUpdated, newValue: value);
+                    _lastUpdated = value;     
                 }
             }
         }
@@ -51,8 +51,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_message != value)
                 {
-                    _message = value;
-                    NotifyPropertyValueChanged("Message", _message);
+                    NotifyPropertyValueChanged("Message", oldValue:_message, newValue: value);
+                    _message = value;     
                 }
             }
         }
@@ -65,8 +65,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_queueName != value)
                 {
-                    _queueName = value;
-                    NotifyPropertyValueChanged("QueueName", _queueName);
+                    NotifyPropertyValueChanged("QueueName", oldValue:_queueName, newValue: value);
+                    _queueName = value;     
                 }
             }
         }
@@ -79,8 +79,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_status != value)
                 {
-                    _status = value;
-                    NotifyPropertyValueChanged("Status", _status);
+                    NotifyPropertyValueChanged("Status", oldValue:_status, newValue: value);
+                    _status = value;     
                 }
             }
         }
@@ -93,8 +93,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_timeIn != value)
                 {
-                    _timeIn = value;
-                    NotifyPropertyValueChanged("TimeIn", _timeIn);
+                    NotifyPropertyValueChanged("TimeIn", oldValue:_timeIn, newValue: value);
+                    _timeIn = value;     
                 }
             }
         }

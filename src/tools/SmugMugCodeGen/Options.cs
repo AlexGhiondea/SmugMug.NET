@@ -10,6 +10,8 @@ namespace SmugMugCodeGen
     {
         public string OutputDir { get; private set; }
         public string OutputDirEnums { get; private set; }
+        public bool GenerateManualFiles { get; private set; }
+
         public string[] InputFiles { get; private set; }
 
         public Options(string[] args)
@@ -17,9 +19,17 @@ namespace SmugMugCodeGen
             OutputDir = args[0];
             OutputDirEnums = Path.Combine(OutputDir, @"\..\Enums");
 
+            int index = 1;
+            GenerateManualFiles = false;
+            if (StringComparer.OrdinalIgnoreCase.Equals("generateManualFiles", args[1]))
+            {
+                GenerateManualFiles = true;
+                index = 2;
+            }
+
             // Copy the input files from the args array.
-            InputFiles = new string[args.Length - 1];
-            Array.Copy(args, 1, InputFiles, 0, args.Length - 1);
+            InputFiles = new string[args.Length - index];
+            Array.Copy(args, index, InputFiles, 0, args.Length - index);
         }
     }
 }

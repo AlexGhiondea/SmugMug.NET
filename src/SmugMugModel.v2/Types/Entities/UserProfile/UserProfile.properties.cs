@@ -39,8 +39,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_bioImageUri != value)
                 {
-                    _bioImageUri = value;
-                    NotifyPropertyValueChanged("BioImageUri", _bioImageUri);
+                    NotifyPropertyValueChanged("BioImageUri", oldValue:_bioImageUri, newValue: value);
+                    _bioImageUri = value;     
                 }
             }
         }
@@ -53,8 +53,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_bioText != value)
                 {
-                    _bioText = value;
-                    NotifyPropertyValueChanged("BioText", _bioText);
+                    NotifyPropertyValueChanged("BioText", oldValue:_bioText, newValue: value);
+                    _bioText = value;     
                 }
             }
         }
@@ -67,8 +67,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_blogger != value)
                 {
-                    _blogger = value;
-                    NotifyPropertyValueChanged("Blogger", _blogger);
+                    NotifyPropertyValueChanged("Blogger", oldValue:_blogger, newValue: value);
+                    _blogger = value;     
                 }
             }
         }
@@ -81,8 +81,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_coverImageUri != value)
                 {
-                    _coverImageUri = value;
-                    NotifyPropertyValueChanged("CoverImageUri", _coverImageUri);
+                    NotifyPropertyValueChanged("CoverImageUri", oldValue:_coverImageUri, newValue: value);
+                    _coverImageUri = value;     
                 }
             }
         }
@@ -95,8 +95,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_custom != value)
                 {
-                    _custom = value;
-                    NotifyPropertyValueChanged("Custom", _custom);
+                    NotifyPropertyValueChanged("Custom", oldValue:_custom, newValue: value);
+                    _custom = value;     
                 }
             }
         }
@@ -109,8 +109,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_displayName != value)
                 {
-                    _displayName = value;
-                    NotifyPropertyValueChanged("DisplayName", _displayName);
+                    NotifyPropertyValueChanged("DisplayName", oldValue:_displayName, newValue: value);
+                    _displayName = value;     
                 }
             }
         }
@@ -123,8 +123,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_facebook != value)
                 {
-                    _facebook = value;
-                    NotifyPropertyValueChanged("Facebook", _facebook);
+                    NotifyPropertyValueChanged("Facebook", oldValue:_facebook, newValue: value);
+                    _facebook = value;     
                 }
             }
         }
@@ -137,8 +137,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_firstName != value)
                 {
-                    _firstName = value;
-                    NotifyPropertyValueChanged("FirstName", _firstName);
+                    NotifyPropertyValueChanged("FirstName", oldValue:_firstName, newValue: value);
+                    _firstName = value;     
                 }
             }
         }
@@ -151,8 +151,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_flickr != value)
                 {
-                    _flickr = value;
-                    NotifyPropertyValueChanged("Flickr", _flickr);
+                    NotifyPropertyValueChanged("Flickr", oldValue:_flickr, newValue: value);
+                    _flickr = value;     
                 }
             }
         }
@@ -165,8 +165,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_googlePlus != value)
                 {
-                    _googlePlus = value;
-                    NotifyPropertyValueChanged("GooglePlus", _googlePlus);
+                    NotifyPropertyValueChanged("GooglePlus", oldValue:_googlePlus, newValue: value);
+                    _googlePlus = value;     
                 }
             }
         }
@@ -179,8 +179,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_instagram != value)
                 {
-                    _instagram = value;
-                    NotifyPropertyValueChanged("Instagram", _instagram);
+                    NotifyPropertyValueChanged("Instagram", oldValue:_instagram, newValue: value);
+                    _instagram = value;     
                 }
             }
         }
@@ -193,8 +193,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_lastName != value)
                 {
-                    _lastName = value;
-                    NotifyPropertyValueChanged("LastName", _lastName);
+                    NotifyPropertyValueChanged("LastName", oldValue:_lastName, newValue: value);
+                    _lastName = value;     
                 }
             }
         }
@@ -207,8 +207,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_linkedIn != value)
                 {
-                    _linkedIn = value;
-                    NotifyPropertyValueChanged("LinkedIn", _linkedIn);
+                    NotifyPropertyValueChanged("LinkedIn", oldValue:_linkedIn, newValue: value);
+                    _linkedIn = value;     
                 }
             }
         }
@@ -221,8 +221,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_pinterest != value)
                 {
-                    _pinterest = value;
-                    NotifyPropertyValueChanged("Pinterest", _pinterest);
+                    NotifyPropertyValueChanged("Pinterest", oldValue:_pinterest, newValue: value);
+                    _pinterest = value;     
                 }
             }
         }
@@ -235,8 +235,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_responseLevel != value)
                 {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    NotifyPropertyValueChanged("ResponseLevel", oldValue:_responseLevel, newValue: value);
+                    _responseLevel = value;     
                 }
             }
         }
@@ -249,8 +249,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_tumblr != value)
                 {
-                    _tumblr = value;
-                    NotifyPropertyValueChanged("Tumblr", _tumblr);
+                    NotifyPropertyValueChanged("Tumblr", oldValue:_tumblr, newValue: value);
+                    _tumblr = value;     
                 }
             }
         }
@@ -263,8 +263,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_twitter != value)
                 {
-                    _twitter = value;
-                    NotifyPropertyValueChanged("Twitter", _twitter);
+                    NotifyPropertyValueChanged("Twitter", oldValue:_twitter, newValue: value);
+                    _twitter = value;     
                 }
             }
         }
@@ -277,8 +277,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -291,8 +291,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }
@@ -305,8 +305,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_vimeo != value)
                 {
-                    _vimeo = value;
-                    NotifyPropertyValueChanged("Vimeo", _vimeo);
+                    NotifyPropertyValueChanged("Vimeo", oldValue:_vimeo, newValue: value);
+                    _vimeo = value;     
                 }
             }
         }
@@ -319,8 +319,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_wordpress != value)
                 {
-                    _wordpress = value;
-                    NotifyPropertyValueChanged("Wordpress", _wordpress);
+                    NotifyPropertyValueChanged("Wordpress", oldValue:_wordpress, newValue: value);
+                    _wordpress = value;     
                 }
             }
         }
@@ -333,8 +333,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_youTube != value)
                 {
-                    _youTube = value;
-                    NotifyPropertyValueChanged("YouTube", _youTube);
+                    NotifyPropertyValueChanged("YouTube", oldValue:_youTube, newValue: value);
+                    _youTube = value;     
                 }
             }
         }

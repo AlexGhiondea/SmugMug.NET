@@ -23,8 +23,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_ajaxEnabled != value)
                 {
-                    _ajaxEnabled = value;
-                    NotifyPropertyValueChanged("AjaxEnabled", _ajaxEnabled);
+                    NotifyPropertyValueChanged("AjaxEnabled", oldValue:_ajaxEnabled, newValue: value);
+                    _ajaxEnabled = value;     
                 }
             }
         }
@@ -37,8 +37,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_cSSVer != value)
                 {
-                    _cSSVer = value;
-                    NotifyPropertyValueChanged("CSSVer", _cSSVer);
+                    NotifyPropertyValueChanged("CSSVer", oldValue:_cSSVer, newValue: value);
+                    _cSSVer = value;     
                 }
             }
         }
@@ -51,8 +51,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_dark != value)
                 {
-                    _dark = value;
-                    NotifyPropertyValueChanged("Dark", _dark);
+                    NotifyPropertyValueChanged("Dark", oldValue:_dark, newValue: value);
+                    _dark = value;     
                 }
             }
         }
@@ -65,8 +65,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_filename != value)
                 {
-                    _filename = value;
-                    NotifyPropertyValueChanged("Filename", _filename);
+                    NotifyPropertyValueChanged("Filename", oldValue:_filename, newValue: value);
+                    _filename = value;     
                 }
             }
         }
@@ -79,8 +79,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_name != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    NotifyPropertyValueChanged("Name", oldValue:_name, newValue: value);
+                    _name = value;     
                 }
             }
         }
@@ -93,8 +93,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_thumbs != value)
                 {
-                    _thumbs = value;
-                    NotifyPropertyValueChanged("Thumbs", _thumbs);
+                    NotifyPropertyValueChanged("Thumbs", oldValue:_thumbs, newValue: value);
+                    _thumbs = value;     
                 }
             }
         }

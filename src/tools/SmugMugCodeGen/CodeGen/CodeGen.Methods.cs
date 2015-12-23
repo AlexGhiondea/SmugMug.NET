@@ -12,6 +12,75 @@ namespace SmugMugCodeGen
 {
     public partial class CodeGen
     {
+        public static StringBuilder BuildManualMethods(List<Method> unsortedList)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            var list = unsortedList.OrderBy(m => m.Uri);
+
+            HashSet<string> methodMap = new HashSet<string>();
+
+            foreach (var item in list)
+            {
+                string returnType, methodName, returnCode = string.Empty, uri;
+
+                returnType = Constants.VoidMethodReturnType; // this is the default
+                if (!string.IsNullOrEmpty(item.ReturnType))
+                {
+                    returnType = item.ReturnType;
+
+                    if (returnType.EndsWith("[]"))
+                        returnType = returnType.Replace("[]", "");
+
+                    returnType = Helpers.NormalizeString(returnType) + "Entity";
+
+                    if (item.ReturnType.EndsWith("[]"))
+                        returnType += "[]";
+                }
+
+                int paramCount;
+                uri = RegExCreator.FromUri(SmugMug.v2.Constants.Addresses.SmugMugApi, SmugMug.v2.Constants.Addresses.SmugMug + item.Uri, out paramCount);
+                methodName = Helpers.NormalizeString(uri, '!', '(', ')', '*');
+                //   parameters = GenerateParams(paramCount);
+
+                StringBuilder parameterBuilder = new StringBuilder();
+                for (int i = 0; i < paramCount; i++)
+                {
+                    parameterBuilder.Append("string.Empty");
+                    if (i != paramCount - 1)
+                        parameterBuilder.Append(", ");
+                }
+
+                if (returnType != Constants.VoidMethodReturnType)
+                {
+                    returnCode = "return ";
+                }
+
+                returnCode += string.Format("await {0}({1});", methodName, parameterBuilder.ToString());
+
+                methodName = "Fixup_" + methodName;
+                string key = returnType + " " + methodName;
+                if (methodMap.Contains(key))
+                {
+                    continue;
+                }
+
+                methodMap.Add(key);
+
+                string methodDefinitionFormat = returnType == Constants.VoidMethodReturnType ?
+                                                    Constants.VoidMethodDefinition :
+                                                    Constants.MethodDefinition;
+
+                sb.AppendLine(string.Format(methodDefinitionFormat,
+                    /*return type*/returnType,
+                    /*method name*/methodName,
+                    /*parameters*/ string.Empty,
+                    /*comment*/uri,
+                    /*return statement*/returnCode));
+            }
+            return sb;
+        }
+
         public static StringBuilder BuildMethods(List<Method> unsortedList)
         {
             StringBuilder sb = new StringBuilder();
@@ -56,6 +125,14 @@ namespace SmugMugCodeGen
                 string methodDefinitionFormat = returnType == Constants.VoidMethodReturnType ?
                                                     Constants.VoidMethodDefinition :
                                                     Constants.MethodDefinition;
+
+                /*public async Task<{returnType}> {methodName} ({parameters})
+                {
+                    // {comment}
+                            * 
+                    {returnCode}
+                }*/
+
                 sb.AppendLine(string.Format(methodDefinitionFormat,
                     /*return type*/returnType,
                     /*method name*/methodName,
@@ -65,6 +142,7 @@ namespace SmugMugCodeGen
             }
             return sb;
         }
+
         private static readonly string[] UriParameterDelimiter = new string[] { "(*)" };
         private static string GenerateMethodCall(string uri, string returnType, int parameterCount)
         {

@@ -26,8 +26,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_dissolve != value)
                 {
-                    _dissolve = value;
-                    NotifyPropertyValueChanged("Dissolve", _dissolve);
+                    NotifyPropertyValueChanged("Dissolve", oldValue:_dissolve, newValue: value);
+                    _dissolve = value;     
                 }
             }
         }
@@ -40,8 +40,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_gap != value)
                 {
-                    _gap = value;
-                    NotifyPropertyValueChanged("Gap", _gap);
+                    NotifyPropertyValueChanged("Gap", oldValue:_gap, newValue: value);
+                    _gap = value;     
                 }
             }
         }
@@ -54,8 +54,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageID != value)
                 {
-                    _imageID = value;
-                    NotifyPropertyValueChanged("ImageID", _imageID);
+                    NotifyPropertyValueChanged("ImageID", oldValue:_imageID, newValue: value);
+                    _imageID = value;     
                 }
             }
         }
@@ -68,8 +68,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageKey != value)
                 {
-                    _imageKey = value;
-                    NotifyPropertyValueChanged("ImageKey", _imageKey);
+                    NotifyPropertyValueChanged("ImageKey", oldValue:_imageKey, newValue: value);
+                    _imageKey = value;     
                 }
             }
         }
@@ -82,8 +82,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageUri != value)
                 {
-                    _imageUri = value;
-                    NotifyPropertyValueChanged("ImageUri", _imageUri);
+                    NotifyPropertyValueChanged("ImageUri", oldValue:_imageUri, newValue: value);
+                    _imageUri = value;     
                 }
             }
         }
@@ -96,8 +96,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_location != value)
                 {
-                    _location = value;
-                    NotifyPropertyValueChanged("Location", _location);
+                    NotifyPropertyValueChanged("Location", oldValue:_location, newValue: value);
+                    _location = value;     
                 }
             }
         }
@@ -110,8 +110,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_name != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    NotifyPropertyValueChanged("Name", oldValue:_name, newValue: value);
+                    _name = value;     
                 }
             }
         }
@@ -124,8 +124,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_printmarkID != value)
                 {
-                    _printmarkID = value;
-                    NotifyPropertyValueChanged("PrintmarkID", _printmarkID);
+                    NotifyPropertyValueChanged("PrintmarkID", oldValue:_printmarkID, newValue: value);
+                    _printmarkID = value;     
                 }
             }
         }
@@ -138,8 +138,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_scale != value)
                 {
-                    _scale = value;
-                    NotifyPropertyValueChanged("Scale", _scale);
+                    NotifyPropertyValueChanged("Scale", oldValue:_scale, newValue: value);
+                    _scale = value;     
                 }
             }
         }
