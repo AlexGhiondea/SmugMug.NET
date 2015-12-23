@@ -161,6 +161,20 @@ namespace SmugMug.v2.Types
             }
         }
 
+        public async Task PatchRequestAsync(string requestUri, string content)
+        {
+            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
+            using (HttpContent httpContent = new StringContent(content))
+            using (HttpRequestMessage message = new HttpRequestMessage(new HttpMethod("PATCH"), requestUri))
+            {
+                message.Content = httpContent;
+                using (HttpResponseMessage response = await httpClient.SendAsync(message))
+                using (StreamReader streamReader = new StreamReader(await response.Content.ReadAsStreamAsync()))
+                {
+                }
+            }
+        }
+
         public string GetPropertyChangesAsJson()
         {
             using (StringWriter writer = new StringWriter())
