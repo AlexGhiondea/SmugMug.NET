@@ -22,8 +22,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_currency != value)
                 {
-                    _currency = value;
-                    NotifyPropertyValueChanged("Currency", _currency);
+                    NotifyPropertyValueChanged("Currency", oldValue:_currency, newValue: value);
+                    _currency = value;     
                 }
             }
         }
@@ -36,8 +36,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_price != value)
                 {
-                    _price = value;
-                    NotifyPropertyValueChanged("Price", _price);
+                    NotifyPropertyValueChanged("Price", oldValue:_price, newValue: value);
+                    _price = value;     
                 }
             }
         }
@@ -50,8 +50,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_responseLevel != value)
                 {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    NotifyPropertyValueChanged("ResponseLevel", oldValue:_responseLevel, newValue: value);
+                    _responseLevel = value;     
                 }
             }
         }
@@ -64,8 +64,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -78,8 +78,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }

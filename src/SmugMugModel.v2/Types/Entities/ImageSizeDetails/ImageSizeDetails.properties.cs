@@ -38,8 +38,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeLarge != value)
                 {
-                    _imageSizeLarge = value;
-                    NotifyPropertyValueChanged("ImageSizeLarge", _imageSizeLarge);
+                    NotifyPropertyValueChanged("ImageSizeLarge", oldValue:_imageSizeLarge, newValue: value);
+                    _imageSizeLarge = value;     
                 }
             }
         }
@@ -52,8 +52,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeMedium != value)
                 {
-                    _imageSizeMedium = value;
-                    NotifyPropertyValueChanged("ImageSizeMedium", _imageSizeMedium);
+                    NotifyPropertyValueChanged("ImageSizeMedium", oldValue:_imageSizeMedium, newValue: value);
+                    _imageSizeMedium = value;     
                 }
             }
         }
@@ -66,8 +66,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeOriginal != value)
                 {
-                    _imageSizeOriginal = value;
-                    NotifyPropertyValueChanged("ImageSizeOriginal", _imageSizeOriginal);
+                    NotifyPropertyValueChanged("ImageSizeOriginal", oldValue:_imageSizeOriginal, newValue: value);
+                    _imageSizeOriginal = value;     
                 }
             }
         }
@@ -80,8 +80,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeSmall != value)
                 {
-                    _imageSizeSmall = value;
-                    NotifyPropertyValueChanged("ImageSizeSmall", _imageSizeSmall);
+                    NotifyPropertyValueChanged("ImageSizeSmall", oldValue:_imageSizeSmall, newValue: value);
+                    _imageSizeSmall = value;     
                 }
             }
         }
@@ -94,8 +94,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeThumb != value)
                 {
-                    _imageSizeThumb = value;
-                    NotifyPropertyValueChanged("ImageSizeThumb", _imageSizeThumb);
+                    NotifyPropertyValueChanged("ImageSizeThumb", oldValue:_imageSizeThumb, newValue: value);
+                    _imageSizeThumb = value;     
                 }
             }
         }
@@ -108,8 +108,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeTiny != value)
                 {
-                    _imageSizeTiny = value;
-                    NotifyPropertyValueChanged("ImageSizeTiny", _imageSizeTiny);
+                    NotifyPropertyValueChanged("ImageSizeTiny", oldValue:_imageSizeTiny, newValue: value);
+                    _imageSizeTiny = value;     
                 }
             }
         }
@@ -122,8 +122,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeX2Large != value)
                 {
-                    _imageSizeX2Large = value;
-                    NotifyPropertyValueChanged("ImageSizeX2Large", _imageSizeX2Large);
+                    NotifyPropertyValueChanged("ImageSizeX2Large", oldValue:_imageSizeX2Large, newValue: value);
+                    _imageSizeX2Large = value;     
                 }
             }
         }
@@ -136,8 +136,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeX3Large != value)
                 {
-                    _imageSizeX3Large = value;
-                    NotifyPropertyValueChanged("ImageSizeX3Large", _imageSizeX3Large);
+                    NotifyPropertyValueChanged("ImageSizeX3Large", oldValue:_imageSizeX3Large, newValue: value);
+                    _imageSizeX3Large = value;     
                 }
             }
         }
@@ -150,8 +150,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageSizeXLarge != value)
                 {
-                    _imageSizeXLarge = value;
-                    NotifyPropertyValueChanged("ImageSizeXLarge", _imageSizeXLarge);
+                    NotifyPropertyValueChanged("ImageSizeXLarge", oldValue:_imageSizeXLarge, newValue: value);
+                    _imageSizeXLarge = value;     
                 }
             }
         }
@@ -164,8 +164,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_imageUrlTemplate != value)
                 {
-                    _imageUrlTemplate = value;
-                    NotifyPropertyValueChanged("ImageUrlTemplate", _imageUrlTemplate);
+                    NotifyPropertyValueChanged("ImageUrlTemplate", oldValue:_imageUrlTemplate, newValue: value);
+                    _imageUrlTemplate = value;     
                 }
             }
         }
@@ -178,8 +178,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -192,8 +192,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }
@@ -206,8 +206,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_usableSizes != value)
                 {
-                    _usableSizes = value;
-                    NotifyPropertyValueChanged("UsableSizes", _usableSizes);
+                    NotifyPropertyValueChanged("UsableSizes", oldValue:_usableSizes, newValue: value);
+                    _usableSizes = value;     
                 }
             }
         }
@@ -220,8 +220,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize110 != value)
                 {
-                    _videoSize110 = value;
-                    NotifyPropertyValueChanged("VideoSize110", _videoSize110);
+                    NotifyPropertyValueChanged("VideoSize110", oldValue:_videoSize110, newValue: value);
+                    _videoSize110 = value;     
                 }
             }
         }
@@ -234,8 +234,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize1280 != value)
                 {
-                    _videoSize1280 = value;
-                    NotifyPropertyValueChanged("VideoSize1280", _videoSize1280);
+                    NotifyPropertyValueChanged("VideoSize1280", oldValue:_videoSize1280, newValue: value);
+                    _videoSize1280 = value;     
                 }
             }
         }
@@ -248,8 +248,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize1920 != value)
                 {
-                    _videoSize1920 = value;
-                    NotifyPropertyValueChanged("VideoSize1920", _videoSize1920);
+                    NotifyPropertyValueChanged("VideoSize1920", oldValue:_videoSize1920, newValue: value);
+                    _videoSize1920 = value;     
                 }
             }
         }
@@ -262,8 +262,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize200 != value)
                 {
-                    _videoSize200 = value;
-                    NotifyPropertyValueChanged("VideoSize200", _videoSize200);
+                    NotifyPropertyValueChanged("VideoSize200", oldValue:_videoSize200, newValue: value);
+                    _videoSize200 = value;     
                 }
             }
         }
@@ -276,8 +276,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize320 != value)
                 {
-                    _videoSize320 = value;
-                    NotifyPropertyValueChanged("VideoSize320", _videoSize320);
+                    NotifyPropertyValueChanged("VideoSize320", oldValue:_videoSize320, newValue: value);
+                    _videoSize320 = value;     
                 }
             }
         }
@@ -290,8 +290,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize640 != value)
                 {
-                    _videoSize640 = value;
-                    NotifyPropertyValueChanged("VideoSize640", _videoSize640);
+                    NotifyPropertyValueChanged("VideoSize640", oldValue:_videoSize640, newValue: value);
+                    _videoSize640 = value;     
                 }
             }
         }
@@ -304,8 +304,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSize960 != value)
                 {
-                    _videoSize960 = value;
-                    NotifyPropertyValueChanged("VideoSize960", _videoSize960);
+                    NotifyPropertyValueChanged("VideoSize960", oldValue:_videoSize960, newValue: value);
+                    _videoSize960 = value;     
                 }
             }
         }
@@ -318,8 +318,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_videoSMIL != value)
                 {
-                    _videoSMIL = value;
-                    NotifyPropertyValueChanged("VideoSMIL", _videoSMIL);
+                    NotifyPropertyValueChanged("VideoSMIL", oldValue:_videoSMIL, newValue: value);
+                    _videoSMIL = value;     
                 }
             }
         }

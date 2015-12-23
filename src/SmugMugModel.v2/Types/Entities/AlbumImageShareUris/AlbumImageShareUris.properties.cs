@@ -21,8 +21,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_buyUri != value)
                 {
-                    _buyUri = value;
-                    NotifyPropertyValueChanged("BuyUri", _buyUri);
+                    NotifyPropertyValueChanged("BuyUri", oldValue:_buyUri, newValue: value);
+                    _buyUri = value;     
                 }
             }
         }
@@ -35,8 +35,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_lightboxUri != value)
                 {
-                    _lightboxUri = value;
-                    NotifyPropertyValueChanged("LightboxUri", _lightboxUri);
+                    NotifyPropertyValueChanged("LightboxUri", oldValue:_lightboxUri, newValue: value);
+                    _lightboxUri = value;     
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -63,8 +63,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }

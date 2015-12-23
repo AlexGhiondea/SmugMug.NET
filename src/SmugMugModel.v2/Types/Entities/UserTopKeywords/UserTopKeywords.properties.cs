@@ -20,8 +20,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_topKeywords != value)
                 {
-                    _topKeywords = value;
-                    NotifyPropertyValueChanged("TopKeywords", _topKeywords);
+                    NotifyPropertyValueChanged("TopKeywords", oldValue:_topKeywords, newValue: value);
+                    _topKeywords = value;     
                 }
             }
         }
@@ -34,8 +34,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -48,8 +48,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }

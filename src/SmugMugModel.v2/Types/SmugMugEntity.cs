@@ -11,14 +11,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace SmugMug.v2.Types
 {
     public class SmugMugEntity
     {
-        private Dictionary<string, object> _storage = new Dictionary<string, object>();
+        private Dictionary<string, PropertyData> _storage = new Dictionary<string, PropertyData>();
         private readonly object _syncLock = new object();
+        private bool _trackChanges = true;
         protected OAuthToken _oauthToken;
 
         public SmugMugEntity()
@@ -30,15 +32,30 @@ namespace SmugMug.v2.Types
             _oauthToken = token;
         }
 
-        protected void NotifyPropertyValueChanged(string propertyName, object newValue)
+        [OnDeserializing]
+        public void PauseChangeTracking(StreamingContext context)
         {
-            object firstCapturedData;
-            if (_storage.TryGetValue(propertyName, out firstCapturedData))
+            _trackChanges = false;
+        }
+
+        [OnDeserialized]
+        public void ResumeChangeTracking(StreamingContext context)
+        {
+            _trackChanges = true;
+        }
+
+        protected void NotifyPropertyValueChanged(string propertyName, object oldValue, object newValue)
+        {
+            if (!_trackChanges)
+                return;
+
+            PropertyData dataInStorage;
+            if (_storage.TryGetValue(propertyName, out dataInStorage))
             {
                 // currentData is the value that was first captured.
                 // setting it back to that value should remove this property from the
                 // list of changed values
-                if (firstCapturedData.Equals(newValue))
+                if (dataInStorage.OldValue.Equals(newValue))
                 {
                     Debug.WriteLine("Same as original {0}, remove tracking", newValue);
                     lock (_syncLock)
@@ -46,13 +63,26 @@ namespace SmugMug.v2.Types
                         _storage.Remove(propertyName);
                     }
                 }
+                else
+                {
+                    dataInStorage.NewValue = newValue;
+                    lock (_syncLock)
+                    {
+                        _storage[propertyName] = dataInStorage;
+                    }
+                }
                 return;
             }
 
+            // if the old and new values are the same, nothing to do.
+            if (oldValue.Equals(newValue))
+                return;
+
+            dataInStorage = new PropertyData(oldValue, newValue);
             lock (_syncLock)
             {
                 Debug.WriteLine("New value! '{0}'", newValue);
-                _storage.Add(propertyName, newValue);
+                _storage.Add(propertyName, dataInStorage);
             }
         }
 
@@ -121,6 +151,40 @@ namespace SmugMug.v2.Types
             }
         }
 
+        public async Task PostRequestAsync(string requestUri, string content)
+        {
+            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
+            using (HttpContent httpContent = new StringContent(content))
+            using (HttpResponseMessage response = await httpClient.PostAsync(requestUri, httpContent))
+            using (StreamReader streamReader = new StreamReader(await response.Content.ReadAsStreamAsync()))
+            {
+            }
+        }
+
+        public string GetPropertyChangesAsJson()
+        {
+            using (StringWriter writer = new StringWriter())
+            using (JsonTextWriter jsonWrite = new JsonTextWriter(writer))
+            {
+                jsonWrite.WriteStartObject();
+
+                lock (_syncLock)
+                {
+                    foreach (var item in _storage)
+                    {
+
+                        jsonWrite.WritePropertyName(item.Key);
+
+                        jsonWrite.WriteValue(item.Value.NewValue);
+                    }
+
+                }
+
+                jsonWrite.WriteEndObject();
+                return writer.ToString();
+            }
+        }
+
         private static JToken GetDataAsJTokenOrDefault(JObject obj, string entityName)
         {
             const string ResponseString = "Response";
@@ -143,6 +207,18 @@ namespace SmugMug.v2.Types
         private static string GetEntityNameFromTypeName(Type type)
         {
             return type.Name.Replace("Entity", "").Replace("[]", "");
+        }
+    }
+
+    internal class PropertyData
+    {
+        public object OldValue { get; set; }
+        public object NewValue { get; set; }
+
+        public PropertyData(object oldValue, object newValue)
+        {
+            this.OldValue = oldValue;
+            this.NewValue = newValue;
         }
     }
 }

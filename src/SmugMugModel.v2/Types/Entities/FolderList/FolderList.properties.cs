@@ -21,8 +21,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_canHaveFolder != value)
                 {
-                    _canHaveFolder = value;
-                    NotifyPropertyValueChanged("CanHaveFolder", _canHaveFolder);
+                    NotifyPropertyValueChanged("CanHaveFolder", oldValue:_canHaveFolder, newValue: value);
+                    _canHaveFolder = value;     
                 }
             }
         }
@@ -35,8 +35,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_name != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    NotifyPropertyValueChanged("Name", oldValue:_name, newValue: value);
+                    _name = value;     
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -63,8 +63,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_urlPath != value)
                 {
-                    _urlPath = value;
-                    NotifyPropertyValueChanged("UrlPath", _urlPath);
+                    NotifyPropertyValueChanged("UrlPath", oldValue:_urlPath, newValue: value);
+                    _urlPath = value;     
                 }
             }
         }

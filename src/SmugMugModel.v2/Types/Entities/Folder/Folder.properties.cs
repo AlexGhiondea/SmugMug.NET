@@ -40,8 +40,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_autoRename != value)
                 {
-                    _autoRename = value;
-                    NotifyPropertyValueChanged("AutoRename", _autoRename);
+                    NotifyPropertyValueChanged("AutoRename", oldValue:_autoRename, newValue: value);
+                    _autoRename = value;     
                 }
             }
         }
@@ -54,8 +54,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_dateAdded != value)
                 {
-                    _dateAdded = value;
-                    NotifyPropertyValueChanged("DateAdded", _dateAdded);
+                    NotifyPropertyValueChanged("DateAdded", oldValue:_dateAdded, newValue: value);
+                    _dateAdded = value;     
                 }
             }
         }
@@ -68,8 +68,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_dateModified != value)
                 {
-                    _dateModified = value;
-                    NotifyPropertyValueChanged("DateModified", _dateModified);
+                    NotifyPropertyValueChanged("DateModified", oldValue:_dateModified, newValue: value);
+                    _dateModified = value;     
                 }
             }
         }
@@ -82,8 +82,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_description != value)
                 {
-                    _description = value;
-                    NotifyPropertyValueChanged("Description", _description);
+                    NotifyPropertyValueChanged("Description", oldValue:_description, newValue: value);
+                    _description = value;     
                 }
             }
         }
@@ -96,8 +96,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_highlightImageUri != value)
                 {
-                    _highlightImageUri = value;
-                    NotifyPropertyValueChanged("HighlightImageUri", _highlightImageUri);
+                    NotifyPropertyValueChanged("HighlightImageUri", oldValue:_highlightImageUri, newValue: value);
+                    _highlightImageUri = value;     
                 }
             }
         }
@@ -110,8 +110,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_isEmpty != value)
                 {
-                    _isEmpty = value;
-                    NotifyPropertyValueChanged("IsEmpty", _isEmpty);
+                    NotifyPropertyValueChanged("IsEmpty", oldValue:_isEmpty, newValue: value);
+                    _isEmpty = value;     
                 }
             }
         }
@@ -124,8 +124,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_keywords != value)
                 {
-                    _keywords = value;
-                    NotifyPropertyValueChanged("Keywords", _keywords);
+                    NotifyPropertyValueChanged("Keywords", oldValue:_keywords, newValue: value);
+                    _keywords = value;     
                 }
             }
         }
@@ -138,8 +138,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_name != value)
                 {
-                    _name = value;
-                    NotifyPropertyValueChanged("Name", _name);
+                    NotifyPropertyValueChanged("Name", oldValue:_name, newValue: value);
+                    _name = value;     
                 }
             }
         }
@@ -152,8 +152,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_nodeID != value)
                 {
-                    _nodeID = value;
-                    NotifyPropertyValueChanged("NodeID", _nodeID);
+                    NotifyPropertyValueChanged("NodeID", oldValue:_nodeID, newValue: value);
+                    _nodeID = value;     
                 }
             }
         }
@@ -166,8 +166,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_password != value)
                 {
-                    _password = value;
-                    NotifyPropertyValueChanged("Password", _password);
+                    NotifyPropertyValueChanged("Password", oldValue:_password, newValue: value);
+                    _password = value;     
                 }
             }
         }
@@ -180,8 +180,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_passwordHint != value)
                 {
-                    _passwordHint = value;
-                    NotifyPropertyValueChanged("PasswordHint", _passwordHint);
+                    NotifyPropertyValueChanged("PasswordHint", oldValue:_passwordHint, newValue: value);
+                    _passwordHint = value;     
                 }
             }
         }
@@ -194,8 +194,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_privacy != value)
                 {
-                    _privacy = value;
-                    NotifyPropertyValueChanged("Privacy", _privacy);
+                    NotifyPropertyValueChanged("Privacy", oldValue:_privacy, newValue: value);
+                    _privacy = value;     
                 }
             }
         }
@@ -208,8 +208,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_responseLevel != value)
                 {
-                    _responseLevel = value;
-                    NotifyPropertyValueChanged("ResponseLevel", _responseLevel);
+                    NotifyPropertyValueChanged("ResponseLevel", oldValue:_responseLevel, newValue: value);
+                    _responseLevel = value;     
                 }
             }
         }
@@ -222,8 +222,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_securityType != value)
                 {
-                    _securityType = value;
-                    NotifyPropertyValueChanged("SecurityType", _securityType);
+                    NotifyPropertyValueChanged("SecurityType", oldValue:_securityType, newValue: value);
+                    _securityType = value;     
                 }
             }
         }
@@ -236,8 +236,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_smugSearchable != value)
                 {
-                    _smugSearchable = value;
-                    NotifyPropertyValueChanged("SmugSearchable", _smugSearchable);
+                    NotifyPropertyValueChanged("SmugSearchable", oldValue:_smugSearchable, newValue: value);
+                    _smugSearchable = value;     
                 }
             }
         }
@@ -250,8 +250,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_sortDirection != value)
                 {
-                    _sortDirection = value;
-                    NotifyPropertyValueChanged("SortDirection", _sortDirection);
+                    NotifyPropertyValueChanged("SortDirection", oldValue:_sortDirection, newValue: value);
+                    _sortDirection = value;     
                 }
             }
         }
@@ -264,8 +264,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_sortMethod != value)
                 {
-                    _sortMethod = value;
-                    NotifyPropertyValueChanged("SortMethod", _sortMethod);
+                    NotifyPropertyValueChanged("SortMethod", oldValue:_sortMethod, newValue: value);
+                    _sortMethod = value;     
                 }
             }
         }
@@ -278,8 +278,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -292,8 +292,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }
@@ -306,8 +306,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_urlName != value)
                 {
-                    _urlName = value;
-                    NotifyPropertyValueChanged("UrlName", _urlName);
+                    NotifyPropertyValueChanged("UrlName", oldValue:_urlName, newValue: value);
+                    _urlName = value;     
                 }
             }
         }
@@ -320,8 +320,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_urlPath != value)
                 {
-                    _urlPath = value;
-                    NotifyPropertyValueChanged("UrlPath", _urlPath);
+                    NotifyPropertyValueChanged("UrlPath", oldValue:_urlPath, newValue: value);
+                    _urlPath = value;     
                 }
             }
         }
@@ -334,8 +334,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_webUri != value)
                 {
-                    _webUri = value;
-                    NotifyPropertyValueChanged("WebUri", _webUri);
+                    NotifyPropertyValueChanged("WebUri", oldValue:_webUri, newValue: value);
+                    _webUri = value;     
                 }
             }
         }
@@ -348,8 +348,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_worldSearchable != value)
                 {
-                    _worldSearchable = value;
-                    NotifyPropertyValueChanged("WorldSearchable", _worldSearchable);
+                    NotifyPropertyValueChanged("WorldSearchable", oldValue:_worldSearchable, newValue: value);
+                    _worldSearchable = value;     
                 }
             }
         }

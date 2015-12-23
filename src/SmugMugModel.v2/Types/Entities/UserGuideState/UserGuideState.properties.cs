@@ -21,8 +21,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_autorun != value)
                 {
-                    _autorun = value;
-                    NotifyPropertyValueChanged("Autorun", _autorun);
+                    NotifyPropertyValueChanged("Autorun", oldValue:_autorun, newValue: value);
+                    _autorun = value;     
                 }
             }
         }
@@ -35,8 +35,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_complete != value)
                 {
-                    _complete = value;
-                    NotifyPropertyValueChanged("Complete", _complete);
+                    NotifyPropertyValueChanged("Complete", oldValue:_complete, newValue: value);
+                    _complete = value;     
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uri != value)
                 {
-                    _uri = value;
-                    NotifyPropertyValueChanged("Uri", _uri);
+                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
+                    _uri = value;     
                 }
             }
         }
@@ -63,8 +63,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_uriDescription != value)
                 {
-                    _uriDescription = value;
-                    NotifyPropertyValueChanged("UriDescription", _uriDescription);
+                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
+                    _uriDescription = value;     
                 }
             }
         }

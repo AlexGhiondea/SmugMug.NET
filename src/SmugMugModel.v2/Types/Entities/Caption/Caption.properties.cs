@@ -20,8 +20,8 @@ namespace SmugMug.v2.Types
             {
                 if (_text != value)
                 {
+                    NotifyPropertyValueChanged("Text", oldValue: _text, newValue: value);
                     _text = value;
-                    NotifyPropertyValueChanged("Text", _text);
                 }
             }
         }
@@ -36,8 +36,8 @@ namespace SmugMug.v2.Types
             {
                 if (_html != value)
                 {
+                    NotifyPropertyValueChanged("Text", oldValue: _html, newValue: value);
                     _html = value;
-                    NotifyPropertyValueChanged("Html", _html);
                 }
             }
         }

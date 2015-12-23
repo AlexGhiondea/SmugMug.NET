@@ -23,8 +23,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_ext != value)
                 {
-                    _ext = value;
-                    NotifyPropertyValueChanged("Ext", _ext);
+                    NotifyPropertyValueChanged("Ext", oldValue:_ext, newValue: value);
+                    _ext = value;     
                 }
             }
         }
@@ -37,8 +37,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_requestedHeight != value)
                 {
-                    _requestedHeight = value;
-                    NotifyPropertyValueChanged("RequestedHeight", _requestedHeight);
+                    NotifyPropertyValueChanged("RequestedHeight", oldValue:_requestedHeight, newValue: value);
+                    _requestedHeight = value;     
                 }
             }
         }
@@ -51,8 +51,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_requestedWidth != value)
                 {
-                    _requestedWidth = value;
-                    NotifyPropertyValueChanged("RequestedWidth", _requestedWidth);
+                    NotifyPropertyValueChanged("RequestedWidth", oldValue:_requestedWidth, newValue: value);
+                    _requestedWidth = value;     
                 }
             }
         }
@@ -65,8 +65,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_url != value)
                 {
-                    _url = value;
-                    NotifyPropertyValueChanged("Url", _url);
+                    NotifyPropertyValueChanged("Url", oldValue:_url, newValue: value);
+                    _url = value;     
                 }
             }
         }
@@ -79,8 +79,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_usable != value)
                 {
-                    _usable = value;
-                    NotifyPropertyValueChanged("Usable", _usable);
+                    NotifyPropertyValueChanged("Usable", oldValue:_usable, newValue: value);
+                    _usable = value;     
                 }
             }
         }
@@ -93,8 +93,8 @@ namespace SmugMug.v2.Types
             set {
                 if (_watermarked != value)
                 {
-                    _watermarked = value;
-                    NotifyPropertyValueChanged("Watermarked", _watermarked);
+                    NotifyPropertyValueChanged("Watermarked", oldValue:_watermarked, newValue: value);
+                    _watermarked = value;     
                 }
             }
         }
