@@ -48,11 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\Tokens\ITokenProvider.cs" />
     <Compile Include="Authentication\OAuthToken.cs" />
     <Compile Include="Authentication\PermissionLevel.cs" />
     <Compile Include="Authentication\AccessLevel.cs" />
     <Compile Include="Authentication\AuthenticationOptions.cs" />
     <Compile Include="Authentication\SmugMugAuthorize.cs" />
+    <Compile Include="Authentication\Tokens\FileTokenProvider.cs" />
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.manual.cs" />
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.methods.cs">
       <SubType>Code</SubType>

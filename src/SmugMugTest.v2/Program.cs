@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using SmugMug.Shared.Descriptors;
 using SmugMug.Shared.Extensions;
+using SmugMug.v2.Authentication.Tokens;
 
 namespace SmugMugTest
 {
@@ -26,7 +27,7 @@ namespace SmugMugTest
         /// </summary>
         private static void GetSmugMugSecrets()
         {
-            if (!SmugMugSecretsAccess.TryReadSecretsFromFile(out oauthToken))
+            if (!FileTokenProvider.TryReadSecretsFromFile(out oauthToken))
             {
                 // Do we have the secret/apikey?
                 Console.WriteLine("Please enter your API Key and press [Enter]:");
@@ -35,7 +36,7 @@ namespace SmugMugTest
                 string secret = Console.ReadLine();
 
                 oauthToken = SmugMugAuthorize.AuthorizeSmugMug(apiKey, secret, AuthenticationOptions.FullAccess);
-                SmugMugSecretsAccess.SaveSecretsToFile(oauthToken);
+                FileTokenProvider.SaveSecretsToFile(oauthToken);
             }
 
             Console.WriteLine("Using APIKey={0}", oauthToken.ApiKey);
