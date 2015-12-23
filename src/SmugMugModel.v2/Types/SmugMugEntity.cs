@@ -174,6 +174,11 @@ namespace SmugMug.v2.Types
                 }
             }
         }
+        
+        public async Task SaveAsync(string Uri)
+        {
+            await PatchRequestAsync(Uri, GetPropertyChangesAsJson());
+        }
 
         public string GetPropertyChangesAsJson()
         {
