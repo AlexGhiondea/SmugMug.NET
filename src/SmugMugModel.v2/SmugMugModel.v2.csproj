@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6322369D-B963-4695-9E43-708836F226F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmugMug.v2</RootNamespace>
+    <AssemblyName>SmugMugModel.v2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OAuth.net">
+      <HintPath>..\packages\OAuth.Net.0.6\lib\net45\OAuth.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\OAuthToken.cs" />
+    <Compile Include="Authentication\PermissionLevel.cs" />
+    <Compile Include="Authentication\AccessLevel.cs" />
+    <Compile Include="Authentication\AuthenticationOptions.cs" />
+    <Compile Include="Authentication\SmugMugAuthorize.cs" />
+    <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.manual.cs" />
+    <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumImage\AlbumImage.manual.cs" />
+    <Compile Include="Types\Entities\AlbumImage\AlbumImage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumImage\AlbumImage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumList\AlbumList.manual.cs" />
+    <Compile Include="Types\Entities\AlbumList\AlbumList.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumList\AlbumList.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumShareUris\AlbumShareUris.manual.cs" />
+    <Compile Include="Types\Entities\AlbumShareUris\AlbumShareUris.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumShareUris\AlbumShareUris.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumTemplate\AlbumTemplate.manual.cs" />
+    <Compile Include="Types\Entities\AlbumTemplate\AlbumTemplate.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\AlbumTemplate\AlbumTemplate.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Album\Album.manual.cs" />
+    <Compile Include="Types\Entities\Album\Album.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Album\Album.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.manual.cs" />
+    <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.methods.cs" />
+    <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.properties.cs" />
+    <Compile Include="Types\Entities\BioImage\BioImage.manual.cs" />
+    <Compile Include="Types\Entities\BioImage\BioImage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\BioImage\BioImage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Caption\Caption.properties.cs" />
+    <Compile Include="Types\Entities\Caption\Caption.methods.cs" />
+    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.manual.cs" />
+    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.methods.cs" />
+    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.properties.cs" />
+    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.manual.cs" />
+    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.methods.cs" />
+    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.properties.cs" />
+    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.manual.cs" />
+    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.manual.cs" />
+    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.methods.cs" />
+    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.properties.cs" />
+    <Compile Include="Types\Entities\CatalogSku\CatalogSku.manual.cs" />
+    <Compile Include="Types\Entities\CatalogSku\CatalogSku.methods.cs" />
+    <Compile Include="Types\Entities\CatalogSku\CatalogSku.properties.cs" />
+    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.manual.cs" />
+    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.methods.cs" />
+    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.properties.cs" />
+    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.manual.cs" />
+    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.methods.cs" />
+    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.properties.cs" />
+    <Compile Include="Types\Entities\ColorImage\ColorImage.manual.cs" />
+    <Compile Include="Types\Entities\ColorImage\ColorImage.methods.cs" />
+    <Compile Include="Types\Entities\ColorImage\ColorImage.properties.cs" />
+    <Compile Include="Types\Entities\Comment\Comment.manual.cs" />
+    <Compile Include="Types\Entities\Comment\Comment.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Comment\Comment.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ContactEmail\ContactEmail.manual.cs" />
+    <Compile Include="Types\Entities\ContactEmail\ContactEmail.methods.cs" />
+    <Compile Include="Types\Entities\ContactEmail\ContactEmail.properties.cs" />
+    <Compile Include="Types\Entities\Contact\Contact.manual.cs" />
+    <Compile Include="Types\Entities\Contact\Contact.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Contact\Contact.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CoverImage\CoverImage.manual.cs" />
+    <Compile Include="Types\Entities\CoverImage\CoverImage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CoverImage\CoverImage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.manual.cs" />
+    <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedAlbum\DeletedAlbum.manual.cs" />
+    <Compile Include="Types\Entities\DeletedAlbum\DeletedAlbum.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedAlbum\DeletedAlbum.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedFolder\DeletedFolder.manual.cs" />
+    <Compile Include="Types\Entities\DeletedFolder\DeletedFolder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedFolder\DeletedFolder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedPage\DeletedPage.manual.cs" />
+    <Compile Include="Types\Entities\DeletedPage\DeletedPage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\DeletedPage\DeletedPage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Download\Download.manual.cs" />
+    <Compile Include="Types\Entities\Download\Download.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Download\Download.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.manual.cs" />
+    <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Features\Features.manual.cs" />
+    <Compile Include="Types\Entities\Features\Features.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Features\Features.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.manual.cs" />
+    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.methods.cs" />
+    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.properties.cs" />
+    <Compile Include="Types\Entities\FolderList\FolderList.manual.cs" />
+    <Compile Include="Types\Entities\FolderList\FolderList.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\FolderList\FolderList.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Folder\Folder.manual.cs" />
+    <Compile Include="Types\Entities\Folder\Folder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Folder\Folder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Grant\Grant.manual.cs" />
+    <Compile Include="Types\Entities\Grant\Grant.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Grant\Grant.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Guide\Guide.manual.cs" />
+    <Compile Include="Types\Entities\Guide\Guide.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Guide\Guide.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageDownload\ImageDownload.manual.cs" />
+    <Compile Include="Types\Entities\ImageDownload\ImageDownload.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageDownload\ImageDownload.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.manual.cs" />
+    <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.methods.cs" />
+    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.properties.cs" />
+    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizes\ImageSizes.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizes\ImageSizes.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizes\ImageSizes.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.manual.cs" />
+    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Image\Image.manual.cs" />
+    <Compile Include="Types\Entities\Image\Image.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Image\Image.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\LargestImage\LargestImage.manual.cs" />
+    <Compile Include="Types\Entities\LargestImage\LargestImage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\LargestImage\LargestImage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\LargestVideo\LargestVideo.manual.cs" />
+    <Compile Include="Types\Entities\LargestVideo\LargestVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\LargestVideo\LargestVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Node\Node.manual.cs" />
+    <Compile Include="Types\Entities\Node\Node.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Node\Node.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Page\Page.manual.cs" />
+    <Compile Include="Types\Entities\Page\Page.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Page\Page.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Printmark\Printmark.manual.cs" />
+    <Compile Include="Types\Entities\Printmark\Printmark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Printmark\Printmark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\QuickNews\QuickNews.manual.cs" />
+    <Compile Include="Types\Entities\QuickNews\QuickNews.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\QuickNews\QuickNews.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.manual.cs" />
+    <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.manual.cs" />
+    <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.manual.cs" />
+    <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Size\Size.manual.cs" />
+    <Compile Include="Types\Entities\Size\Size.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Size\Size.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.manual.cs" />
+    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.manual.cs" />
+    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.manual.cs" />
+    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.manual.cs" />
+    <Compile Include="Types\Entities\Task\Task.manual.cs" />
+    <Compile Include="Types\Entities\Template\Template.manual.cs" />
+    <Compile Include="Types\Entities\Theme\Theme.manual.cs" />
+    <Compile Include="Types\Entities\UserCoupon\UserCoupon.manual.cs" />
+    <Compile Include="Types\Entities\UserGuideState\UserGuideState.manual.cs" />
+    <Compile Include="Types\Entities\UserHideGuides\UserHideGuides.manual.cs" />
+    <Compile Include="Types\Entities\UserProfile\UserProfile.manual.cs" />
+    <Compile Include="Types\Entities\UserTopKeywords\UserTopKeywords.manual.cs" />
+    <Compile Include="Types\Entities\UserUploadLimits\UserUploadLimits.manual.cs" />
+    <Compile Include="Types\Entities\User\User.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize110\VideoSize110.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize200\VideoSize200.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize320\VideoSize320.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize640\VideoSize640.manual.cs" />
+    <Compile Include="Types\Entities\VideoSize960\VideoSize960.manual.cs" />
+    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.manual.cs" />
+    <Compile Include="Types\Entities\Watermark\Watermark.manual.cs" />
+    <Compile Include="Types\SiteEntity.cs" />
+    <Compile Include="Types\SmugMugEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Task\Task.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Task\Task.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Template\Template.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Template\Template.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Theme\Theme.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Theme\Theme.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserCoupon\UserCoupon.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserCoupon\UserCoupon.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserGuideState\UserGuideState.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserGuideState\UserGuideState.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserHideGuides\UserHideGuides.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserHideGuides\UserHideGuides.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserProfile\UserProfile.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserProfile\UserProfile.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserTopKeywords\UserTopKeywords.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserTopKeywords\UserTopKeywords.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserUploadLimits\UserUploadLimits.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\UserUploadLimits\UserUploadLimits.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\User\User.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\User\User.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize110\VideoSize110.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize110\VideoSize110.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize200\VideoSize200.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize200\VideoSize200.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize320\VideoSize320.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize320\VideoSize320.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize640\VideoSize640.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize640\VideoSize640.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize960\VideoSize960.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSize960\VideoSize960.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Watermark\Watermark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Entities\Watermark\Watermark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Enums\AccountStatusEnum.cs" />
+    <Compile Include="Types\Enums\BaseColorEnum.cs" />
+    <Compile Include="Types\Enums\BoutiquePackagingEnum.cs" />
+    <Compile Include="Types\Enums\ColorEnum.cs" />
+    <Compile Include="Types\Enums\CommentStatusEnum.cs" />
+    <Compile Include="Types\Enums\EffectivePrivacyEnum.cs" />
+    <Compile Include="Types\Enums\EffectiveSecurityTypeEnum.cs" />
+    <Compile Include="Types\Enums\HeaderEnum.cs" />
+    <Compile Include="Types\Enums\ImageStatusEnum.cs" />
+    <Compile Include="Types\Enums\InterceptShippingEnum.cs" />
+    <Compile Include="Types\Enums\LargestSizeEnum.cs" />
+    <Compile Include="Types\Enums\PinnedEnum.cs" />
+    <Compile Include="Types\Enums\PrivacyEnum.cs" />
+    <Compile Include="Types\Enums\SecurityTypeEnum.cs" />
+    <Compile Include="Types\Enums\SmallestSizeEnum.cs" />
+    <Compile Include="Types\Enums\SmugSearchableEnum.cs" />
+    <Compile Include="Types\Enums\SortByEnum.cs" />
+    <Compile Include="Types\Enums\SortDirectionEnum.cs" />
+    <Compile Include="Types\Enums\SortMethodEnum.cs" />
+    <Compile Include="Types\Enums\TypeEnum.cs" />
+    <Compile Include="Types\Enums\WatermarkEnum.cs" />
+    <Compile Include="Types\Enums\WorldSearchableEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Utility\HttpClientHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
