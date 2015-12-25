@@ -6456,13 +6456,13 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah",
           "ReturnType": "Folder"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!parents",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!parents",
           "ReturnType": "Folder[]"
         },
         {
@@ -10956,7 +10956,7 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!parent",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!parent",
           "ReturnType": "Folder"
         },
         {
@@ -10968,91 +10968,91 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!highlightimage",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!highlightimage",
           "ReturnType": "Image"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!folders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!folders",
           "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!folderlist",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!folderlist",
           "ReturnType": "FolderList"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!movefolders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!movefolders",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!sortfolders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!sortfolders",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!albums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!albums",
           "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!albumfromalbumtemplate",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!albumfromalbumtemplate",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!sortalbums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!sortalbums",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!movealbums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!movealbums",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!albumlist",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!albumlist",
           "ReturnType": "AlbumList"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!pages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!pages",
           "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!movepages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!movepages",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!sortpages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!sortpages",
           "ReturnType": ""
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!grants",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!grants",
           "ReturnType": "Grant[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!size",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!size",
           "ReturnType": "Size"
         },
         {
@@ -11070,13 +11070,13 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum!parents",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName!parents",
           "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!parent",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!parent",
           "ReturnType": "Folder"
         },
         {
@@ -11088,91 +11088,91 @@
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!highlightimage",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!highlightimage",
           "ReturnType": "Image"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!folders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!folders",
           "ReturnType": "Folder[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!folderlist",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!folderlist",
           "ReturnType": "FolderList"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!movefolders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!movefolders",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!sortfolders",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!sortfolders",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!albums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!albums",
           "ReturnType": "Album[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!albumfromalbumtemplate",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!albumfromalbumtemplate",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!sortalbums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!sortalbums",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!movealbums",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!movealbums",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!albumlist",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!albumlist",
           "ReturnType": "AlbumList"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!pages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!pages",
           "ReturnType": "Page[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!movepages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!movepages",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!sortpages",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!sortpages",
           "ReturnType": null
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!grants",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!grants",
           "ReturnType": "Grant[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
-          "Uri": "/api/v2/folder/user/smugmuguser/smugmugalbum/blah!size",
+          "Uri": "/api/v2/folder/user/smugmuguser/albumName/blah!size",
           "ReturnType": "Size"
         }
       ]
