@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -18,6 +19,17 @@ namespace SmugMug.v2.Types
             : base(oauthToken)
         {
             _oauthToken = oauthToken;
+        }
+
+
+        public List<string> GetPatchParameters()
+        {
+            return new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","UrlName","WorldSearchable","ResetUrlName" };
+        }
+
+        public List<string> GetPostParameters()
+        {
+            return new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","Type","UrlName","WorldSearchable" };
         }
 
 
