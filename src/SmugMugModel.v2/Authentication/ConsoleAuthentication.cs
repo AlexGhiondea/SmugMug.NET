@@ -28,10 +28,10 @@ namespace SmugMug.v2.Authentication
             }
 
 #if DEBUG
-            Debug.WriteLine("Using APIKey={0}", oauthToken.ApiKey);
-            Debug.WriteLine("Using AppSecret={0}", oauthToken.Secret);
-            Debug.WriteLine("Using token={0}", oauthToken.Token);
-            Debug.WriteLine("Using tokenSecret={0}", oauthToken.TokenSecret);
+            Debug.WriteLine(string.Format("Using APIKey={0}", oauthToken.ApiKey));
+            Debug.WriteLine(string.Format("Using AppSecret={0}", oauthToken.Secret));
+            Debug.WriteLine(string.Format("Using token={0}", oauthToken.Token));
+            Debug.WriteLine(string.Format("Using tokenSecret={0}", oauthToken.TokenSecret));
 #endif
 
             return oauthToken;
@@ -41,7 +41,7 @@ namespace SmugMug.v2.Authentication
         {
             return GetOAuthTokenFromProvider(new FileTokenProvider());
         }
-        
-        
+
+
     }
 }
