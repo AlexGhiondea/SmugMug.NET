@@ -10,7 +10,7 @@ namespace SmugMugTest
 
         static void Main(string[] args)
         {
-            s_oauthToken = ConsoleAuthentication.GetOAuthToken(new FileTokenProvider());
+            s_oauthToken = ConsoleAuthentication.GetOAuthTokenFromProvider(new FileTokenProvider());
             Debug.Assert(!s_oauthToken.Equals(OAuthToken.Invalid));
 
 

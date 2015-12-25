@@ -68,7 +68,6 @@
     <Compile Include="Descriptors\Entity.cs" />
     <Compile Include="Descriptors\Properties\Property.cs" />
     <Compile Include="RegExCreator.cs" />
-    <Compile Include="SmugMugSecretsAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmugMugModel.v2\SmugMugModel.v2.csproj">

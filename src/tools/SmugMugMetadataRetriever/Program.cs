@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using SmugMug.Shared.Descriptors;
 using SmugMug.v2;
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Authentication.Tokens;
 using SmugMug.v2.Helpers;
 using SmugMugShared;
 using SmugMugShared.Extensions;
@@ -21,7 +22,7 @@ namespace SmugMugMetadataRetriever
 
         static void Main(string[] args)
         {
-            s_oauthToken = SmugMug.Shared.SecretsAccess.GetSmugMugSecrets();
+            s_oauthToken = ConsoleAuthentication.GetOAuthTokenFromFileProvider();
             Debug.Assert(!s_oauthToken.Equals(OAuthToken.Invalid));
 
             ApiAnalyzer buf = new ApiAnalyzer(s_oauthToken);

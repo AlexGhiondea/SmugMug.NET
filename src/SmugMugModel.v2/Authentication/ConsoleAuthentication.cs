@@ -12,7 +12,7 @@ namespace SmugMug.v2.Authentication
         /// <summary>
         /// Use the ITokenProvider to retrieved stored credentials. If they are not available, authorize with SmugMug using the console.
         /// </summary>
-        public static OAuthToken GetOAuthToken(ITokenProvider provider)
+        public static OAuthToken GetOAuthTokenFromProvider(ITokenProvider provider)
         {
             OAuthToken oauthToken = default(OAuthToken);
             if (!provider.TryGetCredentials(out oauthToken))
@@ -36,5 +36,12 @@ namespace SmugMug.v2.Authentication
 
             return oauthToken;
         }
+
+        public static OAuthToken GetOAuthTokenFromFileProvider()
+        {
+            return GetOAuthTokenFromProvider(new FileTokenProvider());
+        }
+        
+        
     }
 }
