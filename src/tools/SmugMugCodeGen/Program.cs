@@ -66,11 +66,14 @@ namespace SmugMugCodeGen
         {
             foreach (var item in metadata)
             {
+                ConsolePrinter.Write(ConsoleColor.Green, "Generating class {0}", item.Key);
+
                 StringBuilder additionalMethodUsings = new StringBuilder();
 
                 additionalMethodUsings.Append("using System.Threading.Tasks;");
 
                 string className = Helpers.NormalizeString(item.Value.Name);
+
                 StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
 
                 StringBuilder methods = new StringBuilder();
@@ -108,8 +111,6 @@ namespace SmugMugCodeGen
                     sb.Append(classDefinition);
                     File.WriteAllText(Path.Combine(objectDirName, item.Key + ".manual.cs"), sb.ToString());
                 }
-
-                ConsolePrinter.Write(ConsoleColor.Green, "Generated class {0}", item.Key);
             }
             ConsolePrinter.Write(ConsoleColor.White, "Generated {0} classes", metadata.Count);
         }

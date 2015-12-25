@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System;
+using SmugMugShared.Extensions;
 
 namespace SmugMugCodeGen
 {
@@ -140,6 +141,9 @@ namespace SmugMugCodeGen
                     /*comment*/uri,
                     /*return statement*/returnCode));
             }
+
+            ConsolePrinter.Write(ConsoleColor.Cyan, "Generated {0} methods", methodMap.Count);
+
             return sb;
         }
 
