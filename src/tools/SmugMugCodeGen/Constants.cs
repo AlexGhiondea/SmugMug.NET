@@ -80,10 +80,7 @@ namespace SmugMug.v2.Types
         public const string VoidMethodReturnType = "Task";
 
         public const string MethodReturnsParameters = @"
-        public List<string> Get{0}Parameters()
-        {{
-            return new List<string>(){{ {1} }};
-        }}
+        private static readonly List<string> {0}Parameters = new List<string>(){{ {1} }};
 ";
     }
 }

@@ -137,7 +137,7 @@ namespace SmugMugCodeGen
             }
             if (value.HttpMethodsAndParameters.ContainsKey("post"))
             {
-                string patchParams = string.Join(",", value.HttpMethodsAndParameters["post"].Select(p => string.Format("\"{0}\"", p.Name)));
+                string patchParams = string.Join(", ", value.HttpMethodsAndParameters["post"].Select(p => string.Format("\"{0}\"", p.Name)));
                 sb.AppendFormat(Constants.MethodReturnsParameters, "Post", patchParams);
             }
 
