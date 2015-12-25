@@ -21,6 +21,16 @@ namespace SmugMugCodeGen
             }}
         }}
 ";
+        public const string PropertyDefinitionReadOnly = @"
+        public {0} {1} {{
+            get {{
+                return {2};
+            }}
+            private set {{
+                {2} = value;
+            }}
+        }}
+";
 
         public const string MethodDefinition = @"
         public async Task<{0}> {1} ({2})

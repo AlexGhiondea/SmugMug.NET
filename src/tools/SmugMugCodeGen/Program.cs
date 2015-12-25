@@ -74,7 +74,7 @@ namespace SmugMugCodeGen
 
                 string className = Helpers.NormalizeString(item.Value.Name);
 
-                StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
+                StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name), item.Value);
 
                 StringBuilder methods = new StringBuilder();
                 methods.AppendLine(string.Format(Constants.ConstructorDefinition, className));
