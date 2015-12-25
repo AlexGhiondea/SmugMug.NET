@@ -5,6 +5,7 @@ namespace SmugMug.v2.Authentication.Tokens
 {
     public interface ITokenProvider
     {
-        OAuthToken GetCredentials();
+        bool TryGetCredentials(out OAuthToken token);
+        bool SaveCredentials(OAuthToken token);
     }
 }

@@ -1,8 +1,8 @@
 ﻿// Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using SmugMug.v2.Authentication;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,40 +12,81 @@ namespace SmugMug.v2.Authentication.Tokens
 {
     public class FileTokenProvider : ITokenProvider
     {
-        /// <summary>
-        /// If the secrets are in a file, get them from there. Otherwise, request them (apikey, secret) from the user
-        /// </summary>
-        public static OAuthToken GetSmugMugSecrets()
+        #region ITokenProvider
+        public bool TryGetCredentials(out OAuthToken oauthToken)
         {
-            OAuthToken oauthToken = default(OAuthToken);
-            if (!TryReadSecretsFromFile(out oauthToken))
+            try
             {
-                // Do we have the secret/apikey?
-                Console.WriteLine("Please enter your API Key and press [Enter]:");
-                string apiKey = Console.ReadLine();
-                Console.WriteLine("Please enter your Application Secret and press [Enter]:");
-                string secret = Console.ReadLine();
+                string content = DecryptTextFromFile(FileName);
 
-                oauthToken = SmugMugAuthorize.AuthorizeSmugMug(apiKey, secret, AuthenticationOptions.FullAccess);
-                SaveSecretsToFile(oauthToken);
+                XDocument settings = XDocument.Parse(content);
+
+                var root = settings.Element("SmugMug");
+                string apiKey = root.Element("apiKey").Value;
+                string secret = root.Element("secret").Value;
+                string token = root.Element("token").Value;
+                string tokenSecret = root.Element("tokenSecret").Value;
+                oauthToken = new OAuthToken(apiKey, secret, token, tokenSecret);
             }
-
-#if DEBUG
-            Console.WriteLine("Using APIKey={0}", oauthToken.ApiKey);
-            Console.WriteLine("Using AppSecret={0}", oauthToken.Secret);
-            Console.WriteLine("Using token={0}", oauthToken.Token);
-            Console.WriteLine("Using tokenSecret={0}", oauthToken.TokenSecret);
-#endif
-
-            return oauthToken;
+            catch
+            {
+                oauthToken = OAuthToken.Invalid;
+                return false;
+            }
+            return true;
         }
 
-        public OAuthToken GetCredentials()
+        public bool SaveCredentials(OAuthToken oauthToken)
         {
-            throw new NotImplementedException();
+            XDocument doc = new XDocument(
+               new XElement("SmugMug",
+                   new XElement("apiKey", oauthToken.ApiKey),
+                   new XElement("secret", oauthToken.Secret),
+                   new XElement("token", oauthToken.Token),
+                   new XElement("tokenSecret", oauthToken.TokenSecret)));
+
+            return EncryptTextToFile(doc.ToString(), FileName);
+        }
+        #endregion
+
+        private const int MinKeySizeInChars = 8;
+
+        private byte[] _salt;
+        private byte[] _key;
+        private string _fileName = Path.Combine(Path.GetTempPath(), "smugmug.dat");
+
+        public string FileName { get { return _fileName; } set { _fileName = value; } }
+
+
+        public FileTokenProvider()
+            : this(null, null)
+        {
+
         }
 
-        static void EncryptTextToFile(String Data, String FileName, byte[] Key, byte[] IV)
+        public FileTokenProvider(string key, string salt)
+        {
+            _salt = GetSalt(salt);
+            _key = GetKey(key);
+        }
+
+        private static byte[] GetSalt(string salt = "")
+        {
+            if (string.IsNullOrEmpty(salt))
+                salt = Environment.MachineName;
+
+            return GetStringWithMinSize(salt);
+        }
+
+        private static byte[] GetKey(string key = "")
+        {
+            if (string.IsNullOrEmpty(key))
+                key = "12345678";
+
+            return GetStringWithMinSize(key);
+        }
+
+        private bool EncryptTextToFile(String Data, String FileName)
         {
             try
             {
@@ -54,7 +95,7 @@ namespace SmugMug.v2.Authentication.Tokens
                 using (RijndaelManaged rijndael = new RijndaelManaged()) // Create a new Rijndael object.
                 {
                     rijndael.BlockSize = 256;
-                    Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(Encoding.UTF8.GetBytes("12345678"), Encoding.UTF8.GetBytes("1234567" + Environment.MachineName), 10000);
+                    Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(_key, _salt, 10000);
 
                     byte[] key = pwdGen.GetBytes(rijndael.KeySize / 8);   //This will generate a 256 bits key
                     byte[] iv = pwdGen.GetBytes(rijndael.BlockSize / 8);  //This will generate a 256 bits IV
@@ -76,16 +117,18 @@ namespace SmugMug.v2.Authentication.Tokens
             }
             catch (CryptographicException e)
             {
-                Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+                Debug.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+                return false;
             }
             catch (UnauthorizedAccessException e)
             {
-                Console.WriteLine("A file error occurred: {0}", e.Message);
+                Debug.WriteLine("A file error occurred: {0}", e.Message);
+                return false;
             }
-
+            return true;
         }
 
-        static string DecryptTextFromFile(String FileName, byte[] Key, byte[] IV)
+        private string DecryptTextFromFile(String FileName)
         {
             try
             {
@@ -94,7 +137,7 @@ namespace SmugMug.v2.Authentication.Tokens
                 using (RijndaelManaged rijndael = new RijndaelManaged()) // Create a new Rijndael object.
                 {
                     rijndael.BlockSize = 256;
-                    Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(Encoding.UTF8.GetBytes("12345678"), Encoding.UTF8.GetBytes("1234567" + Environment.MachineName), 10000);
+                    Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(_key, _salt, 10000);
 
                     byte[] key = pwdGen.GetBytes(rijndael.KeySize / 8);   //This will generate a 256 bits key
                     byte[] iv = pwdGen.GetBytes(rijndael.BlockSize / 8);  //This will generate a 256 bits IV
@@ -131,65 +174,14 @@ namespace SmugMug.v2.Authentication.Tokens
             }
         }
 
-        public static void SaveSecretsToFile(OAuthToken oauthToken)
+        private static byte[] GetStringWithMinSize(string value, int minVal = MinKeySizeInChars)
         {
-            XDocument doc = new XDocument(
-                new XElement("SmugMug",
-                    new XElement("apiKey", oauthToken.ApiKey),
-                    new XElement("secret", oauthToken.Secret),
-                    new XElement("token", oauthToken.Token),
-                    new XElement("tokenSecret", oauthToken.TokenSecret)));
-
-            EncryptTextToFile(doc.ToString(), FileName, encryptKey, encryptIV);
+            StringBuilder sb = new StringBuilder();
+            do
+            {
+                sb.Append(value);
+            } while (sb.Length < minVal);
+            return Encoding.UTF8.GetBytes(sb.ToString());
         }
-
-        public static bool TryReadSecretsFromFile(out OAuthToken oauthToken)
-        {
-            try
-            {
-                string content = DecryptTextFromFile(FileName, encryptKey, encryptIV);
-
-                XDocument settings = XDocument.Parse(content);
-
-                var root = settings.Element("SmugMug");
-                string apiKey = root.Element("apiKey").Value;
-                string secret = root.Element("secret").Value;
-                string token = root.Element("token").Value;
-                string tokenSecret = root.Element("tokenSecret").Value;
-                oauthToken = new OAuthToken(apiKey, secret, token, tokenSecret);
-            }
-            catch
-            {
-                oauthToken = OAuthToken.Invalid;
-                return false;
-            }
-            return true;
-        }
-
-        private static string myFileName = Path.Combine(Path.GetTempPath(), "smugmug.dat");
-        public static string FileName { get { return myFileName; } set { myFileName = value; } }
-
-        static byte[] encryptKey = Encoding.UTF8.GetBytes("12345678" + Environment.MachineName);
-        static byte[] encryptIV = Encoding.UTF8.GetBytes("12345678" + Environment.MachineName);
-
-        public static void ChangeEncryptionKey(string key, string iv)
-        {
-            if (string.IsNullOrEmpty(key) || key.Length != 8)
-            {
-                throw new ArgumentException("key must have exactly 8 characters", "key");
-            }
-
-            if (string.IsNullOrEmpty(iv) || iv.Length != 8)
-            {
-                throw new ArgumentException("iv must have exactly 8 characters", "iv");
-            }
-
-
-            encryptKey = Encoding.UTF8.GetBytes(key);
-            encryptIV = Encoding.UTF8.GetBytes(iv);
-
-        }
-
-
     }
 }

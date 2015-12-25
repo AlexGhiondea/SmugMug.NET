@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\ConsoleAuthentication.cs" />
     <Compile Include="Authentication\Tokens\ITokenProvider.cs" />
     <Compile Include="Authentication\OAuthToken.cs" />
     <Compile Include="Authentication\PermissionLevel.cs" />
