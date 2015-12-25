@@ -6,6 +6,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using SmugMug.v2.Authentication;
 using SmugMug.v2.Helpers;
+using SmugMug.v2.Utility;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -135,6 +136,7 @@ namespace SmugMug.v2.Types
                     JsonSerializerSettings settings = new JsonSerializerSettings();
                     settings.Converters = new List<JsonConverter>();
                     settings.Converters.Add(new StringEnumConverter());
+                    settings.ContractResolver = new PrivateMemberContractResolver();
                     JsonSerializer jser = JsonSerializer.Create(settings);
 
                     return jser.Deserialize<TResult>(reader);
@@ -174,7 +176,7 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-        
+
         public async Task SaveAsync(string Uri, List<string> patchProperties)
         {
             await PatchRequestAsync(Uri, GetPropertyChangesAsJson(patchProperties));
