@@ -11,6 +11,7 @@ using SmugMugShared;
 using SmugMugShared.Extensions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 
 namespace SmugMugMetadataRetriever
@@ -163,6 +164,9 @@ namespace SmugMugMetadataRetriever
                 try
                 {
                     var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
+
+                    File.WriteAllText("temp.json", req);
+
                     return ProcessData(req);
                 }
                 catch (Exception e)
@@ -236,7 +240,7 @@ namespace SmugMugMetadataRetriever
             else if (val is JArray)
             {
                 var obj = val as JArray;
-                if (obj.Count==0)
+                if (obj.Count == 0)
                 {
                     return e;
                 }
@@ -284,7 +288,7 @@ namespace SmugMugMetadataRetriever
             return e;
         }
 
-        private static Entity ProcessData(string req)
+        public static Entity ProcessData(string req)
         {
             JObject obj = JObject.Parse(req);
 
@@ -297,9 +301,10 @@ namespace SmugMugMetadataRetriever
             Entity od = ProcessOutputEntry(obj);
 
             Entity mParams = ProcessParameterDetails(obj);
-
             od.MergeWith(mParams);
 
+            Entity methods = ProcessMethodAndParamDetails(obj);
+            od.MergeWith(methods);
             // var uriDict = DiscoverUris(obj);
 
             // Now process the Response in search of Uris
@@ -347,55 +352,71 @@ namespace SmugMugMetadataRetriever
                         }
                     }
                 }
-                //else if ((val.Property(name2).Value as JArray) != null)
-                //{
-                //    var val2 = val.Property(name2).Value as JArray;
-
-                //    foreach (JObject arrObj in val2)
-                //    {
-                //        var uris2 = arrObj.Property("Uris");
-                //        if (uris2 != null)
-                //        {
-                //            foreach (JProperty item in uris2.Value)
-                //            {
-                //                Method md = new Method();
-                //                md.Uri = (item.Value as JObject).Property("Uri").Value.ToString();
-                //                md.ReturnType = (item.Value as JObject).Property("Locator").Value.ToString();
-
-                //                od.Methods.Add(md);
-                //            }
-                //        }
-                //    }
-                //}
-
             }
             od.Name = name2;
 
             return od;
-
-            //foreach (var prop in (response.Root as JObject).Properties())
-            //{
-            //    Console.WriteLine(prop.Name);
-            //}
-
         }
 
         private static Entity ProcessParameterDetails(JObject obj)
+        {
+            Entity entityObj = ProcessMethodAndParamDetails(obj);
+
+            // we want to take the parameters from the PATCH property and put them on the object.
+
+            if (!entityObj.HttpMethodsAndParameters.ContainsKey("patch"))
+            {
+                return entityObj;
+            }
+
+
+            var parametes = entityObj.HttpMethodsAndParameters["patch"];
+            foreach (var para in parametes)
+            {
+                entityObj.Properties.Add(para);
+            }
+            return entityObj;
+        }
+
+        private static Entity ProcessMethodAndParamDetails(JObject obj)
         {
             Entity od = new Entity();
             if (obj.Property("Options") == null)
                 return od;
 
-            if ((obj.Property("Options").Value as JObject).Property("Parameters") == null)
+            // Get info about the available methods.
+
+            if ((obj.Property("Options").Value as JObject).Property("Methods") == null)
                 return od;
 
-            var outputInfo = ((obj.Property("Options").Value as JObject).Property("Parameters").Value) as JObject;
+            var method = ((obj.Property("Options").Value as JObject).Property("Methods").Value) as JArray;
 
-            if (outputInfo.Property("PATCH") != null)
+            foreach (var item in method)
             {
-                foreach (JObject item in outputInfo.Property("PATCH").Value as JArray)
+                od.AvailableHttpMethods.Add(item.ToString());
+                od.HttpMethodsAndParameters.Add(item.ToString(), new List<Property>());
+            }
+
+            // for each of the methods in here, let's retrieve the parameters, if any,
+            var parametersProperty = (obj.Property("Options").Value as JObject).Property("Parameters");
+
+            if (parametersProperty == null)
+                return od;
+
+            var parametersNode = parametersProperty.Value as JObject;
+            foreach (var item in od.AvailableHttpMethods)
+            {
+                if (parametersNode.Property(item) == null)
                 {
-                    od.Properties.Add(Property.FromJObject(item));
+                    continue;
+                }
+
+                var valueArray = parametersNode.Property(item).Value as JArray;
+
+                foreach (var property in valueArray)
+                {
+                    var parsedProperty = Property.FromJObject(property as JObject);
+                    od.HttpMethodsAndParameters[item].Add(parsedProperty);
                 }
             }
 
