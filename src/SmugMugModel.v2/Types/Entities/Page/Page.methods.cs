@@ -22,14 +22,8 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "Name","UrlName","AutoRename","Password","PasswordHint","Privacy","SecurityType","HighlightImageUri" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","UrlName","AutoRename","Password","PasswordHint","Privacy","SecurityType","HighlightImageUri" };
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "Name","UrlName","AutoRename","Password","PasswordHint","Privacy","SecurityType" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "UrlName", "AutoRename", "Password", "PasswordHint", "Privacy", "SecurityType" };
     }
 }

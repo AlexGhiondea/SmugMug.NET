@@ -22,15 +22,9 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "Name","UrlName","AutoRename","SecurityType","SortMethod","SortDirection","Description","Keywords","Password","PasswordHint","Privacy","SmugSearchable","WorldSearchable","HighlightImageUri" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","UrlName","AutoRename","SecurityType","SortMethod","SortDirection","Description","Keywords","Password","PasswordHint","Privacy","SmugSearchable","WorldSearchable","HighlightImageUri" };
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "Name","UrlName","AutoRename","SecurityType","SortMethod","SortDirection","Description","Keywords","Password","PasswordHint","Privacy","SmugSearchable","WorldSearchable","HighlightImageUri" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "UrlName", "AutoRename", "SecurityType", "SortMethod", "SortDirection", "Description", "Keywords", "Password", "PasswordHint", "Privacy", "SmugSearchable", "WorldSearchable", "HighlightImageUri" };
 
 
         public async Task<FolderEntity> folderid___ (string param1)

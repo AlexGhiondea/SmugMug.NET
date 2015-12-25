@@ -22,9 +22,6 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "Name","BaseColor","Stretchy","Theme" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","BaseColor","Stretchy","Theme" };
     }
 }

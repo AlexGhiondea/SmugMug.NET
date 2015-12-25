@@ -22,10 +22,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){  };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){  };
 
 
         public async Task<AlbumEntity> album___ (string param1)

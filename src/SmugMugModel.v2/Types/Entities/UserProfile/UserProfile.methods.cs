@@ -22,10 +22,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "BioText","BioImageUri","CoverImageUri","FirstName","LastName","DisplayName","Facebook","Twitter","Instagram","Blogger","Flickr","GooglePlus","LinkedIn","Pinterest","Tumblr","Vimeo","Wordpress","YouTube","Custom" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "BioText","BioImageUri","CoverImageUri","FirstName","LastName","DisplayName","Facebook","Twitter","Instagram","Blogger","Flickr","GooglePlus","LinkedIn","Pinterest","Tumblr","Vimeo","Wordpress","YouTube","Custom" };
 
 
         public async Task<UserEntity> user___ (string param1)

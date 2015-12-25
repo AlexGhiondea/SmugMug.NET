@@ -22,10 +22,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "Name","ImageID","Dissolve","Pinned","Thumbs","SmallestSize" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","ImageID","Dissolve","Pinned","Thumbs","SmallestSize" };
 
 
         public async Task<ImageEntity> image___ (string param1)

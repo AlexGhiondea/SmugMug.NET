@@ -22,9 +22,6 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "PrintmarkID","ImageID","ImageKey","Name","Dissolve","Gap","Location","Scale" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "PrintmarkID","ImageID","ImageKey","Name","Dissolve","Gap","Location","Scale" };
     }
 }

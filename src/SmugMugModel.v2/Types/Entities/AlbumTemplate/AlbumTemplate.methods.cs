@@ -22,15 +22,9 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "Name","CommunityUri","PrintmarkUri","WatermarkUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","LargestSize","PackagingBranding","Password","PasswordHint","Printable","ProofDays","Protected","Public","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","Watermark","WorldSearchable" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","CommunityUri","PrintmarkUri","WatermarkUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","LargestSize","PackagingBranding","Password","PasswordHint","Printable","ProofDays","Protected","Public","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","Watermark","WorldSearchable" };
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "Name","CommunityUri","PrintmarkUri","WatermarkUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","LargestSize","PackagingBranding","Password","PasswordHint","Printable","ProofDays","Protected","Public","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","Watermark","WorldSearchable" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "ProofDays", "Protected", "Public", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "Watermark", "WorldSearchable" };
 
 
         public async Task<UserEntity> user___ (string param1)

@@ -22,15 +22,9 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","UrlName","WorldSearchable","ResetUrlName" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","UrlName","WorldSearchable","ResetUrlName" };
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","Type","UrlName","WorldSearchable" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "AutoRename", "Description", "HideOwner", "HighlightImageUri", "Name", "Keywords", "Password", "PasswordHint", "Privacy", "SecurityType", "SmugSearchable", "SortDirection", "SortMethod", "Type", "UrlName", "WorldSearchable" };
 
 
         public async Task<AlbumEntity> album___ (string param1)

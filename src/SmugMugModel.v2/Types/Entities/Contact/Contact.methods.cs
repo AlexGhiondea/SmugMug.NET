@@ -22,10 +22,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "Name","PrimaryEmail" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "PrimaryEmail" };
 
 
         public async Task<ContactEmailEntity[]> contact____emails (string param1)

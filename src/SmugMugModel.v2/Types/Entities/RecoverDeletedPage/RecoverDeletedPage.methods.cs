@@ -22,9 +22,6 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "FolderUri" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "FolderUri" };
     }
 }

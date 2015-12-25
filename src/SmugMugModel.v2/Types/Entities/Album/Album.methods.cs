@@ -22,15 +22,9 @@ namespace SmugMug.v2.Types
         }
 
 
-        public List<string> GetPatchParameters()
-        {
-            return new List<string>(){ "NiceName","UrlName","Title","Name","CommunityUri","PrintmarkUri","WatermarkUri","ThemeUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","Description","DownloadPassword","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","Keywords","LargestSize","PackagingBranding","Password","PasswordHint","Printable","Privacy","ProofDays","Protected","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","UploadKey","Watermark","WorldSearchable","AutoRename","SecurityType","HighlightAlbumImageUri" };
-        }
+        private static readonly List<string> PatchParameters = new List<string>(){ "NiceName","UrlName","Title","Name","CommunityUri","PrintmarkUri","WatermarkUri","ThemeUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","Description","DownloadPassword","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","Keywords","LargestSize","PackagingBranding","Password","PasswordHint","Printable","Privacy","ProofDays","Protected","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","UploadKey","Watermark","WorldSearchable","AutoRename","SecurityType","HighlightAlbumImageUri" };
 
-        public List<string> GetPostParameters()
-        {
-            return new List<string>(){ "NiceName","UrlName","Title","Name","CommunityUri","PrintmarkUri","WatermarkUri","ThemeUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","Description","DownloadPassword","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","Keywords","LargestSize","PackagingBranding","Password","PasswordHint","Printable","Privacy","ProofDays","Protected","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","UploadKey","Watermark","WorldSearchable","AutoRename","SecurityType","AlbumUri" };
-        }
+        private static readonly List<string> PostParameters = new List<string>(){ "NiceName", "UrlName", "Title", "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "ThemeUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "Description", "DownloadPassword", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "Keywords", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "Privacy", "ProofDays", "Protected", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "UploadKey", "Watermark", "WorldSearchable", "AutoRename", "SecurityType", "AlbumUri" };
 
 
         public async Task<ApplyAlbumTemplateEntity> album____applyalbumtemplate (string param1)
