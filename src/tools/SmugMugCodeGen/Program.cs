@@ -66,11 +66,23 @@ namespace SmugMugCodeGen
         {
             foreach (var item in metadata)
             {
+                StringBuilder additionalMethodUsings = new StringBuilder();
+
+                additionalMethodUsings.Append("using System.Threading.Tasks;");
+
                 string className = Helpers.NormalizeString(item.Value.Name);
                 StringBuilder properties = CodeGen.BuildProperties(item.Value.Properties.OrderBy(p => p.Name));
 
                 StringBuilder methods = new StringBuilder();
                 methods.AppendLine(string.Format(Constants.ConstructorDefinition, className));
+
+                string parameters = CodeGen.BuildMethodReturningParametersToSendInRequest(item.Value);
+                if (!string.IsNullOrEmpty(parameters))
+                {
+                    methods.AppendLine(parameters);
+                    additionalMethodUsings.AppendLine();
+                    additionalMethodUsings.Append("using System.Collections.Generic;");
+                }
                 methods.Append(CodeGen.BuildMethods(item.Value.Methods));
 
                 string objectDirName = Path.Combine(_options.OutputDir, className);
@@ -82,7 +94,7 @@ namespace SmugMugCodeGen
                 File.WriteAllText(Path.Combine(objectDirName, item.Key + ".properties.cs"), sb.ToString());
 
                 sb = new StringBuilder();
-                classDefinition = GetClassDefinition(className, methods.ToString().TrimEnd(), string.Empty, "using System.Threading.Tasks;");
+                classDefinition = GetClassDefinition(className, methods.ToString().TrimEnd(), string.Empty, additionalMethodUsings.ToString());
                 sb.Append(classDefinition);
                 File.WriteAllText(Path.Combine(objectDirName, item.Key + ".methods.cs"), sb.ToString());
 
