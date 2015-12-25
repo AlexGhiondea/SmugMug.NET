@@ -175,13 +175,15 @@ namespace SmugMug.v2.Types
             }
         }
         
-        public async Task SaveAsync(string Uri)
+        public async Task SaveAsync(string Uri, List<string> patchProperties)
         {
-            await PatchRequestAsync(Uri, GetPropertyChangesAsJson());
+            await PatchRequestAsync(Uri, GetPropertyChangesAsJson(patchProperties));
         }
 
-        public string GetPropertyChangesAsJson()
+        public string GetPropertyChangesAsJson(List<string> allowedProperties)
         {
+            HashSet<string> allowedPropertiesSet = new HashSet<string>(allowedProperties, StringComparer.OrdinalIgnoreCase);
+
             using (StringWriter writer = new StringWriter())
             using (JsonTextWriter jsonWrite = new JsonTextWriter(writer))
             {
@@ -191,10 +193,12 @@ namespace SmugMug.v2.Types
                 {
                     foreach (var item in _storage)
                     {
-
-                        jsonWrite.WritePropertyName(item.Key);
-
-                        jsonWrite.WriteValue(item.Value.NewValue);
+                        if (allowedPropertiesSet.Contains(item.Key))
+                        {
+                            // we only want to include the property if it was part of a patch or post request
+                            jsonWrite.WritePropertyName(item.Key);
+                            jsonWrite.WriteValue(item.Value.NewValue);
+                        }
                     }
 
                 }
