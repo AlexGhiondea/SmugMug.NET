@@ -165,8 +165,6 @@ namespace SmugMugMetadataRetriever
                 {
                     var req = client.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
 
-                    File.WriteAllText("temp.json", req);
-
                     return ProcessData(req);
                 }
                 catch (Exception e)
@@ -303,8 +301,6 @@ namespace SmugMugMetadataRetriever
             Entity mParams = ProcessParameterDetails(obj);
             od.MergeWith(mParams);
 
-            Entity methods = ProcessMethodAndParamDetails(obj);
-            od.MergeWith(methods);
             // var uriDict = DiscoverUris(obj);
 
             // Now process the Response in search of Uris
@@ -386,15 +382,14 @@ namespace SmugMugMetadataRetriever
 
             // Get info about the available methods.
 
-            if ((obj.Property("Options").Value as JObject).Property("Methods") == null)
-                return od;
-
-            var method = ((obj.Property("Options").Value as JObject).Property("Methods").Value) as JArray;
-
-            foreach (var item in method)
+            if ((obj.Property("Options").Value as JObject).Property("Methods") != null)
             {
-                od.AvailableHttpMethods.Add(item.ToString());
-                od.HttpMethodsAndParameters.Add(item.ToString(), new List<Property>());
+                var method = ((obj.Property("Options").Value as JObject).Property("Methods").Value) as JArray;
+
+                foreach (var item in method)
+                {
+                    od.AvailableHttpMethods.Add(item.ToString());
+                }
             }
 
             // for each of the methods in here, let's retrieve the parameters, if any,
@@ -404,19 +399,17 @@ namespace SmugMugMetadataRetriever
                 return od;
 
             var parametersNode = parametersProperty.Value as JObject;
-            foreach (var item in od.AvailableHttpMethods)
+
+            foreach (JProperty property in parametersNode.Properties())
             {
-                if (parametersNode.Property(item) == null)
-                {
-                    continue;
-                }
+                od.HttpMethodsAndParameters.Add(property.Name, new List<Property>());
 
-                var valueArray = parametersNode.Property(item).Value as JArray;
+                var valueArray = property.Value as JArray;
 
-                foreach (var property in valueArray)
+                foreach (var arrayElement in valueArray)
                 {
-                    var parsedProperty = Property.FromJObject(property as JObject);
-                    od.HttpMethodsAndParameters[item].Add(parsedProperty);
+                    var parsedProperty = Property.FromJObject(arrayElement as JObject);
+                    od.HttpMethodsAndParameters[property.Name].Add(parsedProperty);
                 }
             }
 

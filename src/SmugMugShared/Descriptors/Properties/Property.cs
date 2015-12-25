@@ -3,6 +3,7 @@
 
 using Newtonsoft.Json.Linq;
 using SmugMug.Shared.Extensions;
+using SmugMugShared.Extensions;
 using System.IO;
 
 namespace SmugMug.Shared.Descriptors
@@ -46,6 +47,7 @@ namespace SmugMug.Shared.Descriptors
                     {
                         return new SelectProperty(item);
                     }
+                case "email":
                 case "varchar":
                 case "text":
                     {
@@ -92,7 +94,11 @@ namespace SmugMug.Shared.Descriptors
                         return new FloatProperty(item);
                     }
                 default:
-                    throw new InvalidDataException("I cannot do it -- type unknown ->>>   " + type);
+                    {
+                        ConsolePrinter.Write(System.ConsoleColor.Red, "Found unknown property type '{0}'. Assuming string", type);
+                        return new StringProperty(item);
+                    }
+
             }
         }
 
