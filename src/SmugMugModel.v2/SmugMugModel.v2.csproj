@@ -437,6 +437,8 @@
     <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.manual.cs" />
     <Compile Include="Types\Entities\Watermark\Watermark.manual.cs" />
     <Compile Include="Types\SiteEntity.cs" />
+    <Compile Include="Types\SmugMugEntity.Requests.cs" />
+    <Compile Include="Types\SmugMugEntity.ChangeTracking.cs" />
     <Compile Include="Types\SmugMugEntity.cs">
       <SubType>Code</SubType>
     </Compile>
