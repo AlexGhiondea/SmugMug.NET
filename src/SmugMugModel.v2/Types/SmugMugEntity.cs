@@ -177,9 +177,14 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public async Task SaveAsync(string Uri, List<string> patchProperties)
+        public async Task SaveAsync(string uri, List<string> patchProperties)
         {
-            await PatchRequestAsync(Uri, GetPropertyChangesAsJson(patchProperties));
+            await PatchRequestAsync(uri, GetPropertyChangesAsJson(patchProperties));
+        }
+
+        public async Task CreateAsync(string uri, List<string> postProperties)
+        {
+            await PostRequestAsync(uri, GetPropertyChangesAsJson(postProperties));
         }
 
         public string GetPropertyChangesAsJson(List<string> allowedProperties)
@@ -232,18 +237,6 @@ namespace SmugMug.v2.Types
         private static string GetEntityNameFromTypeName(Type type)
         {
             return type.Name.Replace("Entity", "").Replace("[]", "");
-        }
-    }
-
-    internal class PropertyData
-    {
-        public object OldValue { get; set; }
-        public object NewValue { get; set; }
-
-        public PropertyData(object oldValue, object newValue)
-        {
-            this.OldValue = oldValue;
-            this.NewValue = newValue;
         }
     }
 }
