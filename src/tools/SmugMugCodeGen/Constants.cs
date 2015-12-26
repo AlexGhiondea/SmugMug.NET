@@ -21,13 +21,18 @@ namespace SmugMugCodeGen
             }}
         }}
 ";
+        //TODO: This needs to be changed to be readonly (ie. private setter).
         public const string PropertyDefinitionReadOnly = @"
         public {0} {1} {{
             get {{
                 return {2};
             }}
-            private set {{
-                {2} = value;
+            set {{
+                if ({2} != value)
+                {{
+                    NotifyPropertyValueChanged(""{1}"", oldValue:{2}, newValue: value);
+                    {2} = value;     
+                }}
             }}
         }}
 ";
