@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -19,6 +20,11 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        private static readonly List<string> PatchParameters = new List<string>(){ "AutoRename","Description","HideOwner","HighlightImageUri","Name","Keywords","Password","PasswordHint","Privacy","SecurityType","SmugSearchable","SortDirection","SortMethod","UrlName","WorldSearchable","ResetUrlName" };
+
+        private static readonly List<string> PostParameters = new List<string>(){ "AutoRename", "Description", "HideOwner", "HighlightImageUri", "Name", "Keywords", "Password", "PasswordHint", "Privacy", "SecurityType", "SmugSearchable", "SortDirection", "SortMethod", "Type", "UrlName", "WorldSearchable" };
 
 
         public async Task<AlbumEntity> album___ (string param1)

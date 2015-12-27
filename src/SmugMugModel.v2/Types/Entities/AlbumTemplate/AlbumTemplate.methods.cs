@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -19,6 +20,11 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","CommunityUri","PrintmarkUri","WatermarkUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","LargestSize","PackagingBranding","Password","PasswordHint","Printable","ProofDays","Protected","Public","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","Watermark","WorldSearchable" };
+
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "ProofDays", "Protected", "Public", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "Watermark", "WorldSearchable" };
 
 
         public async Task<UserEntity> user___ (string param1)

@@ -126,6 +126,24 @@ namespace SmugMugCodeGen
             }
         }
 
+        internal static string BuildMethodReturningParametersToSendInRequest(Entity value)
+        {
+            StringBuilder sb = new StringBuilder();
+            
+            if (value.HttpMethodsAndParameters.ContainsKey("patch"))
+            {
+                string patchParams = string.Join(",", value.HttpMethodsAndParameters["patch"].Select(p => string.Format("\"{0}\"", p.Name)));
+                sb.AppendFormat(Constants.MethodReturnsParameters, "Patch", patchParams);
+            }
+            if (value.HttpMethodsAndParameters.ContainsKey("post"))
+            {
+                string postParams = string.Join(", ", value.HttpMethodsAndParameters["post"].Select(p => string.Format("\"{0}\"", p.Name)));
+                sb.AppendFormat(Constants.MethodReturnsParameters, "Post", postParams);
+            }
+
+            return sb.ToString();
+        }
+
         public static Dictionary<string, string> BuildEnums()
         {
             Dictionary<string, string> enumTypeDefs = new Dictionary<string, string>();

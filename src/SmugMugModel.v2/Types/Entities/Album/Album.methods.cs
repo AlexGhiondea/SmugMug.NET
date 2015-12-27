@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -19,6 +20,11 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        private static readonly List<string> PatchParameters = new List<string>(){ "NiceName","UrlName","Title","Name","CommunityUri","PrintmarkUri","WatermarkUri","ThemeUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","Description","DownloadPassword","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","Keywords","LargestSize","PackagingBranding","Password","PasswordHint","Printable","Privacy","ProofDays","Protected","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","UploadKey","Watermark","WorldSearchable","AutoRename","SecurityType","HighlightAlbumImageUri" };
+
+        private static readonly List<string> PostParameters = new List<string>(){ "NiceName", "UrlName", "Title", "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "ThemeUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "Description", "DownloadPassword", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "Keywords", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "Privacy", "ProofDays", "Protected", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "UploadKey", "Watermark", "WorldSearchable", "AutoRename", "SecurityType", "AlbumUri" };
 
 
         public async Task<ApplyAlbumTemplateEntity> album____applyalbumtemplate (string param1)

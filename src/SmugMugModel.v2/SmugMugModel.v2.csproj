@@ -48,11 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\ConsoleAuthentication.cs" />
+    <Compile Include="Authentication\Tokens\ITokenProvider.cs" />
     <Compile Include="Authentication\OAuthToken.cs" />
     <Compile Include="Authentication\PermissionLevel.cs" />
     <Compile Include="Authentication\AccessLevel.cs" />
     <Compile Include="Authentication\AuthenticationOptions.cs" />
     <Compile Include="Authentication\SmugMugAuthorize.cs" />
+    <Compile Include="Authentication\Tokens\FileTokenProvider.cs" />
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.manual.cs" />
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.methods.cs">
       <SubType>Code</SubType>
@@ -434,6 +437,8 @@
     <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.manual.cs" />
     <Compile Include="Types\Entities\Watermark\Watermark.manual.cs" />
     <Compile Include="Types\SiteEntity.cs" />
+    <Compile Include="Types\SmugMugEntity.Requests.cs" />
+    <Compile Include="Types\SmugMugEntity.ChangeTracking.cs" />
     <Compile Include="Types\SmugMugEntity.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -600,6 +605,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Utility\HttpClientHelpers.cs" />
+    <Compile Include="Types\PropertyData.cs" />
+    <Compile Include="Utility\PrivateMemberContractResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

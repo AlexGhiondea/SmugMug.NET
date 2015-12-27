@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -19,6 +20,9 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        private static readonly List<string> PatchParameters = new List<string>(){ "BioText","BioImageUri","CoverImageUri","FirstName","LastName","DisplayName","Facebook","Twitter","Instagram","Blogger","Flickr","GooglePlus","LinkedIn","Pinterest","Tumblr","Vimeo","Wordpress","YouTube","Custom" };
 
 
         public async Task<UserEntity> user___ (string param1)

@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
@@ -19,5 +20,10 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
+
+
+        private static readonly List<string> PatchParameters = new List<string>(){ "Name","UrlName","AutoRename","Password","PasswordHint","Privacy","SecurityType","HighlightImageUri" };
+
+        private static readonly List<string> PostParameters = new List<string>(){ "Name", "UrlName", "AutoRename", "Password", "PasswordHint", "Privacy", "SecurityType" };
     }
 }

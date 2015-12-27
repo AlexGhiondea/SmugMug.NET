@@ -21,6 +21,21 @@ namespace SmugMugCodeGen
             }}
         }}
 ";
+        //TODO: This needs to be changed to be readonly (ie. private setter).
+        public const string PropertyDefinitionReadOnly = @"
+        public {0} {1} {{
+            get {{
+                return {2};
+            }}
+            set {{
+                if ({2} != value)
+                {{
+                    NotifyPropertyValueChanged(""{1}"", oldValue:{2}, newValue: value);
+                    {2} = value;     
+                }}
+            }}
+        }}
+";
 
         public const string MethodDefinition = @"
         public async Task<{0}> {1} ({2})
@@ -78,5 +93,9 @@ namespace SmugMug.v2.Types
 
         public const string ParameterNameBase = "param";
         public const string VoidMethodReturnType = "Task";
+
+        public const string MethodReturnsParameters = @"
+        private static readonly List<string> {0}Parameters = new List<string>(){{ {1} }};
+";
     }
 }

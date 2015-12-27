@@ -34,8 +34,9 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="OAuth.net">
+    <Reference Include="OAuth.net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OAuth.Net.0.6\lib\net45\OAuth.net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,7 +69,6 @@
     <Compile Include="Descriptors\Entity.cs" />
     <Compile Include="Descriptors\Properties\Property.cs" />
     <Compile Include="RegExCreator.cs" />
-    <Compile Include="SmugMugSecretsAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmugMugModel.v2\SmugMugModel.v2.csproj">

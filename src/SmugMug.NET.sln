@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModelAsync", "SmugMugModelAsync\SmugMugModelAsync.csproj", "{C7020561-8E04-4D6A-8D46-28F31183ECBB}"
 EndProject
@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmugMugMetadata", "SmugMugM
 		tools\SmugMugMetadata\metadata.json = tools\SmugMugMetadata\metadata.json
 		tools\SmugMugMetadata\metadata_part2.json = tools\SmugMugMetadata\metadata_part2.json
 		tools\SmugMugMetadata\metadata_part3.json = tools\SmugMugMetadata\metadata_part3.json
+		tools\SmugMugMetadata\metadata_part4.json = tools\SmugMugMetadata\metadata_part4.json
 	EndProjectSection
 EndProject
 Global

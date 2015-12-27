@@ -50,15 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiAnalysis.cs" />
-    <Compile Include="BaseUriFinder.cs" />
-    <Compile Include="CodeGen.cs" />
     <Compile Include="Program.cs">
       <SubType>
       </SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmugMugSecretsAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
