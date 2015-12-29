@@ -93,30 +93,30 @@
     <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.properties.cs" />
     <Compile Include="Types\Entities\Caption\Caption.properties.cs" />
     <Compile Include="Types\Entities\Caption\Caption.methods.cs" />
-    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.manual.cs" />
-    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.methods.cs" />
-    <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.properties.cs" />
-    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.manual.cs" />
-    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.methods.cs" />
-    <Compile Include="Types\Entities\CatalogProduct\CatalogProduct.properties.cs" />
-    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.manual.cs" />
-    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.methods.cs">
+    <Compile Include="Types\Entities\Catalog\CatalogCategory\CatalogCategory.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogCategory\CatalogCategory.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogCategory\CatalogCategory.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogProduct\CatalogProduct.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogProduct\CatalogProduct.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogProduct\CatalogProduct.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSkuPrice\CatalogSkuPrice.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSkuPrice\CatalogSkuPrice.methods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.properties.cs">
+    <Compile Include="Types\Entities\Catalog\CatalogSkuPrice\CatalogSkuPrice.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.methods.cs" />
-    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.properties.cs" />
-    <Compile Include="Types\Entities\CatalogSku\CatalogSku.manual.cs" />
-    <Compile Include="Types\Entities\CatalogSku\CatalogSku.methods.cs" />
-    <Compile Include="Types\Entities\CatalogSku\CatalogSku.properties.cs" />
-    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.manual.cs" />
-    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.methods.cs" />
-    <Compile Include="Types\Entities\CatalogSubCategory\CatalogSubCategory.properties.cs" />
-    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.manual.cs" />
-    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.methods.cs" />
-    <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSkuType\CatalogSkuType.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSkuType\CatalogSkuType.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSku\CatalogSku.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSku\CatalogSku.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSku\CatalogSku.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSubCategory\CatalogSubCategory.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSubCategory\CatalogSubCategory.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogSubCategory\CatalogSubCategory.properties.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogVendor\CatalogVendor.manual.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogVendor\CatalogVendor.methods.cs" />
+    <Compile Include="Types\Entities\Catalog\CatalogVendor\CatalogVendor.properties.cs" />
     <Compile Include="Types\Entities\ColorImage\ColorImage.methods.cs" />
     <Compile Include="Types\Entities\ColorImage\ColorImage.properties.cs" />
     <Compile Include="Types\Entities\Comment\Comment.methods.cs">
