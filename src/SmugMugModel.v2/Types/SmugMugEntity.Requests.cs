@@ -24,6 +24,7 @@ namespace SmugMug.v2.Types
                 return null;
 
             result._oauthToken = this._oauthToken;
+            result.ParentEntity = this;
             return result;
         }
 
@@ -38,6 +39,7 @@ namespace SmugMug.v2.Types
             foreach (var item in result)
             {
                 item._oauthToken = this._oauthToken;
+                item.ParentEntity = this;
             }
             return result;
         }
