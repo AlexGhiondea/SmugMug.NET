@@ -237,12 +237,12 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<UserTopKeywordsEntity>(requestUri); 
         }
 
-        public async Task<UserUploadLimitsEntity> user____uploadlimits (string param1)
+        public async Task<UserUploadLimitsEntity[]> user____uploadlimits (string param1)
         {
             // /user/(*)!uploadlimits 
             string requestUri = string.Format("{0}/user/{1}!uploadlimits", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<UserUploadLimitsEntity>(requestUri); 
+            return await RetrieveEntityArrayAsync<UserUploadLimitsEntity>(requestUri); 
         }
 
         //public async Task<FolderAlbumPageEntity> user____urlpathlookup (string param1)

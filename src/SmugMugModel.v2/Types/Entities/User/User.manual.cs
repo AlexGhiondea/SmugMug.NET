@@ -182,7 +182,7 @@ namespace SmugMug.v2.Types
             return await user____topkeywords(NickName);
         }
 
-        public async Task<UserUploadLimitsEntity> GetUploadLimitsAsync()
+        public async Task<UserUploadLimitsEntity[]> GetUploadLimitsAsync()
         {
             // /user/(*)!uploadlimits 
             return await user____uploadlimits(NickName);
