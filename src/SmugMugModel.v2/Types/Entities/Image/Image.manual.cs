@@ -4,106 +4,118 @@
 using System;
 using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Utility;
 
 namespace SmugMug.v2.Types
 {
     public partial class ImageEntity : SmugMugEntity
     {
-
-        public async Task<AlbumEntity> Fixup_album___ ()
+public override string EntityId
         {
+            get { return ImageKey; }
+        }
+
+        public async Task<AlbumEntity> GetAlbumAsync()
+        {
+            // TODO: Consider returning ParentEntity here instead.
             // /album/(*) 
-            return await album___(string.Empty); 
+            return await album___(ParentEntity.EntityId);
         }
 
-        public async Task<ColorImageEntity> Fixup_image____color ()
+        public async Task<ColorImageEntity> RequiresPost_ColorImageAsync(ColorEnum color)
         {
-            // /image/(*)!color 
-            return await image____color(string.Empty); 
+            //string colorValue = color == ColorEnum.BW ? "B/W" : color.ToString();
+            string colorValue = color.GetEnumMemberValue();
+
+            // /image/(*)!color?Color=<color>
+            string requestUri = string.Format("{0}/image/{1}!color?Color={2}", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey, colorValue);
+
+            return await RetrieveEntityAsync<ColorImageEntity>(requestUri);
         }
 
-        public async Task<CommentEntity[]> Fixup_image____comments ()
+        public async Task<CommentEntity[]> GetCommentsAsync()
         {
             // /image/(*)!comments 
-            return await image____comments(string.Empty); 
+            return await image____comments(ImageKey);
         }
 
-        public async Task Fixup_image____crop ()
+        public async Task RequiresPost_Fixup_image____crop()
         {
             // /image/(*)!crop 
-            await image____crop(string.Empty); 
+            await image____crop(string.Empty);
         }
 
-        public async Task<ImageDownloadEntity> Fixup_image____download ()
+        public async Task<ImageDownloadEntity> GetDownloadAsync()
         {
             // /image/(*)!download 
-            return await image____download(string.Empty); 
+            return await image____download(ImageKey);
         }
 
-        public async Task<ImageMetadataEntity> Fixup_image____metadata ()
+        public async Task<ImageMetadataEntity> GetMetadataAsync()
         {
             // /image/(*)!metadata 
-            return await image____metadata(string.Empty); 
+            return await image____metadata(ImageKey);
         }
 
-        public async Task<CatalogSkuPriceEntity[]> Fixup_image____prices ()
+        public async Task<CatalogSkuPriceEntity[]> GetPricesAsync()
         {
             // /image/(*)!prices 
-            return await image____prices(string.Empty); 
+            return await image____prices(ImageKey);
         }
 
-        public async Task Fixup_image____rotate ()
+        public async Task RequiresPost_Fixup_image____rotate()
         {
             // /image/(*)!rotate 
-            await image____rotate(string.Empty); 
+            await image____rotate(string.Empty);
         }
 
-        public async Task Fixup_image____watermark ()
+        public async Task RequiresPost_Fixup_image____watermark()
         {
             // /image/(*)!watermark 
-            await image____watermark(string.Empty); 
+            await image____watermark(string.Empty);
         }
 
-        public async Task<LargestImageEntity> Fixup_image____largestimage ()
+        public async Task<LargestImageEntity> GetLargestImageAsync()
         {
             // /image/(*)!largestimage 
-            return await image____largestimage(string.Empty); 
+            return await image____largestimage(ImageKey);
         }
 
-        public async Task<ImageSizeDetailsEntity> Fixup_image____sizedetails ()
+        public async Task<ImageSizeDetailsEntity> GetSizeDetails()
         {
             // /image/(*)!sizedetails 
-            return await image____sizedetails(string.Empty); 
+            return await image____sizedetails(ImageKey);
         }
 
-        public async Task<ImageSizesEntity> Fixup_image____sizes ()
+        public async Task<ImageSizesEntity> GetImageSizesAsync()
         {
+            // NOTE: We need to append -0 to the image key otherwise we will not get the right value 
             // /image/(*)!sizes 
-            return await image____sizes(string.Empty); 
+            return await image____sizes(ImageKey + "-0");
         }
 
-        public async Task<LargestVideoEntity> Fixup_image____largestvideo ()
+        public async Task<LargestVideoEntity> GetLargestVideoAsync()
         {
             // /image/(*)!largestvideo 
-            return await image____largestvideo(string.Empty); 
+            return await image____largestvideo(ImageKey);
         }
 
-        public async Task<UserEntity> Fixup_user___ ()
+        public async Task<UserEntity> Considered_Fixup_user___()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            return await user___(string.Empty);
         }
 
-        public async Task<CSMILVideoEntity> Fixup_video____csmil ()
+        public async Task<CSMILVideoEntity> GetVideoCSMILAsync()
         {
             // /video/(*)!csmil 
-            return await video____csmil(string.Empty); 
+            return await video____csmil(ImageKey);
         }
 
-        public async Task<EmbedVideoEntity> Fixup_video____embed ()
+        public async Task<EmbedVideoEntity> GetEmbedVideoAsync()
         {
             // /video/(*)!embed 
-            return await video____embed(string.Empty); 
+            return await video____embed(ImageKey);
         }
     }
 }
