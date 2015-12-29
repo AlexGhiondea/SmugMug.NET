@@ -7,7 +7,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class StatusImageRotateEntity : SmugMugEntity
+    public partial class StatusImageRotateEntity : StatusEntity
     {
         public StatusImageRotateEntity()
         {

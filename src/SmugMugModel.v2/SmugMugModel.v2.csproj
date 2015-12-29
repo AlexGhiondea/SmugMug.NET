@@ -310,6 +310,8 @@
     <Compile Include="Types\Entities\Size\Size.properties.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Types\Entities\Status\Status.methods.cs" />
+    <Compile Include="Types\Entities\Status\Status.properties.cs" />
     <Compile Include="Types\Entities\UserGuideState\UserGuideState.manual.cs" />
     <Compile Include="Types\Entities\UserProfile\UserProfile.manual.cs" />
     <Compile Include="Types\Entities\User\User.manual.cs" />
