@@ -10,19 +10,19 @@ namespace SmugMug.v2.Types
     public partial class LargestImageEntity : SmugMugEntity
     {
 
-        public async Task<ImageSizeX3LargeEntity> GetImageSizeX3LargeAsync()
+        public async Task<ImageSizeEntity> GetImageSizeX3LargeAsync()
         {
             // /image/(*)!sizex3large 
             return await image____sizex3large(ParentEntity.EntityId + "-0");
         }
 
-        public async Task<ImageSizeOriginalEntity> GetImageSizeOriginalAsync()
+        public async Task<ImageSizeEntity> GetImageSizeOriginalAsync()
         {
             // /image/(*)!sizeoriginal 
             return await image____sizeoriginal(ParentEntity.EntityId + "-0");
         }
 
-        public async Task<ImageSizeXLargeEntity> GetImageSizeXLargeAsync()
+        public async Task<ImageSizeEntity> GetImageSizeXLargeAsync()
         {
             // /image/(*)!sizexlarge 
             return await image____sizexlarge(ParentEntity.EntityId + "-0");

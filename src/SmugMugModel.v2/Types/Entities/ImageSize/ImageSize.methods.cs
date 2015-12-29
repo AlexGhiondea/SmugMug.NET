@@ -7,13 +7,17 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class VideoSize320Entity : SmugMugEntity
+    public partial class ImageSizeEntity : SmugMugEntity
     {
-
-        public async Task<ImageSizeCustomEntity> Fixup_image____sizecustom ()
+        public ImageSizeEntity()
         {
-            // /image/(*)!sizecustom 
-            return await image____sizecustom(string.Empty); 
+            //Empty constructor to enable deserialization
+        }
+
+        public ImageSizeEntity(OAuthToken oauthToken)
+            : base(oauthToken)
+        {
+            _oauthToken = oauthToken;
         }
     }
 }

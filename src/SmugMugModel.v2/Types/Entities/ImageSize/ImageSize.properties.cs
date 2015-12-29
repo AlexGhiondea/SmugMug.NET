@@ -6,7 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class VideoSMILEntity : SmugMugEntity
+    public partial class ImageSizeEntity : SmugMugEntity
     {
         private decimal _bitrate;
         private decimal _duration;

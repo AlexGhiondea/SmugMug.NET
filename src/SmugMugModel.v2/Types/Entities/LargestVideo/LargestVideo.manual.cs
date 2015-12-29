@@ -16,7 +16,7 @@ namespace SmugMug.v2.Types
             return await image____sizecustom(string.Empty); 
         }
 
-        public async Task<VideoSize1920Entity> Fixup_video____size1920 ()
+        public async Task<ImageSizeEntity> Fixup_video____size1920 ()
         {
             // /video/(*)!size1920 
             return await video____size1920(string.Empty); 

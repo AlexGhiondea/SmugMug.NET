@@ -231,61 +231,13 @@
     <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.methods.cs" />
-    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.properties.cs" />
-    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Types\Entities\ImageSize\ImageSize.methods.cs" />
+    <Compile Include="Types\Entities\ImageSize\ImageSize.properties.cs" />
     <Compile Include="Types\Entities\ImageSizes\ImageSizes.manual.cs" />
     <Compile Include="Types\Entities\ImageSizes\ImageSizes.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizes\ImageSizes.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.properties.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Image\Image.manual.cs" />
@@ -361,14 +313,6 @@
     <Compile Include="Types\Entities\UserGuideState\UserGuideState.manual.cs" />
     <Compile Include="Types\Entities\UserProfile\UserProfile.manual.cs" />
     <Compile Include="Types\Entities\User\User.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize110\VideoSize110.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize200\VideoSize200.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize320\VideoSize320.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize640\VideoSize640.manual.cs" />
-    <Compile Include="Types\Entities\VideoSize960\VideoSize960.manual.cs" />
-    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.manual.cs" />
     <Compile Include="Types\Entities\Watermark\Watermark.manual.cs" />
     <Compile Include="Types\SiteEntity.cs" />
     <Compile Include="Types\SmugMugEntity.Requests.cs" />
@@ -458,54 +402,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\User\User.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize110\VideoSize110.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize110\VideoSize110.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize1920\VideoSize1920.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize200\VideoSize200.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize200\VideoSize200.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize320\VideoSize320.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize320\VideoSize320.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize640\VideoSize640.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize640\VideoSize640.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize960\VideoSize960.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSize960\VideoSize960.properties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.methods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Types\Entities\VideoSMIL\VideoSMIL.properties.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Watermark\Watermark.methods.cs">

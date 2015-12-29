@@ -29,12 +29,12 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<ImageSizeCustomEntity>(requestUri); 
         }
 
-        public async Task<VideoSize1920Entity> video____size1920 (string param1)
+        public async Task<ImageSizeEntity> video____size1920 (string param1)
         {
             // /video/(*)!size1920 
             string requestUri = string.Format("{0}/video/{1}!size1920", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<VideoSize1920Entity>(requestUri); 
+            return await RetrieveEntityAsync<ImageSizeEntity>(requestUri); 
         }
     }
 }
