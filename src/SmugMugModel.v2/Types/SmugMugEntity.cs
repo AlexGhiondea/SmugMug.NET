@@ -9,6 +9,7 @@ namespace SmugMug.v2.Types
 {
     public partial class SmugMugEntity
     {
+        public string TODOUrl { get; set; }
         protected OAuthToken _oauthToken;
 
         public SmugMugEntity()
@@ -19,6 +20,10 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = token;
         }
+
+        public SmugMugEntity ParentEntity { get; set; }
+
+        public virtual string EntityId { get { return string.Empty; } }
 
         protected async Task SaveAsync(string uri, List<string> patchProperties)
         {

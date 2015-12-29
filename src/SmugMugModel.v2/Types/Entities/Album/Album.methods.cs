@@ -226,13 +226,5 @@ namespace SmugMug.v2.Types
 
             return await RetrieveEntityAsync<UserEntity>(requestUri); 
         }
-
-        public async Task<WatermarkEntity> watermark___ (string param1)
-        {
-            // /watermark/(*) 
-            string requestUri = string.Format("{0}/watermark/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<WatermarkEntity>(requestUri); 
-        }
     }
 }

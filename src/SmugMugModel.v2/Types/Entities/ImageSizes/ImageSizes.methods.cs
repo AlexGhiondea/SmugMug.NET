@@ -9,6 +9,14 @@ namespace SmugMug.v2.Types
 {
     public partial class ImageSizesEntity : SmugMugEntity
     {
+        public override string EntityId
+        {
+            get
+            {
+                //TODO: This is not necessarily the best way to do this.
+                return this.ParentEntity.EntityId;
+            }
+        }
         public ImageSizesEntity()
         {
             //Empty constructor to enable deserialization

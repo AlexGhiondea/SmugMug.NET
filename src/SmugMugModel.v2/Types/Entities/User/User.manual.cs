@@ -9,9 +9,17 @@ namespace SmugMug.v2.Types
 {
     public partial class UserEntity : SmugMugEntity
     {
+        public override string EntityId
+        {
+            get
+            {
+                return NickName;
+            }
+        }
+
         // TODO: it is unclear if this is still needed.
         [Obsolete]
-        public async Task<FolderEntity> GetFolder()
+        public async Task<FolderEntity> GetFolderAsync()
         {
             // /folder/user/(*) 
             return await folderuser___(NickName);
@@ -120,7 +128,7 @@ namespace SmugMug.v2.Types
         }
 
         [Obsolete]
-        public async Task<ImageEntity[]> Fixup_user____imagesearch()
+        public async Task<ImageEntity[]> RequiresPost_Fixup_user____imagesearch()
         {
             // /user/(*)!imagesearch 
             return await user____imagesearch(NickName);
@@ -156,8 +164,7 @@ namespace SmugMug.v2.Types
             return await user____recentimages(NickName);
         }
 
-        //TODO: requires POST method
-        public async Task Fixup_user____sortfeaturedalbums()
+        public async Task RequiresPost_Fixup_user____sortfeaturedalbums()
         {
             // /user/(*)!sortfeaturedalbums 
             await user____sortfeaturedalbums(NickName);
@@ -181,11 +188,11 @@ namespace SmugMug.v2.Types
             return await user____uploadlimits(NickName);
         }
 
-        public async Task<FolderAlbumPageEntity> Fixup_user____urlpathlookup()
-        {
-            // /user/(*)!urlpathlookup 
-            return await user____urlpathlookup(string.Empty);
-        }
+        //public async Task<FolderAlbumPageEntity> RequiresPost_Fixup_user____urlpathlookup()
+        //{
+        //    // /user/(*)!urlpathlookup 
+        //    return await user____urlpathlookup(string.Empty);
+        //}
 
         public async Task<WatermarkEntity[]> GetWatermarksAsync()
         {

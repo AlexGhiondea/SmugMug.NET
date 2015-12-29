@@ -10,28 +10,30 @@ namespace SmugMug.v2.Types
     public partial class CatalogSkuEntity : SmugMugEntity
     {
 
-        public async Task<CatalogProductEntity> Fixup_catalogproduct___ ()
+        public async Task<CatalogProductEntity> Fixup_catalogproduct___()
         {
             // /catalog/product/(*) 
-            return await catalogproduct___(string.Empty); 
+            return await catalogproduct___(ParentEntity.TODOUrl);
         }
 
-        public async Task Fixup_catalogsku____buy ()
+        public async Task RequiresPost_Fixup_catalogsku____buy()
         {
             // /catalog/sku/(*)!buy 
-            await catalogsku____buy(string.Empty); 
+            await catalogsku____buy(string.Empty);
         }
 
-        public async Task<CatalogSkuPriceEntity> Fixup_catalogsku____price ()
+        public async Task<CatalogSkuPriceEntity> RequiresPost_Fixup_catalogsku____price()
         {
             // /catalog/sku/(*)!price 
-            return await catalogsku____price(string.Empty); 
+            return await catalogsku____price(string.Empty);
         }
 
-        public async Task<CatalogSkuTypeEntity> Fixup_catalogskutypeoptionfinish___ ()
+        public async Task<CatalogSkuTypeEntity> GetCatalogSkuType(string type)
         {
-            // /catalog/skutype/option/finish/(*) 
-            return await catalogskutypeoptionfinish___(string.Empty); 
+            // /catalog/skutype/option/(*) 
+            string requestUri = string.Format("{0}/catalog/skutype/option/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, type);
+
+            return await RetrieveEntityAsync<CatalogSkuTypeEntity>(requestUri);
         }
     }
 }

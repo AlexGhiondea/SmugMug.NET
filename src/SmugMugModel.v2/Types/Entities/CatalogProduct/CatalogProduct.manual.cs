@@ -10,28 +10,36 @@ namespace SmugMug.v2.Types
     public partial class CatalogProductEntity : SmugMugEntity
     {
 
-        public async Task<CatalogCategoryEntity> Fixup_catalogcategory___ ()
+        public async Task<CatalogCategoryEntity> GetPrintsCategoryAsync()
         {
-            // /catalog/category/(*) 
-            return await catalogcategory___(string.Empty); 
+            // /catalog/category/prints
+            string requestUri = string.Format("{0}/catalog/category/prints", SmugMug.v2.Constants.Addresses.SmugMugApi);
+
+            return await RetrieveEntityAsync<CatalogCategoryEntity>(requestUri);
         }
 
-        public async Task<CatalogSubCategoryEntity> Fixup_catalog___prints___ ()
+        public async Task<CatalogSubCategoryEntity> GetOtherPrintsCategoryAsync()
         {
-            // /catalog/(*)/prints/(*) 
-            return await catalog___prints___(string.Empty, string.Empty); 
+            // /catalog/category/prints/other 
+            string requestUri = string.Format("{0}/catalog/category/prints/other", SmugMug.v2.Constants.Addresses.SmugMugApi);
+
+            return await RetrieveEntityAsync<CatalogSubCategoryEntity>(requestUri);
         }
 
-        public async Task<CatalogSkuEntity[]> Fixup_catalogproduct____options ()
+        public async Task<CatalogSkuEntity[]> GetCatalogOptionsAsync()
         {
             // /catalog/product/(*)!options 
-            return await catalogproduct____options(string.Empty); 
+            string requestUri = string.Format("{0}{1}!options", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            return await RetrieveEntityArrayAsync<CatalogSkuEntity>(requestUri);
         }
 
-        public async Task<CatalogVendorEntity> Fixup_catalogvendor___ ()
+        public async Task<CatalogVendorEntity> Fixup_catalogvendor___()
         {
             // /catalog/vendor/(*) 
-            return await catalogvendor___(string.Empty); 
+            string requestUri = string.Format("{0}{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.TODOUrl);
+
+            return await RetrieveEntityAsync<CatalogVendorEntity>(requestUri);
         }
     }
 }

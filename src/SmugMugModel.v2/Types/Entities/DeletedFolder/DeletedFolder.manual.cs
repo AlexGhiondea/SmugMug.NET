@@ -10,7 +10,7 @@ namespace SmugMug.v2.Types
     public partial class DeletedFolderEntity : SmugMugEntity
     {
 
-        public async Task<RecoverDeletedFolderEntity> Fixup_deletedfolder____recover ()
+        public async Task<RecoverDeletedFolderEntity> RequiresPost_Fixup_deletedfolder____recover()
         {
             // /deleted/folder/(*)!recover 
             return await deletedfolder____recover(string.Empty); 
@@ -19,7 +19,7 @@ namespace SmugMug.v2.Types
         public async Task<UserEntity> Fixup_user___ ()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            return await user___(ParentEntity.EntityId);
         }
     }
 }

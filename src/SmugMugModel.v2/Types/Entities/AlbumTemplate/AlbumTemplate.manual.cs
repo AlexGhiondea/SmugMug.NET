@@ -10,7 +10,7 @@ namespace SmugMug.v2.Types
     public partial class AlbumTemplateEntity : SmugMugEntity
     {
 
-        public async Task<UserEntity> Fixup_user___ ()
+        public async Task<UserEntity> Considered_Fixup_user___ ()
         {
             // /user/(*) 
             return await user___(string.Empty); 

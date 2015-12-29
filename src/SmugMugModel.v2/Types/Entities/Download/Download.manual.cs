@@ -10,10 +10,10 @@ namespace SmugMug.v2.Types
     public partial class DownloadEntity : SmugMugEntity
     {
 
-        public async Task<AlbumEntity> Fixup_album___ ()
+        public async Task<AlbumEntity> GetAlbumAsync ()
         {
             // /album/(*) 
-            return await album___(string.Empty); 
+            return await album___(ParentEntity.EntityId); 
         }
     }
 }

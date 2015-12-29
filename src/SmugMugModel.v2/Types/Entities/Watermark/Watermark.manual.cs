@@ -10,16 +10,10 @@ namespace SmugMug.v2.Types
     public partial class WatermarkEntity : SmugMugEntity
     {
 
-        public async Task<ImageEntity> Fixup_image___ ()
+        public async Task<ImageEntity> GetImageAsync ()
         {
             // /image/(*) 
-            return await image___(string.Empty); 
-        }
-
-        public async Task<UserEntity> Fixup_user___ ()
-        {
-            // /user/(*) 
-            return await user___(string.Empty); 
+            return await image___(ImageKey); 
         }
     }
 }
