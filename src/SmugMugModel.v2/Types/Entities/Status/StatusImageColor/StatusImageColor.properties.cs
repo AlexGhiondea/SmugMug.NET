@@ -6,7 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class StatusImageColorEntity : StatusEntity
+    public partial class StatusImageColorEntity : StatusImageEntity
     {
         private ColorEnum _color;
 

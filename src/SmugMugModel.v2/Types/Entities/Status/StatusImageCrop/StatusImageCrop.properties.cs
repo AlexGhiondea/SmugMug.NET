@@ -6,7 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class StatusImageColorEntity : StatusEntity  
+    public partial class StatusImageCropEntity : StatusImageEntity
     {
         private string _imageUri;
         private DateTime _lastUpdated;
@@ -14,6 +14,7 @@ namespace SmugMug.v2.Types
         private string _queueName;
         private ImageStatusEnum _status;
         private DateTime _timeIn;
+
 
         public string ImageUri {
             get {

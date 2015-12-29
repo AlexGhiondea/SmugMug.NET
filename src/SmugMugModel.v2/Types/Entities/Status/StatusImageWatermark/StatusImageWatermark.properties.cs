@@ -6,7 +6,7 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class StatusImageWatermarkEntity : StatusEntity
+    public partial class StatusImageWatermarkEntity : StatusImageEntity
     {
         private string _watermarkUri;
 

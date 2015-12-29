@@ -310,8 +310,8 @@
     <Compile Include="Types\Entities\Size\Size.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Status\Status.methods.cs" />
-    <Compile Include="Types\Entities\Status\Status.properties.cs" />
+    <Compile Include="Types\Entities\Status\StatusImage\StatusImage.methods.cs" />
+    <Compile Include="Types\Entities\Status\StatusImage\StatusImage.properties.cs" />
     <Compile Include="Types\Entities\UserGuideState\UserGuideState.manual.cs" />
     <Compile Include="Types\Entities\UserProfile\UserProfile.manual.cs" />
     <Compile Include="Types\Entities\User\User.manual.cs" />
@@ -322,28 +322,28 @@
     <Compile Include="Types\SmugMugEntity.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.methods.cs">
+    <Compile Include="Types\Entities\Status\StatusImageColor\StatusImageColor.methods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.properties.cs">
+    <Compile Include="Types\Entities\Status\StatusImageColor\StatusImageColor.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.methods.cs">
+    <Compile Include="Types\Entities\Status\StatusImageCrop\StatusImageCrop.methods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.properties.cs">
+    <Compile Include="Types\Entities\Status\StatusImageCrop\StatusImageCrop.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.methods.cs">
+    <Compile Include="Types\Entities\Status\StatusImageRotate\StatusImageRotate.methods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.properties.cs">
+    <Compile Include="Types\Entities\Status\StatusImageRotate\StatusImageRotate.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.methods.cs">
+    <Compile Include="Types\Entities\Status\StatusImageWatermark\StatusImageWatermark.methods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.properties.cs">
+    <Compile Include="Types\Entities\Status\StatusImageWatermark\StatusImageWatermark.properties.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Task\Task.methods.cs">

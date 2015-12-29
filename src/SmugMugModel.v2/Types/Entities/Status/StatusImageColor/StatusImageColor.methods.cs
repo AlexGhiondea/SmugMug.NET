@@ -7,14 +7,14 @@ using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
-    public partial class StatusImageRotateEntity : StatusEntity
+    public partial class StatusImageColorEntity : StatusImageEntity
     {
-        public StatusImageRotateEntity()
+        public StatusImageColorEntity()
         {
             //Empty constructor to enable deserialization
         }
 
-        public StatusImageRotateEntity(OAuthToken oauthToken)
+        public StatusImageColorEntity(OAuthToken oauthToken)
             : base(oauthToken)
         {
             _oauthToken = oauthToken;
