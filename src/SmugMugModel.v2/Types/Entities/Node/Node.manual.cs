@@ -9,59 +9,58 @@ namespace SmugMug.v2.Types
 {
     public partial class NodeEntity : SmugMugEntity
     {
-
-        public async Task<AlbumEntity> Fixup_album___ ()
+        public async Task<AlbumEntity> Considered_Fixup_album___()
         {
             // /album/(*) 
-            return await album___(string.Empty); 
+            return await album___(string.Empty);
         }
 
-        public async Task<FolderEntity> Fixup_folderid___ ()
+        public async Task<FolderEntity> GetFolderByIdAsync()
         {
             // /folder/id/(*) 
-            return await folderid___(string.Empty); 
+            return await folderid___(NodeID);
         }
 
-        public async Task<ImageEntity> Fixup_highlightnode___ ()
+        public async Task<ImageEntity> GetHighlightImageAsync()
         {
             // /highlight/node/(*) 
-            return await highlightnode___(string.Empty); 
+            return await highlightnode___(NodeID);
         }
 
-        public async Task<NodeEntity[]> Fixup_node____children ()
+        public async Task<NodeEntity[]> GetChildrenAsync()
         {
             // /node/(*)!children 
-            return await node____children(string.Empty); 
+            return await node____children(NodeID);
         }
 
-        public async Task<GrantEntity[]> Fixup_node____grants ()
+        public async Task<GrantEntity[]> GetGrantsAsync()
         {
             // /node/(*)!grants 
-            return await node____grants(string.Empty); 
+            return await node____grants(NodeID);
         }
 
-        public async Task Fixup_node____movenodes ()
+        public async Task RequiresPost_Fixup_node____movenodes()
         {
             // /node/(*)!movenodes 
-            await node____movenodes(string.Empty); 
+            await node____movenodes(string.Empty);
         }
 
-        public async Task<NodeEntity> Fixup_node____parent ()
+        public async Task<NodeEntity> GetParentAsync()
         {
             // /node/(*)!parent 
-            return await node____parent(string.Empty); 
+            return await node____parent(NodeID);
         }
 
-        public async Task<NodeEntity[]> Fixup_node____parents ()
+        public async Task<NodeEntity[]> GetParents()
         {
             // /node/(*)!parents 
-            return await node____parents(string.Empty); 
+            return await node____parents(NodeID);
         }
 
-        public async Task<UserEntity> Fixup_user___ ()
-        {
-            // /user/(*) 
-            return await user___(string.Empty); 
-        }
+        //public async Task<UserEntity> Fixup_user___()
+        //{
+        //    // /user/(*) 
+        //    return await user___(string.Empty);
+        //}
     }
 }
