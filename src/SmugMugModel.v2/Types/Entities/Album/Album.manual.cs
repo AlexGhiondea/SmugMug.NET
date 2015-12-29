@@ -9,161 +9,170 @@ namespace SmugMug.v2.Types
 {
     public partial class AlbumEntity : SmugMugEntity
     {
+        public override string EntityId
+        {
+            get { return AlbumKey; }
+        }
 
-        public async Task<ApplyAlbumTemplateEntity> Fixup_album____applyalbumtemplate ()
+        //TODO: Implement search:
+        // https://api.smugmug.com/api/v2/album!search?Scope=&SortDirection=Descending&SortMethod=Rank&Text=
+
+        public async Task<ApplyAlbumTemplateEntity> RequiresPost_Fixup_album____applyalbumtemplate()
         {
             // /album/(*)!applyalbumtemplate 
-            return await album____applyalbumtemplate(string.Empty); 
+            return await album____applyalbumtemplate(string.Empty);
         }
 
-        public async Task Fixup_album____collectimages ()
+        public async Task RequirePost_Fixup_album____collectimages()
         {
             // /album/(*)!collectimages 
-            await album____collectimages(string.Empty); 
+            await album____collectimages(string.Empty);
         }
 
-        public async Task<CommentEntity[]> Fixup_album____comments ()
+        public async Task<CommentEntity[]> GetCommentsAsync()
         {
             // /album/(*)!comments 
-            return await album____comments(string.Empty); 
+            return await album____comments(AlbumKey);
         }
 
-        public async Task Fixup_album____deleteimages ()
+        public async Task RequiresPost_Fixup_album____deleteimages()
         {
             // /album/(*)!deleteimages 
-            await album____deleteimages(string.Empty); 
+            await album____deleteimages(string.Empty);
         }
 
-        public async Task<DownloadEntity[]> Fixup_album____download ()
+        public async Task<DownloadEntity[]> GetDownloadAsync()
         {
             // /album/(*)!download 
-            return await album____download(string.Empty); 
+            return await album____download(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity[]> Fixup_album____geomedia ()
+        public async Task<AlbumImageEntity[]> GetGeoMediaAsync()
         {
             // /album/(*)!geomedia 
-            return await album____geomedia(string.Empty); 
+            return await album____geomedia(AlbumKey);
         }
 
-        public async Task<GrantEntity[]> Fixup_album____grants ()
+        public async Task<GrantEntity[]> GetGrantsAsync()
         {
             // /album/(*)!grants 
-            return await album____grants(string.Empty); 
+            return await album____grants(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity> Fixup_album____highlightimage ()
+        public async Task<AlbumImageEntity> Obsolete_GetHighlightImageAsync()
         {
             // /album/(*)!highlightimage 
-            return await album____highlightimage(string.Empty); 
+            return await album____highlightimage(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity[]> Fixup_album____images ()
+        public async Task<AlbumImageEntity[]> GetImagesAsync()
         {
             // /album/(*)!images 
-            return await album____images(string.Empty); 
+            return await album____images(AlbumKey);
         }
 
-        public async Task Fixup_album____moveimages ()
+        public async Task RequiresPost_Fixup_album____moveimages()
         {
-            // /album/(*)!moveimages 
-            await album____moveimages(string.Empty); 
+            // /album/(*)!   
+            await album____moveimages(string.Empty);
         }
 
-        public async Task<AlbumImageEntity[]> Fixup_album____popularmedia ()
+        public async Task<AlbumImageEntity[]> GetPopularMediaAsync()
         {
             // /album/(*)!popularmedia 
-            return await album____popularmedia(string.Empty); 
+            return await album____popularmedia(AlbumKey);
         }
 
-        public async Task<CatalogSkuPriceEntity[]> Fixup_album____prices ()
+        public async Task<CatalogSkuPriceEntity[]> GetPricesAsync()
         {
             // /album/(*)!prices 
-            return await album____prices(string.Empty); 
+            return await album____prices(AlbumKey);
         }
 
-        public async Task<AlbumShareUrisEntity> Fixup_album____shareuris ()
+        public async Task<AlbumShareUrisEntity> GetShareUrisAsync()
         {
             // /album/(*)!shareuris 
-            return await album____shareuris(string.Empty); 
+            return await album____shareuris(AlbumKey);
         }
 
-        public async Task Fixup_album____uploadfromuri ()
+        public async Task RequiresPost_Fixup_album____uploadfromuri()
         {
             // /album/(*)!uploadfromuri 
-            await album____uploadfromuri(string.Empty); 
+            await album____uploadfromuri(string.Empty);
         }
 
-        public async Task<FolderEntity> Fixup_folderuser______ ()
+        public async Task<FolderEntity> Considered_Fixup_folderuser______()
         {
             // /folder/user/(*)/(*) 
-            return await folderuser______(string.Empty, string.Empty); 
+            return await folderuser______(ParentEntity.EntityId, AlbumKey);
         }
 
-        public async Task<FolderEntity[]> Fixup_folderuser_______parents ()
+        public async Task<FolderEntity[]> Considered_Fixup_folderuser_______parents()
         {
             // /folder/user/(*)/(*)!parents 
-            return await folderuser_______parents(string.Empty, string.Empty); 
+            return await folderuser_______parents(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity> Fixup_folderuser___albumName___ ()
+        public async Task<FolderEntity> Considered_Fixup_folderuser___albumName___()
         {
             // /folder/user/(*)/albumName/(*) 
-            return await folderuser___albumName___(string.Empty, string.Empty); 
+            return await folderuser___albumName___(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity[]> Fixup_folderuser___albumName____parents ()
+        public async Task<FolderEntity[]> Considered_Fixup_folderuser___albumName____parents()
         {
             // /folder/user/(*)/albumName/(*)!parents 
-            return await folderuser___albumName____parents(string.Empty, string.Empty); 
+            return await folderuser___albumName____parents(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity> Fixup_folderuser___Family___ ()
+        public async Task<FolderEntity> Considered_Fixup_folderuser___Family___()
         {
             // /folder/user/(*)/Family/(*) 
-            return await folderuser___Family___(string.Empty, string.Empty); 
+            return await folderuser___Family___(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity[]> Fixup_folderuser___Family____parents ()
+        public async Task<FolderEntity[]> Considered_Fixup_folderuser___Family____parents()
         {
             // /folder/user/(*)/Family/(*)!parents 
-            return await folderuser___Family____parents(string.Empty, string.Empty); 
+            return await folderuser___Family____parents(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity> Fixup_folderuser___SmugMug___ ()
+        public async Task<FolderEntity> Considered_Fixup_folderuser___SmugMug___()
         {
             // /folder/user/(*)/SmugMug/(*) 
-            return await folderuser___SmugMug___(string.Empty, string.Empty); 
+            return await folderuser___SmugMug___(string.Empty, string.Empty);
         }
 
-        public async Task<FolderEntity[]> Fixup_folderuser___SmugMug____parents ()
+        public async Task<FolderEntity[]> Considered_Fixup_folderuser___SmugMug____parents()
         {
             // /folder/user/(*)/SmugMug/(*)!parents 
-            return await folderuser___SmugMug____parents(string.Empty, string.Empty); 
+            return await folderuser___SmugMug____parents(string.Empty, string.Empty);
         }
 
-        public async Task<ImageEntity> Fixup_highlightnode___ ()
+        public async Task<ImageEntity> GetHighlightImageAsync()
         {
             // /highlight/node/(*) 
-            return await highlightnode___(string.Empty); 
+            return await highlightnode___(NodeID);
         }
 
-        public async Task<NodeEntity> Fixup_node___ ()
+        public async Task<NodeEntity> GetNodeAsync()
         {
             // /node/(*) 
-            return await node___(string.Empty); 
+            return await node___(NodeID);
         }
 
-        public async Task<UserEntity> Fixup_user___ ()
+        public async Task<UserEntity> GetUserAsync()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            return await user___(ParentEntity.EntityId);
         }
 
-        public async Task<WatermarkEntity> Fixup_watermark___ ()
+        public async Task<WatermarkEntity> GetWatermarkAsync()
         {
             // /watermark/(*) 
-            return await watermark___(string.Empty); 
+            string requestUri = string.Format("{0}{1}", SmugMug.v2.Constants.Addresses.SmugMug, WatermarkUri);
+
+            return await RetrieveEntityAsync<WatermarkEntity>(requestUri);
         }
     }
 }
