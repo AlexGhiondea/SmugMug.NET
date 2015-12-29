@@ -245,13 +245,13 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<UserUploadLimitsEntity>(requestUri); 
         }
 
-        public async Task<FolderAlbumPageEntity> user____urlpathlookup (string param1)
-        {
-            // /user/(*)!urlpathlookup 
-            string requestUri = string.Format("{0}/user/{1}!urlpathlookup", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
+        //public async Task<FolderAlbumPageEntity> user____urlpathlookup (string param1)
+        //{
+        //    // /user/(*)!urlpathlookup 
+        //    string requestUri = string.Format("{0}/user/{1}!urlpathlookup", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<FolderAlbumPageEntity>(requestUri); 
-        }
+        //    return await RetrieveEntityAsync<FolderAlbumPageEntity>(requestUri); 
+        //}
 
         public async Task<WatermarkEntity[]> user____watermarks (string param1)
         {
