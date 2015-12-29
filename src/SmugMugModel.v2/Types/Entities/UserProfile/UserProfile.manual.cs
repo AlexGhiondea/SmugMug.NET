@@ -10,22 +10,22 @@ namespace SmugMug.v2.Types
     public partial class UserProfileEntity : SmugMugEntity
     {
 
-        public async Task<UserEntity> Fixup_user___ ()
+        public async Task<UserEntity> Fixup_user___()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            return await user___(ParentEntity.EntityId);
         }
 
-        public async Task<BioImageEntity> Fixup_user____bioimage ()
+        public async Task<BioImageEntity> GetBioImageAsync()
         {
             // /user/(*)!bioimage 
-            return await user____bioimage(string.Empty); 
+            return await user____bioimage(ParentEntity.EntityId);
         }
 
-        public async Task<CoverImageEntity> Fixup_user____coverimage ()
+        public async Task<CoverImageEntity> GetCoverImageAsync()
         {
             // /user/(*)!coverimage 
-            return await user____coverimage(string.Empty); 
+            return await user____coverimage(ParentEntity.EntityId);
         }
     }
 }
