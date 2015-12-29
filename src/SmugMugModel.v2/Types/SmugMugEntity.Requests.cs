@@ -53,10 +53,7 @@ namespace SmugMug.v2.Types
             {
                 JObject jsonObject = JObject.Load(jsonTextReader);
 
-                // find the right object name to deserialize
-                string entityName = GetEntityNameFromTypeName(typeof(TResult));
-
-                JToken objectResponse = GetDataAsJTokenOrDefault(jsonObject, entityName);
+                JToken objectResponse = GetDataAsJTokenOrDefault(jsonObject);
 
                 if (objectResponse == null)
                     return default(TResult);
@@ -108,7 +105,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        private static JToken GetDataAsJTokenOrDefault(JObject obj, string entityName)
+        private static JToken GetDataAsJTokenOrDefault(JObject obj)
         {
             const string ResponseString = "Response";
 
@@ -120,16 +117,18 @@ namespace SmugMug.v2.Types
             if (responseValue == null)
                 return null;
 
+            JProperty locatorNode = responseValue.Property("Locator");
+
+            if (locatorNode == null)
+                return null;
+
+            string entityName = locatorNode.Value.ToString();
+
             JProperty objectData = responseValue.Property(entityName);
             if (objectData == null)
                 return null;
 
             return objectData.Value;
-        }
-
-        private static string GetEntityNameFromTypeName(Type type)
-        {
-            return type.Name.Replace("Entity", "").Replace("[]", "");
         }
     }
 }
