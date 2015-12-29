@@ -37,8 +37,6 @@ namespace SmugMug.v2.Types
         private string _thumbnailUrl;
         private string _title;
         private string _uploadKey;
-        private string _uri;
-        private string _uriDescription;
         private WatermarkEnum _watermark;
         private bool _watermarked;
         private string _webUri;
@@ -448,35 +446,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
-                }
-            }
-        }
-
 
         public WatermarkEnum Watermark {
             get {

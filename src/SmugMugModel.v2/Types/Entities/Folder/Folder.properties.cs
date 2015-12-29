@@ -25,8 +25,6 @@ namespace SmugMug.v2.Types
         private SmugSearchableEnum _smugSearchable;
         private SortDirectionEnum _sortDirection;
         private SortMethodEnum _sortMethod;
-        private string _uri;
-        private string _uriDescription;
         private string _urlName;
         private string _urlPath;
         private string _webUri;
@@ -269,35 +267,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
-                }
-            }
-        }
-
 
         public string UrlName {
             get {

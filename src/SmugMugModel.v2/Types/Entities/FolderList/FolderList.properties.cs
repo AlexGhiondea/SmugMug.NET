@@ -10,7 +10,6 @@ namespace SmugMug.v2.Types
     {
         private bool _canHaveFolder;
         private string _name;
-        private string _uri;
         private string _urlPath;
 
 
@@ -40,21 +39,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
 
         public string UrlPath {
             get {

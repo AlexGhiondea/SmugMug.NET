@@ -24,8 +24,6 @@ namespace SmugMug.v2.Types
         private string _sMILVideoUrl;
         private string _thumbImageUrl;
         private string _tinyImageUrl;
-        private string _uri;
-        private string _uriDescription;
         private string _x2LargeImageUrl;
         private string _x3LargeImageUrl;
         private string _xLargeImageUrl;
@@ -250,34 +248,6 @@ namespace SmugMug.v2.Types
                 {
                     NotifyPropertyValueChanged("TinyImageUrl", oldValue:_tinyImageUrl, newValue: value);
                     _tinyImageUrl = value;     
-                }
-            }
-        }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
                 }
             }
         }

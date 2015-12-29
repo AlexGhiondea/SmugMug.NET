@@ -12,8 +12,6 @@ namespace SmugMug.v2.Types
         private DateTime _dateDeleted;
         private DateTime _dateModified;
         private string _name;
-        private string _uri;
-        private string _uriDescription;
         private string _urlPath;
 
 
@@ -71,35 +69,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
-                }
-            }
-        }
-
 
         public string UrlPath {
             get {

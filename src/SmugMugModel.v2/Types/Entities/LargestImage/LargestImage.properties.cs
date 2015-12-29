@@ -11,8 +11,6 @@ namespace SmugMug.v2.Types
         private string _ext;
         private long _height;
         private long _size;
-        private string _uri;
-        private string _uriDescription;
         private string _url;
         private bool _usable;
         private bool _watermarked;
@@ -59,35 +57,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
-                }
-            }
-        }
-
 
         public string Url {
             get {

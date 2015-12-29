@@ -10,8 +10,6 @@ namespace SmugMug.v2.Types
     {
         private string _name;
         private string _primaryEmail;
-        private string _uri;
-        private string _uriDescription;
 
 
         public string Name {
@@ -37,34 +35,6 @@ namespace SmugMug.v2.Types
                 {
                     NotifyPropertyValueChanged("PrimaryEmail", oldValue:_primaryEmail, newValue: value);
                     _primaryEmail = value;     
-                }
-            }
-        }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
                 }
             }
         }
