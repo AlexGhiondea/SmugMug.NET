@@ -33,20 +33,20 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<UserEntity>(requestUri); 
         }
 
-        public async Task<BioImageEntity> user____bioimage (string param1)
+        public async Task<ImageEntity> user____bioimage (string param1)
         {
             // /user/(*)!bioimage 
             string requestUri = string.Format("{0}/user/{1}!bioimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<BioImageEntity>(requestUri); 
+            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
         }
 
-        public async Task<CoverImageEntity> user____coverimage (string param1)
+        public async Task<ImageEntity> user____coverimage (string param1)
         {
             // /user/(*)!coverimage 
             string requestUri = string.Format("{0}/user/{1}!coverimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<CoverImageEntity>(requestUri); 
+            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
         }
     }
 }

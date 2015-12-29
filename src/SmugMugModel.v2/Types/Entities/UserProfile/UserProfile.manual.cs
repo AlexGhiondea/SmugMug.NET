@@ -16,13 +16,13 @@ namespace SmugMug.v2.Types
             return await user___(ParentEntity.EntityId);
         }
 
-        public async Task<BioImageEntity> GetBioImageAsync()
+        public async Task<ImageEntity> GetBioImageAsync()
         {
             // /user/(*)!bioimage 
             return await user____bioimage(ParentEntity.EntityId);
         }
 
-        public async Task<CoverImageEntity> GetCoverImageAsync()
+        public async Task<ImageEntity> GetCoverImageAsync()
         {
             // /user/(*)!coverimage 
             return await user____coverimage(ParentEntity.EntityId);

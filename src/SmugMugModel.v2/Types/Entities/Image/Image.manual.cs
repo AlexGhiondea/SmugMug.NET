@@ -10,7 +10,15 @@ namespace SmugMug.v2.Types
 {
     public partial class ImageEntity : SmugMugEntity
     {
-public override string EntityId
+        public async Task<AlbumImageShareUrisEntity> GetShareUrisAsync()
+        {
+            // /album/(*)/image/(*)!shareuris 
+            string requestUri = string.Format("{0}/album/{1}/image/{2}!shareuris", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId, ImageKey);
+
+            return await RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri);
+        }
+
+        public override string EntityId
         {
             get { return ImageKey; }
         }

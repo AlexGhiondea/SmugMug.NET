@@ -43,7 +43,7 @@ namespace SmugMug.v2.Types
             return await user____albumtemplates(NickName);
         }
 
-        public async Task<BioImageEntity> GetBioImageAsync()
+        public async Task<ImageEntity> GetBioImageAsync()
         {
             // /user/(*)!bioimage 
             return await user____bioimage(NickName);
@@ -61,7 +61,7 @@ namespace SmugMug.v2.Types
             return await user____coupons(NickName);
         }
 
-        public async Task<CoverImageEntity> GetCoverImageAsync()
+        public async Task<ImageEntity> GetCoverImageAsync()
         {
             // /user/(*)!coverimage 
             return await user____coverimage(NickName);

@@ -47,7 +47,7 @@ namespace SmugMug.v2.Types
             return await album____download(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity[]> GetGeoMediaAsync()
+        public async Task<ImageEntity[]> GetGeoMediaAsync()
         {
             // /album/(*)!geomedia 
             return await album____geomedia(AlbumKey);
@@ -59,13 +59,13 @@ namespace SmugMug.v2.Types
             return await album____grants(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity> Obsolete_GetHighlightImageAsync()
+        public async Task<ImageEntity> Obsolete_GetHighlightImageAsync()
         {
             // /album/(*)!highlightimage 
             return await album____highlightimage(AlbumKey);
         }
 
-        public async Task<AlbumImageEntity[]> GetImagesAsync()
+        public async Task<ImageEntity[]> GetImagesAsync()
         {
             // /album/(*)!images 
             return await album____images(AlbumKey);
@@ -77,7 +77,7 @@ namespace SmugMug.v2.Types
             await album____moveimages(string.Empty);
         }
 
-        public async Task<AlbumImageEntity[]> GetPopularMediaAsync()
+        public async Task<ImageEntity[]> GetPopularMediaAsync()
         {
             // /album/(*)!popularmedia 
             return await album____popularmedia(AlbumKey);

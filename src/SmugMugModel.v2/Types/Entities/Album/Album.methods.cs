@@ -67,12 +67,12 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityArrayAsync<DownloadEntity>(requestUri); 
         }
 
-        public async Task<AlbumImageEntity[]> album____geomedia (string param1)
+        public async Task<ImageEntity[]> album____geomedia (string param1)
         {
             // /album/(*)!geomedia 
             string requestUri = string.Format("{0}/album/{1}!geomedia", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityArrayAsync<AlbumImageEntity>(requestUri); 
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri); 
         }
 
         public async Task<GrantEntity[]> album____grants (string param1)
@@ -83,20 +83,20 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityArrayAsync<GrantEntity>(requestUri); 
         }
 
-        public async Task<AlbumImageEntity> album____highlightimage (string param1)
+        public async Task<ImageEntity> album____highlightimage (string param1)
         {
             // /album/(*)!highlightimage 
             string requestUri = string.Format("{0}/album/{1}!highlightimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<AlbumImageEntity>(requestUri); 
+            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
         }
 
-        public async Task<AlbumImageEntity[]> album____images (string param1)
+        public async Task<ImageEntity[]> album____images (string param1)
         {
             // /album/(*)!images 
             string requestUri = string.Format("{0}/album/{1}!images", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityArrayAsync<AlbumImageEntity>(requestUri); 
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri); 
         }
 
         public async Task album____moveimages (string param1)
@@ -107,12 +107,12 @@ namespace SmugMug.v2.Types
             await GetRequestAsync(requestUri); 
         }
 
-        public async Task<AlbumImageEntity[]> album____popularmedia (string param1)
+        public async Task<ImageEntity[]> album____popularmedia (string param1)
         {
             // /album/(*)!popularmedia 
             string requestUri = string.Format("{0}/album/{1}!popularmedia", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityArrayAsync<AlbumImageEntity>(requestUri); 
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri); 
         }
 
         public async Task<CatalogSkuPriceEntity[]> album____prices (string param1)

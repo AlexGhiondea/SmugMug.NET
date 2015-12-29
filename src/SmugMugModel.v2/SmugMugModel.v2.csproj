@@ -63,7 +63,6 @@
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\AlbumImage\AlbumImage.manual.cs" />
     <Compile Include="Types\Entities\AlbumList\AlbumList.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,7 +91,6 @@
     </Compile>
     <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.methods.cs" />
     <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.properties.cs" />
-    <Compile Include="Types\Entities\BioImage\BioImage.manual.cs" />
     <Compile Include="Types\Entities\Caption\Caption.properties.cs" />
     <Compile Include="Types\Entities\Caption\Caption.methods.cs" />
     <Compile Include="Types\Entities\CatalogCategory\CatalogCategory.manual.cs" />
@@ -136,7 +134,6 @@
     <Compile Include="Types\Entities\Contact\Contact.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\CoverImage\CoverImage.manual.cs" />
     <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.methods.cs">
       <SubType>Code</SubType>
     </Compile>
