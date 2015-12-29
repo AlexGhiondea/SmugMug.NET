@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -56,7 +57,6 @@
     <Compile Include="Authentication\AuthenticationOptions.cs" />
     <Compile Include="Authentication\SmugMugAuthorize.cs" />
     <Compile Include="Authentication\Tokens\FileTokenProvider.cs" />
-    <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.manual.cs" />
     <Compile Include="Types\Entities\AlbumImageShareUris\AlbumImageShareUris.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,14 +70,12 @@
     <Compile Include="Types\Entities\AlbumImage\AlbumImage.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\AlbumList\AlbumList.manual.cs" />
     <Compile Include="Types\Entities\AlbumList\AlbumList.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\AlbumList\AlbumList.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\AlbumShareUris\AlbumShareUris.manual.cs" />
     <Compile Include="Types\Entities\AlbumShareUris\AlbumShareUris.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,7 +96,6 @@
     <Compile Include="Types\Entities\Album\Album.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.manual.cs" />
     <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.methods.cs" />
     <Compile Include="Types\Entities\ApplyAlbumTemplate\ApplyAlbumTemplate.properties.cs" />
     <Compile Include="Types\Entities\BioImage\BioImage.manual.cs" />
@@ -123,7 +120,6 @@
     <Compile Include="Types\Entities\CatalogSkuPrice\CatalogSkuPrice.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.manual.cs" />
     <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.methods.cs" />
     <Compile Include="Types\Entities\CatalogSkuType\CatalogSkuType.properties.cs" />
     <Compile Include="Types\Entities\CatalogSku\CatalogSku.manual.cs" />
@@ -135,17 +131,14 @@
     <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.manual.cs" />
     <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.methods.cs" />
     <Compile Include="Types\Entities\CatalogVendor\CatalogVendor.properties.cs" />
-    <Compile Include="Types\Entities\ColorImage\ColorImage.manual.cs" />
     <Compile Include="Types\Entities\ColorImage\ColorImage.methods.cs" />
     <Compile Include="Types\Entities\ColorImage\ColorImage.properties.cs" />
-    <Compile Include="Types\Entities\Comment\Comment.manual.cs" />
     <Compile Include="Types\Entities\Comment\Comment.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Comment\Comment.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ContactEmail\ContactEmail.manual.cs" />
     <Compile Include="Types\Entities\ContactEmail\ContactEmail.methods.cs" />
     <Compile Include="Types\Entities\ContactEmail\ContactEmail.properties.cs" />
     <Compile Include="Types\Entities\Contact\Contact.manual.cs" />
@@ -162,7 +155,6 @@
     <Compile Include="Types\Entities\CoverImage\CoverImage.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.manual.cs" />
     <Compile Include="Types\Entities\CSMILVideo\CSMILVideo.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -197,23 +189,18 @@
     <Compile Include="Types\Entities\Download\Download.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.manual.cs" />
     <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\EmbedVideo\EmbedVideo.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Features\Features.manual.cs" />
     <Compile Include="Types\Entities\Features\Features.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Features\Features.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.manual.cs" />
-    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.methods.cs" />
-    <Compile Include="Types\Entities\FolderAlbumPage\Folder,Album,Page.properties.cs" />
     <Compile Include="Types\Entities\FolderList\FolderList.manual.cs" />
     <Compile Include="Types\Entities\FolderList\FolderList.methods.cs">
       <SubType>Code</SubType>
@@ -228,14 +215,12 @@
     <Compile Include="Types\Entities\Folder\Folder.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Grant\Grant.manual.cs" />
     <Compile Include="Types\Entities\Grant\Grant.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Grant\Grant.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Guide\Guide.manual.cs" />
     <Compile Include="Types\Entities\Guide\Guide.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -249,45 +234,38 @@
     <Compile Include="Types\Entities\ImageDownload\ImageDownload.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.manual.cs" />
     <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageMetadata\ImageMetadata.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeCustom\ImageSizeCustom.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeDetails\ImageSizeDetails.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeLarge\ImageSizeLarge.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeMedium\ImageSizeMedium.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.methods.cs" />
     <Compile Include="Types\Entities\ImageSizeOriginal\ImageSizeOriginal.properties.cs" />
-    <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeSmall\ImageSizeSmall.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -301,35 +279,30 @@
     <Compile Include="Types\Entities\ImageSizes\ImageSizes.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeThumb\ImageSizeThumb.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeTiny\ImageSizeTiny.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeX2Large\ImageSizeX2Large.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\ImageSizeX3Large\ImageSizeX3Large.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.manual.cs" />
     <Compile Include="Types\Entities\ImageSizeXLarge\ImageSizeXLarge.methods.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -364,68 +337,50 @@
     <Compile Include="Types\Entities\Node\Node.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Page\Page.manual.cs" />
     <Compile Include="Types\Entities\Page\Page.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Page\Page.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Printmark\Printmark.manual.cs" />
     <Compile Include="Types\Entities\Printmark\Printmark.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Printmark\Printmark.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\QuickNews\QuickNews.manual.cs" />
     <Compile Include="Types\Entities\QuickNews\QuickNews.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\QuickNews\QuickNews.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.manual.cs" />
     <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\RecoverDeletedAlbum\RecoverDeletedAlbum.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.manual.cs" />
     <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\RecoverDeletedFolder\RecoverDeletedFolder.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.manual.cs" />
     <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\RecoverDeletedPage\RecoverDeletedPage.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\Size\Size.manual.cs" />
     <Compile Include="Types\Entities\Size\Size.methods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Types\Entities\Size\Size.properties.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Types\Entities\StatusImageColor\StatusImageColor.manual.cs" />
-    <Compile Include="Types\Entities\StatusImageCrop\StatusImageCrop.manual.cs" />
-    <Compile Include="Types\Entities\StatusImageRotate\StatusImageRotate.manual.cs" />
-    <Compile Include="Types\Entities\StatusImageWatermark\StatusImageWatermark.manual.cs" />
-    <Compile Include="Types\Entities\Task\Task.manual.cs" />
-    <Compile Include="Types\Entities\Template\Template.manual.cs" />
-    <Compile Include="Types\Entities\Theme\Theme.manual.cs" />
-    <Compile Include="Types\Entities\UserCoupon\UserCoupon.manual.cs" />
     <Compile Include="Types\Entities\UserGuideState\UserGuideState.manual.cs" />
-    <Compile Include="Types\Entities\UserHideGuides\UserHideGuides.manual.cs" />
     <Compile Include="Types\Entities\UserProfile\UserProfile.manual.cs" />
-    <Compile Include="Types\Entities\UserTopKeywords\UserTopKeywords.manual.cs" />
-    <Compile Include="Types\Entities\UserUploadLimits\UserUploadLimits.manual.cs" />
     <Compile Include="Types\Entities\User\User.manual.cs" />
     <Compile Include="Types\Entities\VideoSize110\VideoSize110.manual.cs" />
     <Compile Include="Types\Entities\VideoSize1280\VideoSize1280.manual.cs" />
@@ -604,6 +559,7 @@
     <Compile Include="Types\Enums\WorldSearchableEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Utility\EnumExtensions.cs" />
     <Compile Include="Utility\HttpClientHelpers.cs" />
     <Compile Include="Types\PropertyData.cs" />
     <Compile Include="Utility\PrivateMemberContractResolver.cs" />
