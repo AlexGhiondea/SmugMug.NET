@@ -10,10 +10,12 @@ namespace SmugMug.v2.Types
     public partial class CatalogVendorEntity : SmugMugEntity
     {
 
-        public async Task<CatalogProductEntity[]> Fixup_catalogvendor____products ()
+        public async Task<CatalogProductEntity[]> GetProductsAsync()
         {
             // /catalog/vendor/(*)!products 
-            return await catalogvendor____products(string.Empty); 
+            string requestUri = string.Format("{0}{1}!products", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            return await RetrieveEntityArrayAsync<CatalogProductEntity>(requestUri);
         }
     }
 }

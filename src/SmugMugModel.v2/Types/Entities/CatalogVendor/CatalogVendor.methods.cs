@@ -24,7 +24,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogProductEntity[]> catalogvendor____products (string param1)
         {
             // /catalog/vendor/(*)!products 
-            string requestUri = string.Format("{0}/catalog/vendor/{1}!products", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
+            string requestUri = string.Format("{0}{1}!products", SmugMug.v2.Constants.Addresses.SmugMug, param1);
 
             return await RetrieveEntityArrayAsync<CatalogProductEntity>(requestUri); 
         }
