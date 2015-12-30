@@ -59,12 +59,6 @@ namespace SmugMug.v2.Types
             return await album____grants(AlbumKey);
         }
 
-        public async Task<ImageEntity> Obsolete_GetHighlightImageAsync()
-        {
-            // /album/(*)!highlightimage 
-            return await album____highlightimage(AlbumKey);
-        }
-
         public async Task<ImageEntity[]> GetImagesAsync()
         {
             // /album/(*)!images 
@@ -101,52 +95,10 @@ namespace SmugMug.v2.Types
             await album____uploadfromuri(string.Empty);
         }
 
-        public async Task<FolderEntity> Considered_Fixup_folderuser______()
+        public async Task<FolderEntity> GetFolderAsync()
         {
             // /folder/user/(*)/(*) 
             return await folderuser______(ParentEntity.EntityId, AlbumKey);
-        }
-
-        public async Task<FolderEntity[]> Considered_Fixup_folderuser_______parents()
-        {
-            // /folder/user/(*)/(*)!parents 
-            return await folderuser_______parents(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity> Considered_Fixup_folderuser___albumName___()
-        {
-            // /folder/user/(*)/albumName/(*) 
-            return await folderuser___albumName___(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity[]> Considered_Fixup_folderuser___albumName____parents()
-        {
-            // /folder/user/(*)/albumName/(*)!parents 
-            return await folderuser___albumName____parents(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity> Considered_Fixup_folderuser___Family___()
-        {
-            // /folder/user/(*)/Family/(*) 
-            return await folderuser___Family___(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity[]> Considered_Fixup_folderuser___Family____parents()
-        {
-            // /folder/user/(*)/Family/(*)!parents 
-            return await folderuser___Family____parents(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity> Considered_Fixup_folderuser___SmugMug___()
-        {
-            // /folder/user/(*)/SmugMug/(*) 
-            return await folderuser___SmugMug___(string.Empty, string.Empty);
-        }
-
-        public async Task<FolderEntity[]> Considered_Fixup_folderuser___SmugMug____parents()
-        {
-            // /folder/user/(*)/SmugMug/(*)!parents 
-            return await folderuser___SmugMug____parents(string.Empty, string.Empty);
         }
 
         public async Task<ImageEntity> GetHighlightImageAsync()
