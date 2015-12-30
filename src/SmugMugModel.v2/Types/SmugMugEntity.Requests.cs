@@ -72,7 +72,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public async Task GetRequestAsync(string requestUri)
+        internal async Task GetRequestAsync(string requestUri)
         {
             using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
             using (HttpResponseMessage response = await httpClient.GetAsync(requestUri))
@@ -81,7 +81,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public async Task PostRequestAsync(string requestUri, string content)
+        internal async Task PostRequestAsync(string requestUri, string content)
         {
             using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
             using (HttpContent httpContent = new StringContent(content))
@@ -91,7 +91,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public async Task PatchRequestAsync(string requestUri, string content)
+        internal async Task PatchRequestAsync(string requestUri, string content)
         {
             using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
             using (HttpContent httpContent = new StringContent(content))

@@ -19,13 +19,13 @@ namespace SmugMug.v2.Types
         // We are going to use the serializing/serialized callbacks to figure out when the serialization process
         // is complete so that we can start tracking user changes to the object.
         [OnDeserializing]
-        public void PauseChangeTracking(StreamingContext context)
+        protected void PauseChangeTracking(StreamingContext context)
         {
             _trackChanges = false;
         }
 
         [OnDeserialized]
-        public void ResumeChangeTracking(StreamingContext context)
+        protected void ResumeChangeTracking(StreamingContext context)
         {
             _trackChanges = true;
         }
@@ -72,7 +72,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public string GetPropertyChangesAsJson(List<string> allowedProperties)
+        protected string GetPropertyChangesAsJson(List<string> allowedProperties)
         {
             HashSet<string> allowedPropertiesSet = new HashSet<string>(allowedProperties, StringComparer.OrdinalIgnoreCase);
 
