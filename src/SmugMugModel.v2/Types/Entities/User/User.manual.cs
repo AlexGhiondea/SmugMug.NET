@@ -91,7 +91,7 @@ namespace SmugMug.v2.Types
             return await user____duplicateimagesearch(NickName);
         }
 
-        public async Task<AlbumEntity[]> GetFeaturedAlbums()
+        public async Task<AlbumEntity[]> GetFeaturedAlbumsAsync()
         {
             // /user/(*)!featuredalbums 
             return await user____featuredalbums(NickName);
