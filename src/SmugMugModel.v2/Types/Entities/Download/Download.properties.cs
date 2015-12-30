@@ -13,9 +13,6 @@ namespace SmugMug.v2.Types
         private string _fileName;
         private long _part;
         private ImageStatusEnum _status;
-        private string _uri;
-        private string _uriDescription;
-
 
         public DateTime DateAdded {
             get {
@@ -82,34 +79,6 @@ namespace SmugMug.v2.Types
                 {
                     NotifyPropertyValueChanged("Status", oldValue:_status, newValue: value);
                     _status = value;     
-                }
-            }
-        }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
                 }
             }
         }

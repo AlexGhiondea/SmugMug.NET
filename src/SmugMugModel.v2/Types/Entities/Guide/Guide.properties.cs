@@ -10,8 +10,6 @@ namespace SmugMug.v2.Types
     {
         private string _creationDate;
         private string _guideID;
-        private string _uri;
-        private string _uriDescription;
 
 
         public string CreationDate {
@@ -37,34 +35,6 @@ namespace SmugMug.v2.Types
                 {
                     NotifyPropertyValueChanged("GuideID", oldValue:_guideID, newValue: value);
                     _guideID = value;     
-                }
-            }
-        }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
                 }
             }
         }

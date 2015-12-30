@@ -15,9 +15,6 @@ namespace SmugMug.v2.Types
         private long _mediaCount;
         private long _mediaSize;
         private long _pageCount;
-        private string _uri;
-        private string _uriDescription;
-
 
         public long AlbumCount {
             get {
@@ -112,34 +109,6 @@ namespace SmugMug.v2.Types
                 {
                     NotifyPropertyValueChanged("PageCount", oldValue:_pageCount, newValue: value);
                     _pageCount = value;     
-                }
-            }
-        }
-
-
-        public string Uri {
-            get {
-                return _uri;
-            }
-            set {
-                if (_uri != value)
-                {
-                    NotifyPropertyValueChanged("Uri", oldValue:_uri, newValue: value);
-                    _uri = value;     
-                }
-            }
-        }
-
-
-        public string UriDescription {
-            get {
-                return _uriDescription;
-            }
-            set {
-                if (_uriDescription != value)
-                {
-                    NotifyPropertyValueChanged("UriDescription", oldValue:_uriDescription, newValue: value);
-                    _uriDescription = value;     
                 }
             }
         }
