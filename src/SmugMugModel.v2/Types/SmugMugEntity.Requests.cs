@@ -4,6 +4,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using SmugMug.v2.Authentication;
 using SmugMug.v2.Helpers;
 using SmugMug.v2.Utility;
 using System;
@@ -16,22 +17,31 @@ namespace SmugMug.v2.Types
 {
     public partial class SmugMugEntity
     {
-        public async Task<TResult> RetrieveEntityAsync<TResult>(string requestUri)
+        public static async Task<TResult> RetrieveEntityAsync<TResult>(OAuthToken oauthToken, string requestUri)
             where TResult : SmugMugEntity
         {
-            TResult result = await DeserializeRequestAsync<TResult>(requestUri);
+            TResult result = await DeserializeRequestAsync<TResult>(oauthToken, requestUri);
             if (result == null)
                 return null;
 
-            result._oauthToken = this._oauthToken;
-            result.ParentEntity = this;
             return result;
         }
 
-        public async Task<TResult[]> RetrieveEntityArrayAsync<TResult>(string requestUri)
+        public static async Task<TResult[]> RetrieveEntityArrayAsync<TResult>(OAuthToken oauthToken, string requestUri)
             where TResult : SmugMugEntity
         {
-            TResult[] result = await DeserializeRequestAsync<TResult[]>(requestUri);
+            TResult[] result = await DeserializeRequestAsync<TResult[]>(oauthToken, requestUri);
+            if (result == null)
+                return null;
+
+            return result;
+        }
+
+        protected async Task<TResult[]> RetrieveEntityArrayAsync<TResult>(string requestUri)
+            where TResult : SmugMugEntity
+        {
+            TResult[] result = await RetrieveEntityArrayAsync<TResult>(this._oauthToken, requestUri);
+
             if (result == null)
                 return null;
 
@@ -44,9 +54,21 @@ namespace SmugMug.v2.Types
             return result;
         }
 
-        private async Task<TResult> DeserializeRequestAsync<TResult>(string requestUri)
+        protected async Task<TResult> RetrieveEntityAsync<TResult>(string requestUri)
+            where TResult : SmugMugEntity
         {
-            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(_oauthToken))
+            TResult result = await RetrieveEntityAsync<TResult>(this._oauthToken, requestUri);
+            if (result == null)
+                return null;
+
+            result._oauthToken = this._oauthToken;
+            result.ParentEntity = this;
+            return result;
+        }
+
+        private static async Task<TResult> DeserializeRequestAsync<TResult>(OAuthToken oauthToken, string requestUri)
+        {
+            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(oauthToken))
             using (HttpResponseMessage response = await httpClient.GetAsync(requestUri))
             using (StreamReader streamReader = new StreamReader(await response.Content.ReadAsStreamAsync()))
             using (JsonTextReader jsonTextReader = new JsonTextReader(streamReader))
