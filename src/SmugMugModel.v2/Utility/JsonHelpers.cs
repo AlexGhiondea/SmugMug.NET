@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,33 @@ namespace SmugMug.v2.Utility
 {
     public static class JsonHelpers
     {
-        public static string GetPayloadAsJson(List<KeyValuePair<string, object>> properties)
+        internal static JToken GetDataOrDefault(JObject obj)
+        {
+            const string ResponseString = "Response";
+
+            JProperty response = obj.Property(ResponseString);
+            if (response == null)
+                return null;
+
+            JObject responseValue = response.Value as JObject;
+            if (responseValue == null)
+                return null;
+
+            JProperty locatorNode = responseValue.Property("Locator");
+
+            if (locatorNode == null)
+                return null;
+
+            string entityName = locatorNode.Value.ToString();
+
+            JProperty objectData = responseValue.Property(entityName);
+            if (objectData == null)
+                return null;
+
+            return objectData.Value;
+        }
+
+        internal static string GetPayloadAsJson(List<KeyValuePair<string, object>> properties)
         {
             //NOTE: This uses reflection to get the values
 
