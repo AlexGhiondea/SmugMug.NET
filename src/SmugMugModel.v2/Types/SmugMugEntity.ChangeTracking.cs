@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 
 namespace SmugMug.v2.Types
@@ -73,8 +74,9 @@ namespace SmugMug.v2.Types
             }
         }
 
-        protected string GetPropertyChangesAsJson(List<string> allowedProperties)
+        protected string GetPatchPayloadAsJson(List<string> allowedProperties)
         {
+            //NOTE: This uses the information from the change tracking storage 
             HashSet<string> allowedPropertiesSet = new HashSet<string>(allowedProperties, StringComparer.OrdinalIgnoreCase);
 
             using (StringWriter writer = new StringWriter())
@@ -94,6 +96,38 @@ namespace SmugMug.v2.Types
                         }
                     }
 
+                }
+
+                jsonWrite.WriteEndObject();
+                return writer.ToString();
+            }
+        }
+
+        protected string GetPostPayloadAsJson(List<string> requestedProperties)
+        {
+            //NOTE: This uses reflection to get the values
+           
+            using (StringWriter writer = new StringWriter())
+            using (JsonTextWriter jsonWrite = new JsonTextWriter(writer))
+            {
+                Type thisType = this.GetType();
+
+                jsonWrite.WriteStartObject();
+
+                foreach (var propertyName in requestedProperties)
+                {
+                    PropertyInfo property = thisType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public);
+                    if (property == null)
+                    {
+                        Debug.Write(string.Format("Could not find property {0} on type {1}", propertyName, thisType.Name));
+                        continue;
+                    }
+
+                    object value = property.GetValue(this);
+
+                    // we only want to include the property if it was part of a patch or post request
+                    jsonWrite.WritePropertyName(propertyName);
+                    jsonWrite.WriteValue(value);                    
                 }
 
                 jsonWrite.WriteEndObject();

@@ -62,12 +62,12 @@ namespace SmugMug.v2.Types
 
         protected async Task SaveAsync(string uri, List<string> patchProperties)
         {
-            await PatchRequestAsync(uri, GetPropertyChangesAsJson(patchProperties));
+            await PatchRequestAsync(uri, GetPatchPayloadAsJson(patchProperties));
         }
 
         protected async Task CreateAsync(string uri, List<string> postProperties)
         {
-            await PostRequestAsync(uri, GetPropertyChangesAsJson(postProperties));
+            await PostRequestAsync(uri, GetPatchPayloadAsJson(postProperties));
         }
     }
 }
