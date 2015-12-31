@@ -61,18 +61,19 @@ namespace SmugMug.v2.Types
 
         public virtual string EntityId { get { return string.Empty; } }
 
-        protected async Task SaveAsync(string uri, List<string> patchProperties)
+        public async Task SaveAsync()
         {
-            var patchPropertiesWithValues = GetModifedPropertiesValue(patchProperties);
+            // We get the modified properties and post them to the objects's uri
+            var patchPropertiesWithValues = GetModifedPropertiesValue(GetPatchPropertiesName());
 
-            await PatchRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+            await PatchRequestAsync(this.Uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
 
         protected async Task CreateAsync(string uri, List<string> properties)
         {
             var patchPropertiesWithValues = GetPropertiesValue(properties);
 
-            await PatchRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+            await PostRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
     }
 }
