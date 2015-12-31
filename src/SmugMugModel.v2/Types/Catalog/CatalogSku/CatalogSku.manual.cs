@@ -13,7 +13,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogProductEntity> Fixup_catalogproduct___()
         {
             // /catalog/product/(*) 
-            return await catalogproduct___(ParentEntity.TODOUrl);
+            return await catalogproduct___(ParentEntity.Uri);
         }
 
         public async Task RequiresPost_Fixup_catalogsku____buy()
