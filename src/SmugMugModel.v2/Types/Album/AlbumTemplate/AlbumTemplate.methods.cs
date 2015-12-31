@@ -21,18 +21,27 @@ namespace SmugMug.v2.Types
             _oauthToken = oauthToken;
         }
 
+        protected override IEnumerable<string> GetPostPropertiesName()
+        {
+            return PostParameters;
+        }
 
-        private static readonly List<string> PatchParameters = new List<string>(){ "Name","CommunityUri","PrintmarkUri","WatermarkUri","TemplateUri","AllowDownloads","Backprinting","BoutiquePackaging","CanRank","Clean","Comments","EXIF","External","FamilyEdit","Filenames","FriendEdit","Geography","Header","HideOwner","InterceptShipping","LargestSize","PackagingBranding","Password","PasswordHint","Printable","ProofDays","Protected","Public","Share","SmugSearchable","SortDirection","SortMethod","SquareThumbs","Watermark","WorldSearchable" };
+        protected override IEnumerable<string> GetPatchPropertiesName()
+        {
+            return PatchParameters;
+        }
 
-        private static readonly List<string> PostParameters = new List<string>(){ "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "ProofDays", "Protected", "Public", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "Watermark", "WorldSearchable" };
+        private static readonly List<string> PatchParameters = new List<string>() { "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "ProofDays", "Protected", "Public", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "Watermark", "WorldSearchable" };
+
+        private static readonly List<string> PostParameters = new List<string>() { "Name", "CommunityUri", "PrintmarkUri", "WatermarkUri", "TemplateUri", "AllowDownloads", "Backprinting", "BoutiquePackaging", "CanRank", "Clean", "Comments", "EXIF", "External", "FamilyEdit", "Filenames", "FriendEdit", "Geography", "Header", "HideOwner", "InterceptShipping", "LargestSize", "PackagingBranding", "Password", "PasswordHint", "Printable", "ProofDays", "Protected", "Public", "Share", "SmugSearchable", "SortDirection", "SortMethod", "SquareThumbs", "Watermark", "WorldSearchable" };
 
 
-        public async Task<UserEntity> user___ (string param1)
+        public async Task<UserEntity> user___(string param1)
         {
             // /user/(*) 
             string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<UserEntity>(requestUri); 
+            return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
     }
 }

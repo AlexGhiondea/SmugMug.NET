@@ -21,6 +21,10 @@ namespace SmugMug.v2.Types
             _oauthToken = oauthToken;
         }
 
+        protected override IEnumerable<string> GetPostPropertiesName()
+        {
+            return PostParameters;
+        }
 
         private static readonly List<string> PostParameters = new List<string>(){ "FolderUri", "IncludeChildren" };
     }

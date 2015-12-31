@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 
 namespace SmugMug.v2.Types
@@ -98,6 +99,16 @@ namespace SmugMug.v2.Types
                 jsonWrite.WriteEndObject();
                 return writer.ToString();
             }
+        }
+
+        protected virtual IEnumerable<string> GetPostPropertiesName()
+        {
+            return Enumerable.Empty<string>();
+        }
+
+        protected virtual IEnumerable<string> GetPatchPropertiesName()
+        {
+            return Enumerable.Empty<string>();
         }
     }
 }

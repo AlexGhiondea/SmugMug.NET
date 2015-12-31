@@ -22,6 +22,11 @@ namespace SmugMug.v2.Types
         }
 
 
+        protected override IEnumerable<string> GetPostPropertiesName()
+        {
+            return PostParameters;
+        }
+
         private static readonly List<string> PostParameters = new List<string>(){ "Color" };
     }
 }
