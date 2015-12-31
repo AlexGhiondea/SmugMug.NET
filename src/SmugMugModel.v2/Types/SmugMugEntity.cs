@@ -64,7 +64,7 @@ namespace SmugMug.v2.Types
             // We get the modified properties and post them to the objects's uri
             var patchPropertiesWithValues = GetModifedPropertiesValue(GetPatchPropertiesName());
 
-            await PatchRequestAsync(this.Uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+            await PatchRequestAsync(Constants.Addresses.SmugMug + this.Uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
 
         protected async Task CreateAsync(string uri, List<string> properties)
