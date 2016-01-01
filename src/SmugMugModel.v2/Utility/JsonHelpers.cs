@@ -72,9 +72,12 @@ namespace SmugMug.v2.Utility
             jsonWrite.WriteStartArray();
 
             var array = arrayValue as Array;
-            foreach (var item in array)
+            if (array != null)
             {
-                jsonWrite.WriteValue(item);
+                foreach (var item in array)
+                {
+                    jsonWrite.WriteValue(item);
+                }
             }
 
             jsonWrite.WriteEndArray();

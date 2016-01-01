@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using SmugMug.v2.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,10 +32,20 @@ namespace SmugMug.v2.Types
             await PostRequestAsync(requestUri, payload);
         }
 
-        public async Task RequirePost_Fixup_album____collectimages()
+        public async Task CollectImagesAsync(IEnumerable<ImageEntity> images)
         {
             // /album/(*)!collectimages 
-            await album____collectimages(string.Empty);
+            string requestUri = string.Format("{0}{1}!collectimages", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            // Create the list of ImageUris to use.
+            string imageUris = string.Join(",", images.Select(img => img.Uri));
+
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("CollectUris", imageUris));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<CommentEntity[]> GetCommentsAsync()
@@ -118,10 +129,56 @@ namespace SmugMug.v2.Types
             return await album____shareuris(AlbumKey);
         }
 
-        public async Task RequiresPost_Fixup_album____uploadfromuri()
+        /// <summary>
+        /// </summary>
+        /// <param name="sourceUri">Uri The source URI (supported schemes: https and http)</param>
+        /// <param name="allowInsecure">Allow the source to be an insecure http URI</param>
+        /// <param name="byteCount">The size of the media file in bytes, for improved error-detection</param>
+        /// <param name="caption">The caption to attach to the uploaded media</param>
+        /// <param name="cookie">A string to send as the value of a Cookie header when fetching the source URI</param>
+        /// <param name="fileName">The filename to attach to the uploaded media, overriding the filename guessed from the URI</param>
+        /// <param name="hidden">Should the uploaded media be set as hidden?</param>
+        /// <param name="keywords">Keywords to attach to the uploaded media</param>
+        /// <param name="MD5Sum">The MD5 hash of the media file as a hexadecimal string, for improved error-detection</param>
+        /// <param name="title">The title to attach to the uploaded media</param>
+        /// <returns></returns>
+        public async Task UploadFromUriAsync(Uri sourceUri, bool allowInsecure = false, long byteCount = 0, string caption = "",
+            string cookie = "_", string fileName = "", bool hidden = false, string[] keywords = null, string MD5Sum = "", string title = "")
         {
+            if (sourceUri.Scheme != System.Uri.UriSchemeHttp && sourceUri.Scheme != System.Uri.UriSchemeHttps)
+                throw new ArgumentException("Supported URI schemes are HTTP and HTTPS", "sourceUri");
+
+            var postProperties = new List<KeyValuePair<string, object>>();
+            if (byteCount > 0)
+                postProperties.Add(new KeyValuePair<string, object>("ByteCount", byteCount));
+            if (!string.IsNullOrEmpty(caption))
+                postProperties.Add(new KeyValuePair<string, object>("Caption", caption));
+            postProperties.Add(new KeyValuePair<string, object>("Hidden", hidden));
+
+            if (keywords != null)
+                postProperties.Add(new KeyValuePair<string, object>("Keywords", keywords));
+
+            if (!string.IsNullOrEmpty(MD5Sum))
+                postProperties.Add(new KeyValuePair<string, object>("MD5Sum", MD5Sum));
+
+            if (!string.IsNullOrEmpty(title))
+                postProperties.Add(new KeyValuePair<string, object>("Title", title));
+
+            if (!string.IsNullOrEmpty(cookie))
+                postProperties.Add(new KeyValuePair<string, object>("Cookie", cookie));
+
+            if (!string.IsNullOrEmpty(fileName))
+                postProperties.Add(new KeyValuePair<string, object>("FileName", fileName));
+
+            postProperties.Add(new KeyValuePair<string, object>("AllowInsecure", allowInsecure));
+            postProperties.Add(new KeyValuePair<string, object>("Uri", sourceUri));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
             // /album/(*)!uploadfromuri 
-            await album____uploadfromuri(string.Empty);
+            string requestUri = string.Format("{0}{1}!uploadfromuri", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<FolderEntity> GetFolderAsync()
