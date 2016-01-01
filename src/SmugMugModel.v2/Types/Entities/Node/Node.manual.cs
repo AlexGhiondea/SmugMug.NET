@@ -4,6 +4,9 @@
 using System;
 using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
+using System.Collections.Generic;
+using System.Linq;
+using SmugMug.v2.Utility;
 
 namespace SmugMug.v2.Types
 {
@@ -39,10 +42,18 @@ namespace SmugMug.v2.Types
             return await node____grants(NodeID);
         }
 
-        public async Task RequiresPost_Fixup_node____movenodes()
+        public async Task MoveNodesAsync(IEnumerable<NodeEntity> nodes, bool asyncMove, bool autoRename = true)
         {
-            // /node/(*)!movenodes 
-            await node____movenodes(string.Empty);
+            var nodeUris = nodes.Select(node => node.Uri).ToArray();
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("Async", asyncMove));
+            postProperties.Add(new KeyValuePair<string, object>("AutoRename", autoRename));
+            postProperties.Add(new KeyValuePair<string, object>("MoveUris", nodeUris));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
+            string requestUri = string.Format("{0}/node/{1}!movenodes", SmugMug.v2.Constants.Addresses.SmugMugApi, NodeID);
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<NodeEntity> GetParentAsync()
