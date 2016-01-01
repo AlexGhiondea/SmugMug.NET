@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 using SmugMug.v2.Utility;
+using System.Collections.Generic;
 
 namespace SmugMug.v2.Types
 {
@@ -30,15 +31,17 @@ namespace SmugMug.v2.Types
             return await album___(ParentEntity.EntityId);
         }
 
-        public async Task<ColorImageEntity> RequiresPost_ColorImageAsync(ColorEnum color)
+        public async Task ColorAsync(ColorEnum color)
         {
-            //string colorValue = color == ColorEnum.BW ? "B/W" : color.ToString();
             string colorValue = color.GetEnumMemberValue();
 
-            // /image/(*)!color?Color=<color>
-            string requestUri = string.Format("{0}/image/{1}!color?Color={2}", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey, colorValue);
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("Color", colorValue));
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
 
-            return await RetrieveEntityAsync<ColorImageEntity>(requestUri);
+            // /image/(*)!crop 
+            string requestUri = string.Format("{0}/image/{1}!color", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<CommentEntity[]> GetCommentsAsync()
@@ -47,10 +50,19 @@ namespace SmugMug.v2.Types
             return await image____comments(ImageKey);
         }
 
-        public async Task RequiresPost_Fixup_image____crop()
+        public async Task CropAsync(long topLeftX, long topLeftY, long height, long width, bool thumbOnly)
         {
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("TopLeftX", topLeftX));
+            postProperties.Add(new KeyValuePair<string, object>("TopLeftY", topLeftY));
+            postProperties.Add(new KeyValuePair<string, object>("Height", height));
+            postProperties.Add(new KeyValuePair<string, object>("Width", width));
+            postProperties.Add(new KeyValuePair<string, object>("ThumbOnly", thumbOnly));
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
             // /image/(*)!crop 
-            await image____crop(string.Empty);
+            string requestUri = string.Format("{0}/image/{1}!crop", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<ImageDownloadEntity> GetDownloadAsync()
@@ -71,16 +83,42 @@ namespace SmugMug.v2.Types
             return await image____prices(ImageKey);
         }
 
-        public async Task RequiresPost_Fixup_image____rotate()
+        public async Task RotateAsync(DegreesEnum degrees, FlipEnum flip)
         {
+            string flipValue = flip.GetEnumMemberValue();
+            string degreesValue = degrees.GetEnumMemberValue();
+
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("Degrees", degreesValue));
+            postProperties.Add(new KeyValuePair<string, object>("Flip", flipValue));
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
             // /image/(*)!rotate 
-            await image____rotate(string.Empty);
+            string requestUri = string.Format("{0}/image/{1}!rotate", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+            await PostRequestAsync(requestUri, payload);
         }
 
-        public async Task RequiresPost_Fixup_image____watermark()
+        public async Task ApplyWatermarkAsync(WatermarkEntity watermark)
         {
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("Mode", "Add"));
+            postProperties.Add(new KeyValuePair<string, object>("WatermarkUri", watermark.Uri));
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
             // /image/(*)!watermark 
-            await image____watermark(string.Empty);
+            string requestUri = string.Format("{0}/image/{1}!watermark", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+            await PostRequestAsync(requestUri, payload);
+        }
+
+        public async Task RemoveWatermarkAsync()
+        {
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("Mode", "Remove"));
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
+            // /image/(*)!watermark 
+            string requestUri = string.Format("{0}/image/{1}!watermark", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<LargestImageEntity> GetLargestImageAsync()
