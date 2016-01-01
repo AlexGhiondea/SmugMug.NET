@@ -54,6 +54,14 @@ namespace SmugMug.v2.Types
             return await album____comments(AlbumKey);
         }
 
+        /// <summary>
+        /// Convenience method for calling DeleteImagesAsync non-async
+        /// </summary>
+        public async Task DeleteImagesAsync(params ImageEntity[] images)
+        {
+            await DeleteImagesAsync(new List<ImageEntity>(images), false);
+        }
+
         public async Task DeleteImagesAsync(IEnumerable<ImageEntity> images, bool deleteAsync)
         {
             // /album/(*)!deleteimages 
