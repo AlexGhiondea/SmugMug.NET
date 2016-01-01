@@ -51,12 +51,33 @@ namespace SmugMug.v2.Utility
                 {
                     // we only want to include the property if it was part of a patch or post request
                     jsonWrite.WritePropertyName(property.Key);
-                    jsonWrite.WriteValue(property.Value);
+
+                    if (!property.Value.GetType().IsArray)
+                    {
+                        jsonWrite.WriteValue(property.Value);
+                        continue;
+                    }
+
+                    // we are here if the property is an array.
+                    WriteArrayValue(jsonWrite, property.Value);
                 }
 
                 jsonWrite.WriteEndObject();
                 return writer.ToString();
             }
+        }
+
+        private static void WriteArrayValue(JsonTextWriter jsonWrite, object arrayValue)
+        {
+            jsonWrite.WriteStartArray();
+
+            var array = arrayValue as Array;
+            foreach (var item in array)
+            {
+                jsonWrite.WriteValue(item);
+            }
+
+            jsonWrite.WriteEndArray();
         }
     }
 }
