@@ -3,6 +3,7 @@
 
 using SmugMug.v2.Utility;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SmugMug.v2.Types
@@ -42,10 +43,21 @@ namespace SmugMug.v2.Types
             return await album____comments(AlbumKey);
         }
 
-        public async Task RequiresPost_Fixup_album____deleteimages()
+        public async Task DeleteImagesAsync(IEnumerable<ImageEntity> images, bool deleteAsync)
         {
             // /album/(*)!deleteimages 
-            await album____deleteimages(string.Empty);
+            string requestUri = string.Format("{0}{1}!deleteimages", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            // Create the list of ImageUris to use.
+            string imageUris = string.Join(",", images.Select(img => img.Uri));
+
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("DeleteUris", imageUris));
+            postProperties.Add(new KeyValuePair<string, object>("Async", deleteAsync));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<DownloadEntity[]> GetDownloadAsync()
