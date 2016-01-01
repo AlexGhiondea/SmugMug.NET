@@ -84,10 +84,20 @@ namespace SmugMug.v2.Types
             return await album____images(AlbumKey);
         }
 
-        public async Task RequiresPost_Fixup_album____moveimages()
+        public async Task MoveImagesAsync(IEnumerable<ImageEntity> images, bool moveAsync)
         {
-            // /album/(*)!   
-            await album____moveimages(string.Empty);
+            // Create the list of ImageUris to use.
+            string imageUris = string.Join(",", images.Select(img => img.Uri));
+
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("MoveUris", imageUris));
+            postProperties.Add(new KeyValuePair<string, object>("Async", moveAsync));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
+            // /album/(*)!moveimages 
+            string requestUri = string.Format("{0}{1}!moveimages", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<ImageEntity[]> GetPopularMediaAsync()
