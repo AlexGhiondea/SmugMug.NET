@@ -1,9 +1,9 @@
 // Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System;
+using SmugMug.v2.Utility;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using SmugMug.v2.Authentication;
 
 namespace SmugMug.v2.Types
 {
@@ -17,10 +17,17 @@ namespace SmugMug.v2.Types
         //TODO: Implement search:
         // https://api.smugmug.com/api/v2/album!search?Scope=&SortDirection=Descending&SortMethod=Rank&Text=
 
-        public async Task<ApplyAlbumTemplateEntity> RequiresPost_Fixup_album____applyalbumtemplate()
+        public async Task ApplyAlbumTemplateAsync(AlbumTemplateEntity template)
         {
+            var postProperties = new List<KeyValuePair<string, object>>();
+            postProperties.Add(new KeyValuePair<string, object>("AlbumTemplateUri", template.Uri));
+
+            var payload = JsonHelpers.GetPayloadAsJson(postProperties);
+
             // /album/(*)!applyalbumtemplate 
-            return await album____applyalbumtemplate(string.Empty);
+            string requestUri = string.Format("{0}{1}!applyalbumtemplate", SmugMug.v2.Constants.Addresses.SmugMug, Uri);
+
+            await PostRequestAsync(requestUri, payload);
         }
 
         public async Task RequirePost_Fixup_album____collectimages()
