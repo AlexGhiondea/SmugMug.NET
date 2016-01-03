@@ -75,7 +75,7 @@ namespace SmugMug.v2.Types
             {
                 JObject jsonObject = JObject.Load(jsonTextReader);
 
-                JToken objectResponse = GetDataAsJTokenOrDefault(jsonObject);
+                JToken objectResponse = JsonHelpers.GetDataOrDefault(jsonObject);
 
                 if (objectResponse == null)
                     return default(TResult);
@@ -125,32 +125,6 @@ namespace SmugMug.v2.Types
                 {
                 }
             }
-        }
-
-        private static JToken GetDataAsJTokenOrDefault(JObject obj)
-        {
-            const string ResponseString = "Response";
-
-            JProperty response = obj.Property(ResponseString);
-            if (response == null)
-                return null;
-
-            JObject responseValue = response.Value as JObject;
-            if (responseValue == null)
-                return null;
-
-            JProperty locatorNode = responseValue.Property("Locator");
-
-            if (locatorNode == null)
-                return null;
-
-            string entityName = locatorNode.Value.ToString();
-
-            JProperty objectData = responseValue.Property(entityName);
-            if (objectData == null)
-                return null;
-
-            return objectData.Value;
         }
     }
 }

@@ -21,6 +21,10 @@ namespace SmugMug.v2.Types
             _oauthToken = oauthToken;
         }
 
+        protected override IEnumerable<string> GetPatchPropertiesName()
+        {
+            return PatchParameters;
+        }
 
         private static readonly List<string> PatchParameters = new List<string>(){ "Title","Caption","Keywords","KeywordArray","Watermark","Latitude","Longitude","Altitude","Hidden" };
 

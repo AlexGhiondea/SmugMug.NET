@@ -117,6 +117,9 @@
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.manual.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.methods.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.properties.cs" />
+    <Compile Include="Types\Enums\DegreesEnum.cs" />
+    <Compile Include="Types\Enums\ImageSearchModeEnum.cs" />
+    <Compile Include="Types\Enums\FlipEnum.cs" />
     <Compile Include="Types\Images\ColorImage\ColorImage.methods.cs" />
     <Compile Include="Types\Images\ColorImage\ColorImage.properties.cs" />
     <Compile Include="Types\Entities\Comment\Comment.methods.cs">
@@ -436,6 +439,7 @@
     <Compile Include="Types\Enums\WorldSearchableEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Utility\JsonHelpers.cs" />
     <Compile Include="Utility\EnumExtensions.cs" />
     <Compile Include="Utility\HttpClientHelpers.cs" />
     <Compile Include="Types\PropertyData.cs" />

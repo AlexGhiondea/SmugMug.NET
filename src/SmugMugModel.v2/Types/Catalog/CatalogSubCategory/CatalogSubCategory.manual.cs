@@ -13,7 +13,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogCategoryEntity> Fixup_catalogcategory___ ()
         {
             // /catalog/category/(*) 
-            return await catalogcategory___(ParentEntity.TODOUrl); 
+            return await catalogcategory___(ParentEntity.Uri); 
         }
     }
 }

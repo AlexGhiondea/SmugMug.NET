@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Utility;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace SmugMug.v2.Types
 {
     public partial class SmugMugEntity
     {
+        protected OAuthToken _oauthToken;
         private string _uri;
         private string _uriDescription;
 
@@ -44,8 +46,9 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public string TODOUrl { get; set; }
-        protected OAuthToken _oauthToken;
+        public SmugMugEntity ParentEntity { get; set; }
+
+        public virtual string EntityId { get { return string.Empty; } }
 
         public SmugMugEntity()
         {
@@ -56,18 +59,19 @@ namespace SmugMug.v2.Types
             _oauthToken = token;
         }
 
-        public SmugMugEntity ParentEntity { get; set; }
-
-        public virtual string EntityId { get { return string.Empty; } }
-
-        protected async Task SaveAsync(string uri, List<string> patchProperties)
+        public async Task SaveAsync()
         {
-            await PatchRequestAsync(uri, GetPropertyChangesAsJson(patchProperties));
+            // We get the modified properties and post them to the objects's uri
+            var patchPropertiesWithValues = GetModifedPropertiesValue(GetPatchPropertiesName());
+
+            await PatchRequestAsync(Constants.Addresses.SmugMug + this.Uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
 
-        protected async Task CreateAsync(string uri, List<string> postProperties)
+        protected async Task CreateAsync(string uri, List<string> properties)
         {
-            await PostRequestAsync(uri, GetPropertyChangesAsJson(postProperties));
+            var patchPropertiesWithValues = GetPropertiesValue(properties);
+
+            await PostRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
     }
 }

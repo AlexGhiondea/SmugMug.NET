@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 
 namespace SmugMug.v2.Types
@@ -72,32 +74,56 @@ namespace SmugMug.v2.Types
             }
         }
 
-        protected string GetPropertyChangesAsJson(List<string> allowedProperties)
+        protected List<KeyValuePair<string, object>> GetModifedPropertiesValue(IEnumerable<string> allowedProperties)
         {
+            List<KeyValuePair<string, object>> properties = new List<KeyValuePair<string, object>>();
+
+            //NOTE: This uses the information from the change tracking storage 
             HashSet<string> allowedPropertiesSet = new HashSet<string>(allowedProperties, StringComparer.OrdinalIgnoreCase);
 
-            using (StringWriter writer = new StringWriter())
-            using (JsonTextWriter jsonWrite = new JsonTextWriter(writer))
+            lock (_syncLock)
             {
-                jsonWrite.WriteStartObject();
-
-                lock (_syncLock)
+                foreach (var item in _storage)
                 {
-                    foreach (var item in _storage)
+                    if (allowedPropertiesSet.Contains(item.Key))
                     {
-                        if (allowedPropertiesSet.Contains(item.Key))
-                        {
-                            // we only want to include the property if it was part of a patch or post request
-                            jsonWrite.WritePropertyName(item.Key);
-                            jsonWrite.WriteValue(item.Value.NewValue);
-                        }
+                        properties.Add(new KeyValuePair<string, object>(item.Key, item.Value.NewValue));
                     }
-
                 }
 
-                jsonWrite.WriteEndObject();
-                return writer.ToString();
             }
+            return properties;
+        }
+
+        protected List<KeyValuePair<string, object>> GetPropertiesValue(List<string> requestedProperties)
+        {
+            List<KeyValuePair<string, object>> result = new List<KeyValuePair<string, object>>();
+            Type thisType = this.GetType();
+
+            foreach (var propertyName in requestedProperties)
+            {
+                PropertyInfo property = thisType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public);
+                if (property == null)
+                {
+                    Debug.Write(string.Format("Could not find property {0} on type {1}", propertyName, thisType.Name));
+                    continue;
+                }
+
+                object value = property.GetValue(this);
+                result.Add(new KeyValuePair<string, object>(propertyName, value));
+            }
+
+            return result;
+        }
+
+        protected virtual IEnumerable<string> GetPostPropertiesName()
+        {
+            return Enumerable.Empty<string>();
+        }
+
+        protected virtual IEnumerable<string> GetPatchPropertiesName()
+        {
+            return Enumerable.Empty<string>();
         }
     }
 }
