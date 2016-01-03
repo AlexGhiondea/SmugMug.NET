@@ -4,6 +4,8 @@
 using System;
 using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Utility;
+using System.Collections.Generic;
 
 namespace SmugMug.v2.Types
 {
@@ -127,11 +129,19 @@ namespace SmugMug.v2.Types
             return await user____hideguides(NickName);
         }
 
-        [Obsolete]
-        public async Task<ImageEntity[]> RequiresPost_Fixup_user____imagesearch()
+        public async Task<ImageEntity[]> ImageSearchAsync(string text, SortDirectionEnum direction = SortDirectionEnum.Descending, ImageSearchModeEnum searchMode = ImageSearchModeEnum.Popular)
         {
+            // Todo: support searching for keywords.
+            string directionValue = direction.GetEnumMemberValue();
+            string searchModeValue = searchMode.GetEnumMemberValue();
+
+            //string orderValue = order.GetEnumMemberValue();
             // /user/(*)!imagesearch 
-            return await user____imagesearch(NickName);
+            string requestUri = string.Format("{0}/image!search?Scope={1}&SortDirection={2}&SortMethod={3}&Text={4}",
+                SmugMug.v2.Constants.Addresses.SmugMugApi, this.Uri, directionValue, searchModeValue, text);
+
+
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri);
         }
 
         public async Task<QuickNewsEntity[]> GetLatestQuickNewsAsync()
