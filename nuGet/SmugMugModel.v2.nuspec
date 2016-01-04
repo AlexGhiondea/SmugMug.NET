@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>SmugMug.NET</id>
-    <version>2.0</version>
-    <title>SmugMug.NET v.2</title>
+    <id>SmugMug.Net.v2Api</id>
+    <version>1.0.0-alpha</version>
+    <title>SmugMug.NET API v.2</title>
     <authors>Alex Ghiondea</authors>
     <owners>Alex Ghiondea</owners>
     <licenseUrl>https://github.com/AlexGhiondea/SmugMug.NET/blob/master/LICENSE</licenseUrl>
