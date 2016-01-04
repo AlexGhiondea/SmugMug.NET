@@ -22,7 +22,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public async Task<AlbumEntity> album___ (string param1)
+        private async Task<AlbumEntity> album___ (string param1)
         {
             // /album/(*) 
             string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
