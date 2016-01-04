@@ -21,7 +21,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public async Task<CatalogSkuEntity> catalogsku___ (string param1)
+        private async Task<CatalogSkuEntity> catalogsku___ (string param1)
         {
             // /catalog/sku/(*) 
             string requestUri = string.Format("{0}/catalog/sku/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
@@ -29,7 +29,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<CatalogSkuEntity>(requestUri); 
         }
 
-        public async Task catalogsku____buy (string param1)
+        private async Task catalogsku____buy (string param1)
         {
             // /catalog/sku/(*)!buy 
             string requestUri = string.Format("{0}/catalog/sku/{1}!buy", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);

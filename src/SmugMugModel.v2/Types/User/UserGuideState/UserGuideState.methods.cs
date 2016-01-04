@@ -21,7 +21,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public async Task<GuideEntity> guide___ (string param1)
+        private async Task<GuideEntity> guide___ (string param1)
         {
             // /guide/(*) 
             string requestUri = string.Format("{0}/guide/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);

@@ -21,7 +21,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public async Task<ImageEntity> image___ (string param1)
+        private async Task<ImageEntity> image___ (string param1)
         {
             // /image/(*) 
             string requestUri = string.Format("{0}/image/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);

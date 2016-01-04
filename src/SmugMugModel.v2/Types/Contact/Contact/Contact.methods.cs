@@ -29,7 +29,7 @@ namespace SmugMug.v2.Types
         private static readonly List<string> PostParameters = new List<string>(){ "Name", "PrimaryEmail" };
 
 
-        public async Task<ContactEmailEntity[]> contact____emails (string param1)
+        private async Task<ContactEmailEntity[]> contact____emails (string param1)
         {
             // /contact/(*)!emails 
             string requestUri = string.Format("{0}/contact/{1}!emails", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
@@ -37,7 +37,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityArrayAsync<ContactEmailEntity>(requestUri); 
         }
 
-        public async Task<GrantEntity[]> contact____grants (string param1)
+        private async Task<GrantEntity[]> contact____grants (string param1)
         {
             // /contact/(*)!grants 
             string requestUri = string.Format("{0}/contact/{1}!grants", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
