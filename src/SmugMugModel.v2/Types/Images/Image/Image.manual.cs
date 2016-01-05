@@ -11,6 +11,14 @@ namespace SmugMug.v2.Types
 {
     public partial class ImageEntity : SmugMugEntity
     {
+        public override string PatchUri
+        {
+            get
+            {
+                return "/api/v2/image/" + ImageKey;
+            }
+        }
+
         public async Task<AlbumImageShareUrisEntity> GetShareUrisAsync()
         {
             // /album/(*)/image/(*)!shareuris 

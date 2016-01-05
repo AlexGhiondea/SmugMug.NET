@@ -50,6 +50,8 @@ namespace SmugMug.v2.Types
 
         public virtual string EntityId { get { return string.Empty; } }
 
+        public virtual string PatchUri { get { return Uri; } }
+
         public SmugMugEntity()
         {
 
@@ -64,7 +66,7 @@ namespace SmugMug.v2.Types
             // We get the modified properties and post them to the objects's uri
             var patchPropertiesWithValues = GetModifedPropertiesValue(GetPatchPropertiesName());
 
-            await PatchRequestAsync(Constants.Addresses.SmugMug + this.Uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+            await PatchRequestAsync(Constants.Addresses.SmugMug + this.PatchUri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
 
         protected async Task CreateAsync(string uri, List<string> properties)
