@@ -19,7 +19,7 @@ namespace SmugMug.v2.Types
             return await album___(string.Empty);
         }
 
-        public async Task<FolderEntity> GetFolderByIdAsync()
+        public async Task<FolderEntity> AsFolderAsync()
         {
             // /folder/id/(*) 
             return await folderid___(NodeId);
