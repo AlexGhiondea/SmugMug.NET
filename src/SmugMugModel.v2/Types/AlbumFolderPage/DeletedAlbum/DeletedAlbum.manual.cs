@@ -13,13 +13,17 @@ namespace SmugMug.v2.Types
         public async Task<RecoverDeletedAlbumEntity> RequiresPost_Fixup_deletedalbum____recover()
         {
             // /deleted/album/(*)!recover 
-            return await deletedalbum____recover(string.Empty);
+            // /deleted/album/(*)!recover 
+            string requestUri = string.Format("{0}/deleted/album/{1}!recover", SmugMug.v2.Constants.Addresses.SmugMugApi, string.Empty);
+            return await RetrieveEntityAsync<RecoverDeletedAlbumEntity>(requestUri);
         }
 
         public async Task<UserEntity> GetUserAsync()
         {
             // /user/(*) 
-            return await user___(ParentEntity.EntityId);
+            // /user/(*) 
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
+            return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
     }
 }

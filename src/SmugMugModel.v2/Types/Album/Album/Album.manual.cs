@@ -51,7 +51,9 @@ namespace SmugMug.v2.Types
         public async Task<CommentEntity[]> GetCommentsAsync()
         {
             // /album/(*)!comments 
-            return await album____comments(AlbumKey);
+            // /album/(*)!comments 
+            string requestUri = string.Format("{0}/album/{1}!comments", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<CommentEntity>(requestUri);
         }
 
         /// <summary>
@@ -82,25 +84,33 @@ namespace SmugMug.v2.Types
         public async Task<DownloadEntity[]> GetDownloadAsync()
         {
             // /album/(*)!download 
-            return await album____download(AlbumKey);
+            // /album/(*)!download 
+            string requestUri = string.Format("{0}/album/{1}!download", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<DownloadEntity>(requestUri);
         }
 
         public async Task<ImageEntity[]> GetGeoMediaAsync()
         {
             // /album/(*)!geomedia 
-            return await album____geomedia(AlbumKey);
+            // /album/(*)!geomedia 
+            string requestUri = string.Format("{0}/album/{1}!geomedia", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri);
         }
 
         public async Task<GrantEntity[]> GetGrantsAsync()
         {
             // /album/(*)!grants 
-            return await album____grants(AlbumKey);
+            // /album/(*)!grants 
+            string requestUri = string.Format("{0}/album/{1}!grants", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<GrantEntity>(requestUri);
         }
 
         public async Task<ImageEntity[]> GetImagesAsync()
         {
             // /album/(*)!images 
-            return await album____images(AlbumKey);
+            // /album/(*)!images 
+            string requestUri = string.Format("{0}/album/{1}!images", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri);
         }
 
         public async Task MoveImagesAsync(IEnumerable<ImageEntity> images, bool moveAsync)
@@ -122,19 +132,25 @@ namespace SmugMug.v2.Types
         public async Task<ImageEntity[]> GetPopularMediaAsync()
         {
             // /album/(*)!popularmedia 
-            return await album____popularmedia(AlbumKey);
+            // /album/(*)!popularmedia 
+            string requestUri = string.Format("{0}/album/{1}!popularmedia", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<ImageEntity>(requestUri);
         }
 
         public async Task<CatalogSkuPriceEntity[]> GetPricesAsync()
         {
             // /album/(*)!prices 
-            return await album____prices(AlbumKey);
+            // /album/(*)!prices 
+            string requestUri = string.Format("{0}/album/{1}!prices", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityArrayAsync<CatalogSkuPriceEntity>(requestUri);
         }
 
         public async Task<AlbumShareUrisEntity> GetShareUrisAsync()
         {
             // /album/(*)!shareuris 
-            return await album____shareuris(AlbumKey);
+            // /album/(*)!shareuris 
+            string requestUri = string.Format("{0}/album/{1}!shareuris", SmugMug.v2.Constants.Addresses.SmugMugApi, AlbumKey);
+            return await RetrieveEntityAsync<AlbumShareUrisEntity>(requestUri);
         }
 
         /// <summary>
@@ -192,25 +208,33 @@ namespace SmugMug.v2.Types
         public async Task<FolderEntity> GetFolderAsync()
         {
             // /folder/user/(*)/(*) 
-            return await folderuser______(ParentEntity.EntityId, AlbumKey);
+            // /folder/user/(*)/(*) 
+            string requestUri = string.Format("{0}/folder/user/{1}/{2}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId, AlbumKey);
+            return await RetrieveEntityAsync<FolderEntity>(requestUri);
         }
 
         public async Task<ImageEntity> GetHighlightImageAsync()
         {
             // /highlight/node/(*) 
-            return await highlightnode___(NodeID);
+            // /highlight/node/(*) 
+            string requestUri = string.Format("{0}/highlight/node/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, NodeID);
+            return await RetrieveEntityAsync<ImageEntity>(requestUri);
         }
 
         public async Task<NodeEntity> GetNodeAsync()
         {
             // /node/(*) 
-            return await node___(NodeID);
+            // /node/(*) 
+            string requestUri = string.Format("{0}/node/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, NodeID);
+            return await RetrieveEntityAsync<NodeEntity>(requestUri);
         }
 
         public async Task<UserEntity> GetUserAsync()
         {
             // /user/(*) 
-            return await user___(ParentEntity.EntityId);
+            // /user/(*) 
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
+            return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
 
         public async Task<WatermarkEntity> GetWatermarkAsync()

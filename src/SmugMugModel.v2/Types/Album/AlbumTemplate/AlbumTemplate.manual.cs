@@ -13,7 +13,9 @@ namespace SmugMug.v2.Types
         public async Task<UserEntity> Considered_Fixup_user___ ()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            // /user/(*) 
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, string.Empty);
+            return await RetrieveEntityAsync<UserEntity>(requestUri); 
         }
     }
 }

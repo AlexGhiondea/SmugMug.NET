@@ -37,7 +37,7 @@ namespace SmugMug.v2.Types
         public async Task<CatalogVendorEntity> Fixup_catalogvendor___()
         {
             // /catalog/vendor/(*) 
-            string requestUri = string.Format("{0}{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.Uri);
+            string requestUri = string.Format("{0}{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.Uri);
 
             return await RetrieveEntityAsync<CatalogVendorEntity>(requestUri);
         }

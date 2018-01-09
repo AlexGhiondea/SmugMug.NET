@@ -198,7 +198,7 @@ namespace SmugMug.v2.Types
         }
 
 
-        public string RefTag {
+        internal string RefTag {
             get {
                 return _refTag;
             }

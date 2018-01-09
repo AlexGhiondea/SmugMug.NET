@@ -9,11 +9,5 @@ namespace SmugMug.v2.Types
 {
     public partial class CatalogSubCategoryEntity : SmugMugEntity
     {
-
-        public async Task<CatalogCategoryEntity> Fixup_catalogcategory___ ()
-        {
-            // /catalog/category/(*) 
-            return await catalogcategory___(ParentEntity.Uri); 
-        }
     }
 }

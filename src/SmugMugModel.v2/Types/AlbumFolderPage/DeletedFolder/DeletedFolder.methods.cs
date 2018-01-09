@@ -19,22 +19,5 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
-
-
-        private async Task<RecoverDeletedFolderEntity> deletedfolder____recover (string param1)
-        {
-            // /deleted/folder/(*)!recover 
-            string requestUri = string.Format("{0}/deleted/folder/{1}!recover", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<RecoverDeletedFolderEntity>(requestUri); 
-        }
-
-        private async Task<UserEntity> user___ (string param1)
-        {
-            // /user/(*) 
-            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<UserEntity>(requestUri); 
-        }
     }
 }

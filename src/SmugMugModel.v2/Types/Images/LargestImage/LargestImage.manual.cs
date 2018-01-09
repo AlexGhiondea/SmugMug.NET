@@ -13,19 +13,34 @@ namespace SmugMug.v2.Types
         public async Task<ImageSizeEntity> GetImageSizeX3LargeAsync()
         {
             // /image/(*)!sizex3large 
-            return await image____sizex3large(ParentEntity.EntityId + "-0");
+            // return await image____sizex3large();
+
+            // /image/(*)!sizex3large 
+            string requestUri = string.Format("{0}/image/{1}!sizex3large", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId + "-0");
+
+            return await RetrieveEntityAsync<ImageSizeEntity>(requestUri);
         }
 
         public async Task<ImageSizeEntity> GetImageSizeOriginalAsync()
         {
             // /image/(*)!sizeoriginal 
-            return await image____sizeoriginal(ParentEntity.EntityId + "-0");
+            //return await image____sizeoriginal();
+
+            // /image/(*)!sizeoriginal 
+            string requestUri = string.Format("{0}/image/{1}!sizeoriginal", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId + "-0");
+
+            return await RetrieveEntityAsync<ImageSizeEntity>(requestUri);
         }
 
         public async Task<ImageSizeEntity> GetImageSizeXLargeAsync()
         {
             // /image/(*)!sizexlarge 
-            return await image____sizexlarge(ParentEntity.EntityId + "-0");
+            //return await image____sizexlarge(Parent.EntityId + "-0");
+
+            // /image/(*)!sizexlarge 
+            string requestUri = string.Format("{0}/image/{1}!sizexlarge", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId + "-0");
+
+            return await RetrieveEntityAsync<ImageSizeEntity>(requestUri);
         }
     }
 }

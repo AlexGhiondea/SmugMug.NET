@@ -19,14 +19,5 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
-
-
-        private async Task<CatalogProductEntity[]> catalogvendor____products (string param1)
-        {
-            // /catalog/vendor/(*)!products 
-            string requestUri = string.Format("{0}{1}!products", SmugMug.v2.Constants.Addresses.SmugMug, param1);
-
-            return await RetrieveEntityArrayAsync<CatalogProductEntity>(requestUri); 
-        }
     }
 }

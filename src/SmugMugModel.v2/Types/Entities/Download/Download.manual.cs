@@ -13,7 +13,12 @@ namespace SmugMug.v2.Types
         public async Task<AlbumEntity> GetAlbumAsync ()
         {
             // /album/(*) 
-            return await album___(ParentEntity.EntityId); 
+           // return await album___();
+
+            // /album/(*) 
+            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
+
+            return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }
     }
 }

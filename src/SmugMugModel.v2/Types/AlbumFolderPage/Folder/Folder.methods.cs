@@ -36,22 +36,6 @@ namespace SmugMug.v2.Types
         private static readonly List<string> PostParameters = new List<string>(){ "Name", "UrlName", "AutoRename", "SecurityType", "SortMethod", "SortDirection", "Description", "Keywords", "Password", "PasswordHint", "Privacy", "SmugSearchable", "WorldSearchable", "HighlightImageUri" };
 
 
-        private async Task<FolderEntity> folderid___ (string param1)
-        {
-            // /folder/id/(*) 
-            string requestUri = string.Format("{0}/folder/id/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<FolderEntity>(requestUri); 
-        }
-
-        private async Task folderuser____albumfromalbumtemplate (string param1)
-        {
-            // /folder/user/(*)!albumfromalbumtemplate 
-            string requestUri = string.Format("{0}/folder/user/{1}!albumfromalbumtemplate", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
         private async Task<AlbumListEntity> folderuser____albumlist (string param1)
         {
             // /folder/user/(*)!albumlist 
@@ -76,108 +60,12 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<FolderListEntity>(requestUri); 
         }
 
-        private async Task<FolderEntity[]> folderuser____folders (string param1)
-        {
-            // /folder/user/(*)!folders 
-            string requestUri = string.Format("{0}/folder/user/{1}!folders", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityArrayAsync<FolderEntity>(requestUri); 
-        }
-
-        private async Task<GrantEntity[]> folderuser____grants (string param1)
-        {
-            // /folder/user/(*)!grants 
-            string requestUri = string.Format("{0}/folder/user/{1}!grants", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityArrayAsync<GrantEntity>(requestUri); 
-        }
-
         private async Task<ImageEntity> folderuser____highlightimage (string param1)
         {
             // /folder/user/(*)!highlightimage 
             string requestUri = string.Format("{0}/folder/user/{1}!highlightimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
             return await RetrieveEntityAsync<ImageEntity>(requestUri); 
-        }
-
-        private async Task folderuser____movealbums (string param1)
-        {
-            // /folder/user/(*)!movealbums 
-            string requestUri = string.Format("{0}/folder/user/{1}!movealbums", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task folderuser____movefolders (string param1)
-        {
-            // /folder/user/(*)!movefolders 
-            string requestUri = string.Format("{0}/folder/user/{1}!movefolders", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task folderuser____movepages (string param1)
-        {
-            // /folder/user/(*)!movepages 
-            string requestUri = string.Format("{0}/folder/user/{1}!movepages", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task<PageEntity[]> folderuser____pages (string param1)
-        {
-            // /folder/user/(*)!pages 
-            string requestUri = string.Format("{0}/folder/user/{1}!pages", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityArrayAsync<PageEntity>(requestUri); 
-        }
-
-        private async Task<FolderEntity[]> folderuser____parents (string param1)
-        {
-            // /folder/user/(*)!parents 
-            string requestUri = string.Format("{0}/folder/user/{1}!parents", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityArrayAsync<FolderEntity>(requestUri); 
-        }
-
-        private async Task<SizeEntity> folderuser____size (string param1)
-        {
-            // /folder/user/(*)!size 
-            string requestUri = string.Format("{0}/folder/user/{1}!size", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<SizeEntity>(requestUri); 
-        }
-
-        private async Task folderuser____sortalbums (string param1)
-        {
-            // /folder/user/(*)!sortalbums 
-            string requestUri = string.Format("{0}/folder/user/{1}!sortalbums", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task folderuser____sortfolders (string param1)
-        {
-            // /folder/user/(*)!sortfolders 
-            string requestUri = string.Format("{0}/folder/user/{1}!sortfolders", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task folderuser____sortpages (string param1)
-        {
-            // /folder/user/(*)!sortpages 
-            string requestUri = string.Format("{0}/folder/user/{1}!sortpages", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            await GetRequestAsync(requestUri); 
-        }
-
-        private async Task folderuser_______albumfromalbumtemplate (string param1, string param2)
-        {
-            // /folder/user/(*)/(*)!albumfromalbumtemplate 
-            string requestUri = string.Format("{0}/folder/user/{1}/{2}!albumfromalbumtemplate", SmugMug.v2.Constants.Addresses.SmugMugApi, param1,param2);
-
-            await GetRequestAsync(requestUri); 
         }
 
         private async Task<AlbumListEntity> folderuser_______albumlist (string param1, string param2)
@@ -562,30 +450,6 @@ namespace SmugMug.v2.Types
             string requestUri = string.Format("{0}/folder/user/{1}/SmugMug/{2}!size", SmugMug.v2.Constants.Addresses.SmugMugApi, param1,param2);
 
             return await RetrieveEntityAsync<SizeEntity>(requestUri); 
-        }
-
-        private async Task<ImageEntity> highlightnode___ (string param1)
-        {
-            // /highlight/node/(*) 
-            string requestUri = string.Format("{0}/highlight/node/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
-        }
-
-        private async Task<NodeEntity> node___ (string param1)
-        {
-            // /node/(*) 
-            string requestUri = string.Format("{0}/node/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<NodeEntity>(requestUri); 
-        }
-
-        private async Task<UserEntity> user___ (string param1)
-        {
-            // /user/(*) 
-            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<UserEntity>(requestUri); 
         }
     }
 }
