@@ -70,6 +70,12 @@ namespace SmugMug.v2.Types
         {
             using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(oauthToken))
             using (HttpResponseMessage response = await httpClient.GetAsync(requestUri))
+            {
+                var x = response.Content.ReadAsStringAsync().Result;
+            }
+
+            using (HttpClient httpClient = HttpClientHelpers.CreateHttpClient(oauthToken))
+            using (HttpResponseMessage response = await httpClient.GetAsync(requestUri))
             using (StreamReader streamReader = new StreamReader(await response.Content.ReadAsStreamAsync()))
             using (JsonTextReader jsonTextReader = new JsonTextReader(streamReader))
             {

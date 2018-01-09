@@ -13,6 +13,9 @@ namespace SmugMug.v2.Types
         protected OAuthToken _oauthToken;
         private string _uri;
         private string _uriDescription;
+        private string _nodeId;
+
+        public Dictionary<string, UriDescriptor> Uris { get; set; }
 
         public string Uri
         {
@@ -56,6 +59,7 @@ namespace SmugMug.v2.Types
         {
 
         }
+
         public SmugMugEntity(OAuthToken token)
         {
             _oauthToken = token;
@@ -74,6 +78,33 @@ namespace SmugMug.v2.Types
             var patchPropertiesWithValues = GetPropertiesValue(properties);
 
             await PostRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+        }
+
+        public string NodeId
+        {
+            get
+            {
+                if (_nodeId != null)
+                {
+                    return _nodeId;
+                }
+
+                // get it from the Node Uri.
+                UriDescriptor val;
+                if (Uris.TryGetValue("Node", out val))
+                {
+                    var posLastSlash = val.Uri.LastIndexOf("/");
+                    if (posLastSlash >= 0)
+                        _nodeId = val.Uri.Substring(posLastSlash + 1);
+                    else
+                        _nodeId = string.Empty;
+                }
+                return _nodeId;
+            }
+            internal set
+            {
+                _nodeId = value;
+            }
         }
     }
 }

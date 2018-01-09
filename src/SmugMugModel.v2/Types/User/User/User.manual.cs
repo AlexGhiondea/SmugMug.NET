@@ -27,6 +27,11 @@ namespace SmugMug.v2.Types
             return await folderuser___(NickName);
         }
 
+        public async Task<NodeEntity> AsNodeAsync()
+        {
+            return await node___(this.NodeId);
+        }
+
         public async Task<NodeEntity> GetNodeAsync(string nodeId)
         {
             // /node/(*) 

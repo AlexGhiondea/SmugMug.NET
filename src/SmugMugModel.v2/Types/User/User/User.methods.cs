@@ -34,7 +34,9 @@ namespace SmugMug.v2.Types
             // /node/(*) 
             string requestUri = string.Format("{0}/node/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
 
-            return await RetrieveEntityAsync<NodeEntity>(requestUri); 
+            var node = await RetrieveEntityAsync<NodeEntity>(requestUri);
+            node.NodeId = param1;
+            return node;
         }
 
         private async Task<AlbumEntity[]> user____albums (string param1)

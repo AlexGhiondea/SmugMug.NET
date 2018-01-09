@@ -30,12 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>c:\users\alexghi\source\repos\SyncSmugMugAlbum\packages\Newtonsoft.Json.11.0.1-beta3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OAuth.net">
-      <HintPath>..\packages\OAuth.Net.0.6\lib\net45\OAuth.net.dll</HintPath>
+    <Reference Include="OAuth.net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>c:\users\alexghi\source\repos\SyncSmugMugAlbum\packages\OAuth.net.1.1.0\lib\net45\OAuth.net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -117,6 +116,7 @@
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.manual.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.methods.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.properties.cs" />
+    <Compile Include="Types\Enums\Children\NodeSortMethodEnum.cs" />
     <Compile Include="Types\Enums\DegreesEnum.cs" />
     <Compile Include="Types\Enums\ImageSearchModeEnum.cs" />
     <Compile Include="Types\Enums\FlipEnum.cs" />
@@ -315,6 +315,7 @@
     </Compile>
     <Compile Include="Types\Status\StatusImage\StatusImage.methods.cs" />
     <Compile Include="Types\Status\StatusImage\StatusImage.properties.cs" />
+    <Compile Include="Types\UriDescriptor.cs" />
     <Compile Include="Types\User\UserGuideState\UserGuideState.manual.cs" />
     <Compile Include="Types\User\UserProfile\UserProfile.manual.cs" />
     <Compile Include="Types\User\User\User.manual.cs" />
