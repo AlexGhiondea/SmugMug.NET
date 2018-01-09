@@ -28,15 +28,6 @@ namespace SmugMug.v2.Types
 
         private static readonly List<string> PatchParameters = new List<string>(){ "Name","ImageID","Dissolve","Pinned","Thumbs","SmallestSize" };
 
-
-        private async Task<ImageEntity> image___ (string param1)
-        {
-            // /image/(*) 
-            string requestUri = string.Format("{0}/image/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
-        }
-
         private async Task<UserEntity> user___ (string param1)
         {
             // /user/(*) 

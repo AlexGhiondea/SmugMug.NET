@@ -13,7 +13,12 @@ namespace SmugMug.v2.Types
         public async Task<ImageEntity> GetImageAsync ()
         {
             // /image/(*) 
-            return await image___(ImageKey); 
+            //return await image___(ImageKey);
+
+            // /image/(*) 
+            string requestUri = string.Format("{0}/image/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey);
+
+            return await RetrieveEntityAsync<ImageEntity>(requestUri);
         }
     }
 }

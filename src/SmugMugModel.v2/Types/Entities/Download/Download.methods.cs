@@ -20,14 +20,5 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
-
-
-        private async Task<AlbumEntity> album___ (string param1)
-        {
-            // /album/(*) 
-            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<AlbumEntity>(requestUri); 
-        }
     }
 }
