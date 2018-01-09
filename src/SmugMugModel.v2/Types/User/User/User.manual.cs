@@ -27,7 +27,7 @@ namespace SmugMug.v2.Types
             return await folderuser___(NickName);
         }
 
-        public async Task<NodeEntity> AsNodeAsync()
+        public async Task<NodeEntity> GetRootNode()
         {
             return await node___(this.NodeId);
         }
@@ -36,6 +36,16 @@ namespace SmugMug.v2.Types
         {
             // /node/(*) 
             return await node___(nodeId);
+        }
+
+        public async Task<AlbumEntity> GetAlbumAsync(string albumId)
+        {
+            //https://api.smugmug.com/api/v2/album/JxG37h
+
+            // /album/<key>
+            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, albumId);
+
+            return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }
 
         public async Task<AlbumEntity[]> GetAlbumsAsync()
