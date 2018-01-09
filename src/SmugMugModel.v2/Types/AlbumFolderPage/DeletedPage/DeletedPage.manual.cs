@@ -10,16 +10,20 @@ namespace SmugMug.v2.Types
     public partial class DeletedPageEntity : SmugMugEntity
     {
 
-        public async Task<RecoverDeletedPageEntity> Fixup_deletedpage____recover ()
+        public async Task<RecoverDeletedPageEntity> Fixup_deletedpage____recover()
         {
             // /deleted/page/(*)!recover 
-            return await deletedpage____recover(string.Empty); 
+            // /deleted/page/(*)!recover 
+            string requestUri = string.Format("{0}/deleted/page/{1}!recover", SmugMug.v2.Constants.Addresses.SmugMugApi, string.Empty);
+            return await RetrieveEntityAsync<RecoverDeletedPageEntity>(requestUri);
         }
 
-        public async Task<UserEntity> Fixup_user___ ()
+        public async Task<UserEntity> Fixup_user___()
         {
             // /user/(*) 
-            return await user___(string.Empty); 
+            // /user/(*)  
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, string.Empty);
+            return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
     }
 }
