@@ -314,6 +314,7 @@
     </Compile>
     <Compile Include="Types\Status\StatusImage\StatusImage.methods.cs" />
     <Compile Include="Types\Status\StatusImage\StatusImage.properties.cs" />
+    <Compile Include="Types\UriDescriptor.cs" />
     <Compile Include="Types\User\UserGuideState\UserGuideState.manual.cs" />
     <Compile Include="Types\User\UserProfile\UserProfile.manual.cs" />
     <Compile Include="Types\User\User\User.manual.cs" />
