@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SmugMug.v2.Authentication;
 using SmugMug.v2.Utility;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SmugMug.v2.Types
 {
@@ -19,7 +20,20 @@ namespace SmugMug.v2.Types
             }
         }
 
-        // TODO: it is unclear if this is still needed.
+        private List<AlbumEntity> _albums;
+        public List<AlbumEntity> AllAlbums
+        {
+            get
+            {
+                if (_albums == null)
+                {
+                    _albums = GetAllAlbumsAsync().Result.ToList();
+                }
+
+                return _albums;
+            }
+        }
+
         [Obsolete]
         public async Task<FolderEntity> GetFolderAsync()
         {
@@ -32,7 +46,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<FolderEntity>(requestUri);
         }
 
-        public async Task<NodeEntity> GetRootNode()
+        public async Task<NodeEntity> GetRootNodeAsync()
         {
             return await CreateNodeEntity(this.NodeId);
         }
@@ -43,7 +57,7 @@ namespace SmugMug.v2.Types
             return await CreateNodeEntity(nodeId);
         }
 
-        public async Task<AlbumEntity> GetAlbumAsync(string albumId)
+        public async Task<AlbumEntity> GetAlbumByIdAsync(string albumId)
         {
             //https://api.smugmug.com/api/v2/album/JxG37h
 
@@ -53,7 +67,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }
 
-        public async Task<AlbumEntity[]> GetAlbumsAsync()
+        public async Task<AlbumEntity[]> GetAllAlbumsAsync()
         {
             // /user/(*)!albums 
             //return await user____albums(NickName);
@@ -121,7 +135,7 @@ namespace SmugMug.v2.Types
         public async Task<DeletedAlbumEntity[]> GetDeletedAlbumsAsync()
         {
             // /user/(*)!deletedalbums 
-           // return await user____deletedalbums(NickName);
+            // return await user____deletedalbums(NickName);
 
             // /user/(*)!deletedalbums 
             string requestUri = string.Format("{0}/user/{1}!deletedalbums", SmugMug.v2.Constants.Addresses.SmugMugApi, NickName);
@@ -129,6 +143,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityArrayAsync<DeletedAlbumEntity>(requestUri);
         }
 
+        [Obsolete]
         public async Task<DeletedFolderEntity[]> GetDeletedFoldersAsync()
         {
             // /user/(*)!deletedfolders 

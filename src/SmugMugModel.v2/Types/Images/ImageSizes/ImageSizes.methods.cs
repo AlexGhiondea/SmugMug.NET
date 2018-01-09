@@ -14,7 +14,7 @@ namespace SmugMug.v2.Types
             get
             {
                 //TODO: This is not necessarily the best way to do this.
-                return this.ParentEntity.EntityId;
+                return this.Parent.EntityId;
             }
         }
         public ImageSizesEntity()

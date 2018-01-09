@@ -22,7 +22,7 @@ namespace SmugMug.v2.Types
         public async Task<AlbumImageShareUrisEntity> GetShareUrisAsync()
         {
             // /album/(*)/image/(*)!shareuris 
-            string requestUri = string.Format("{0}/album/{1}/image/{2}!shareuris", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId, ImageKey);
+            string requestUri = string.Format("{0}/album/{1}/image/{2}!shareuris", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId, ImageKey);
 
             return await RetrieveEntityAsync<AlbumImageShareUrisEntity>(requestUri);
         }
@@ -34,12 +34,12 @@ namespace SmugMug.v2.Types
 
         public async Task<AlbumEntity> GetAlbumAsync()
         {
-            // TODO: Consider returning ParentEntity here instead.
+            // TODO: Consider returning Parent here instead.
             // /album/(*) 
-            //return await album___(ParentEntity.EntityId);
+            //return await album___(Parent.EntityId);
 
             // /album/(*) 
-            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
 
             return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }

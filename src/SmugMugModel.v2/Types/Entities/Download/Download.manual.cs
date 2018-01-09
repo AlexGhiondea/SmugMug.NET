@@ -16,7 +16,7 @@ namespace SmugMug.v2.Types
            // return await album___();
 
             // /album/(*) 
-            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/album/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
 
             return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }

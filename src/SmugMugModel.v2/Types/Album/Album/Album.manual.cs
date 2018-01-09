@@ -209,7 +209,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)/(*) 
             // /folder/user/(*)/(*) 
-            string requestUri = string.Format("{0}/folder/user/{1}/{2}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId, AlbumKey);
+            string requestUri = string.Format("{0}/folder/user/{1}/{2}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId, AlbumKey);
             return await RetrieveEntityAsync<FolderEntity>(requestUri);
         }
 
@@ -233,7 +233,7 @@ namespace SmugMug.v2.Types
         {
             // /user/(*) 
             // /user/(*) 
-            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
 

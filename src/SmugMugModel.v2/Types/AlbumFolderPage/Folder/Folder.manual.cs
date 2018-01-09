@@ -33,7 +33,7 @@ namespace SmugMug.v2.Types
             // I can use urlpath to get the parent.
 
             // /folder/user/(*)!albumlist 
-            string requestUri = string.Format("{0}/folder/user/{1}!albumlist", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!albumlist", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
 
             return await RetrieveEntityArrayAsync<AlbumListEntity>(requestUri);
         }
@@ -42,7 +42,7 @@ namespace SmugMug.v2.Types
         public async Task<FolderListEntity[]> GetFolderListAsync()
         {
             // /folder/user/(*)!folderlist 
-            string requestUri = string.Format("{0}/folder/user/{1}!folderlist", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!folderlist", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
 
             return await RetrieveEntityArrayAsync<FolderListEntity>(requestUri);
         }
@@ -52,7 +52,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)!folders 
             // /folder/user/(*)!folders 
-            string requestUri = string.Format("{0}/folder/user/{1}!folders", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!folders", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityArrayAsync<FolderEntity>(requestUri);
         }
 
@@ -61,7 +61,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)!grants 
             // /folder/user/(*)!grants 
-            string requestUri = string.Format("{0}/folder/user/{1}!grants", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!grants", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityArrayAsync<GrantEntity>(requestUri);
         }
 
@@ -98,7 +98,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)!pages 
             // /folder/user/(*)!pages 
-            string requestUri = string.Format("{0}/folder/user/{1}!pages", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!pages", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityArrayAsync<PageEntity>(requestUri);
         }
 
@@ -107,7 +107,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)!parents 
             // /folder/user/(*)!parents 
-            string requestUri = string.Format("{0}/folder/user/{1}!parents", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!parents", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityArrayAsync<FolderEntity>(requestUri);
         }
 
@@ -115,7 +115,7 @@ namespace SmugMug.v2.Types
         {
             // /folder/user/(*)!size 
             // /folder/user/(*)!size 
-            string requestUri = string.Format("{0}/folder/user/{1}!size", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/folder/user/{1}!size", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityAsync<SizeEntity>(requestUri);
         }
 
@@ -183,7 +183,7 @@ namespace SmugMug.v2.Types
         {
             // /user/(*) 
             // /user/(*) 
-            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId);
+            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId);
             return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
 
@@ -191,7 +191,7 @@ namespace SmugMug.v2.Types
         //public async Task<ImageEntity> GetHighlightImageAsync()
         //{
         //    // /folder/user/(*)!highlightimage 
-        //    return await folderuser____highlightimage(ParentEntity.EntityId);
+        //    return await folderuser____highlightimage(Parent.EntityId);
         //}
     }
 }

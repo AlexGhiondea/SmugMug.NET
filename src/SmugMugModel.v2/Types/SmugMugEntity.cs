@@ -49,7 +49,7 @@ namespace SmugMug.v2.Types
             }
         }
 
-        public SmugMugEntity ParentEntity { get; set; }
+        public SmugMugEntity Parent { get; set; }
 
         public virtual string EntityId { get { return string.Empty; } }
 
@@ -101,7 +101,7 @@ namespace SmugMug.v2.Types
                 }
                 return _nodeId;
             }
-            internal set
+            set
             {
                 _nodeId = value;
             }

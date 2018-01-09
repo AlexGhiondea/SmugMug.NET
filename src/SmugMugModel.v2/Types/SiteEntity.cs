@@ -21,7 +21,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<UserEntity>(requestUri);
         }
 
-        public async Task<CatalogVendorEntity[]> GetVendors()
+        public async Task<CatalogVendorEntity[]> GetVendorsAsync()
         {
             // /catalog!vendors 
             string requestUri = string.Format("{0}/catalog!vendors", SmugMug.v2.Constants.Addresses.SmugMugApi);
@@ -29,7 +29,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityArrayAsync<CatalogVendorEntity>(requestUri);
         }
 
-        public async Task<UserEntity[]> SearchForUser(string query)
+        public async Task<UserEntity[]> SearchForUserAsync(string query)
         {
             // api/v2/user!search?q=
             string requestUri = string.Format("{0}/user!search?q={1}", SmugMug.v2.Constants.Addresses.SmugMugApi, query);

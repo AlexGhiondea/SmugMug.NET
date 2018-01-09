@@ -13,6 +13,14 @@ namespace SmugMug.v2.Types
 {
     public partial class NodeEntity : SmugMugEntity
     {
+        private List<NodeEntity> _folders;
+        private List<NodeEntity> _pages;
+        private List<NodeEntity> _albums;
+
+        public List<NodeEntity> Folders => _folders ?? (_folders = GetChildrenAsync(type: TypeEnum.Folder).Result.ToList());
+        public List<NodeEntity> Pages => _pages ?? (_pages = GetChildrenAsync(type: TypeEnum.Page).Result.ToList());
+        public List<NodeEntity> Albums => _albums ?? (_albums = GetChildrenAsync(type: TypeEnum.Album).Result.ToList());
+
         public async Task<AlbumEntity> Considered_Fixup_album___()
         {
             // /album/(*) 
@@ -24,6 +32,7 @@ namespace SmugMug.v2.Types
             return await RetrieveEntityAsync<AlbumEntity>(requestUri);
         }
 
+        [Obsolete]
         public async Task<FolderEntity> AsFolderAsync()
         {
             // /folder/id/(*) 

@@ -38,6 +38,26 @@ namespace SmugMug.v2.Utility
             return objectData.Value;
         }
 
+        internal static JToken GetPagesResultOrDefault(JObject obj)
+        {
+            const string ResponseString = "Response";
+
+            JProperty response = obj.Property(ResponseString);
+            if (response == null)
+                return null;
+
+            JObject responseValue = response.Value as JObject;
+            if (responseValue == null)
+                return null;
+
+            JProperty pagesNode = responseValue.Property("Pages");
+
+            if (pagesNode == null)
+                return null;
+
+            return pagesNode.Value;
+        }
+
         internal static string GetPayloadAsJson(List<KeyValuePair<string, object>> properties)
         {
             //NOTE: This uses reflection to get the values

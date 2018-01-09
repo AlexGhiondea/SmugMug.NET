@@ -16,7 +16,7 @@ namespace SmugMug.v2.Types
             //return await image____sizecustom(string.Empty);
 
             // /image/(*)!sizecustom 
-            string requestUri = string.Format("{0}/image/{1}!sizecustom", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId + "-0");
+            string requestUri = string.Format("{0}/image/{1}!sizecustom", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId + "-0");
 
             return await RetrieveEntityAsync<ImageSizeCustomEntity>(requestUri);
         }
@@ -27,7 +27,7 @@ namespace SmugMug.v2.Types
             //return await video____size1920(string.Empty);
 
             // /video/(*)!size1920 
-            string requestUri = string.Format("{0}/video/{1}!size1920", SmugMug.v2.Constants.Addresses.SmugMugApi, ParentEntity.EntityId + "-0");
+            string requestUri = string.Format("{0}/video/{1}!size1920", SmugMug.v2.Constants.Addresses.SmugMugApi, Parent.EntityId + "-0");
 
             return await RetrieveEntityAsync<ImageSizeEntity>(requestUri);
         }
