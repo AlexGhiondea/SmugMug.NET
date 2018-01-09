@@ -38,14 +38,14 @@ namespace SmugMugCodeGen
 ";
 
         public const string MethodDefinition = @"
-        public async Task<{0}> {1} ({2})
+        private async Task<{0}> {1} ({2}, CancellationToken ct = default(CancellationToken))
         {{
             // {3} 
             {4} 
         }}";
 
         public const string VoidMethodDefinition = @"
-        public async Task {1} ({2})
+        private async Task {1} ({2}, CancellationToken ct = default(CancellationToken))
         {{
             // {3} 
             {4} 
@@ -69,6 +69,8 @@ namespace SmugMug.v2.Types
 
 using System;{3}
 using SmugMug.v2.Authentication;
+using SmugMug.v2.Utility;
+using System.Threading;
 
 namespace SmugMug.v2.Types
 {{{2}

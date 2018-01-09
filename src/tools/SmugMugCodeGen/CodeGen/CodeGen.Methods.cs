@@ -99,8 +99,15 @@ namespace SmugMugCodeGen
                 {
                     returnType = item.ReturnType;
 
+
+
                     if (returnType.EndsWith("[]"))
                         returnType = returnType.Replace("[]", "");
+
+                    if (returnType == "BioImage" || returnType == "CoverImage")
+                    {
+                        returnType = "Image";
+                    }
 
                     returnType = Helpers.NormalizeString(returnType) + "Entity";
 
@@ -155,36 +162,38 @@ namespace SmugMugCodeGen
             if (returnType == Constants.VoidMethodReturnType)
             {
                 methodCall = "GetRequestAsync";
-                awaitStatement = "await {0}(requestUri);";
+                awaitStatement = "await {0}({1});";
             }
             else
             {
                 methodCall = returnType.TrimEnd().EndsWith("[]") ?
                                 "RetrieveEntityArrayAsync" :
                                 "RetrieveEntityAsync";
-                awaitStatement = "await {0}<{1}>(requestUri);";
+                awaitStatement = "await {0}<{2}>({1}, ct);";
             }
 
             // we need to first reconstruct the uri to take into account the parameters.
 
             StringBuilder sb = new StringBuilder();
-
             // the code that puts the uri together with the parameters.
-            sb.AppendLine(CreateRequestUriWithParameters(uri, parameterCount));
-            sb.AppendLine();
+            //sb.AppendLine(CreateRequestUriWithParameters(uri, parameterCount));
+            //sb.AppendLine($"ApiHelpers.CreateUri({CreateRequestUriWithParameters(uri, parameterCount)})");
+            //sb.AppendLine();
             sb.Append("            ");
             if (returnType != "Task")
                 sb.Append("return ");
 
-
-            sb.AppendFormat(awaitStatement, methodCall, returnType.Replace("[]", ""));
+            // put the return at the end because we use the same append for both result and void returning methods.
+            sb.AppendFormat(awaitStatement, methodCall, $"ApiHelpers.CreateUri({CreateRequestUriWithParameters(uri, parameterCount)})", returnType.Replace("[]", ""));
             return sb.ToString();
         }
 
         private static string CreateRequestUriWithParameters(string uri, int parameterCount)
         {
+            //ApiHelpers.CreateUri(string.Format());
+
             StringBuilder requestUri = new StringBuilder();
-            requestUri.Append("string requestUri = string.Format(\"{0}");
+            requestUri.Append("string.Format(\"");
             string[] parts = uri.Split(UriParameterDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < parts.Length; i++)
@@ -195,12 +204,12 @@ namespace SmugMugCodeGen
                 {
                     // the part that starts with '!' does not accept parameters.
                     requestUri.Append("{");
-                    requestUri.Append(i + 1);
+                    requestUri.Append(i);
                     requestUri.Append("}");
                 }
             }
             requestUri.Append("\", "); // close format string;
-            requestUri.Append("SmugMug.v2.Constants.Addresses.SmugMugApi, ");
+            //requestUri.Append("SmugMug.v2.Constants.Addresses.SmugMugApi, ");
             for (int i = 0; i < parameterCount; i++)
             {
                 requestUri.Append(Constants.ParameterNameBase);
@@ -209,7 +218,7 @@ namespace SmugMugCodeGen
                     requestUri.Append(",");
             }
 
-            requestUri.Append(");"); // close string.format
+            requestUri.Append(")"); // close string.format
             return requestUri.ToString();
         }
 

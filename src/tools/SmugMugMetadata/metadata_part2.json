@@ -424,7 +424,7 @@
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
           "NormalizedUri": null,
           "Uri": "/api/v2/user/smugmuguser!uploadlimits",
-          "ReturnType": "UserUploadLimits"
+          "ReturnType": "UserUploadLimits[]"
         },
         {
           "$type": "SmugMug.Shared.Descriptors.Method, SmugMugShared",
