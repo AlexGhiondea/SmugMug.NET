@@ -1,0 +1,329 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="OAuth.Net" Version="1.1.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'!='net45'">
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmugMug.NET.Shared\SmugMug.NET.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Types\AlbumFolderPage\DeletedAlbum\DeletedAlbum.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\DeletedAlbum\DeletedAlbum.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\DeletedFolder\DeletedFolder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\DeletedFolder\DeletedFolder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\DeletedPage\DeletedPage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\DeletedPage\DeletedPage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\FolderList\FolderList.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\FolderList\FolderList.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\Folder\Folder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\Folder\Folder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\Page\Page.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\Page\Page.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedAlbum\RecoverDeletedAlbum.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedAlbum\RecoverDeletedAlbum.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedFolder\RecoverDeletedFolder.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedFolder\RecoverDeletedFolder.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedPage\RecoverDeletedPage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\AlbumFolderPage\RecoverDeletedPage\RecoverDeletedPage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumImageShareUris\AlbumImageShareUris.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumImageShareUris\AlbumImageShareUris.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumList\AlbumList.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumList\AlbumList.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumShareUris\AlbumShareUris.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumShareUris\AlbumShareUris.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumTemplate\AlbumTemplate.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\AlbumTemplate\AlbumTemplate.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\Album\Album.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Album\Album\Album.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Catalog\CatalogSkuPrice\CatalogSkuPrice.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Catalog\CatalogSkuPrice\CatalogSkuPrice.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Contact\Contact\Contact.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Contact\Contact\Contact.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Comment\Comment.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Comment\Comment.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Download\Download.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Download\Download.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Features\Features.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Features\Features.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Grant\Grant.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Grant\Grant.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Guide\Guide.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Guide\Guide.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Node\Node.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Node\Node.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Printmark\Printmark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Printmark\Printmark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\QuickNews\QuickNews.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\QuickNews\QuickNews.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Size\Size.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Size\Size.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Task\Task.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Task\Task.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Template\Template.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Template\Template.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Theme\Theme.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Theme\Theme.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Watermark\Watermark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Entities\Watermark\Watermark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\CSMILVideo\CSMILVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\CSMILVideo\CSMILVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\EmbedVideo\EmbedVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\EmbedVideo\EmbedVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageDownload\ImageDownload.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageDownload\ImageDownload.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageMetadata\ImageMetadata.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageMetadata\ImageMetadata.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizeCustom\ImageSizeCustom.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizeCustom\ImageSizeCustom.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizeDetails\ImageSizeDetails.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizeDetails\ImageSizeDetails.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizes\ImageSizes.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\ImageSizes\ImageSizes.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\Image\Image.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\Image\Image.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\LargestImage\LargestImage.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\LargestImage\LargestImage.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\LargestVideo\LargestVideo.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Images\LargestVideo\LargestVideo.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\SmugMugEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageColor\StatusImageColor.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageColor\StatusImageColor.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageCrop\StatusImageCrop.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageCrop\StatusImageCrop.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageRotate\StatusImageRotate.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageRotate\StatusImageRotate.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageWatermark\StatusImageWatermark.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\Status\StatusImageWatermark\StatusImageWatermark.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserCoupon\UserCoupon.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserCoupon\UserCoupon.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserGuideState\UserGuideState.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserGuideState\UserGuideState.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserHideGuides\UserHideGuides.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserHideGuides\UserHideGuides.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserProfile\UserProfile.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserProfile\UserProfile.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserTopKeywords\UserTopKeywords.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserTopKeywords\UserTopKeywords.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserUploadLimits\UserUploadLimits.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\UserUploadLimits\UserUploadLimits.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\User\User.methods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Types\User\User\User.properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

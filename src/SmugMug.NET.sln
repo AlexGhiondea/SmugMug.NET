@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27303.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModelAsync", "SmugMugModelAsync\SmugMugModelAsync.csproj", "{C7020561-8E04-4D6A-8D46-28F31183ECBB}"
 EndProject
@@ -9,11 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugTest", "SmugMugTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugTest.v2", "SmugMugTest.v2\SmugMugTest.v2.csproj", "{5F920D4B-3C84-4329-B539-DE884404EBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugModel.v2", "SmugMugModel.v2\SmugMugModel.v2.csproj", "{6322369D-B963-4695-9E43-708836F226F2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugMetadataRetriever", "tools\SmugMugMetadataRetriever\SmugMugMetadataRetriever.csproj", "{24E408C7-79D6-41E6-B2DA-9E71A36EED13}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugShared", "SmugMugShared\SmugMugShared.csproj", "{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugMugCodeGen", "tools\SmugMugCodeGen\SmugMugCodeGen.csproj", "{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}"
 EndProject
@@ -26,6 +22,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmugMugMetadata", "SmugMugM
 		tools\SmugMugMetadata\metadata_part3.json = tools\SmugMugMetadata\metadata_part3.json
 		tools\SmugMugMetadata\metadata_part4.json = tools\SmugMugMetadata\metadata_part4.json
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmugMug.NET", "SmugMug.NET\SmugMug.NET.csproj", "{FC31294C-694B-40F6-B1ED-73727AB2999E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{84F2FB0F-216C-4D84-A22B-741CF3BACE34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmugMug.NET.Shared", "SmugMug.NET.Shared\SmugMug.NET.Shared.csproj", "{151DD076-6C45-449B-90F4-902307FA6DFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{75D6CB53-38AA-4509-B4E2-8A3D45EB1867}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,29 +49,35 @@ Global
 		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F920D4B-3C84-4329-B539-DE884404EBC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6322369D-B963-4695-9E43-708836F226F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6322369D-B963-4695-9E43-708836F226F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6322369D-B963-4695-9E43-708836F226F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6322369D-B963-4695-9E43-708836F226F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24E408C7-79D6-41E6-B2DA-9E71A36EED13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24E408C7-79D6-41E6-B2DA-9E71A36EED13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E408C7-79D6-41E6-B2DA-9E71A36EED13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E408C7-79D6-41E6-B2DA-9E71A36EED13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D05E1C9C-A3CD-4DB2-B52F-7897366581CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC31294C-694B-40F6-B1ED-73727AB2999E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC31294C-694B-40F6-B1ED-73727AB2999E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC31294C-694B-40F6-B1ED-73727AB2999E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC31294C-694B-40F6-B1ED-73727AB2999E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151DD076-6C45-449B-90F4-902307FA6DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151DD076-6C45-449B-90F4-902307FA6DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151DD076-6C45-449B-90F4-902307FA6DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151DD076-6C45-449B-90F4-902307FA6DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{C7020561-8E04-4D6A-8D46-28F31183ECBB} = {75D6CB53-38AA-4509-B4E2-8A3D45EB1867}
 		{24E408C7-79D6-41E6-B2DA-9E71A36EED13} = {1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}
 		{FEF25999-C53A-44EA-BDCE-40DFD862AAE1} = {1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}
 		{A6EAD003-DBD4-4634-B5EB-BC0F29AAFFFE} = {1D50F4B6-DCEC-441F-B33D-081DBEFF7A2F}
+		{FC31294C-694B-40F6-B1ED-73727AB2999E} = {84F2FB0F-216C-4D84-A22B-741CF3BACE34}
+		{151DD076-6C45-449B-90F4-902307FA6DFC} = {84F2FB0F-216C-4D84-A22B-741CF3BACE34}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E01EB671-4706-4854-ACD6-689136A36BC5}
 	EndGlobalSection
 EndGlobal

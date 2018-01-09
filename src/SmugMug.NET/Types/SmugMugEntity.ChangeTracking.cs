@@ -1,11 +1,9 @@
 ﻿// Copyright (c) Alex Ghiondea. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -102,7 +100,7 @@ namespace SmugMug.v2.Types
 
             foreach (var propertyName in requestedProperties)
             {
-                PropertyInfo property = thisType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public);
+                PropertyInfo property = thisType.GetRuntimeProperty(propertyName);
                 if (property == null)
                 {
                     Debug.Write(string.Format("Could not find property {0} on type {1}", propertyName, thisType.Name));

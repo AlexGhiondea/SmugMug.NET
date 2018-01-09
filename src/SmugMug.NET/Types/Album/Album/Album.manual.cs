@@ -169,7 +169,7 @@ namespace SmugMug.v2.Types
         public async Task UploadFromUriAsync(Uri sourceUri, bool allowInsecure = false, long byteCount = 0, string caption = "",
             string cookie = "_", string fileName = "", bool hidden = false, string[] keywords = null, string MD5Sum = "", string title = "")
         {
-            if (sourceUri.Scheme != System.Uri.UriSchemeHttp && sourceUri.Scheme != System.Uri.UriSchemeHttps)
+            if (sourceUri.Scheme.ToLower() != "http" && sourceUri.Scheme.ToLower() != "https")
                 throw new ArgumentException("Supported URI schemes are HTTP and HTTPS", "sourceUri");
 
             var postProperties = new List<KeyValuePair<string, object>>();

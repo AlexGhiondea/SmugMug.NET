@@ -2,6 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Reflection;
+using System.Linq;
 using System.Runtime.Serialization;
 
 namespace SmugMug.v2.Utility
@@ -11,13 +13,15 @@ namespace SmugMug.v2.Utility
         public static string GetEnumMemberValue(this Enum enumVal)
         {
             var enumType = enumVal.GetType();
-            var memInfo = enumType.GetMember(enumVal.ToString());
-            var attributes = memInfo[0].GetCustomAttributes(typeof(EnumMemberAttribute), false);
 
-            if (attributes.Length == 0)
+            var memInfo = enumType.GetRuntimeProperty(enumVal.ToString()); // enumType.GetMember(enumVal.ToString());
+
+            var attributes = memInfo.GetCustomAttributes(typeof(EnumMemberAttribute), false);
+
+            if (!attributes.Any())
                 return enumVal.ToString();
 
-            return (attributes[0] as EnumMemberAttribute).Value;
+            return (attributes.First() as EnumMemberAttribute).Value;
         }
     }
 }

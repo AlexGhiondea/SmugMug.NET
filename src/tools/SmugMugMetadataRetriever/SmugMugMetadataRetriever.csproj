@@ -57,13 +57,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SmugMugModel.v2\SmugMugModel.v2.csproj">
-      <Project>{6322369d-b963-4695-9e43-708836f226f2}</Project>
-      <Name>SmugMugModel.v2</Name>
+    <ProjectReference Include="..\..\SmugMug.NET.Shared\SmugMug.NET.Shared.csproj">
+      <Project>{151dd076-6c45-449b-90f4-902307fa6dfc}</Project>
+      <Name>SmugMug.NET.Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SmugMugShared\SmugMugShared.csproj">
-      <Project>{d05e1c9c-a3cd-4db2-b52f-7897366581cb}</Project>
-      <Name>SmugMugShared</Name>
+    <ProjectReference Include="..\..\SmugMug.NET\SmugMug.NET.csproj">
+      <Project>{fc31294c-694b-40f6-b1ed-73727ab2999e}</Project>
+      <Name>SmugMug.NET</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
