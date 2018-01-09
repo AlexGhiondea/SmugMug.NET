@@ -61,10 +61,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmugMug.NET.Shared\SmugMug.NET.Shared.csproj">
-      <Project>{151dd076-6c45-449b-90f4-902307fa6dfc}</Project>
-      <Name>SmugMug.NET.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SmugMug.NET\SmugMug.NET.csproj">
       <Project>{fc31294c-694b-40f6-b1ed-73727ab2999e}</Project>
       <Name>SmugMug.NET</Name>

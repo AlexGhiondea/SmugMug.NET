@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
+    <Version>1.0.0-beta1</Version>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,10 +17,6 @@
   <ItemGroup Condition="'$(TargetFramework)'!='net45'">
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SmugMug.NET.Shared\SmugMug.NET.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
