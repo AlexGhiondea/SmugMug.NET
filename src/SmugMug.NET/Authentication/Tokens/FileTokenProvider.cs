@@ -92,26 +92,20 @@ namespace SmugMug.v2.Authentication.Tokens
             {
                 // Create or open the specified file.
                 using (FileStream fStream = File.Open(FileName, FileMode.OpenOrCreate))
-                using (RijndaelManaged rijndael = new RijndaelManaged()) // Create a new Rijndael object.
+                using (var aes = Aes.Create()) // Create a new Rijndael object.
                 {
-                    rijndael.BlockSize = 256;
+                    aes.BlockSize = 128;
                     Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(_key, _salt, 10000);
 
-                    byte[] key = pwdGen.GetBytes(rijndael.KeySize / 8);   //This will generate a 256 bits key
-                    byte[] iv = pwdGen.GetBytes(rijndael.BlockSize / 8);  //This will generate a 256 bits IV
+                    byte[] key = pwdGen.GetBytes(aes.KeySize / 8);   //This will generate a 256 bits key
+                    byte[] iv = pwdGen.GetBytes(aes.BlockSize / 8);  //This will generate a 256 bits IV
 
-                    using (CryptoStream cStream = new CryptoStream(fStream, rijndael.CreateEncryptor(key, iv), CryptoStreamMode.Write))                 // Create a CryptoStream using the FileStream and the passed key and initialization vector (IV).
+                    using (CryptoStream cStream = new CryptoStream(fStream, aes.CreateEncryptor(key, iv), CryptoStreamMode.Write))                 // Create a CryptoStream using the FileStream and the passed key and initialization vector (IV).
                     using (StreamWriter sWriter = new StreamWriter(cStream))// Create a StreamWriter using the CryptoStream.
                     {
                         // Write the data to the stream 
                         // to encrypt it.
                         sWriter.WriteLine(Data);
-
-                        // Close the streams and
-                        // close the file.
-                        sWriter.Close();
-                        cStream.Close();
-                        fStream.Close();
                     }
                 }
             }
@@ -134,15 +128,15 @@ namespace SmugMug.v2.Authentication.Tokens
             {
                 // Create or open the specified file. 
                 using (FileStream fStream = File.Open(FileName, FileMode.OpenOrCreate))
-                using (RijndaelManaged rijndael = new RijndaelManaged()) // Create a new Rijndael object.
+                using (var aes = Aes.Create()) // Create a new Rijndael object.
                 {
-                    rijndael.BlockSize = 256;
+                    aes.BlockSize = 128;
                     Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(_key, _salt, 10000);
 
-                    byte[] key = pwdGen.GetBytes(rijndael.KeySize / 8);   //This will generate a 256 bits key
-                    byte[] iv = pwdGen.GetBytes(rijndael.BlockSize / 8);  //This will generate a 256 bits IV
+                    byte[] key = pwdGen.GetBytes(aes.KeySize / 8);   //This will generate a 256 bits key
+                    byte[] iv = pwdGen.GetBytes(aes.BlockSize / 8);  //This will generate a 256 bits IV
 
-                    using (CryptoStream cStream = new CryptoStream(fStream, rijndael.CreateDecryptor(key, iv), CryptoStreamMode.Read))                 // Create a CryptoStream using the FileStream and the passed key and initialization vector (IV).
+                    using (CryptoStream cStream = new CryptoStream(fStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))                 // Create a CryptoStream using the FileStream and the passed key and initialization vector (IV).
                     // Create a StreamReader using the CryptoStream.
                     using (StreamReader sReader = new StreamReader(cStream))
                     {
@@ -150,12 +144,6 @@ namespace SmugMug.v2.Authentication.Tokens
                         // Read the data from the stream 
                         // to decrypt it.
                         string val = sReader.ReadToEnd();
-
-                        // Close the streams and
-                        // close the file.
-                        sReader.Close();
-                        cStream.Close();
-                        fStream.Close();
 
                         // Return the string. 
                         return val;
