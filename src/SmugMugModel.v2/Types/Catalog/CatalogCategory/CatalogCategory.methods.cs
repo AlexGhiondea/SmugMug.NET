@@ -19,14 +19,5 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
-
-
-        private async Task<CatalogSubCategoryEntity[]> catalogcategory____subcategories (string param1)
-        {
-            // /catalog/category/(*)!subcategories 
-            string requestUri = string.Format("{0}/catalog/category/{1}!subcategories", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityArrayAsync<CatalogSubCategoryEntity>(requestUri); 
-        }
     }
 }
