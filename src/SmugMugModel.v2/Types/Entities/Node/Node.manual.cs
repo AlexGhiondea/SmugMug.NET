@@ -7,6 +7,7 @@ using SmugMug.v2.Authentication;
 using System.Collections.Generic;
 using System.Linq;
 using SmugMug.v2.Utility;
+using SmugMug.v2.Types.Enums;
 
 namespace SmugMug.v2.Types
 {
@@ -18,28 +19,33 @@ namespace SmugMug.v2.Types
             return await album___(string.Empty);
         }
 
-        public async Task<FolderEntity> GetFolderByIdAsync()
+        public async Task<FolderEntity> AsFolderAsync()
         {
             // /folder/id/(*) 
-            return await folderid___(NodeID);
+            return await folderid___(NodeId);
         }
 
         public async Task<ImageEntity> GetHighlightImageAsync()
         {
             // /highlight/node/(*) 
-            return await highlightnode___(NodeID);
+            return await highlightnode___(NodeId);
+        }
+
+        public async Task<NodeEntity[]> GetChildrenAsync(NodeSortMethodEnum sortMethod = NodeSortMethodEnum.Organizer, SortDirectionEnum sortDirection = SortDirectionEnum.Ascending, TypeEnum type = TypeEnum.All)
+        {
+            // /node/(*)!children 
+            return await node____children(NodeId, $"SortDirection={sortDirection}&SortMethod={sortMethod}&Type={type}");
         }
 
         public async Task<NodeEntity[]> GetChildrenAsync()
         {
-            // /node/(*)!children 
-            return await node____children(NodeID);
+            return await GetChildrenAsync(NodeSortMethodEnum.Organizer, SortDirectionEnum.Ascending, TypeEnum.All);
         }
 
         public async Task<GrantEntity[]> GetGrantsAsync()
         {
             // /node/(*)!grants 
-            return await node____grants(NodeID);
+            return await node____grants(NodeId);
         }
 
         public async Task MoveNodesAsync(IEnumerable<NodeEntity> nodes, bool asyncMove, bool autoRename = true)
@@ -52,20 +58,20 @@ namespace SmugMug.v2.Types
 
             var payload = JsonHelpers.GetPayloadAsJson(postProperties);
 
-            string requestUri = string.Format("{0}/node/{1}!movenodes", SmugMug.v2.Constants.Addresses.SmugMugApi, NodeID);
+            string requestUri = string.Format("{0}/node/{1}!movenodes", SmugMug.v2.Constants.Addresses.SmugMugApi, NodeId);
             await PostRequestAsync(requestUri, payload);
         }
 
         public async Task<NodeEntity> GetParentAsync()
         {
             // /node/(*)!parent 
-            return await node____parent(NodeID);
+            return await node____parent(NodeId);
         }
 
         public async Task<NodeEntity[]> GetParents()
         {
             // /node/(*)!parents 
-            return await node____parents(NodeID);
+            return await node____parents(NodeId);
         }
 
         //public async Task<UserEntity> Fixup_user___()

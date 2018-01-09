@@ -116,6 +116,7 @@
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.manual.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.methods.cs" />
     <Compile Include="Types\Catalog\CatalogVendor\CatalogVendor.properties.cs" />
+    <Compile Include="Types\Enums\Children\NodeSortMethodEnum.cs" />
     <Compile Include="Types\Enums\DegreesEnum.cs" />
     <Compile Include="Types\Enums\ImageSearchModeEnum.cs" />
     <Compile Include="Types\Enums\FlipEnum.cs" />
