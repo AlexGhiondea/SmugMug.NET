@@ -13,10 +13,10 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/AlexGhiondea/SmugMug.Net/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/AlexGhiondea/SmugMug.Net</PackageProjectUrl>
     <PackageTags></PackageTags>
-    <PackageVersion>1.0.0-beta2</PackageVersion>
-    <Version>1.0.0-beta2</Version>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <PackageVersion>1.0.0-beta3</PackageVersion>
+    <Version>1.0.0-beta3</Version>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
     <Description></Description>
     <PackageId>SmugMug.Net.v2Api</PackageId>
   </PropertyGroup>
