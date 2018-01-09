@@ -26,31 +26,6 @@ namespace SmugMug.v2.Types
             return PatchParameters;
         }
 
-        private static readonly List<string> PatchParameters = new List<string>(){ "BioText","BioImageUri","CoverImageUri","FirstName","LastName","DisplayName","Facebook","Twitter","Instagram","Blogger","Flickr","GooglePlus","LinkedIn","Pinterest","Tumblr","Vimeo","Wordpress","YouTube","Custom" };
-
-
-        private async Task<UserEntity> user___ (string param1)
-        {
-            // /user/(*) 
-            string requestUri = string.Format("{0}/user/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<UserEntity>(requestUri); 
-        }
-
-        private async Task<ImageEntity> user____bioimage (string param1)
-        {
-            // /user/(*)!bioimage 
-            string requestUri = string.Format("{0}/user/{1}!bioimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
-        }
-
-        private async Task<ImageEntity> user____coverimage (string param1)
-        {
-            // /user/(*)!coverimage 
-            string requestUri = string.Format("{0}/user/{1}!coverimage", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<ImageEntity>(requestUri); 
-        }
+        private static readonly List<string> PatchParameters = new List<string>() { "BioText", "BioImageUri", "CoverImageUri", "FirstName", "LastName", "DisplayName", "Facebook", "Twitter", "Instagram", "Blogger", "Flickr", "GooglePlus", "LinkedIn", "Pinterest", "Tumblr", "Vimeo", "Wordpress", "YouTube", "Custom" };
     }
 }

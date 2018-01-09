@@ -19,14 +19,5 @@ namespace SmugMug.v2.Types
         {
             _oauthToken = oauthToken;
         }
-
-
-        private async Task<GuideEntity> guide___ (string param1)
-        {
-            // /guide/(*) 
-            string requestUri = string.Format("{0}/guide/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, param1);
-
-            return await RetrieveEntityAsync<GuideEntity>(requestUri); 
-        }
     }
 }
