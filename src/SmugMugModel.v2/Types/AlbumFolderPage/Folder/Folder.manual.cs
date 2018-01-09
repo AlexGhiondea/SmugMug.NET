@@ -13,7 +13,7 @@ namespace SmugMug.v2.Types
         public async Task<FolderEntity> Fixup_folderid___()
         {
             // /folder/id/(*) 
-            return await folderid___(NodeID);
+            return await folderid___(NodeId);
         }
 
         public async Task RequiresPost_Fixup_folderuser____albumfromalbumtemplate()
@@ -130,13 +130,13 @@ namespace SmugMug.v2.Types
         public async Task<ImageEntity> GetHighlightImageAsync()
         {
             // /highlight/node/(*) 
-            return await highlightnode___(NodeID);
+            return await highlightnode___(NodeId);
         }
 
         public async Task<NodeEntity> GetNodeAsync()
         {
             // /node/(*) 
-            return await node___(NodeID);
+            return await node___(NodeId);
         }
 
         public async Task<UserEntity> GetUserAsync()

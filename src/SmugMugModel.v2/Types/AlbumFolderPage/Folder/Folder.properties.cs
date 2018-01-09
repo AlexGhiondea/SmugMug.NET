@@ -16,7 +16,6 @@ namespace SmugMug.v2.Types
         private bool _isEmpty;
         private string _keywords;
         private string _name;
-        private string _nodeID;
         private string _password;
         private string _passwordHint;
         private PrivacyEnum _privacy;
@@ -141,21 +140,6 @@ namespace SmugMug.v2.Types
                 }
             }
         }
-
-
-        public string NodeID {
-            get {
-                return _nodeID;
-            }
-            set {
-                if (_nodeID != value)
-                {
-                    NotifyPropertyValueChanged("NodeID", oldValue:_nodeID, newValue: value);
-                    _nodeID = value;     
-                }
-            }
-        }
-
 
         public string Password {
             get {
