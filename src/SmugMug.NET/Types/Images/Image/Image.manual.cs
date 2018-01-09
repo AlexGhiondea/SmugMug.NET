@@ -183,7 +183,19 @@ namespace SmugMug.v2.Types
             //return await image____sizes();
 
             // /image/(*)!sizes 
-            string requestUri = string.Format("{0}/image/{1}!sizes", SmugMug.v2.Constants.Addresses.SmugMugApi, ImageKey + "-0");
+
+            // get the image key from the Uris if possible
+
+            string imgKey = ImageKey;
+            UriDescriptor val;
+            if (Uris.TryGetValue("Image", out val))
+            {
+                var posLastSlash = val.Uri.LastIndexOf("/");
+                if (posLastSlash >= 0)
+                    imgKey = val.Uri.Substring(posLastSlash + 1);
+            }
+
+            string requestUri = string.Format("{0}/image/{1}!sizes", SmugMug.v2.Constants.Addresses.SmugMugApi, imgKey);
 
             return await RetrieveEntityAsync<ImageSizesEntity>(requestUri);
         }
