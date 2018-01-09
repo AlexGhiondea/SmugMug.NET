@@ -20,20 +20,6 @@ namespace SmugMug.v2.Types
             }
         }
 
-        private List<AlbumEntity> _albums;
-        public List<AlbumEntity> AllAlbums
-        {
-            get
-            {
-                if (_albums == null)
-                {
-                    _albums = GetAllAlbumsAsync().Result.ToList();
-                }
-
-                return _albums;
-            }
-        }
-
         [Obsolete]
         public async Task<FolderEntity> GetFolderAsync()
         {

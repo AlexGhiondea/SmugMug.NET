@@ -22,12 +22,12 @@ namespace SmugMugTest
 
             System.Console.WriteLine(user.Name);
 
-            foreach (var folder in rootNode.Folders)
+            foreach (var folder in rootNode.GetFoldersAsync().Result)
             {
                 Console.WriteLine($"Folder: {folder.Name}");
             }
 
-            foreach (var album in rootNode.Albums)
+            foreach (var album in rootNode.GetAlbumsAsync().Result)
             {
                 Console.WriteLine($"Album: {album.Name}");
             }
