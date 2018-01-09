@@ -13,7 +13,12 @@ namespace SmugMug.v2.Types
         public async Task<GuideEntity> Fixup_guide___ ()
         {
             // /guide/(*) 
-            return await guide___(string.Empty); 
+           // return await guide___(string.Empty);
+
+            // /guide/(*) 
+            string requestUri = string.Format("{0}/guide/{1}", SmugMug.v2.Constants.Addresses.SmugMugApi, EntityId);
+
+            return await RetrieveEntityAsync<GuideEntity>(requestUri);
         }
     }
 }
