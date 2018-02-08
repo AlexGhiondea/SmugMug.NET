@@ -38,7 +38,11 @@ namespace SmugMug.v2.Authentication
             string authorizationOptions = options == null ? string.Empty : "?" + options.AsQueryString();
             string authorizeUrl = authenticator.CreateAuthorizeAddress(OAuthAuthorizeUrl + authorizationOptions, tokens);
 
-            Process.Start(authorizeUrl);
+            // Launching the url to authorize the app
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.UseShellExecute = true; // we need to be explicit about this since on Core the default is 'false'
+            psi.FileName = authorizeUrl;
+            Process.Start(psi);
 
             Console.WriteLine("Press [Enter] after you authorized the application and entered the pin provided");
             string pin = Console.ReadLine();
