@@ -3,6 +3,7 @@ using SmugMug.v2.Authentication.Tokens;
 using SmugMug.v2.Types;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace SmugMugTest
 {
@@ -18,20 +19,19 @@ namespace SmugMugTest
             SiteEntity site = new SiteEntity(s_oauthToken);
             var user = site.GetAuthenticatedUserAsync().Result;
 
-            var rootNode = user.GetRootNodeAsync().Result;
-
             System.Console.WriteLine(user.Name);
 
-            foreach (var folder in rootNode.GetFoldersAsync().Result)
-            {
-                Console.WriteLine($"Folder: {folder.Name}");
-            }
+            var album = user.GetAllAlbumsAsync().Result.FirstOrDefault();
 
-            foreach (var album in rootNode.GetAlbumsAsync().Result)
-            {
-                Console.WriteLine($"Album: {album.Name}");
-            }
+            Console.WriteLine(album.Name);
 
-        }
+            var image = album.GetImagesAsync().Result.FirstOrDefault();
+
+            Console.WriteLine(image.Title);
+
+            image.Caption = "test";
+
+            image.SaveAsync().Wait();
+       }
     }
 }

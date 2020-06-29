@@ -70,7 +70,7 @@ namespace SmugMug.v2.Types
             // We get the modified properties and post them to the objects's uri
             var patchPropertiesWithValues = GetModifedPropertiesValue(GetPatchPropertiesName());
 
-            await PatchRequestAsync(Constants.Addresses.SmugMug + this.PatchUri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+            await PatchRequestAsync(Constants.Addresses.SmugMug + AppendSuffixToUrl(this.PatchUri), JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
 
         protected async Task CreateAsync(string uri, List<string> properties)
@@ -78,6 +78,14 @@ namespace SmugMug.v2.Types
             var patchPropertiesWithValues = GetPropertiesValue(properties);
 
             await PostRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
+        }
+        
+        protected string AppendSuffixToUrl(string url)
+        {
+            if (url.EndsWith("-0"))
+                return url;
+
+            return $"{url}-0";
         }
 
         public string NodeId

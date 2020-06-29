@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SmugMug.Net.v2Api</id>
-    <version>1.0.0-alpha</version>
+    <version>1.0.1</version>
     <title>SmugMug.NET API v.2</title>
     <authors>Alex Ghiondea</authors>
     <owners>Alex Ghiondea</owners>
