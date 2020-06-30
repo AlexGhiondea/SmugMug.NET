@@ -9,14 +9,14 @@
     <Authors>Alex Ghiondea</Authors>
     <Company />
     <Product />
-    <Copyright>Alex Ghiondea (c) 2017</Copyright>
+    <Copyright>Alex Ghiondea (c) 2020</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/AlexGhiondea/SmugMug.Net/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/AlexGhiondea/SmugMug.Net</PackageProjectUrl>
     <PackageTags></PackageTags>
-    <PackageVersion>1.0.0-beta5</PackageVersion>
-    <Version>1.0.0-beta5</Version>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
+    <PackageVersion>1.0.0-beta6</PackageVersion>
+    <Version>1.0.0-beta6</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
     <Description></Description>
     <PackageId>SmugMug.Net.v2Api</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
