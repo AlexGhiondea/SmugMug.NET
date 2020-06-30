@@ -79,10 +79,18 @@ namespace SmugMug.v2.Types
 
             await PostRequestAsync(uri, JsonHelpers.GetPayloadAsJson(patchPropertiesWithValues));
         }
-        
+
         protected string AppendSuffixToUrl(string url)
         {
-            if (url.EndsWith("-0"))
+            // we are going to use the value on the Uri and use that, if it exists.
+
+            // if the Uri string is not empty, has more than 2 characters and we have a suffix (ie. image-1), use that.
+            if (!string.IsNullOrEmpty(Uri) && Uri.Length > 2 && Uri[Uri.Length - 2] == '-')
+            {
+                return $"{url}-{Uri[Uri.Length - 1]}";
+            }
+
+            if (url.Length > 2 && url[url.Length - 2] == '-')
                 return url;
 
             return $"{url}-0";
